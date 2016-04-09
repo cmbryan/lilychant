@@ -1,0 +1,9 @@
+grammar org.lilychant.script.LilyChantScript with org.eclipse.xtext.common.Terminals
+
+generate lilyChantScript "http://www.lilychant.org/script/LilyChantScript"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
