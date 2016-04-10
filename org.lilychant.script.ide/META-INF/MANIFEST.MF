@@ -9,3 +9,7 @@ Require-Bundle: org.lilychant.script,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.lilychant.script.ide.contentassist.antlr.internal,
+ org.lilychant.script.ide.contentassist.antlr,
+ org.lilychant.script.ide.contentassist.antlr.lexer
+
