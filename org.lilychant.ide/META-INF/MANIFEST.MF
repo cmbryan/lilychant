@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.lilychant.ide
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.lilychant.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.lilychant,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.lilychant.ide.contentassist.antlr,
+ org.lilychant.ide.contentassist.antlr.lexer,
+ org.lilychant.ide.contentassist.antlr.internal
+

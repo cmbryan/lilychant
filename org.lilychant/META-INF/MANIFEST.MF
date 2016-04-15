@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.lilychant
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.lilychant; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.util,
+ org.antlr.runtime,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: org.lilychant.generator,
+ org.lilychant.lilyChantScript,
+ org.lilychant.parser.antlr.internal,
+ org.lilychant,
+ org.lilychant.serializer,
+ org.lilychant.scoping,
+ org.lilychant.validation,
+ org.lilychant.parser.antlr.lexer,
+ org.lilychant.services,
+ org.lilychant.lilyChantScript.util,
+ org.lilychant.lilyChantScript.impl,
+ org.lilychant.parser.antlr
+Import-Package: org.apache.log4j
