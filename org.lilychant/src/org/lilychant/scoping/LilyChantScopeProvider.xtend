@@ -3,6 +3,12 @@
  */
 package org.lilychant.scoping
 
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EReference
+import org.eclipse.xtext.EcoreUtil2
+import org.eclipse.xtext.scoping.Scopes
+import org.lilychant.lilyChantScript.LyricPhrase
+import org.lilychant.lilyChantScript.TonePhrase
 
 /**
  * This class contains custom scoping description.
@@ -12,4 +18,14 @@ package org.lilychant.scoping
  */
 class LilyChantScopeProvider extends AbstractLilyChantScopeProvider {
 
+	// Look for TonePhrase cross-references inside LyricPhrases globally
+	override getScope(EObject context, EReference reference) {
+		if (context instanceof LyricPhrase) {
+			val root = EcoreUtil2.getRootContainer(context)
+			val candidates = EcoreUtil2.getAllContentsOfType(root, TonePhrase)
+			return Scopes.scopeFor(candidates)
+		} else {
+			return super.getScope(context, reference)
+		}
+	}
 }

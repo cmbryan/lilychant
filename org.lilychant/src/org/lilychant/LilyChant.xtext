@@ -16,6 +16,8 @@ Script:
  * Tone definitions
  */
 
+// TODO VOICE NAMES SHOULD BE GLOBAL
+
 Tone:
 	'Tone' name=ID 'in' key=ID ':'
 		BEGIN
@@ -58,19 +60,21 @@ VoicePhrase:
  */
 
 Chant:
-	'Chant' 'in' 'Tone' toneName=[Tone] 'in' key=ID ':'
+	'Chant' 'in' 'Tone' tone=[Tone] 'in' key=ID ':'
 		BEGIN
-		phrases+=LyricPhrase
-		('|' phrases+=LyricPhrase)*
+		phrases+=LyricPhrase+
 		END
 ;
 
 LyricPhrase:
-	noteGroups+=NoteGroup ('.' noteGroups+=NoteGroup)*
+	'Phrase' notes=[TonePhrase] ':'
+		BEGIN
+		noteGroups+=NoteGroup ('.' noteGroups+=NoteGroup)*
+		END
 ;
 
 NoteGroup:
-	syllabels+=(ID|HYPHEN|EXTENDER)+
+	syllables+=(ID|HYPHEN|EXTENDER)+
 ;
 
 

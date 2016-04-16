@@ -15,11 +15,8 @@ import org.lilychant.lilyChantScript.Script
 @InjectWith(LilyChantInjectorProvider)
 class LilyChantParsingTest{
 
-	@Inject
-	ParseHelper<Script> parseHelper;
-	
-	@Inject
-	ValidationTestHelper validationHelper;
+	@Inject ParseHelper<Script> parseHelper;
+	@Inject ValidationTestHelper validationHelper;
 
 	@Test 
 	def void loadModel() {
@@ -33,7 +30,7 @@ class LilyChantParsingTest{
 						g4 a b c2
 				Phrase two:
 					Voice Sop:
-						d4 e f1			
+						d4 e f1
 					Voice Alt:
 						g4 a b c2
 			Chant in Tone one in F:

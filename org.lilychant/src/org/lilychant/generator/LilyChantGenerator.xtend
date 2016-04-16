@@ -3,10 +3,18 @@
  */
 package org.lilychant.generator
 
+import java.util.ArrayList
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import org.lilychant.lilyChantScript.Chant
+import org.lilychant.lilyChantScript.Script
+import org.lilychant.lilyChantScript.Tone
+import org.lilychant.lilyChantScript.VoiceName
+import org.lilychant.lilyChantScript.VoicePhrase
+
+import static extension org.eclipse.xtext.EcoreUtil2.*
 
 /**
  * Generates code from your model files on save.
@@ -14,12 +22,166 @@ import org.eclipse.xtext.generator.IGeneratorContext
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class LilyChantGenerator extends AbstractGenerator {
+	
+	def generateVoice(Tone tone) {
+		'''
+		«tone.name»
+		'''
+	}
+		
+	def getVoiceNotes(Script model, Chant chant, VoiceName voiceName) {
+		var result = new ArrayList<String>()
+
+		for (lyricPhrase : chant.phrases) {
+			var VoicePhrase targetVoice
+			for (voice : lyricPhrase.notes.voices) {
+				if (voice.name == voiceName) {
+					targetVoice = voice
+				}
+			}
+			
+			// Match the notes to the syllables
+			var noteIndex = 0
+			for (noteGroup : lyricPhrase.noteGroups) {
+				var syllableIndex = 0
+				var inSlur = false
+				while (syllableIndex < noteGroup.syllables.length) {
+					// TODO use terminal definitions for hyphens and extenders
+					val note = targetVoice.notes.get(noteIndex)
+					val syllable = noteGroup.syllables.get(syllableIndex)
+					switch (syllable) {
+						case "--": {
+							syllableIndex++
+							val nextSyllable = noteGroup.syllables.get(syllableIndex)
+							println("-- " + nextSyllable)
+							result.add(note)
+						}
+						case "__": {
+							noteIndex++
+							val nextNote = targetVoice.notes.get(noteIndex)
+							println("(" + nextNote + ")")
+							if (!inSlur) {
+								result.add("(")
+								inSlur = true
+							}
+							result.add(nextNote)
+							if (syllableIndex+1 == noteGroup.syllables.length
+									|| noteGroup.syllables.get(syllableIndex+1) != "__")
+								result.add(")")
+						}
+						default: {
+							println(syllable + " <-> " + note)
+							result.add(note)
+						}
+					}
+					syllableIndex++
+				}
+				syllableIndex++
+				noteIndex++
+			}
+		}
+		
+		println('''Notes for voice: «FOR note : result» «note»«ENDFOR»''')
+		return result
+	}
+
+	def private generateVoices(Script model) {
+		'''
+		«FOR voice : model.tones.get(0).voiceNames»
+		«voice.name» = {
+			«FOR chant : model.chants»
+			«FOR note : getVoiceNotes(model, chant, voice)»«note» «ENDFOR»
+			«ENDFOR»
+		}
+		
+		«ENDFOR»
+		'''
+	}
+	
+	def private generateLyrics(Script model) {
+		'''
+		words = \lyricmode {
+			«FOR chant : model.chants»
+			«FOR lyricPhrase : chant.phrases»
+			«FOR noteGroup : lyricPhrase.noteGroups»«FOR syllable : noteGroup.syllables»«syllable» «ENDFOR»«ENDFOR»
+			«ENDFOR»
+			«ENDFOR»
+		}
+		'''
+	}
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(typeof(Greeting))
-//				.map[name]
-//				.join(', '))
+		val model = resource.allContents.filter(typeof(Script)).next
+		val filename = resource.normalizedURI.lastSegment + ".ly"
+		fsa.generateFile(filename,
+			'''
+			\version "2.16.2"
+			
+			% =======================
+			% Global Variables
+			% =======================
+			alignleft = \once \override LyricText #'self-alignment-X = #-1
+			
+			%
+			% voices
+			%
+			«model.generateVoices»
+			
+			% =======================
+			% Lyrics
+			% =======================
+			«model.generateLyrics»
+			
+			% =======================
+			% Score
+			% =======================
+			\score {
+			  \new ChoirStaff \with {
+			    instrumentName = \markup \bold "Choir:"
+			  }
+			  <<
+			    #(set-accidental-style 'neo-modern 'Score)
+			    \new Staff {
+			      \key f \major
+			      \cadenzaOn
+			      <<{
+				  \new Voice = "Sop" {
+				    \voiceOne
+				    \relative c''
+				    \Sop
+				  }
+				}>>
+			    }
+			    \new Lyrics \lyricsto "Sop" { \words }
+			    \new Staff {
+			      \key f \major
+			      \clef bass
+			      \cadenzaOn
+			      <<{
+				  \new Voice = "Bass" {
+				    \voiceOne
+				    \relative c
+				    \Bass
+				  }
+				}>>
+			    }
+			  >>
+			}
+			
+			% =======================
+			% Layout
+			% =======================
+			\layout {
+			  \context {
+			    \Score
+			    \remove "Bar_number_engraver"
+			  }
+			  \context {
+			    \Staff
+			    \remove "Time_signature_engraver"
+			  }
+			}			
+			'''.toString
+		)
 	}
 }
