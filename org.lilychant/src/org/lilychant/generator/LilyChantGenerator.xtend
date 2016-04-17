@@ -71,6 +71,8 @@ class LilyChantGenerator extends AbstractGenerator {
 						}
 						default: {
 							println(syllable + " <-> " + note)
+							if (result.length == 0 || result.get(result.length-1).indexOf("bar") == -1)
+								result.add('''\bar ""''')
 							result.add(note)
 						}
 					}
@@ -79,6 +81,7 @@ class LilyChantGenerator extends AbstractGenerator {
 				syllableIndex++
 				noteIndex++
 			}
+			result.add('''\bar "|"''')
 		}
 		
 		println('''Notes for voice: «FOR note : result» «note»«ENDFOR»''')
@@ -142,11 +145,11 @@ class LilyChantGenerator extends AbstractGenerator {
 			  <<
 			    #(set-accidental-style 'neo-modern 'Score)
 			    \new Staff {
-			      \key f \major
+			      \key g \major
 			      \cadenzaOn
 			      <<{
 				  \new Voice = "Sop" {
-				    \voiceOne
+				    %\voiceOne
 				    \relative c''
 				    \Sop
 				  }
@@ -154,13 +157,13 @@ class LilyChantGenerator extends AbstractGenerator {
 			    }
 			    \new Lyrics \lyricsto "Sop" { \words }
 			    \new Staff {
-			      \key f \major
+			      \key g \major
 			      \clef bass
 			      \cadenzaOn
 			      <<{
 				  \new Voice = "Bass" {
-				    \voiceOne
-				    \relative c
+				    %\voiceOne
+				    \relative c'
 				    \Bass
 				  }
 				}>>
