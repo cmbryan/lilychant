@@ -94,7 +94,7 @@ Note:
  * Terminals
  */
 
-terminal ID: ('a'..'z'|'A'..'Z')*;
+terminal ID: '^'?('a'..'z'|'A'..'Z'|','|';')*;
 terminal INT: ('0'..'9')+;
 terminal HYPHEN: '--';
 terminal EXTENDER: '__';
