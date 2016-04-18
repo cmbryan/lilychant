@@ -3,7 +3,8 @@
 'Tone'=8
 'Voice'=7
 'Voices'=5
-'in'=9
+'key'=9
+RULE_ANY_OTHER=21
 RULE_BEGIN=16
 RULE_DURATION=11
 RULE_END=17

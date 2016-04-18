@@ -97,7 +97,7 @@ public class LilyChantSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     NoteGroup returns NoteGroup
 	 *
 	 * Constraint:
-	 *     ((((syllables+=ID syllables+=HYPHEN?) | (syllables+=HYPHEN syllables+=ID)) syllables+=EXTENDER?) | (syllables+=ID | syllables+=HYPHEN)+)
+	 *     ((((syllables+=ID syllables+=HYPHEN?) | (syllables+=HYPHEN syllables+=ID)) syllables+=EXTENDER*) | (syllables+=ID | syllables+=HYPHEN)+)
 	 */
 	protected void sequence_NoteGroup(ISerializationContext context, NoteGroup semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -109,7 +109,7 @@ public class LilyChantSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Script returns Script
 	 *
 	 * Constraint:
-	 *     (tones+=Tone+ chants+=Chant*)
+	 *     ((tones+=Tone+ chants+=Chant+) | chants+=Chant+)?
 	 */
 	protected void sequence_Script(ISerializationContext context, Script semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

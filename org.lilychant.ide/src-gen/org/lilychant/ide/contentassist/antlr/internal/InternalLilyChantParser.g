@@ -32,7 +32,7 @@ import org.lilychant.services.LilyChantGrammarAccess;
 	private final Map<String, String> tokenNameToValue = new HashMap<String, String>();
 	
 	{
-		tokenNameToValue.put("In", "'in'");
+		tokenNameToValue.put("Key", "'key'");
 		tokenNameToValue.put("Tone", "'Tone'");
 		tokenNameToValue.put("Chant", "'Chant'");
 		tokenNameToValue.put("Voice", "'Voice'");
@@ -75,7 +75,7 @@ ruleScript
 	:
 	(
 		{ before(grammarAccess.getScriptAccess().getGroup()); }
-		(rule__Script__Group__0)?
+		(rule__Script__Group__0)
 		{ after(grammarAccess.getScriptAccess().getGroup()); }
 	)
 ;
@@ -364,16 +364,9 @@ rule__Script__Group__0__Impl
 	}
 :
 (
-	(
-		{ before(grammarAccess.getScriptAccess().getTonesAssignment_0()); }
-		(rule__Script__TonesAssignment_0)
-		{ after(grammarAccess.getScriptAccess().getTonesAssignment_0()); }
-	)
-	(
-		{ before(grammarAccess.getScriptAccess().getTonesAssignment_0()); }
-		(rule__Script__TonesAssignment_0)*
-		{ after(grammarAccess.getScriptAccess().getTonesAssignment_0()); }
-	)
+	{ before(grammarAccess.getScriptAccess().getTonesAssignment_0()); }
+	(rule__Script__TonesAssignment_0)*
+	{ after(grammarAccess.getScriptAccess().getTonesAssignment_0()); }
 )
 ;
 finally {
@@ -479,9 +472,9 @@ rule__Tone__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getToneAccess().getInKeyword_2()); }
-	In
-	{ after(grammarAccess.getToneAccess().getInKeyword_2()); }
+	{ before(grammarAccess.getToneAccess().getKeyKeyword_2()); }
+	Key
+	{ after(grammarAccess.getToneAccess().getKeyKeyword_2()); }
 )
 ;
 finally {
@@ -1047,9 +1040,9 @@ rule__Chant__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getChantAccess().getInKeyword_1()); }
-	In
-	{ after(grammarAccess.getChantAccess().getInKeyword_1()); }
+	{ before(grammarAccess.getChantAccess().getToneKeyword_1()); }
+	Tone
+	{ after(grammarAccess.getChantAccess().getToneKeyword_1()); }
 )
 ;
 finally {
@@ -1074,9 +1067,9 @@ rule__Chant__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getChantAccess().getToneKeyword_2()); }
-	Tone
-	{ after(grammarAccess.getChantAccess().getToneKeyword_2()); }
+	{ before(grammarAccess.getChantAccess().getToneAssignment_2()); }
+	(rule__Chant__ToneAssignment_2)
+	{ after(grammarAccess.getChantAccess().getToneAssignment_2()); }
 )
 ;
 finally {
@@ -1101,9 +1094,9 @@ rule__Chant__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getChantAccess().getToneAssignment_3()); }
-	(rule__Chant__ToneAssignment_3)
-	{ after(grammarAccess.getChantAccess().getToneAssignment_3()); }
+	{ before(grammarAccess.getChantAccess().getKeyKeyword_3()); }
+	Key
+	{ after(grammarAccess.getChantAccess().getKeyKeyword_3()); }
 )
 ;
 finally {
@@ -1128,9 +1121,9 @@ rule__Chant__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getChantAccess().getInKeyword_4()); }
-	In
-	{ after(grammarAccess.getChantAccess().getInKeyword_4()); }
+	{ before(grammarAccess.getChantAccess().getKeyAssignment_4()); }
+	(rule__Chant__KeyAssignment_4)
+	{ after(grammarAccess.getChantAccess().getKeyAssignment_4()); }
 )
 ;
 finally {
@@ -1155,9 +1148,9 @@ rule__Chant__Group__5__Impl
 	}
 :
 (
-	{ before(grammarAccess.getChantAccess().getKeyAssignment_5()); }
-	(rule__Chant__KeyAssignment_5)
-	{ after(grammarAccess.getChantAccess().getKeyAssignment_5()); }
+	{ before(grammarAccess.getChantAccess().getBEGINTerminalRuleCall_5()); }
+	RULE_BEGIN
+	{ after(grammarAccess.getChantAccess().getBEGINTerminalRuleCall_5()); }
 )
 ;
 finally {
@@ -1182,9 +1175,16 @@ rule__Chant__Group__6__Impl
 	}
 :
 (
-	{ before(grammarAccess.getChantAccess().getBEGINTerminalRuleCall_6()); }
-	RULE_BEGIN
-	{ after(grammarAccess.getChantAccess().getBEGINTerminalRuleCall_6()); }
+	(
+		{ before(grammarAccess.getChantAccess().getPhrasesAssignment_6()); }
+		(rule__Chant__PhrasesAssignment_6)
+		{ after(grammarAccess.getChantAccess().getPhrasesAssignment_6()); }
+	)
+	(
+		{ before(grammarAccess.getChantAccess().getPhrasesAssignment_6()); }
+		(rule__Chant__PhrasesAssignment_6)*
+		{ after(grammarAccess.getChantAccess().getPhrasesAssignment_6()); }
+	)
 )
 ;
 finally {
@@ -1197,7 +1197,6 @@ rule__Chant__Group__7
 	}
 :
 	rule__Chant__Group__7__Impl
-	rule__Chant__Group__8
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1209,42 +1208,9 @@ rule__Chant__Group__7__Impl
 	}
 :
 (
-	(
-		{ before(grammarAccess.getChantAccess().getPhrasesAssignment_7()); }
-		(rule__Chant__PhrasesAssignment_7)
-		{ after(grammarAccess.getChantAccess().getPhrasesAssignment_7()); }
-	)
-	(
-		{ before(grammarAccess.getChantAccess().getPhrasesAssignment_7()); }
-		(rule__Chant__PhrasesAssignment_7)*
-		{ after(grammarAccess.getChantAccess().getPhrasesAssignment_7()); }
-	)
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Chant__Group__8
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__Chant__Group__8__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Chant__Group__8__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getChantAccess().getENDTerminalRuleCall_8()); }
+	{ before(grammarAccess.getChantAccess().getENDTerminalRuleCall_7()); }
 	RULE_END
-	{ after(grammarAccess.getChantAccess().getENDTerminalRuleCall_8()); }
+	{ after(grammarAccess.getChantAccess().getENDTerminalRuleCall_7()); }
 )
 ;
 finally {
@@ -1439,7 +1405,7 @@ rule__NoteGroup__Group_0__1__Impl
 :
 (
 	{ before(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_1()); }
-	(rule__NoteGroup__SyllablesAssignment_0_1)?
+	(rule__NoteGroup__SyllablesAssignment_0_1)*
 	{ after(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_1()); }
 )
 ;
@@ -1894,49 +1860,49 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Chant__ToneAssignment_3
+rule__Chant__ToneAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getChantAccess().getToneToneCrossReference_3_0()); }
+		{ before(grammarAccess.getChantAccess().getToneToneCrossReference_2_0()); }
 		(
-			{ before(grammarAccess.getChantAccess().getToneToneIDTerminalRuleCall_3_0_1()); }
+			{ before(grammarAccess.getChantAccess().getToneToneIDTerminalRuleCall_2_0_1()); }
 			RULE_ID
-			{ after(grammarAccess.getChantAccess().getToneToneIDTerminalRuleCall_3_0_1()); }
+			{ after(grammarAccess.getChantAccess().getToneToneIDTerminalRuleCall_2_0_1()); }
 		)
-		{ after(grammarAccess.getChantAccess().getToneToneCrossReference_3_0()); }
+		{ after(grammarAccess.getChantAccess().getToneToneCrossReference_2_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Chant__KeyAssignment_5
+rule__Chant__KeyAssignment_4
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getChantAccess().getKeyIDTerminalRuleCall_5_0()); }
+		{ before(grammarAccess.getChantAccess().getKeyIDTerminalRuleCall_4_0()); }
 		RULE_ID
-		{ after(grammarAccess.getChantAccess().getKeyIDTerminalRuleCall_5_0()); }
+		{ after(grammarAccess.getChantAccess().getKeyIDTerminalRuleCall_4_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Chant__PhrasesAssignment_7
+rule__Chant__PhrasesAssignment_6
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getChantAccess().getPhrasesLyricPhraseParserRuleCall_7_0()); }
+		{ before(grammarAccess.getChantAccess().getPhrasesLyricPhraseParserRuleCall_6_0()); }
 		ruleLyricPhrase
-		{ after(grammarAccess.getChantAccess().getPhrasesLyricPhraseParserRuleCall_7_0()); }
+		{ after(grammarAccess.getChantAccess().getPhrasesLyricPhraseParserRuleCall_6_0()); }
 	)
 ;
 finally {

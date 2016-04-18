@@ -31,22 +31,22 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cChantsChantParserRuleCall_1_0 = (RuleCall)cChantsAssignment_1.eContents().get(0);
 		
 		//Script:
-		//	(tones+=Tone+
-		//	//		ensemble=Ensemble
-		//	chants+=Chant*)?;
+		//	tones+=Tone*
+		//	//	ensemble=Ensemble
+		//	chants+=Chant*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(tones+=Tone+ //		ensemble=Ensemble
-		//chants+=Chant*)?
+		//tones+=Tone* //	ensemble=Ensemble
+		//chants+=Chant*
 		public Group getGroup() { return cGroup; }
 		
-		//tones+=Tone+
+		//tones+=Tone*
 		public Assignment getTonesAssignment_0() { return cTonesAssignment_0; }
 		
 		//Tone
 		public RuleCall getTonesToneParserRuleCall_0_0() { return cTonesToneParserRuleCall_0_0; }
 		
-		////		ensemble=Ensemble
+		////	ensemble=Ensemble
 		//chants+=Chant*
 		public Assignment getChantsAssignment_1() { return cChantsAssignment_1; }
 		
@@ -59,7 +59,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cToneKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cInKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cKeyKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cKeyAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cKeyIDTerminalRuleCall_3_0 = (RuleCall)cKeyAssignment_3.eContents().get(0);
 		private final RuleCall cBEGINTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
@@ -76,7 +76,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		// * Tone definitions
 		// * / // TODO VOICE NAMES SHOULD BE GLOBAL
 		//Tone:
-		//	'Tone' name=ID 'in' key=ID
+		//	'Tone' name=ID 'key' key=ID
 		//	BEGIN
 		//	'Voices'
 		//	BEGIN
@@ -86,7 +86,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		//	END;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Tone' name=ID 'in' key=ID BEGIN 'Voices' BEGIN voiceNames+=VoiceName+ END phrases+=TonePhrase+ END
+		//'Tone' name=ID 'key' key=ID BEGIN 'Voices' BEGIN voiceNames+=VoiceName+ END phrases+=TonePhrase+ END
 		public Group getGroup() { return cGroup; }
 		
 		//'Tone'
@@ -98,8 +98,8 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//'in'
-		public Keyword getInKeyword_2() { return cInKeyword_2; }
+		//'key'
+		public Keyword getKeyKeyword_2() { return cKeyKeyword_2; }
 		
 		//key=ID
 		public Assignment getKeyAssignment_3() { return cKeyAssignment_3; }
@@ -240,18 +240,17 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.Chant");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cChantKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cInKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cToneKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cToneAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cToneToneCrossReference_3_0 = (CrossReference)cToneAssignment_3.eContents().get(0);
-		private final RuleCall cToneToneIDTerminalRuleCall_3_0_1 = (RuleCall)cToneToneCrossReference_3_0.eContents().get(1);
-		private final Keyword cInKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cKeyAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cKeyIDTerminalRuleCall_5_0 = (RuleCall)cKeyAssignment_5.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
-		private final Assignment cPhrasesAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cPhrasesLyricPhraseParserRuleCall_7_0 = (RuleCall)cPhrasesAssignment_7.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
+		private final Keyword cToneKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cToneAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cToneToneCrossReference_2_0 = (CrossReference)cToneAssignment_2.eContents().get(0);
+		private final RuleCall cToneToneIDTerminalRuleCall_2_0_1 = (RuleCall)cToneToneCrossReference_2_0.eContents().get(1);
+		private final Keyword cKeyKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cKeyAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cKeyIDTerminalRuleCall_4_0 = (RuleCall)cKeyAssignment_4.eContents().get(0);
+		private final RuleCall cBEGINTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+		private final Assignment cPhrasesAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cPhrasesLyricPhraseParserRuleCall_6_0 = (RuleCall)cPhrasesAssignment_6.eContents().get(0);
+		private final RuleCall cENDTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
 		
 		///// *
 		//// * Ensemble
@@ -265,53 +264,50 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		/// *
 		// * Chants
 		// * / Chant:
-		//	'Chant' 'in' 'Tone' tone=[Tone] 'in' key=ID
+		//	'Chant' 'Tone' tone=[Tone] 'key' key=ID
 		//	BEGIN
 		//	phrases+=LyricPhrase+
 		//	END;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Chant' 'in' 'Tone' tone=[Tone] 'in' key=ID BEGIN phrases+=LyricPhrase+ END
+		//'Chant' 'Tone' tone=[Tone] 'key' key=ID BEGIN phrases+=LyricPhrase+ END
 		public Group getGroup() { return cGroup; }
 		
 		//'Chant'
 		public Keyword getChantKeyword_0() { return cChantKeyword_0; }
 		
-		//'in'
-		public Keyword getInKeyword_1() { return cInKeyword_1; }
-		
 		//'Tone'
-		public Keyword getToneKeyword_2() { return cToneKeyword_2; }
+		public Keyword getToneKeyword_1() { return cToneKeyword_1; }
 		
 		//tone=[Tone]
-		public Assignment getToneAssignment_3() { return cToneAssignment_3; }
+		public Assignment getToneAssignment_2() { return cToneAssignment_2; }
 		
 		//[Tone]
-		public CrossReference getToneToneCrossReference_3_0() { return cToneToneCrossReference_3_0; }
+		public CrossReference getToneToneCrossReference_2_0() { return cToneToneCrossReference_2_0; }
 		
 		//ID
-		public RuleCall getToneToneIDTerminalRuleCall_3_0_1() { return cToneToneIDTerminalRuleCall_3_0_1; }
+		public RuleCall getToneToneIDTerminalRuleCall_2_0_1() { return cToneToneIDTerminalRuleCall_2_0_1; }
 		
-		//'in'
-		public Keyword getInKeyword_4() { return cInKeyword_4; }
+		//'key'
+		public Keyword getKeyKeyword_3() { return cKeyKeyword_3; }
 		
 		//key=ID
-		public Assignment getKeyAssignment_5() { return cKeyAssignment_5; }
+		public Assignment getKeyAssignment_4() { return cKeyAssignment_4; }
 		
 		//ID
-		public RuleCall getKeyIDTerminalRuleCall_5_0() { return cKeyIDTerminalRuleCall_5_0; }
+		public RuleCall getKeyIDTerminalRuleCall_4_0() { return cKeyIDTerminalRuleCall_4_0; }
 		
 		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_6() { return cBEGINTerminalRuleCall_6; }
+		public RuleCall getBEGINTerminalRuleCall_5() { return cBEGINTerminalRuleCall_5; }
 		
 		//phrases+=LyricPhrase+
-		public Assignment getPhrasesAssignment_7() { return cPhrasesAssignment_7; }
+		public Assignment getPhrasesAssignment_6() { return cPhrasesAssignment_6; }
 		
 		//LyricPhrase
-		public RuleCall getPhrasesLyricPhraseParserRuleCall_7_0() { return cPhrasesLyricPhraseParserRuleCall_7_0; }
+		public RuleCall getPhrasesLyricPhraseParserRuleCall_6_0() { return cPhrasesLyricPhraseParserRuleCall_6_0; }
 		
 		//END
-		public RuleCall getENDTerminalRuleCall_8() { return cENDTerminalRuleCall_8; }
+		public RuleCall getENDTerminalRuleCall_7() { return cENDTerminalRuleCall_7; }
 	}
 	public class LyricPhraseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.LyricPhrase");
@@ -386,27 +382,21 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//NoteGroup:
 		//	(syllables+=ID => (syllables+=HYPHEN)?
-		//	| syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER?
-		//	//	syllables+=HYPHEN? syllables+=ID =>syllables+=HYPHEN? syllables+=EXTENDER*
-		//	//	| syllables+=ID syllables+=HYPHEN? syllables+=EXTENDER*
-		//
+		//	| syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER*
 		//	// group of syllables to be repeated on the same pitch
 		//	// Note that '__' is not allowed within a group, as this implies a slur
 		//	| START_NOTE_GROUP syllables+=(ID | HYPHEN)+ END_NOTE_GROUP;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(syllables+=ID => (syllables+=HYPHEN)? | syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER? //	syllables+=HYPHEN? syllables+=ID =>syllables+=HYPHEN? syllables+=EXTENDER*
-		////	| syllables+=ID syllables+=HYPHEN? syllables+=EXTENDER*
-		//// group of syllables to be repeated on the same pitch
+		//(syllables+=ID => (syllables+=HYPHEN)? | syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER* // group of syllables to be repeated on the same pitch
 		//// Note that '__' is not allowed within a group, as this implies a slur
 		//| START_NOTE_GROUP syllables+=(ID | HYPHEN)+ END_NOTE_GROUP
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//(syllables+=ID => (syllables+=HYPHEN)? | syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER?
+		//(syllables+=ID => (syllables+=HYPHEN)? | syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER*
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//// single syllable
-		//// '--' is allowed at the start to support exiting a '<...>' group in the middle of a word
 		//syllables+=ID => (syllables+=HYPHEN)? | syllables+=HYPHEN syllables+=ID
 		public Alternatives getAlternatives_0_0() { return cAlternatives_0_0; }
 		
@@ -443,7 +433,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getSyllablesIDTerminalRuleCall_0_0_1_1_0() { return cSyllablesIDTerminalRuleCall_0_0_1_1_0; }
 		
-		//syllables+=EXTENDER?
+		//syllables+=EXTENDER*
 		public Assignment getSyllablesAssignment_0_1() { return cSyllablesAssignment_0_1; }
 		
 		//EXTENDER
@@ -516,6 +506,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tML_COMMENT;
 	private final TerminalRule tSL_COMMENT;
 	private final TerminalRule tWS;
+	private final TerminalRule tANY_OTHER;
 	
 	private final Grammar grammar;
 
@@ -542,6 +533,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.ML_COMMENT");
 		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.SL_COMMENT");
 		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.WS");
+		this.tANY_OTHER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.ANY_OTHER");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -568,9 +560,9 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Script:
-	//	(tones+=Tone+
-	//	//		ensemble=Ensemble
-	//	chants+=Chant*)?;
+	//	tones+=Tone*
+	//	//	ensemble=Ensemble
+	//	chants+=Chant*;
 	public ScriptElements getScriptAccess() {
 		return pScript;
 	}
@@ -583,7 +575,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	// * Tone definitions
 	// * / // TODO VOICE NAMES SHOULD BE GLOBAL
 	//Tone:
-	//	'Tone' name=ID 'in' key=ID
+	//	'Tone' name=ID 'key' key=ID
 	//	BEGIN
 	//	'Voices'
 	//	BEGIN
@@ -646,7 +638,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * Chants
 	// * / Chant:
-	//	'Chant' 'in' 'Tone' tone=[Tone] 'in' key=ID
+	//	'Chant' 'Tone' tone=[Tone] 'key' key=ID
 	//	BEGIN
 	//	phrases+=LyricPhrase+
 	//	END;
@@ -672,10 +664,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//NoteGroup:
 	//	(syllables+=ID => (syllables+=HYPHEN)?
-	//	| syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER?
-	//	//	syllables+=HYPHEN? syllables+=ID =>syllables+=HYPHEN? syllables+=EXTENDER*
-	//	//	| syllables+=ID syllables+=HYPHEN? syllables+=EXTENDER*
-	//
+	//	| syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER*
 	//	// group of syllables to be repeated on the same pitch
 	//	// Note that '__' is not allowed within a group, as this implies a slur
 	//	| START_NOTE_GROUP syllables+=(ID | HYPHEN)+ END_NOTE_GROUP;
@@ -703,7 +692,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | ',' | ';' | '.' | ':')*;
+	//	'^'? ('a'..'z' | 'A'..'Z' | ',' | '\'' | ';' | '.' | ':')*;
 	public TerminalRule getIDRule() {
 		return tID;
 	}
@@ -766,5 +755,11 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	//	' ' | '\t' | '\r' | '\n'+;
 	public TerminalRule getWSRule() {
 		return tWS;
+	}
+	
+	//terminal ANY_OTHER:
+	//	'(' | ')' | '\\' | '&';
+	public TerminalRule getANY_OTHERRule() {
+		return tANY_OTHER;
 	}
 }

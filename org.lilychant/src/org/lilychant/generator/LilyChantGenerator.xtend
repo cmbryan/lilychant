@@ -118,6 +118,11 @@ class LilyChantGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		val model = resource.allContents.filter(typeof(Script)).next
+		
+		// Only generate if there are chants in the file
+		if (model.chants.size == 0)
+			return
+		
 		val filename = resource.normalizedURI.lastSegment + ".ly"
 		fsa.generateFile(filename,
 			'''
@@ -153,7 +158,6 @@ class LilyChantGenerator extends AbstractGenerator {
 			      <<{
 				  \new Voice = "Sop" {
 				    %\voiceOne
-				    \relative c''
 				    \Sop
 				  }
 				}>>
@@ -166,7 +170,6 @@ class LilyChantGenerator extends AbstractGenerator {
 			      <<{
 				  \new Voice = "Bass" {
 				    %\voiceOne
-				    \relative c'
 				    \Bass
 				  }
 				}>>

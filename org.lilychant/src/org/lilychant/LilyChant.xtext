@@ -5,11 +5,9 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 generate lilyChantScript "http://www.lilychant.org/script/LilyChantScript"
 
 Script:
-	(
-		(tones+=Tone)+
-//		ensemble=Ensemble
-		(chants+=Chant)*
-	)?
+	(tones+=Tone)*
+//	ensemble=Ensemble
+	(chants+=Chant)*
 ;
 
 /*
@@ -19,7 +17,7 @@ Script:
 // TODO VOICE NAMES SHOULD BE GLOBAL
 
 Tone:
-	'Tone' name=ID 'in' key=ID
+	'Tone' name=ID 'key' key=ID
 		BEGIN
 		'Voices'
 			BEGIN
@@ -63,7 +61,7 @@ VoicePhrase:
  */
 
 Chant:
-	'Chant' 'in' 'Tone' tone=[Tone] 'in' key=ID
+	'Chant' 'Tone' tone=[Tone] 'key' key=ID
 		BEGIN
 		phrases+=LyricPhrase+
 		END
@@ -78,12 +76,9 @@ LyricPhrase:
 
 NoteGroup:
 	// single syllable
-	// '--' is allowed at the start to support exiting a '<...>' group in the middle of a word
 	(syllables+=ID =>(syllables+=HYPHEN)?
 	| syllables+=HYPHEN syllables+=ID)
-	syllables+=EXTENDER?
-//	syllables+=HYPHEN? syllables+=ID =>syllables+=HYPHEN? syllables+=EXTENDER*
-//	| syllables+=ID syllables+=HYPHEN? syllables+=EXTENDER*
+	syllables+=EXTENDER*
 	
 	// group of syllables to be repeated on the same pitch
 	// Note that '__' is not allowed within a group, as this implies a slur
@@ -106,7 +101,7 @@ Note:
  * Terminals
  */
 
-terminal ID: '^'?('a'..'z'|'A'..'Z'|','|';'|'.'|':')*;
+terminal ID: '^'?('a'..'z'|'A'..'Z'|','|'\''|';'|'.'|':')*;
 terminal DURATION: ('1'|'2'|'4'|'8'|'16'|'\breve')+;
 terminal HYPHEN: '--';
 terminal EXTENDER: '__';
@@ -120,3 +115,5 @@ terminal ML_COMMENT : '/*' -> '*/';
 terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 
 terminal WS : (' '|'\t'|'\r'|'\n')+;
+
+terminal ANY_OTHER : '('|')'|'\\'|'&';

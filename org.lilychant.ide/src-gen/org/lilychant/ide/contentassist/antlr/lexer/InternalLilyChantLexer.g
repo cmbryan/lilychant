@@ -21,11 +21,11 @@ Voice : 'Voice';
 
 Tone : 'Tone';
 
-In : 'in';
+Key : 'key';
 
 // Rules duplicated to allow inter-rule references
 
-RULE_ID : '^'? ('a'..'z'|'A'..'Z'|','|';'|'.'|':')*;
+RULE_ID : '^'? ('a'..'z'|'A'..'Z'|','|'\''|';'|'.'|':')*;
 
 RULE_DURATION : ('1'|'2'|'4'|'8'|'16'|'\breve')+;
 
@@ -46,3 +46,5 @@ RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
 RULE_SL_COMMENT : '//' ~(('\n'|'\r'))* ('\r'? '\n')?;
 
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
+
+RULE_ANY_OTHER : ('('|')'|'\\'|'&');
