@@ -1,6 +1,1 @@
-src-gen
-org.lilychant.script/model
-*.xml_gen
-target
-.antlr-generator-3.2.0-patch.jar
-org.lilychant/model
+bin/

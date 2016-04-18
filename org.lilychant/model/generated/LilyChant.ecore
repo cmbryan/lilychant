@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="lilyChantScript" nsURI="http://www.lilychant.org/script/LilyChantScript"
+    nsPrefix="lilyChantScript">
+  <eClassifiers xsi:type="ecore:EClass" name="Script">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tones" upperBound="-1"
+        eType="#//Tone" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="chants" upperBound="-1"
+        eType="#//Chant" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tone">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="voiceNames" upperBound="-1"
+        eType="#//VoiceName" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="phrases" upperBound="-1"
+        eType="#//TonePhrase" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VoiceName">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TonePhrase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="voices" upperBound="-1"
+        eType="#//VoicePhrase" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VoicePhrase">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//VoiceName"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notes" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Chant">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tone" eType="#//Tone"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="phrases" upperBound="-1"
+        eType="#//LyricPhrase" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LyricPhrase">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="notes" eType="#//TonePhrase"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="noteGroups" upperBound="-1"
+        eType="#//NoteGroup" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NoteGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="syllables" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
