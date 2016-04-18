@@ -21,22 +21,25 @@ class LilyChantParsingTest{
 	@Test 
 	def void loadModel() {
 		val result = parseHelper.parse('''
-			Tone one in A:
-				Voices: Sop Alt
-				Phrase one:
-					Voice Sop:
+			Tone one in A
+				Voices
+					Sop Alt
+				Phrase one
+					Voice Sop
 						c4 d e f2
-					Voice Alt:
+					Voice Alt
 						g4 a b c2
-				Phrase two:
-					Voice Sop:
+				Phrase two
+					Voice Sop
 						d4 e f1
-					Voice Alt:
+					Voice Alt
 						g4 a b c2
-			Chant in Tone one in F:
-				This -- is __ a test
-				This -- is __ b test
-		''')
+			Chant in Tone one in F
+				Phrase one
+					<This--s> is__ <a test>
+				Phrase two
+					<This--s> is__ <a test>
+			''')
 		
 		result.assertParsedWithoutError;
 	}
