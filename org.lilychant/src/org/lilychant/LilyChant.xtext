@@ -19,9 +19,12 @@ Script:
 // TODO VOICE NAMES SHOULD BE GLOBAL
 
 Tone:
-	'Tone' name=ID 'in' key=ID ':'
+	'Tone' name=ID 'in' key=ID
 		BEGIN
-		'Voices' ':' voiceNames+=VoiceName+
+		'Voices'
+			BEGIN
+			voiceNames+=VoiceName+
+			END
 		(phrases+=TonePhrase)+
 		END
 ;
@@ -31,14 +34,14 @@ VoiceName:
 ;
 
 TonePhrase:
-	'Phrase' name=ID ':'
+	'Phrase' name=ID
 		BEGIN
 		voices+=VoicePhrase+
 		END
 ;
 
 VoicePhrase:
-	'Voice' name=[VoiceName] ':'
+	'Voice' name=[VoiceName]
 		BEGIN
 		notes+=Note+
 		END
@@ -60,21 +63,23 @@ VoicePhrase:
  */
 
 Chant:
-	'Chant' 'in' 'Tone' tone=[Tone] 'in' key=ID ':'
+	'Chant' 'in' 'Tone' tone=[Tone] 'in' key=ID
 		BEGIN
 		phrases+=LyricPhrase+
 		END
 ;
 
 LyricPhrase:
-	'Phrase' notes=[TonePhrase] ':'
+	'Phrase' notes=[TonePhrase]
 		BEGIN
-		noteGroups+=NoteGroup ('.' noteGroups+=NoteGroup)*
+		noteGroups+=NoteGroup+
 		END
 ;
 
 NoteGroup:
-	syllables+=(ID|HYPHEN|EXTENDER)+
+	// TODO Doesn't support hyphens at the beginning of notegroups
+	(syllables+=ID syllables+=(HYPHEN|EXTENDER)?)
+	| (START_NOTE_GROUP syllables+=(ID|HYPHEN)+ END_NOTE_GROUP)
 ;
 
 
@@ -87,17 +92,19 @@ NoteGroup:
 //;
 
 Note:
-	ID INT?
+	ID DURATION?
 ;
 
 /*
  * Terminals
  */
 
-terminal ID: '^'?('a'..'z'|'A'..'Z'|','|';')*;
-terminal INT: ('0'..'9')+;
+terminal ID: '^'?('a'..'z'|'A'..'Z'|','|';'|'.'|':')*;
+terminal DURATION: ('1'|'2'|'4'|'8'|'16'|'\breve')+;
 terminal HYPHEN: '--';
 terminal EXTENDER: '__';
+terminal START_NOTE_GROUP: '<';
+terminal END_NOTE_GROUP: '>';
 
 terminal BEGIN: 'synthetic:BEGIN';
 terminal END: 'synthetic:END';

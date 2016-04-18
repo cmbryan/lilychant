@@ -43,6 +43,7 @@ class LilyChantGenerator extends AbstractGenerator {
 			// Match the notes to the syllables
 			var noteIndex = 0
 			for (noteGroup : lyricPhrase.noteGroups) {
+				println('''«FOR syllable : noteGroup.syllables» «syllable»«ENDFOR»''')
 				var syllableIndex = 0
 				var inSlur = false
 				while (syllableIndex < noteGroup.syllables.length) {
@@ -51,15 +52,15 @@ class LilyChantGenerator extends AbstractGenerator {
 					val syllable = noteGroup.syllables.get(syllableIndex)
 					switch (syllable) {
 						case "--": {
-							syllableIndex++
-							val nextSyllable = noteGroup.syllables.get(syllableIndex)
-							println("-- " + nextSyllable)
-							result.add(note)
+//							syllableIndex++
+////							val nextSyllable = noteGroup.syllables.get(syllableIndex)
+////							println("-- " + nextSyllable)
+//							result.add(note)
 						}
 						case "__": {
 							noteIndex++
 							val nextNote = targetVoice.notes.get(noteIndex)
-							println("(" + nextNote + ")")
+//							println("(" + nextNote + ")")
 							if (!inSlur) {
 								result.add("(")
 								inSlur = true
@@ -70,7 +71,7 @@ class LilyChantGenerator extends AbstractGenerator {
 								result.add(")")
 						}
 						default: {
-							println(syllable + " <-> " + note)
+//							println(syllable + " <-> " + note)
 							if (result.length == 0 || result.get(result.length-1).indexOf("bar") == -1)
 								result.add('''\bar ""''')
 							result.add(note)
@@ -84,7 +85,7 @@ class LilyChantGenerator extends AbstractGenerator {
 			result.add('''\bar "|"''')
 		}
 		
-		println('''Notes for voice: «FOR note : result» «note»«ENDFOR»''')
+//		println('''Notes for voice: «FOR note : result» «note»«ENDFOR»''')
 		return result
 	}
 
