@@ -25,28 +25,29 @@ class LilyChantGeneratorTest {
 	@Test 
 	def void basicGenerationTest() {
 		val model = parseHelper.parse('''
-			Tone one in A:
-				Voices: Sop Bass
-				Phrase one:
-					Voice Sop:
+			Tone one in A
+				Voices
+					Sop Bass
+				Phrase one
+					Voice Sop
 						e4 f g a2
-					Voice Bass:
+					Voice Bass
 						c4 d e f2
-				Phrase two:
-					Voice Sop:
+				Phrase two
+					Voice Sop
 						a4 g f e1
-					Voice Bass:
+					Voice Bass
 						f4 e d c1
-			Chant in Tone one in F:
-				Phrase one:
-					This __ . is a . test
-				Phrase two:
-					This __ __ . is a ve -- ry long test
-			Chant in Tone one in F:
-				Phrase one:
-					A . -- no . -- ther . test
-				Phrase two:
-					A . -- no . -- ther . test
+			Chant in Tone one in F
+				Phrase one
+					This __ <is a> test
+				Phrase two
+					This __ __ <is a ve -- ry long test>
+			Chant in Tone one in F
+				Phrase one
+					A--no--ther test
+				Phrase two
+					A--no--ther test
 			''')
 		model.assertParsedWithoutError;
 		
