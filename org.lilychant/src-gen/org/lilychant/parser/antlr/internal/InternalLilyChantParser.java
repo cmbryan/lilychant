@@ -1557,7 +1557,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNoteGroup"
-    // InternalLilyChantParser.g:564:1: ruleNoteGroup returns [EObject current=null] : ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( ( RULE_HYPHEN ) ) | ( ( RULE_EXTENDER ) )+ ) )=> ( ( (lv_syllables_1_0= RULE_HYPHEN ) ) | ( (lv_syllables_2_0= RULE_EXTENDER ) )+ ) )? ) | ( ( (lv_syllables_3_0= RULE_HYPHEN ) ) ( (lv_syllables_4_0= RULE_ID ) ) ) | (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP ) ) ;
+    // InternalLilyChantParser.g:564:1: ruleNoteGroup returns [EObject current=null] : ( ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )? ) | (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP ) ) ;
     public final EObject ruleNoteGroup() throws RecognitionException {
         EObject current = null;
 
@@ -1575,220 +1575,270 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLilyChantParser.g:570:2: ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( ( RULE_HYPHEN ) ) | ( ( RULE_EXTENDER ) )+ ) )=> ( ( (lv_syllables_1_0= RULE_HYPHEN ) ) | ( (lv_syllables_2_0= RULE_EXTENDER ) )+ ) )? ) | ( ( (lv_syllables_3_0= RULE_HYPHEN ) ) ( (lv_syllables_4_0= RULE_ID ) ) ) | (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP ) ) )
-            // InternalLilyChantParser.g:571:2: ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( ( RULE_HYPHEN ) ) | ( ( RULE_EXTENDER ) )+ ) )=> ( ( (lv_syllables_1_0= RULE_HYPHEN ) ) | ( (lv_syllables_2_0= RULE_EXTENDER ) )+ ) )? ) | ( ( (lv_syllables_3_0= RULE_HYPHEN ) ) ( (lv_syllables_4_0= RULE_ID ) ) ) | (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP ) )
+            // InternalLilyChantParser.g:570:2: ( ( ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )? ) | (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP ) ) )
+            // InternalLilyChantParser.g:571:2: ( ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )? ) | (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP ) )
             {
-            // InternalLilyChantParser.g:571:2: ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( ( RULE_HYPHEN ) ) | ( ( RULE_EXTENDER ) )+ ) )=> ( ( (lv_syllables_1_0= RULE_HYPHEN ) ) | ( (lv_syllables_2_0= RULE_EXTENDER ) )+ ) )? ) | ( ( (lv_syllables_3_0= RULE_HYPHEN ) ) ( (lv_syllables_4_0= RULE_ID ) ) ) | (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP ) )
-            int alt15=3;
-            switch ( input.LA(1) ) {
-            case RULE_ID:
-                {
+            // InternalLilyChantParser.g:571:2: ( ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )? ) | (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP ) )
+            int alt15=2;
+            int LA15_0 = input.LA(1);
+
+            if ( (LA15_0==RULE_ID||LA15_0==RULE_HYPHEN) ) {
                 alt15=1;
-                }
-                break;
-            case RULE_HYPHEN:
-                {
+            }
+            else if ( (LA15_0==RULE_START_NOTE_GROUP) ) {
                 alt15=2;
-                }
-                break;
-            case RULE_START_NOTE_GROUP:
-                {
-                alt15=3;
-                }
-                break;
-            default:
+            }
+            else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
                     new NoViableAltException("", 15, 0, input);
 
                 throw nvae;
             }
-
             switch (alt15) {
                 case 1 :
-                    // InternalLilyChantParser.g:572:3: ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( ( RULE_HYPHEN ) ) | ( ( RULE_EXTENDER ) )+ ) )=> ( ( (lv_syllables_1_0= RULE_HYPHEN ) ) | ( (lv_syllables_2_0= RULE_EXTENDER ) )+ ) )? )
+                    // InternalLilyChantParser.g:572:3: ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )? )
                     {
-                    // InternalLilyChantParser.g:572:3: ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( ( RULE_HYPHEN ) ) | ( ( RULE_EXTENDER ) )+ ) )=> ( ( (lv_syllables_1_0= RULE_HYPHEN ) ) | ( (lv_syllables_2_0= RULE_EXTENDER ) )+ ) )? )
-                    // InternalLilyChantParser.g:573:4: ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( ( RULE_HYPHEN ) ) | ( ( RULE_EXTENDER ) )+ ) )=> ( ( (lv_syllables_1_0= RULE_HYPHEN ) ) | ( (lv_syllables_2_0= RULE_EXTENDER ) )+ ) )?
+                    // InternalLilyChantParser.g:572:3: ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )? )
+                    // InternalLilyChantParser.g:573:4: ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )?
                     {
-                    // InternalLilyChantParser.g:573:4: ( (lv_syllables_0_0= RULE_ID ) )
-                    // InternalLilyChantParser.g:574:5: (lv_syllables_0_0= RULE_ID )
-                    {
-                    // InternalLilyChantParser.g:574:5: (lv_syllables_0_0= RULE_ID )
-                    // InternalLilyChantParser.g:575:6: lv_syllables_0_0= RULE_ID
-                    {
-                    lv_syllables_0_0=(Token)match(input,RULE_ID,FOLLOW_17); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
+                    // InternalLilyChantParser.g:573:4: ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) )
+                    int alt11=2;
+                    int LA11_0 = input.LA(1);
 
-                      						newLeafNode(lv_syllables_0_0, grammarAccess.getNoteGroupAccess().getSyllablesIDTerminalRuleCall_0_0_0());
-                      					
+                    if ( (LA11_0==RULE_ID) ) {
+                        alt11=1;
                     }
-                    if ( state.backtracking==0 ) {
+                    else if ( (LA11_0==RULE_HYPHEN) ) {
+                        alt11=2;
+                    }
+                    else {
+                        if (state.backtracking>0) {state.failed=true; return current;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 11, 0, input);
 
-                      						if (current==null) {
-                      							current = createModelElement(grammarAccess.getNoteGroupRule());
-                      						}
-                      						addWithLastConsumed(
-                      							current,
-                      							"syllables",
-                      							lv_syllables_0_0,
-                      							"org.lilychant.LilyChant.ID");
-                      					
+                        throw nvae;
+                    }
+                    switch (alt11) {
+                        case 1 :
+                            // InternalLilyChantParser.g:574:5: ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? )
+                            {
+                            // InternalLilyChantParser.g:574:5: ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? )
+                            // InternalLilyChantParser.g:575:6: ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )?
+                            {
+                            // InternalLilyChantParser.g:575:6: ( (lv_syllables_0_0= RULE_ID ) )
+                            // InternalLilyChantParser.g:576:7: (lv_syllables_0_0= RULE_ID )
+                            {
+                            // InternalLilyChantParser.g:576:7: (lv_syllables_0_0= RULE_ID )
+                            // InternalLilyChantParser.g:577:8: lv_syllables_0_0= RULE_ID
+                            {
+                            lv_syllables_0_0=(Token)match(input,RULE_ID,FOLLOW_17); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                              								newLeafNode(lv_syllables_0_0, grammarAccess.getNoteGroupAccess().getSyllablesIDTerminalRuleCall_0_0_0_0_0());
+                              							
+                            }
+                            if ( state.backtracking==0 ) {
+
+                              								if (current==null) {
+                              									current = createModelElement(grammarAccess.getNoteGroupRule());
+                              								}
+                              								addWithLastConsumed(
+                              									current,
+                              									"syllables",
+                              									lv_syllables_0_0,
+                              									"org.lilychant.LilyChant.ID");
+                              							
+                            }
+
+                            }
+
+
+                            }
+
+                            // InternalLilyChantParser.g:593:6: ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )?
+                            int alt10=2;
+                            int LA10_0 = input.LA(1);
+
+                            if ( (LA10_0==RULE_HYPHEN) ) {
+                                int LA10_1 = input.LA(2);
+
+                                if ( (LA10_1==RULE_ID) ) {
+                                    int LA10_3 = input.LA(3);
+
+                                    if ( (synpred1_InternalLilyChantParser()) ) {
+                                        alt10=1;
+                                    }
+                                }
+                                else if ( (LA10_1==RULE_EXTENDER) && (synpred1_InternalLilyChantParser())) {
+                                    alt10=1;
+                                }
+                                else if ( (LA10_1==RULE_END) && (synpred1_InternalLilyChantParser())) {
+                                    alt10=1;
+                                }
+                                else if ( (LA10_1==RULE_HYPHEN) && (synpred1_InternalLilyChantParser())) {
+                                    alt10=1;
+                                }
+                                else if ( (LA10_1==RULE_START_NOTE_GROUP) && (synpred1_InternalLilyChantParser())) {
+                                    alt10=1;
+                                }
+                                else if ( (LA10_1==EOF) && (synpred1_InternalLilyChantParser())) {
+                                    alt10=1;
+                                }
+                            }
+                            switch (alt10) {
+                                case 1 :
+                                    // InternalLilyChantParser.g:594:7: ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) )
+                                    {
+                                    // InternalLilyChantParser.g:600:7: ( (lv_syllables_1_0= RULE_HYPHEN ) )
+                                    // InternalLilyChantParser.g:601:8: (lv_syllables_1_0= RULE_HYPHEN )
+                                    {
+                                    // InternalLilyChantParser.g:601:8: (lv_syllables_1_0= RULE_HYPHEN )
+                                    // InternalLilyChantParser.g:602:9: lv_syllables_1_0= RULE_HYPHEN
+                                    {
+                                    lv_syllables_1_0=(Token)match(input,RULE_HYPHEN,FOLLOW_18); if (state.failed) return current;
+                                    if ( state.backtracking==0 ) {
+
+                                      									newLeafNode(lv_syllables_1_0, grammarAccess.getNoteGroupAccess().getSyllablesHYPHENTerminalRuleCall_0_0_0_1_0_0());
+                                      								
+                                    }
+                                    if ( state.backtracking==0 ) {
+
+                                      									if (current==null) {
+                                      										current = createModelElement(grammarAccess.getNoteGroupRule());
+                                      									}
+                                      									addWithLastConsumed(
+                                      										current,
+                                      										"syllables",
+                                      										lv_syllables_1_0,
+                                      										"org.lilychant.LilyChant.HYPHEN");
+                                      								
+                                    }
+
+                                    }
+
+
+                                    }
+
+
+                                    }
+                                    break;
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+                        case 2 :
+                            // InternalLilyChantParser.g:621:5: ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) )
+                            {
+                            // InternalLilyChantParser.g:621:5: ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) )
+                            // InternalLilyChantParser.g:622:6: ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) )
+                            {
+                            // InternalLilyChantParser.g:622:6: ( (lv_syllables_2_0= RULE_HYPHEN ) )
+                            // InternalLilyChantParser.g:623:7: (lv_syllables_2_0= RULE_HYPHEN )
+                            {
+                            // InternalLilyChantParser.g:623:7: (lv_syllables_2_0= RULE_HYPHEN )
+                            // InternalLilyChantParser.g:624:8: lv_syllables_2_0= RULE_HYPHEN
+                            {
+                            lv_syllables_2_0=(Token)match(input,RULE_HYPHEN,FOLLOW_5); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                              								newLeafNode(lv_syllables_2_0, grammarAccess.getNoteGroupAccess().getSyllablesHYPHENTerminalRuleCall_0_0_1_0_0());
+                              							
+                            }
+                            if ( state.backtracking==0 ) {
+
+                              								if (current==null) {
+                              									current = createModelElement(grammarAccess.getNoteGroupRule());
+                              								}
+                              								addWithLastConsumed(
+                              									current,
+                              									"syllables",
+                              									lv_syllables_2_0,
+                              									"org.lilychant.LilyChant.HYPHEN");
+                              							
+                            }
+
+                            }
+
+
+                            }
+
+                            // InternalLilyChantParser.g:640:6: ( (lv_syllables_3_0= RULE_ID ) )
+                            // InternalLilyChantParser.g:641:7: (lv_syllables_3_0= RULE_ID )
+                            {
+                            // InternalLilyChantParser.g:641:7: (lv_syllables_3_0= RULE_ID )
+                            // InternalLilyChantParser.g:642:8: lv_syllables_3_0= RULE_ID
+                            {
+                            lv_syllables_3_0=(Token)match(input,RULE_ID,FOLLOW_18); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                              								newLeafNode(lv_syllables_3_0, grammarAccess.getNoteGroupAccess().getSyllablesIDTerminalRuleCall_0_0_1_1_0());
+                              							
+                            }
+                            if ( state.backtracking==0 ) {
+
+                              								if (current==null) {
+                              									current = createModelElement(grammarAccess.getNoteGroupRule());
+                              								}
+                              								addWithLastConsumed(
+                              									current,
+                              									"syllables",
+                              									lv_syllables_3_0,
+                              									"org.lilychant.LilyChant.ID");
+                              							
+                            }
+
+                            }
+
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+
                     }
 
-                    }
-
-
-                    }
-
-                    // InternalLilyChantParser.g:591:4: ( ( ( ( ( RULE_HYPHEN ) ) | ( ( RULE_EXTENDER ) )+ ) )=> ( ( (lv_syllables_1_0= RULE_HYPHEN ) ) | ( (lv_syllables_2_0= RULE_EXTENDER ) )+ ) )?
+                    // InternalLilyChantParser.g:660:4: ( (lv_syllables_4_0= RULE_EXTENDER ) )?
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
-                    if ( (LA12_0==RULE_HYPHEN) ) {
-                        int LA12_1 = input.LA(2);
-
-                        if ( (LA12_1==RULE_ID) ) {
-                            int LA12_4 = input.LA(3);
-
-                            if ( (synpred1_InternalLilyChantParser()) ) {
-                                alt12=1;
-                            }
-                        }
-                        else if ( (LA12_1==RULE_END) && (synpred1_InternalLilyChantParser())) {
-                            alt12=1;
-                        }
-                        else if ( (LA12_1==RULE_HYPHEN) && (synpred1_InternalLilyChantParser())) {
-                            alt12=1;
-                        }
-                        else if ( (LA12_1==RULE_START_NOTE_GROUP) && (synpred1_InternalLilyChantParser())) {
-                            alt12=1;
-                        }
-                        else if ( (LA12_1==EOF) && (synpred1_InternalLilyChantParser())) {
-                            alt12=1;
-                        }
-                    }
-                    else if ( (LA12_0==RULE_EXTENDER) && (synpred1_InternalLilyChantParser())) {
+                    if ( (LA12_0==RULE_EXTENDER) ) {
                         alt12=1;
                     }
                     switch (alt12) {
                         case 1 :
-                            // InternalLilyChantParser.g:592:5: ( ( ( ( RULE_HYPHEN ) ) | ( ( RULE_EXTENDER ) )+ ) )=> ( ( (lv_syllables_1_0= RULE_HYPHEN ) ) | ( (lv_syllables_2_0= RULE_EXTENDER ) )+ )
+                            // InternalLilyChantParser.g:661:5: (lv_syllables_4_0= RULE_EXTENDER )
                             {
-                            // InternalLilyChantParser.g:606:5: ( ( (lv_syllables_1_0= RULE_HYPHEN ) ) | ( (lv_syllables_2_0= RULE_EXTENDER ) )+ )
-                            int alt11=2;
-                            int LA11_0 = input.LA(1);
+                            // InternalLilyChantParser.g:661:5: (lv_syllables_4_0= RULE_EXTENDER )
+                            // InternalLilyChantParser.g:662:6: lv_syllables_4_0= RULE_EXTENDER
+                            {
+                            lv_syllables_4_0=(Token)match(input,RULE_EXTENDER,FOLLOW_2); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
 
-                            if ( (LA11_0==RULE_HYPHEN) ) {
-                                alt11=1;
+                              						newLeafNode(lv_syllables_4_0, grammarAccess.getNoteGroupAccess().getSyllablesEXTENDERTerminalRuleCall_0_1_0());
+                              					
                             }
-                            else if ( (LA11_0==RULE_EXTENDER) ) {
-                                alt11=2;
+                            if ( state.backtracking==0 ) {
+
+                              						if (current==null) {
+                              							current = createModelElement(grammarAccess.getNoteGroupRule());
+                              						}
+                              						addWithLastConsumed(
+                              							current,
+                              							"syllables",
+                              							lv_syllables_4_0,
+                              							"org.lilychant.LilyChant.EXTENDER");
+                              					
                             }
-                            else {
-                                if (state.backtracking>0) {state.failed=true; return current;}
-                                NoViableAltException nvae =
-                                    new NoViableAltException("", 11, 0, input);
-
-                                throw nvae;
-                            }
-                            switch (alt11) {
-                                case 1 :
-                                    // InternalLilyChantParser.g:607:6: ( (lv_syllables_1_0= RULE_HYPHEN ) )
-                                    {
-                                    // InternalLilyChantParser.g:607:6: ( (lv_syllables_1_0= RULE_HYPHEN ) )
-                                    // InternalLilyChantParser.g:608:7: (lv_syllables_1_0= RULE_HYPHEN )
-                                    {
-                                    // InternalLilyChantParser.g:608:7: (lv_syllables_1_0= RULE_HYPHEN )
-                                    // InternalLilyChantParser.g:609:8: lv_syllables_1_0= RULE_HYPHEN
-                                    {
-                                    lv_syllables_1_0=(Token)match(input,RULE_HYPHEN,FOLLOW_2); if (state.failed) return current;
-                                    if ( state.backtracking==0 ) {
-
-                                      								newLeafNode(lv_syllables_1_0, grammarAccess.getNoteGroupAccess().getSyllablesHYPHENTerminalRuleCall_0_1_0_0_0());
-                                      							
-                                    }
-                                    if ( state.backtracking==0 ) {
-
-                                      								if (current==null) {
-                                      									current = createModelElement(grammarAccess.getNoteGroupRule());
-                                      								}
-                                      								addWithLastConsumed(
-                                      									current,
-                                      									"syllables",
-                                      									lv_syllables_1_0,
-                                      									"org.lilychant.LilyChant.HYPHEN");
-                                      							
-                                    }
-
-                                    }
-
-
-                                    }
-
-
-                                    }
-                                    break;
-                                case 2 :
-                                    // InternalLilyChantParser.g:626:6: ( (lv_syllables_2_0= RULE_EXTENDER ) )+
-                                    {
-                                    // InternalLilyChantParser.g:626:6: ( (lv_syllables_2_0= RULE_EXTENDER ) )+
-                                    int cnt10=0;
-                                    loop10:
-                                    do {
-                                        int alt10=2;
-                                        int LA10_0 = input.LA(1);
-
-                                        if ( (LA10_0==RULE_EXTENDER) ) {
-                                            alt10=1;
-                                        }
-
-
-                                        switch (alt10) {
-                                    	case 1 :
-                                    	    // InternalLilyChantParser.g:627:7: (lv_syllables_2_0= RULE_EXTENDER )
-                                    	    {
-                                    	    // InternalLilyChantParser.g:627:7: (lv_syllables_2_0= RULE_EXTENDER )
-                                    	    // InternalLilyChantParser.g:628:8: lv_syllables_2_0= RULE_EXTENDER
-                                    	    {
-                                    	    lv_syllables_2_0=(Token)match(input,RULE_EXTENDER,FOLLOW_18); if (state.failed) return current;
-                                    	    if ( state.backtracking==0 ) {
-
-                                    	      								newLeafNode(lv_syllables_2_0, grammarAccess.getNoteGroupAccess().getSyllablesEXTENDERTerminalRuleCall_0_1_0_1_0());
-                                    	      							
-                                    	    }
-                                    	    if ( state.backtracking==0 ) {
-
-                                    	      								if (current==null) {
-                                    	      									current = createModelElement(grammarAccess.getNoteGroupRule());
-                                    	      								}
-                                    	      								addWithLastConsumed(
-                                    	      									current,
-                                    	      									"syllables",
-                                    	      									lv_syllables_2_0,
-                                    	      									"org.lilychant.LilyChant.EXTENDER");
-                                    	      							
-                                    	    }
-
-                                    	    }
-
-
-                                    	    }
-                                    	    break;
-
-                                    	default :
-                                    	    if ( cnt10 >= 1 ) break loop10;
-                                    	    if (state.backtracking>0) {state.failed=true; return current;}
-                                                EarlyExitException eee =
-                                                    new EarlyExitException(10, input);
-                                                throw eee;
-                                        }
-                                        cnt10++;
-                                    } while (true);
-
-
-                                    }
-                                    break;
 
                             }
 
@@ -1805,90 +1855,18 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLilyChantParser.g:648:3: ( ( (lv_syllables_3_0= RULE_HYPHEN ) ) ( (lv_syllables_4_0= RULE_ID ) ) )
+                    // InternalLilyChantParser.g:680:3: (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP )
                     {
-                    // InternalLilyChantParser.g:648:3: ( ( (lv_syllables_3_0= RULE_HYPHEN ) ) ( (lv_syllables_4_0= RULE_ID ) ) )
-                    // InternalLilyChantParser.g:649:4: ( (lv_syllables_3_0= RULE_HYPHEN ) ) ( (lv_syllables_4_0= RULE_ID ) )
-                    {
-                    // InternalLilyChantParser.g:649:4: ( (lv_syllables_3_0= RULE_HYPHEN ) )
-                    // InternalLilyChantParser.g:650:5: (lv_syllables_3_0= RULE_HYPHEN )
-                    {
-                    // InternalLilyChantParser.g:650:5: (lv_syllables_3_0= RULE_HYPHEN )
-                    // InternalLilyChantParser.g:651:6: lv_syllables_3_0= RULE_HYPHEN
-                    {
-                    lv_syllables_3_0=(Token)match(input,RULE_HYPHEN,FOLLOW_5); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      						newLeafNode(lv_syllables_3_0, grammarAccess.getNoteGroupAccess().getSyllablesHYPHENTerminalRuleCall_1_0_0());
-                      					
-                    }
-                    if ( state.backtracking==0 ) {
-
-                      						if (current==null) {
-                      							current = createModelElement(grammarAccess.getNoteGroupRule());
-                      						}
-                      						addWithLastConsumed(
-                      							current,
-                      							"syllables",
-                      							lv_syllables_3_0,
-                      							"org.lilychant.LilyChant.HYPHEN");
-                      					
-                    }
-
-                    }
-
-
-                    }
-
-                    // InternalLilyChantParser.g:667:4: ( (lv_syllables_4_0= RULE_ID ) )
-                    // InternalLilyChantParser.g:668:5: (lv_syllables_4_0= RULE_ID )
-                    {
-                    // InternalLilyChantParser.g:668:5: (lv_syllables_4_0= RULE_ID )
-                    // InternalLilyChantParser.g:669:6: lv_syllables_4_0= RULE_ID
-                    {
-                    lv_syllables_4_0=(Token)match(input,RULE_ID,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      						newLeafNode(lv_syllables_4_0, grammarAccess.getNoteGroupAccess().getSyllablesIDTerminalRuleCall_1_1_0());
-                      					
-                    }
-                    if ( state.backtracking==0 ) {
-
-                      						if (current==null) {
-                      							current = createModelElement(grammarAccess.getNoteGroupRule());
-                      						}
-                      						addWithLastConsumed(
-                      							current,
-                      							"syllables",
-                      							lv_syllables_4_0,
-                      							"org.lilychant.LilyChant.ID");
-                      					
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalLilyChantParser.g:687:3: (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP )
-                    {
-                    // InternalLilyChantParser.g:687:3: (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP )
-                    // InternalLilyChantParser.g:688:4: this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP
+                    // InternalLilyChantParser.g:680:3: (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP )
+                    // InternalLilyChantParser.g:681:4: this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP
                     {
                     this_START_NOTE_GROUP_5=(Token)match(input,RULE_START_NOTE_GROUP,FOLLOW_19); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(this_START_NOTE_GROUP_5, grammarAccess.getNoteGroupAccess().getSTART_NOTE_GROUPTerminalRuleCall_2_0());
+                      				newLeafNode(this_START_NOTE_GROUP_5, grammarAccess.getNoteGroupAccess().getSTART_NOTE_GROUPTerminalRuleCall_1_0());
                       			
                     }
-                    // InternalLilyChantParser.g:692:4: ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+
+                    // InternalLilyChantParser.g:685:4: ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+
                     int cnt14=0;
                     loop14:
                     do {
@@ -1902,12 +1880,12 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
                         switch (alt14) {
                     	case 1 :
-                    	    // InternalLilyChantParser.g:693:5: ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) )
+                    	    // InternalLilyChantParser.g:686:5: ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) )
                     	    {
-                    	    // InternalLilyChantParser.g:693:5: ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) )
-                    	    // InternalLilyChantParser.g:694:6: (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN )
+                    	    // InternalLilyChantParser.g:686:5: ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) )
+                    	    // InternalLilyChantParser.g:687:6: (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN )
                     	    {
-                    	    // InternalLilyChantParser.g:694:6: (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN )
+                    	    // InternalLilyChantParser.g:687:6: (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN )
                     	    int alt13=2;
                     	    int LA13_0 = input.LA(1);
 
@@ -1926,12 +1904,12 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
                     	    }
                     	    switch (alt13) {
                     	        case 1 :
-                    	            // InternalLilyChantParser.g:695:7: lv_syllables_6_1= RULE_ID
+                    	            // InternalLilyChantParser.g:688:7: lv_syllables_6_1= RULE_ID
                     	            {
                     	            lv_syllables_6_1=(Token)match(input,RULE_ID,FOLLOW_20); if (state.failed) return current;
                     	            if ( state.backtracking==0 ) {
 
-                    	              							newLeafNode(lv_syllables_6_1, grammarAccess.getNoteGroupAccess().getSyllablesIDTerminalRuleCall_2_1_0_0());
+                    	              							newLeafNode(lv_syllables_6_1, grammarAccess.getNoteGroupAccess().getSyllablesIDTerminalRuleCall_1_1_0_0());
                     	              						
                     	            }
                     	            if ( state.backtracking==0 ) {
@@ -1950,12 +1928,12 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
                     	            }
                     	            break;
                     	        case 2 :
-                    	            // InternalLilyChantParser.g:710:7: lv_syllables_6_2= RULE_HYPHEN
+                    	            // InternalLilyChantParser.g:703:7: lv_syllables_6_2= RULE_HYPHEN
                     	            {
                     	            lv_syllables_6_2=(Token)match(input,RULE_HYPHEN,FOLLOW_20); if (state.failed) return current;
                     	            if ( state.backtracking==0 ) {
 
-                    	              							newLeafNode(lv_syllables_6_2, grammarAccess.getNoteGroupAccess().getSyllablesHYPHENTerminalRuleCall_2_1_0_1());
+                    	              							newLeafNode(lv_syllables_6_2, grammarAccess.getNoteGroupAccess().getSyllablesHYPHENTerminalRuleCall_1_1_0_1());
                     	              						
                     	            }
                     	            if ( state.backtracking==0 ) {
@@ -1996,7 +1974,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
                     this_END_NOTE_GROUP_7=(Token)match(input,RULE_END_NOTE_GROUP,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(this_END_NOTE_GROUP_7, grammarAccess.getNoteGroupAccess().getEND_NOTE_GROUPTerminalRuleCall_2_2());
+                      				newLeafNode(this_END_NOTE_GROUP_7, grammarAccess.getNoteGroupAccess().getEND_NOTE_GROUPTerminalRuleCall_1_2());
                       			
                     }
 
@@ -2030,7 +2008,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNote"
-    // InternalLilyChantParser.g:736:1: entryRuleNote returns [String current=null] : iv_ruleNote= ruleNote EOF ;
+    // InternalLilyChantParser.g:729:1: entryRuleNote returns [String current=null] : iv_ruleNote= ruleNote EOF ;
     public final String entryRuleNote() throws RecognitionException {
         String current = null;
 
@@ -2038,8 +2016,8 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLilyChantParser.g:736:44: (iv_ruleNote= ruleNote EOF )
-            // InternalLilyChantParser.g:737:2: iv_ruleNote= ruleNote EOF
+            // InternalLilyChantParser.g:729:44: (iv_ruleNote= ruleNote EOF )
+            // InternalLilyChantParser.g:730:2: iv_ruleNote= ruleNote EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNoteRule()); 
@@ -2070,7 +2048,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNote"
-    // InternalLilyChantParser.g:743:1: ruleNote returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? ) ;
+    // InternalLilyChantParser.g:736:1: ruleNote returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? ) ;
     public final AntlrDatatypeRuleToken ruleNote() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2081,11 +2059,11 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLilyChantParser.g:749:2: ( (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? ) )
-            // InternalLilyChantParser.g:750:2: (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? )
+            // InternalLilyChantParser.g:742:2: ( (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? ) )
+            // InternalLilyChantParser.g:743:2: (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? )
             {
-            // InternalLilyChantParser.g:750:2: (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? )
-            // InternalLilyChantParser.g:751:3: this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )?
+            // InternalLilyChantParser.g:743:2: (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? )
+            // InternalLilyChantParser.g:744:3: this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )?
             {
             this_ID_0=(Token)match(input,RULE_ID,FOLLOW_21); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -2098,7 +2076,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
               			newLeafNode(this_ID_0, grammarAccess.getNoteAccess().getIDTerminalRuleCall_0());
               		
             }
-            // InternalLilyChantParser.g:758:3: (this_DURATION_1= RULE_DURATION )?
+            // InternalLilyChantParser.g:751:3: (this_DURATION_1= RULE_DURATION )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -2107,7 +2085,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
             }
             switch (alt16) {
                 case 1 :
-                    // InternalLilyChantParser.g:759:4: this_DURATION_1= RULE_DURATION
+                    // InternalLilyChantParser.g:752:4: this_DURATION_1= RULE_DURATION
                     {
                     this_DURATION_1=(Token)match(input,RULE_DURATION,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -2151,89 +2129,19 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred1_InternalLilyChantParser
     public final void synpred1_InternalLilyChantParser_fragment() throws RecognitionException {   
-        // InternalLilyChantParser.g:592:5: ( ( ( ( RULE_HYPHEN ) ) | ( ( RULE_EXTENDER ) )+ ) )
-        // InternalLilyChantParser.g:592:6: ( ( ( RULE_HYPHEN ) ) | ( ( RULE_EXTENDER ) )+ )
+        // InternalLilyChantParser.g:594:7: ( ( ( RULE_HYPHEN ) ) )
+        // InternalLilyChantParser.g:594:8: ( ( RULE_HYPHEN ) )
         {
-        // InternalLilyChantParser.g:592:6: ( ( ( RULE_HYPHEN ) ) | ( ( RULE_EXTENDER ) )+ )
-        int alt18=2;
-        int LA18_0 = input.LA(1);
+        // InternalLilyChantParser.g:594:8: ( ( RULE_HYPHEN ) )
+        // InternalLilyChantParser.g:595:8: ( RULE_HYPHEN )
+        {
+        // InternalLilyChantParser.g:595:8: ( RULE_HYPHEN )
+        // InternalLilyChantParser.g:596:9: RULE_HYPHEN
+        {
+        match(input,RULE_HYPHEN,FOLLOW_2); if (state.failed) return ;
 
-        if ( (LA18_0==RULE_HYPHEN) ) {
-            alt18=1;
         }
-        else if ( (LA18_0==RULE_EXTENDER) ) {
-            alt18=2;
-        }
-        else {
-            if (state.backtracking>0) {state.failed=true; return ;}
-            NoViableAltException nvae =
-                new NoViableAltException("", 18, 0, input);
 
-            throw nvae;
-        }
-        switch (alt18) {
-            case 1 :
-                // InternalLilyChantParser.g:593:6: ( ( RULE_HYPHEN ) )
-                {
-                // InternalLilyChantParser.g:593:6: ( ( RULE_HYPHEN ) )
-                // InternalLilyChantParser.g:594:7: ( RULE_HYPHEN )
-                {
-                // InternalLilyChantParser.g:594:7: ( RULE_HYPHEN )
-                // InternalLilyChantParser.g:595:8: RULE_HYPHEN
-                {
-                match(input,RULE_HYPHEN,FOLLOW_2); if (state.failed) return ;
-
-                }
-
-
-                }
-
-
-                }
-                break;
-            case 2 :
-                // InternalLilyChantParser.g:599:6: ( ( RULE_EXTENDER ) )+
-                {
-                // InternalLilyChantParser.g:599:6: ( ( RULE_EXTENDER ) )+
-                int cnt17=0;
-                loop17:
-                do {
-                    int alt17=2;
-                    int LA17_0 = input.LA(1);
-
-                    if ( (LA17_0==RULE_EXTENDER) ) {
-                        alt17=1;
-                    }
-
-
-                    switch (alt17) {
-                	case 1 :
-                	    // InternalLilyChantParser.g:600:7: ( RULE_EXTENDER )
-                	    {
-                	    // InternalLilyChantParser.g:600:7: ( RULE_EXTENDER )
-                	    // InternalLilyChantParser.g:601:8: RULE_EXTENDER
-                	    {
-                	    match(input,RULE_EXTENDER,FOLLOW_18); if (state.failed) return ;
-
-                	    }
-
-
-                	    }
-                	    break;
-
-                	default :
-                	    if ( cnt17 >= 1 ) break loop17;
-                	    if (state.backtracking>0) {state.failed=true; return ;}
-                            EarlyExitException eee =
-                                new EarlyExitException(17, input);
-                            throw eee;
-                    }
-                    cnt17++;
-                } while (true);
-
-
-                }
-                break;
 
         }
 

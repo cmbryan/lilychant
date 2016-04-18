@@ -60,7 +60,8 @@ class LilyChantGenerator extends AbstractGenerator {
 								result.add("(")
 								inSlur = true
 							}
-							result.add(targetVoice.notes.get(noteIndex+1))
+							noteIndex++
+							result.add(targetVoice.notes.get(noteIndex))
 							if (syllableIndex+1 == noteGroup.syllables.length
 									|| noteGroup.syllables.get(syllableIndex+1) != "__")
 								result.add(")")

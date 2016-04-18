@@ -43,8 +43,8 @@ public class LilyChantParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getNoteGroupAccess().getAlternatives(), "rule__NoteGroup__Alternatives");
-					put(grammarAccess.getNoteGroupAccess().getAlternatives_0_1_0(), "rule__NoteGroup__Alternatives_0_1_0");
-					put(grammarAccess.getNoteGroupAccess().getSyllablesAlternatives_2_1_0(), "rule__NoteGroup__SyllablesAlternatives_2_1_0");
+					put(grammarAccess.getNoteGroupAccess().getAlternatives_0_0(), "rule__NoteGroup__Alternatives_0_0");
+					put(grammarAccess.getNoteGroupAccess().getSyllablesAlternatives_1_1_0(), "rule__NoteGroup__SyllablesAlternatives_1_1_0");
 					put(grammarAccess.getScriptAccess().getGroup(), "rule__Script__Group__0");
 					put(grammarAccess.getToneAccess().getGroup(), "rule__Tone__Group__0");
 					put(grammarAccess.getTonePhraseAccess().getGroup(), "rule__TonePhrase__Group__0");
@@ -52,9 +52,10 @@ public class LilyChantParser extends AbstractContentAssistParser {
 					put(grammarAccess.getChantAccess().getGroup(), "rule__Chant__Group__0");
 					put(grammarAccess.getLyricPhraseAccess().getGroup(), "rule__LyricPhrase__Group__0");
 					put(grammarAccess.getNoteGroupAccess().getGroup_0(), "rule__NoteGroup__Group_0__0");
-					put(grammarAccess.getNoteGroupAccess().getGroup_0_1(), "rule__NoteGroup__Group_0_1__0");
+					put(grammarAccess.getNoteGroupAccess().getGroup_0_0_0(), "rule__NoteGroup__Group_0_0_0__0");
+					put(grammarAccess.getNoteGroupAccess().getGroup_0_0_0_1(), "rule__NoteGroup__Group_0_0_0_1__0");
+					put(grammarAccess.getNoteGroupAccess().getGroup_0_0_1(), "rule__NoteGroup__Group_0_0_1__0");
 					put(grammarAccess.getNoteGroupAccess().getGroup_1(), "rule__NoteGroup__Group_1__0");
-					put(grammarAccess.getNoteGroupAccess().getGroup_2(), "rule__NoteGroup__Group_2__0");
 					put(grammarAccess.getNoteAccess().getGroup(), "rule__Note__Group__0");
 					put(grammarAccess.getScriptAccess().getTonesAssignment_0(), "rule__Script__TonesAssignment_0");
 					put(grammarAccess.getScriptAccess().getChantsAssignment_1(), "rule__Script__ChantsAssignment_1");
@@ -72,12 +73,12 @@ public class LilyChantParser extends AbstractContentAssistParser {
 					put(grammarAccess.getChantAccess().getPhrasesAssignment_7(), "rule__Chant__PhrasesAssignment_7");
 					put(grammarAccess.getLyricPhraseAccess().getNotesAssignment_1(), "rule__LyricPhrase__NotesAssignment_1");
 					put(grammarAccess.getLyricPhraseAccess().getNoteGroupsAssignment_3(), "rule__LyricPhrase__NoteGroupsAssignment_3");
-					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_0(), "rule__NoteGroup__SyllablesAssignment_0_0");
-					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_1_0_0(), "rule__NoteGroup__SyllablesAssignment_0_1_0_0");
-					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_1_0_1(), "rule__NoteGroup__SyllablesAssignment_0_1_0_1");
-					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_1_0(), "rule__NoteGroup__SyllablesAssignment_1_0");
+					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_0_0_0(), "rule__NoteGroup__SyllablesAssignment_0_0_0_0");
+					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_0_0_1_0(), "rule__NoteGroup__SyllablesAssignment_0_0_0_1_0");
+					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_0_1_0(), "rule__NoteGroup__SyllablesAssignment_0_0_1_0");
+					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_0_1_1(), "rule__NoteGroup__SyllablesAssignment_0_0_1_1");
+					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_1(), "rule__NoteGroup__SyllablesAssignment_0_1");
 					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_1_1(), "rule__NoteGroup__SyllablesAssignment_1_1");
-					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_2_1(), "rule__NoteGroup__SyllablesAssignment_2_1");
 				}
 			};
 		}

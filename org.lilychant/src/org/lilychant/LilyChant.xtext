@@ -79,8 +79,11 @@ LyricPhrase:
 NoteGroup:
 	// single syllable
 	// '--' is allowed at the start to support exiting a '<...>' group in the middle of a word
-	syllables+=ID =>(syllables+=HYPHEN|(syllables+=EXTENDER)+)?
-	| syllables+=HYPHEN syllables+=ID
+	(syllables+=ID =>(syllables+=HYPHEN)?
+	| syllables+=HYPHEN syllables+=ID)
+	syllables+=EXTENDER?
+//	syllables+=HYPHEN? syllables+=ID =>syllables+=HYPHEN? syllables+=EXTENDER*
+//	| syllables+=ID syllables+=HYPHEN? syllables+=EXTENDER*
 	
 	// group of syllables to be repeated on the same pitch
 	// Note that '__' is not allowed within a group, as this implies a slur

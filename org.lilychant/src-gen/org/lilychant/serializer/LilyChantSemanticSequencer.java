@@ -97,7 +97,7 @@ public class LilyChantSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     NoteGroup returns NoteGroup
 	 *
 	 * Constraint:
-	 *     ((syllables+=ID (syllables+=HYPHEN | syllables+=EXTENDER+)?) | (syllables+=HYPHEN syllables+=ID) | (syllables+=ID | syllables+=HYPHEN)+)
+	 *     ((((syllables+=ID syllables+=HYPHEN?) | (syllables+=HYPHEN syllables+=ID)) syllables+=EXTENDER?) | (syllables+=ID | syllables+=HYPHEN)+)
 	 */
 	protected void sequence_NoteGroup(ISerializationContext context, NoteGroup semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

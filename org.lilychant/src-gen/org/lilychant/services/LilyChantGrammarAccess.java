@@ -362,108 +362,113 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.NoteGroup");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Assignment cSyllablesAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
-		private final RuleCall cSyllablesIDTerminalRuleCall_0_0_0 = (RuleCall)cSyllablesAssignment_0_0.eContents().get(0);
-		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
-		private final Alternatives cAlternatives_0_1_0 = (Alternatives)cGroup_0_1.eContents().get(0);
-		private final Assignment cSyllablesAssignment_0_1_0_0 = (Assignment)cAlternatives_0_1_0.eContents().get(0);
-		private final RuleCall cSyllablesHYPHENTerminalRuleCall_0_1_0_0_0 = (RuleCall)cSyllablesAssignment_0_1_0_0.eContents().get(0);
-		private final Assignment cSyllablesAssignment_0_1_0_1 = (Assignment)cAlternatives_0_1_0.eContents().get(1);
-		private final RuleCall cSyllablesEXTENDERTerminalRuleCall_0_1_0_1_0 = (RuleCall)cSyllablesAssignment_0_1_0_1.eContents().get(0);
+		private final Alternatives cAlternatives_0_0 = (Alternatives)cGroup_0.eContents().get(0);
+		private final Group cGroup_0_0_0 = (Group)cAlternatives_0_0.eContents().get(0);
+		private final Assignment cSyllablesAssignment_0_0_0_0 = (Assignment)cGroup_0_0_0.eContents().get(0);
+		private final RuleCall cSyllablesIDTerminalRuleCall_0_0_0_0_0 = (RuleCall)cSyllablesAssignment_0_0_0_0.eContents().get(0);
+		private final Group cGroup_0_0_0_1 = (Group)cGroup_0_0_0.eContents().get(1);
+		private final Assignment cSyllablesAssignment_0_0_0_1_0 = (Assignment)cGroup_0_0_0_1.eContents().get(0);
+		private final RuleCall cSyllablesHYPHENTerminalRuleCall_0_0_0_1_0_0 = (RuleCall)cSyllablesAssignment_0_0_0_1_0.eContents().get(0);
+		private final Group cGroup_0_0_1 = (Group)cAlternatives_0_0.eContents().get(1);
+		private final Assignment cSyllablesAssignment_0_0_1_0 = (Assignment)cGroup_0_0_1.eContents().get(0);
+		private final RuleCall cSyllablesHYPHENTerminalRuleCall_0_0_1_0_0 = (RuleCall)cSyllablesAssignment_0_0_1_0.eContents().get(0);
+		private final Assignment cSyllablesAssignment_0_0_1_1 = (Assignment)cGroup_0_0_1.eContents().get(1);
+		private final RuleCall cSyllablesIDTerminalRuleCall_0_0_1_1_0 = (RuleCall)cSyllablesAssignment_0_0_1_1.eContents().get(0);
+		private final Assignment cSyllablesAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cSyllablesEXTENDERTerminalRuleCall_0_1_0 = (RuleCall)cSyllablesAssignment_0_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Assignment cSyllablesAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cSyllablesHYPHENTerminalRuleCall_1_0_0 = (RuleCall)cSyllablesAssignment_1_0.eContents().get(0);
+		private final RuleCall cSTART_NOTE_GROUPTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
 		private final Assignment cSyllablesAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cSyllablesIDTerminalRuleCall_1_1_0 = (RuleCall)cSyllablesAssignment_1_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final RuleCall cSTART_NOTE_GROUPTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
-		private final Assignment cSyllablesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final Alternatives cSyllablesAlternatives_2_1_0 = (Alternatives)cSyllablesAssignment_2_1.eContents().get(0);
-		private final RuleCall cSyllablesIDTerminalRuleCall_2_1_0_0 = (RuleCall)cSyllablesAlternatives_2_1_0.eContents().get(0);
-		private final RuleCall cSyllablesHYPHENTerminalRuleCall_2_1_0_1 = (RuleCall)cSyllablesAlternatives_2_1_0.eContents().get(1);
-		private final RuleCall cEND_NOTE_GROUPTerminalRuleCall_2_2 = (RuleCall)cGroup_2.eContents().get(2);
+		private final Alternatives cSyllablesAlternatives_1_1_0 = (Alternatives)cSyllablesAssignment_1_1.eContents().get(0);
+		private final RuleCall cSyllablesIDTerminalRuleCall_1_1_0_0 = (RuleCall)cSyllablesAlternatives_1_1_0.eContents().get(0);
+		private final RuleCall cSyllablesHYPHENTerminalRuleCall_1_1_0_1 = (RuleCall)cSyllablesAlternatives_1_1_0.eContents().get(1);
+		private final RuleCall cEND_NOTE_GROUPTerminalRuleCall_1_2 = (RuleCall)cGroup_1.eContents().get(2);
 		
 		//NoteGroup:
-		//	syllables+=ID => (syllables+=HYPHEN | syllables+=EXTENDER+)?
-		//	| syllables+=HYPHEN syllables+=ID
+		//	(syllables+=ID => (syllables+=HYPHEN)?
+		//	| syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER?
+		//	//	syllables+=HYPHEN? syllables+=ID =>syllables+=HYPHEN? syllables+=EXTENDER*
+		//	//	| syllables+=ID syllables+=HYPHEN? syllables+=EXTENDER*
+		//
 		//	// group of syllables to be repeated on the same pitch
 		//	// Note that '__' is not allowed within a group, as this implies a slur
 		//	| START_NOTE_GROUP syllables+=(ID | HYPHEN)+ END_NOTE_GROUP;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//// single syllable
-		//// '--' is allowed at the start to support exiting a '<...>' group in the middle of a word
-		//syllables+=ID => (syllables+=HYPHEN | syllables+=EXTENDER+)? | syllables+=HYPHEN syllables+=ID // group of syllables to be repeated on the same pitch
+		//(syllables+=ID => (syllables+=HYPHEN)? | syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER? //	syllables+=HYPHEN? syllables+=ID =>syllables+=HYPHEN? syllables+=EXTENDER*
+		////	| syllables+=ID syllables+=HYPHEN? syllables+=EXTENDER*
+		//// group of syllables to be repeated on the same pitch
 		//// Note that '__' is not allowed within a group, as this implies a slur
 		//| START_NOTE_GROUP syllables+=(ID | HYPHEN)+ END_NOTE_GROUP
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//// single syllable
-		//// '--' is allowed at the start to support exiting a '<...>' group in the middle of a word
-		//syllables+=ID => (syllables+=HYPHEN | syllables+=EXTENDER+)?
+		//(syllables+=ID => (syllables+=HYPHEN)? | syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER?
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//// single syllable
 		//// '--' is allowed at the start to support exiting a '<...>' group in the middle of a word
+		//syllables+=ID => (syllables+=HYPHEN)? | syllables+=HYPHEN syllables+=ID
+		public Alternatives getAlternatives_0_0() { return cAlternatives_0_0; }
+		
+		//syllables+=ID => (syllables+=HYPHEN)?
+		public Group getGroup_0_0_0() { return cGroup_0_0_0; }
+		
 		//syllables+=ID
-		public Assignment getSyllablesAssignment_0_0() { return cSyllablesAssignment_0_0; }
+		public Assignment getSyllablesAssignment_0_0_0_0() { return cSyllablesAssignment_0_0_0_0; }
 		
 		//ID
-		public RuleCall getSyllablesIDTerminalRuleCall_0_0_0() { return cSyllablesIDTerminalRuleCall_0_0_0; }
+		public RuleCall getSyllablesIDTerminalRuleCall_0_0_0_0_0() { return cSyllablesIDTerminalRuleCall_0_0_0_0_0; }
 		
-		//=> (syllables+=HYPHEN | syllables+=EXTENDER+)?
-		public Group getGroup_0_1() { return cGroup_0_1; }
-		
-		//syllables+=HYPHEN | syllables+=EXTENDER+
-		public Alternatives getAlternatives_0_1_0() { return cAlternatives_0_1_0; }
+		//=> (syllables+=HYPHEN)?
+		public Group getGroup_0_0_0_1() { return cGroup_0_0_0_1; }
 		
 		//syllables+=HYPHEN
-		public Assignment getSyllablesAssignment_0_1_0_0() { return cSyllablesAssignment_0_1_0_0; }
+		public Assignment getSyllablesAssignment_0_0_0_1_0() { return cSyllablesAssignment_0_0_0_1_0; }
 		
 		//HYPHEN
-		public RuleCall getSyllablesHYPHENTerminalRuleCall_0_1_0_0_0() { return cSyllablesHYPHENTerminalRuleCall_0_1_0_0_0; }
-		
-		//syllables+=EXTENDER+
-		public Assignment getSyllablesAssignment_0_1_0_1() { return cSyllablesAssignment_0_1_0_1; }
-		
-		//EXTENDER
-		public RuleCall getSyllablesEXTENDERTerminalRuleCall_0_1_0_1_0() { return cSyllablesEXTENDERTerminalRuleCall_0_1_0_1_0; }
+		public RuleCall getSyllablesHYPHENTerminalRuleCall_0_0_0_1_0_0() { return cSyllablesHYPHENTerminalRuleCall_0_0_0_1_0_0; }
 		
 		//syllables+=HYPHEN syllables+=ID
-		public Group getGroup_1() { return cGroup_1; }
+		public Group getGroup_0_0_1() { return cGroup_0_0_1; }
 		
 		//syllables+=HYPHEN
-		public Assignment getSyllablesAssignment_1_0() { return cSyllablesAssignment_1_0; }
+		public Assignment getSyllablesAssignment_0_0_1_0() { return cSyllablesAssignment_0_0_1_0; }
 		
 		//HYPHEN
-		public RuleCall getSyllablesHYPHENTerminalRuleCall_1_0_0() { return cSyllablesHYPHENTerminalRuleCall_1_0_0; }
+		public RuleCall getSyllablesHYPHENTerminalRuleCall_0_0_1_0_0() { return cSyllablesHYPHENTerminalRuleCall_0_0_1_0_0; }
 		
 		//syllables+=ID
-		public Assignment getSyllablesAssignment_1_1() { return cSyllablesAssignment_1_1; }
+		public Assignment getSyllablesAssignment_0_0_1_1() { return cSyllablesAssignment_0_0_1_1; }
 		
 		//ID
-		public RuleCall getSyllablesIDTerminalRuleCall_1_1_0() { return cSyllablesIDTerminalRuleCall_1_1_0; }
+		public RuleCall getSyllablesIDTerminalRuleCall_0_0_1_1_0() { return cSyllablesIDTerminalRuleCall_0_0_1_1_0; }
+		
+		//syllables+=EXTENDER?
+		public Assignment getSyllablesAssignment_0_1() { return cSyllablesAssignment_0_1; }
+		
+		//EXTENDER
+		public RuleCall getSyllablesEXTENDERTerminalRuleCall_0_1_0() { return cSyllablesEXTENDERTerminalRuleCall_0_1_0; }
 		
 		//START_NOTE_GROUP syllables+=(ID | HYPHEN)+ END_NOTE_GROUP
-		public Group getGroup_2() { return cGroup_2; }
+		public Group getGroup_1() { return cGroup_1; }
 		
 		//START_NOTE_GROUP
-		public RuleCall getSTART_NOTE_GROUPTerminalRuleCall_2_0() { return cSTART_NOTE_GROUPTerminalRuleCall_2_0; }
+		public RuleCall getSTART_NOTE_GROUPTerminalRuleCall_1_0() { return cSTART_NOTE_GROUPTerminalRuleCall_1_0; }
 		
 		//syllables+=(ID | HYPHEN)+
-		public Assignment getSyllablesAssignment_2_1() { return cSyllablesAssignment_2_1; }
+		public Assignment getSyllablesAssignment_1_1() { return cSyllablesAssignment_1_1; }
 		
 		//(ID | HYPHEN)
-		public Alternatives getSyllablesAlternatives_2_1_0() { return cSyllablesAlternatives_2_1_0; }
+		public Alternatives getSyllablesAlternatives_1_1_0() { return cSyllablesAlternatives_1_1_0; }
 		
 		//ID
-		public RuleCall getSyllablesIDTerminalRuleCall_2_1_0_0() { return cSyllablesIDTerminalRuleCall_2_1_0_0; }
+		public RuleCall getSyllablesIDTerminalRuleCall_1_1_0_0() { return cSyllablesIDTerminalRuleCall_1_1_0_0; }
 		
 		//HYPHEN
-		public RuleCall getSyllablesHYPHENTerminalRuleCall_2_1_0_1() { return cSyllablesHYPHENTerminalRuleCall_2_1_0_1; }
+		public RuleCall getSyllablesHYPHENTerminalRuleCall_1_1_0_1() { return cSyllablesHYPHENTerminalRuleCall_1_1_0_1; }
 		
 		//END_NOTE_GROUP
-		public RuleCall getEND_NOTE_GROUPTerminalRuleCall_2_2() { return cEND_NOTE_GROUPTerminalRuleCall_2_2; }
+		public RuleCall getEND_NOTE_GROUPTerminalRuleCall_1_2() { return cEND_NOTE_GROUPTerminalRuleCall_1_2; }
 	}
 	public class NoteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.Note");
@@ -666,8 +671,11 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//NoteGroup:
-	//	syllables+=ID => (syllables+=HYPHEN | syllables+=EXTENDER+)?
-	//	| syllables+=HYPHEN syllables+=ID
+	//	(syllables+=ID => (syllables+=HYPHEN)?
+	//	| syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER?
+	//	//	syllables+=HYPHEN? syllables+=ID =>syllables+=HYPHEN? syllables+=EXTENDER*
+	//	//	| syllables+=ID syllables+=HYPHEN? syllables+=EXTENDER*
+	//
 	//	// group of syllables to be repeated on the same pitch
 	//	// Note that '__' is not allowed within a group, as this implies a slur
 	//	| START_NOTE_GROUP syllables+=(ID | HYPHEN)+ END_NOTE_GROUP;
