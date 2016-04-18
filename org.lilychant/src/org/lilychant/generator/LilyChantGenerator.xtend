@@ -47,33 +47,34 @@ class LilyChantGenerator extends AbstractGenerator {
 				var syllableIndex = 0
 				var inSlur = false
 				while (syllableIndex < noteGroup.syllables.length) {
-					// TODO use terminal definitions for hyphens and extenders
+					// TODO use terminal definitions for hyphens and extenders, but where do they live?
 					val note = targetVoice.notes.get(noteIndex)
 					val syllable = noteGroup.syllables.get(syllableIndex)
 					switch (syllable) {
 						case "--": {
-//							syllableIndex++
-////							val nextSyllable = noteGroup.syllables.get(syllableIndex)
-////							println("-- " + nextSyllable)
-//							result.add(note)
+							// skip to the next syllable
 						}
 						case "__": {
-							noteIndex++
-							val nextNote = targetVoice.notes.get(noteIndex)
-//							println("(" + nextNote + ")")
+//							// slurring implies advance to the next note
 							if (!inSlur) {
 								result.add("(")
 								inSlur = true
 							}
-							result.add(nextNote)
+							result.add(targetVoice.notes.get(noteIndex+1))
 							if (syllableIndex+1 == noteGroup.syllables.length
 									|| noteGroup.syllables.get(syllableIndex+1) != "__")
 								result.add(")")
 						}
 						default: {
-//							println(syllable + " <-> " + note)
-							if (result.length == 0 || result.get(result.length-1).indexOf("bar") == -1)
+							if (inSlur) {
+								result.add(")")
+								inSlur = false
+							}
+
+							if (result.length == 0 || result.get(result.length-1).indexOf("bar") == -1) {
+								// allow for natural line breaking
 								result.add('''\bar ""''')
+							}
 							result.add(note)
 						}
 					}
