@@ -84,33 +84,36 @@ class LilyChantGenerator extends AbstractGenerator {
 				syllableIndex++
 				noteIndex++
 			}
-			result.add('''\bar "|"''')
+			if (lyricPhrase.doubleBar)
+				result.add('''\bar "||"''')
+			else
+				result.add('''\bar "|"''')
 		}
+		
+		// replace last barline with double-bar
+		result.remove(result.length-1)
+		result.add('''\bar "|."''')
 		
 //		println('''Notes for voice: «FOR note : result» «note»«ENDFOR»''')
 		return result
 	}
 
-	def private generateVoices(Script model) {
+	def private generateVoices(Script model, Chant chant) {
 		'''
 		«FOR voice : model.tones.get(0).voiceNames»
 		«voice.name» = {
-			«FOR chant : model.chants»
 			«FOR note : getVoiceNotes(model, chant, voice)»«note» «ENDFOR»
-			«ENDFOR»
 		}
 		
 		«ENDFOR»
 		'''
 	}
 	
-	def private generateLyrics(Script model) {
+	def private generateLyrics(Script model, Chant chant) {
 		'''
 		words = \lyricmode {
-			«FOR chant : model.chants»
 			«FOR lyricPhrase : chant.phrases»
 			«FOR noteGroup : lyricPhrase.noteGroups»«FOR syllable : noteGroup.syllables»«syllable» «ENDFOR»«ENDFOR»
-			«ENDFOR»
 			«ENDFOR»
 		}
 		'''
@@ -133,20 +136,26 @@ class LilyChantGenerator extends AbstractGenerator {
 			% =======================
 			alignleft = \once \override LyricText #'self-alignment-X = #-1
 			
+			«FOR chant : model.chants»
+			% =======================
+			% Score for «chant.name»
+			% =======================
+			
 			%
 			% voices
 			%
-			«model.generateVoices»
+			«model.generateVoices(chant)»
 			
 			% =======================
 			% Lyrics
 			% =======================
-			«model.generateLyrics»
+			«model.generateLyrics(chant)»
 			
-			% =======================
-			% Score
-			% =======================
 			\score {
+
+			  % This produces a lilypond error, but still seems to render OK, so...
+			  \header { title = "«chant.name»" }
+
 			  \new ChoirStaff \with {
 			    instrumentName = \markup \bold "Choir:"
 			  }
@@ -176,6 +185,8 @@ class LilyChantGenerator extends AbstractGenerator {
 			    }
 			  >>
 			}
+			
+			«ENDFOR»
 			
 			% =======================
 			% Layout

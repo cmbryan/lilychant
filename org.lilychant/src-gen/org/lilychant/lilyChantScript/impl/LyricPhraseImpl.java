@@ -33,6 +33,7 @@ import org.lilychant.lilyChantScript.TonePhrase;
  * <ul>
  *   <li>{@link org.lilychant.lilyChantScript.impl.LyricPhraseImpl#getNotes <em>Notes</em>}</li>
  *   <li>{@link org.lilychant.lilyChantScript.impl.LyricPhraseImpl#getNoteGroups <em>Note Groups</em>}</li>
+ *   <li>{@link org.lilychant.lilyChantScript.impl.LyricPhraseImpl#isDoubleBar <em>Double Bar</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,6 +60,26 @@ public class LyricPhraseImpl extends MinimalEObjectImpl.Container implements Lyr
    * @ordered
    */
   protected EList<NoteGroup> noteGroups;
+
+  /**
+   * The default value of the '{@link #isDoubleBar() <em>Double Bar</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isDoubleBar()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean DOUBLE_BAR_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isDoubleBar() <em>Double Bar</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isDoubleBar()
+   * @generated
+   * @ordered
+   */
+  protected boolean doubleBar = DOUBLE_BAR_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -143,6 +164,29 @@ public class LyricPhraseImpl extends MinimalEObjectImpl.Container implements Lyr
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isDoubleBar()
+  {
+    return doubleBar;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDoubleBar(boolean newDoubleBar)
+  {
+    boolean oldDoubleBar = doubleBar;
+    doubleBar = newDoubleBar;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LilyChantScriptPackage.LYRIC_PHRASE__DOUBLE_BAR, oldDoubleBar, doubleBar));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -169,6 +213,8 @@ public class LyricPhraseImpl extends MinimalEObjectImpl.Container implements Lyr
         return basicGetNotes();
       case LilyChantScriptPackage.LYRIC_PHRASE__NOTE_GROUPS:
         return getNoteGroups();
+      case LilyChantScriptPackage.LYRIC_PHRASE__DOUBLE_BAR:
+        return isDoubleBar();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -191,6 +237,9 @@ public class LyricPhraseImpl extends MinimalEObjectImpl.Container implements Lyr
         getNoteGroups().clear();
         getNoteGroups().addAll((Collection<? extends NoteGroup>)newValue);
         return;
+      case LilyChantScriptPackage.LYRIC_PHRASE__DOUBLE_BAR:
+        setDoubleBar((Boolean)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -211,6 +260,9 @@ public class LyricPhraseImpl extends MinimalEObjectImpl.Container implements Lyr
       case LilyChantScriptPackage.LYRIC_PHRASE__NOTE_GROUPS:
         getNoteGroups().clear();
         return;
+      case LilyChantScriptPackage.LYRIC_PHRASE__DOUBLE_BAR:
+        setDoubleBar(DOUBLE_BAR_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -229,8 +281,27 @@ public class LyricPhraseImpl extends MinimalEObjectImpl.Container implements Lyr
         return notes != null;
       case LilyChantScriptPackage.LYRIC_PHRASE__NOTE_GROUPS:
         return noteGroups != null && !noteGroups.isEmpty();
+      case LilyChantScriptPackage.LYRIC_PHRASE__DOUBLE_BAR:
+        return doubleBar != DOUBLE_BAR_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (doubleBar: ");
+    result.append(doubleBar);
+    result.append(')');
+    return result.toString();
   }
 
 } //LyricPhraseImpl

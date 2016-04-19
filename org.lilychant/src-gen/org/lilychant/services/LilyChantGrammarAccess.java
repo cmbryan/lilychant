@@ -240,17 +240,19 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.Chant");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cChantKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cToneKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cToneAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cToneToneCrossReference_2_0 = (CrossReference)cToneAssignment_2.eContents().get(0);
-		private final RuleCall cToneToneIDTerminalRuleCall_2_0_1 = (RuleCall)cToneToneCrossReference_2_0.eContents().get(1);
-		private final Keyword cKeyKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cKeyAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cKeyIDTerminalRuleCall_4_0 = (RuleCall)cKeyAssignment_4.eContents().get(0);
-		private final RuleCall cBEGINTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
-		private final Assignment cPhrasesAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cPhrasesLyricPhraseParserRuleCall_6_0 = (RuleCall)cPhrasesAssignment_6.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cToneKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cToneAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cToneToneCrossReference_3_0 = (CrossReference)cToneAssignment_3.eContents().get(0);
+		private final RuleCall cToneToneIDTerminalRuleCall_3_0_1 = (RuleCall)cToneToneCrossReference_3_0.eContents().get(1);
+		private final Keyword cKeyKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cKeyAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cKeyIDTerminalRuleCall_5_0 = (RuleCall)cKeyAssignment_5.eContents().get(0);
+		private final RuleCall cBEGINTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		private final Assignment cPhrasesAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cPhrasesLyricPhraseParserRuleCall_7_0 = (RuleCall)cPhrasesAssignment_7.eContents().get(0);
+		private final RuleCall cENDTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
 		
 		///// *
 		//// * Ensemble
@@ -264,50 +266,56 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		/// *
 		// * Chants
 		// * / Chant:
-		//	'Chant' 'Tone' tone=[Tone] 'key' key=ID
+		//	'Chant' name=STRING 'Tone' tone=[Tone] 'key' key=ID
 		//	BEGIN
 		//	phrases+=LyricPhrase+
 		//	END;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Chant' 'Tone' tone=[Tone] 'key' key=ID BEGIN phrases+=LyricPhrase+ END
+		//'Chant' name=STRING 'Tone' tone=[Tone] 'key' key=ID BEGIN phrases+=LyricPhrase+ END
 		public Group getGroup() { return cGroup; }
 		
 		//'Chant'
 		public Keyword getChantKeyword_0() { return cChantKeyword_0; }
 		
+		//name=STRING
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		
 		//'Tone'
-		public Keyword getToneKeyword_1() { return cToneKeyword_1; }
+		public Keyword getToneKeyword_2() { return cToneKeyword_2; }
 		
 		//tone=[Tone]
-		public Assignment getToneAssignment_2() { return cToneAssignment_2; }
+		public Assignment getToneAssignment_3() { return cToneAssignment_3; }
 		
 		//[Tone]
-		public CrossReference getToneToneCrossReference_2_0() { return cToneToneCrossReference_2_0; }
+		public CrossReference getToneToneCrossReference_3_0() { return cToneToneCrossReference_3_0; }
 		
 		//ID
-		public RuleCall getToneToneIDTerminalRuleCall_2_0_1() { return cToneToneIDTerminalRuleCall_2_0_1; }
+		public RuleCall getToneToneIDTerminalRuleCall_3_0_1() { return cToneToneIDTerminalRuleCall_3_0_1; }
 		
 		//'key'
-		public Keyword getKeyKeyword_3() { return cKeyKeyword_3; }
+		public Keyword getKeyKeyword_4() { return cKeyKeyword_4; }
 		
 		//key=ID
-		public Assignment getKeyAssignment_4() { return cKeyAssignment_4; }
+		public Assignment getKeyAssignment_5() { return cKeyAssignment_5; }
 		
 		//ID
-		public RuleCall getKeyIDTerminalRuleCall_4_0() { return cKeyIDTerminalRuleCall_4_0; }
+		public RuleCall getKeyIDTerminalRuleCall_5_0() { return cKeyIDTerminalRuleCall_5_0; }
 		
 		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_5() { return cBEGINTerminalRuleCall_5; }
+		public RuleCall getBEGINTerminalRuleCall_6() { return cBEGINTerminalRuleCall_6; }
 		
 		//phrases+=LyricPhrase+
-		public Assignment getPhrasesAssignment_6() { return cPhrasesAssignment_6; }
+		public Assignment getPhrasesAssignment_7() { return cPhrasesAssignment_7; }
 		
 		//LyricPhrase
-		public RuleCall getPhrasesLyricPhraseParserRuleCall_6_0() { return cPhrasesLyricPhraseParserRuleCall_6_0; }
+		public RuleCall getPhrasesLyricPhraseParserRuleCall_7_0() { return cPhrasesLyricPhraseParserRuleCall_7_0; }
 		
 		//END
-		public RuleCall getENDTerminalRuleCall_7() { return cENDTerminalRuleCall_7; }
+		public RuleCall getENDTerminalRuleCall_8() { return cENDTerminalRuleCall_8; }
 	}
 	public class LyricPhraseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.LyricPhrase");
@@ -319,15 +327,18 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBEGINTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final Assignment cNoteGroupsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cNoteGroupsNoteGroupParserRuleCall_3_0 = (RuleCall)cNoteGroupsAssignment_3.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Assignment cDoubleBarAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final Keyword cDoubleBarVerticalLineVerticalLineKeyword_4_0 = (Keyword)cDoubleBarAssignment_4.eContents().get(0);
+		private final RuleCall cENDTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
 		
 		//LyricPhrase:
 		//	'Phrase' notes=[TonePhrase] BEGIN
 		//	noteGroups+=NoteGroup+
+		//	doubleBar?='||'?
 		//	END;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Phrase' notes=[TonePhrase] BEGIN noteGroups+=NoteGroup+ END
+		//'Phrase' notes=[TonePhrase] BEGIN noteGroups+=NoteGroup+ doubleBar?='||'? END
 		public Group getGroup() { return cGroup; }
 		
 		//'Phrase'
@@ -351,8 +362,14 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		//NoteGroup
 		public RuleCall getNoteGroupsNoteGroupParserRuleCall_3_0() { return cNoteGroupsNoteGroupParserRuleCall_3_0; }
 		
+		//doubleBar?='||'?
+		public Assignment getDoubleBarAssignment_4() { return cDoubleBarAssignment_4; }
+		
+		//'||'
+		public Keyword getDoubleBarVerticalLineVerticalLineKeyword_4_0() { return cDoubleBarVerticalLineVerticalLineKeyword_4_0; }
+		
 		//END
-		public RuleCall getENDTerminalRuleCall_4() { return cENDTerminalRuleCall_4; }
+		public RuleCall getENDTerminalRuleCall_5() { return cENDTerminalRuleCall_5; }
 	}
 	public class NoteGroupElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.NoteGroup");
@@ -496,6 +513,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	private final NoteGroupElements pNoteGroup;
 	private final NoteElements pNote;
 	private final TerminalRule tID;
+	private final TerminalRule tSTRING;
 	private final TerminalRule tDURATION;
 	private final TerminalRule tHYPHEN;
 	private final TerminalRule tEXTENDER;
@@ -523,6 +541,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		this.pNoteGroup = new NoteGroupElements();
 		this.pNote = new NoteElements();
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.ID");
+		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.STRING");
 		this.tDURATION = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.DURATION");
 		this.tHYPHEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.HYPHEN");
 		this.tEXTENDER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.EXTENDER");
@@ -638,7 +657,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	/// *
 	// * Chants
 	// * / Chant:
-	//	'Chant' 'Tone' tone=[Tone] 'key' key=ID
+	//	'Chant' name=STRING 'Tone' tone=[Tone] 'key' key=ID
 	//	BEGIN
 	//	phrases+=LyricPhrase+
 	//	END;
@@ -653,6 +672,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	//LyricPhrase:
 	//	'Phrase' notes=[TonePhrase] BEGIN
 	//	noteGroups+=NoteGroup+
+	//	doubleBar?='||'?
 	//	END;
 	public LyricPhraseElements getLyricPhraseAccess() {
 		return pLyricPhrase;
@@ -695,6 +715,13 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	//	'^'? ('a'..'z' | 'A'..'Z' | ',' | '\'' | ';' | '.' | ':')*;
 	public TerminalRule getIDRule() {
 		return tID;
+	}
+	
+	//terminal STRING:
+	//	'"' ('\\' . | !('\\' | '"'))* '"' |
+	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	public TerminalRule getSTRINGRule() {
+		return tSTRING;
 	}
 	
 	//terminal DURATION:
@@ -758,7 +785,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal ANY_OTHER:
-	//	'(' | ')' | '\\' | '&';
+	//	.;
 	public TerminalRule getANY_OTHERRule() {
 		return tANY_OTHER;
 	}

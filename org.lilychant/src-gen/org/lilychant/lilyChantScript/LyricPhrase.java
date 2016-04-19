@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.lilychant.lilyChantScript.LyricPhrase#getNotes <em>Notes</em>}</li>
  *   <li>{@link org.lilychant.lilyChantScript.LyricPhrase#getNoteGroups <em>Note Groups</em>}</li>
+ *   <li>{@link org.lilychant.lilyChantScript.LyricPhrase#isDoubleBar <em>Double Bar</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,5 +68,31 @@ public interface LyricPhrase extends EObject
    * @generated
    */
   EList<NoteGroup> getNoteGroups();
+
+  /**
+   * Returns the value of the '<em><b>Double Bar</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Double Bar</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Double Bar</em>' attribute.
+   * @see #setDoubleBar(boolean)
+   * @see org.lilychant.lilyChantScript.LilyChantScriptPackage#getLyricPhrase_DoubleBar()
+   * @model
+   * @generated
+   */
+  boolean isDoubleBar();
+
+  /**
+   * Sets the value of the '{@link org.lilychant.lilyChantScript.LyricPhrase#isDoubleBar <em>Double Bar</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Double Bar</em>' attribute.
+   * @see #isDoubleBar()
+   * @generated
+   */
+  void setDoubleBar(boolean value);
 
 } // LyricPhrase

@@ -28,6 +28,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LilyChant.ecore#//VoicePhrase/notes"/>
     </genClasses>
     <genClasses ecoreClass="LilyChant.ecore#//Chant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LilyChant.ecore#//Chant/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LilyChant.ecore#//Chant/tone"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LilyChant.ecore#//Chant/key"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LilyChant.ecore#//Chant/phrases"/>
@@ -35,6 +36,7 @@
     <genClasses ecoreClass="LilyChant.ecore#//LyricPhrase">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LilyChant.ecore#//LyricPhrase/notes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LilyChant.ecore#//LyricPhrase/noteGroups"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LilyChant.ecore#//LyricPhrase/doubleBar"/>
     </genClasses>
     <genClasses ecoreClass="LilyChant.ecore#//NoteGroup">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LilyChant.ecore#//NoteGroup/syllables"/>

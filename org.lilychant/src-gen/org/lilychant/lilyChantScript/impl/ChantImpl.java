@@ -31,6 +31,7 @@ import org.lilychant.lilyChantScript.Tone;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.lilychant.lilyChantScript.impl.ChantImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.lilychant.lilyChantScript.impl.ChantImpl#getTone <em>Tone</em>}</li>
  *   <li>{@link org.lilychant.lilyChantScript.impl.ChantImpl#getKey <em>Key</em>}</li>
  *   <li>{@link org.lilychant.lilyChantScript.impl.ChantImpl#getPhrases <em>Phrases</em>}</li>
@@ -41,6 +42,26 @@ import org.lilychant.lilyChantScript.Tone;
  */
 public class ChantImpl extends MinimalEObjectImpl.Container implements Chant
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getTone() <em>Tone</em>}' reference.
    * <!-- begin-user-doc -->
@@ -100,6 +121,29 @@ public class ChantImpl extends MinimalEObjectImpl.Container implements Chant
   protected EClass eStaticClass()
   {
     return LilyChantScriptPackage.Literals.CHANT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LilyChantScriptPackage.CHANT__NAME, oldName, name));
   }
 
   /**
@@ -208,6 +252,8 @@ public class ChantImpl extends MinimalEObjectImpl.Container implements Chant
   {
     switch (featureID)
     {
+      case LilyChantScriptPackage.CHANT__NAME:
+        return getName();
       case LilyChantScriptPackage.CHANT__TONE:
         if (resolve) return getTone();
         return basicGetTone();
@@ -230,6 +276,9 @@ public class ChantImpl extends MinimalEObjectImpl.Container implements Chant
   {
     switch (featureID)
     {
+      case LilyChantScriptPackage.CHANT__NAME:
+        setName((String)newValue);
+        return;
       case LilyChantScriptPackage.CHANT__TONE:
         setTone((Tone)newValue);
         return;
@@ -254,6 +303,9 @@ public class ChantImpl extends MinimalEObjectImpl.Container implements Chant
   {
     switch (featureID)
     {
+      case LilyChantScriptPackage.CHANT__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case LilyChantScriptPackage.CHANT__TONE:
         setTone((Tone)null);
         return;
@@ -277,6 +329,8 @@ public class ChantImpl extends MinimalEObjectImpl.Container implements Chant
   {
     switch (featureID)
     {
+      case LilyChantScriptPackage.CHANT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case LilyChantScriptPackage.CHANT__TONE:
         return tone != null;
       case LilyChantScriptPackage.CHANT__KEY:
@@ -298,7 +352,9 @@ public class ChantImpl extends MinimalEObjectImpl.Container implements Chant
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (key: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", key: ");
     result.append(key);
     result.append(')');
     return result.toString();

@@ -417,9 +417,27 @@ ruleChant returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getChantAccess().getChantKeyword_0());
 		}
-		otherlv_1=Tone
+		(
+			(
+				lv_name_1_0=RULE_STRING
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getChantAccess().getNameSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getChantRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.lilychant.LilyChant.STRING");
+				}
+			)
+		)
+		otherlv_2=Tone
 		{
-			newLeafNode(otherlv_1, grammarAccess.getChantAccess().getToneKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getChantAccess().getToneKeyword_2());
 		}
 		(
 			(
@@ -428,21 +446,21 @@ ruleChant returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getChantRule());
 					}
 				}
-				otherlv_2=RULE_ID
+				otherlv_3=RULE_ID
 				{
-					newLeafNode(otherlv_2, grammarAccess.getChantAccess().getToneToneCrossReference_2_0());
+					newLeafNode(otherlv_3, grammarAccess.getChantAccess().getToneToneCrossReference_3_0());
 				}
 			)
 		)
-		otherlv_3=Key
+		otherlv_4=Key
 		{
-			newLeafNode(otherlv_3, grammarAccess.getChantAccess().getKeyKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getChantAccess().getKeyKeyword_4());
 		}
 		(
 			(
-				lv_key_4_0=RULE_ID
+				lv_key_5_0=RULE_ID
 				{
-					newLeafNode(lv_key_4_0, grammarAccess.getChantAccess().getKeyIDTerminalRuleCall_4_0());
+					newLeafNode(lv_key_5_0, grammarAccess.getChantAccess().getKeyIDTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -451,21 +469,21 @@ ruleChant returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"key",
-						lv_key_4_0,
+						lv_key_5_0,
 						"org.lilychant.LilyChant.ID");
 				}
 			)
 		)
-		this_BEGIN_5=RULE_BEGIN
+		this_BEGIN_6=RULE_BEGIN
 		{
-			newLeafNode(this_BEGIN_5, grammarAccess.getChantAccess().getBEGINTerminalRuleCall_5());
+			newLeafNode(this_BEGIN_6, grammarAccess.getChantAccess().getBEGINTerminalRuleCall_6());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getChantAccess().getPhrasesLyricPhraseParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getChantAccess().getPhrasesLyricPhraseParserRuleCall_7_0());
 				}
-				lv_phrases_6_0=ruleLyricPhrase
+				lv_phrases_7_0=ruleLyricPhrase
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getChantRule());
@@ -473,15 +491,15 @@ ruleChant returns [EObject current=null]
 					add(
 						$current,
 						"phrases",
-						lv_phrases_6_0,
+						lv_phrases_7_0,
 						"org.lilychant.LilyChant.LyricPhrase");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)+
-		this_END_7=RULE_END
+		this_END_8=RULE_END
 		{
-			newLeafNode(this_END_7, grammarAccess.getChantAccess().getENDTerminalRuleCall_7());
+			newLeafNode(this_END_8, grammarAccess.getChantAccess().getENDTerminalRuleCall_8());
 		}
 	)
 ;
@@ -542,9 +560,23 @@ ruleLyricPhrase returns [EObject current=null]
 				}
 			)
 		)+
-		this_END_4=RULE_END
+		(
+			(
+				lv_doubleBar_4_0=VerticalLineVerticalLine
+				{
+					newLeafNode(lv_doubleBar_4_0, grammarAccess.getLyricPhraseAccess().getDoubleBarVerticalLineVerticalLineKeyword_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLyricPhraseRule());
+					}
+					setWithLastConsumed($current, "doubleBar", true, "||");
+				}
+			)
+		)?
+		this_END_5=RULE_END
 		{
-			newLeafNode(this_END_4, grammarAccess.getLyricPhraseAccess().getENDTerminalRuleCall_4());
+			newLeafNode(this_END_5, grammarAccess.getLyricPhraseAccess().getENDTerminalRuleCall_5());
 		}
 	)
 ;

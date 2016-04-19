@@ -68,11 +68,13 @@ public class LilyChantParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTonePhraseAccess().getVoicesAssignment_3(), "rule__TonePhrase__VoicesAssignment_3");
 					put(grammarAccess.getVoicePhraseAccess().getNameAssignment_1(), "rule__VoicePhrase__NameAssignment_1");
 					put(grammarAccess.getVoicePhraseAccess().getNotesAssignment_3(), "rule__VoicePhrase__NotesAssignment_3");
-					put(grammarAccess.getChantAccess().getToneAssignment_2(), "rule__Chant__ToneAssignment_2");
-					put(grammarAccess.getChantAccess().getKeyAssignment_4(), "rule__Chant__KeyAssignment_4");
-					put(grammarAccess.getChantAccess().getPhrasesAssignment_6(), "rule__Chant__PhrasesAssignment_6");
+					put(grammarAccess.getChantAccess().getNameAssignment_1(), "rule__Chant__NameAssignment_1");
+					put(grammarAccess.getChantAccess().getToneAssignment_3(), "rule__Chant__ToneAssignment_3");
+					put(grammarAccess.getChantAccess().getKeyAssignment_5(), "rule__Chant__KeyAssignment_5");
+					put(grammarAccess.getChantAccess().getPhrasesAssignment_7(), "rule__Chant__PhrasesAssignment_7");
 					put(grammarAccess.getLyricPhraseAccess().getNotesAssignment_1(), "rule__LyricPhrase__NotesAssignment_1");
 					put(grammarAccess.getLyricPhraseAccess().getNoteGroupsAssignment_3(), "rule__LyricPhrase__NoteGroupsAssignment_3");
+					put(grammarAccess.getLyricPhraseAccess().getDoubleBarAssignment_4(), "rule__LyricPhrase__DoubleBarAssignment_4");
 					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_0_0_0(), "rule__NoteGroup__SyllablesAssignment_0_0_0_0");
 					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_0_0_1_0(), "rule__NoteGroup__SyllablesAssignment_0_0_0_1_0");
 					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_0_1_0(), "rule__NoteGroup__SyllablesAssignment_0_0_1_0");

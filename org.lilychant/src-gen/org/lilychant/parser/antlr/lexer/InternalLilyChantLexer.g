@@ -23,9 +23,13 @@ Tone : 'Tone';
 
 Key : 'key';
 
+VerticalLineVerticalLine : '||';
+
 // Rules duplicated to allow inter-rule references
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|','|'\''|';'|'.'|':')*;
+
+RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
 
 RULE_DURATION : ('1'|'2'|'4'|'8'|'16'|'\breve')+;
 
@@ -47,4 +51,4 @@ RULE_SL_COMMENT : '//' ~(('\n'|'\r'))* ('\r'? '\n')?;
 
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
 
-RULE_ANY_OTHER : ('('|')'|'\\'|'&');
+RULE_ANY_OTHER : .;

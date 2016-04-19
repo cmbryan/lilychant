@@ -323,9 +323,19 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getChant_Name()
+  {
+    return (EAttribute)chantEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getChant_Tone()
   {
-    return (EReference)chantEClass.getEStructuralFeatures().get(0);
+    return (EReference)chantEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -335,7 +345,7 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
    */
   public EAttribute getChant_Key()
   {
-    return (EAttribute)chantEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)chantEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -345,7 +355,7 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
    */
   public EReference getChant_Phrases()
   {
-    return (EReference)chantEClass.getEStructuralFeatures().get(2);
+    return (EReference)chantEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -376,6 +386,16 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
   public EReference getLyricPhrase_NoteGroups()
   {
     return (EReference)lyricPhraseEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLyricPhrase_DoubleBar()
+  {
+    return (EAttribute)lyricPhraseEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -450,6 +470,7 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
     createEAttribute(voicePhraseEClass, VOICE_PHRASE__NOTES);
 
     chantEClass = createEClass(CHANT);
+    createEAttribute(chantEClass, CHANT__NAME);
     createEReference(chantEClass, CHANT__TONE);
     createEAttribute(chantEClass, CHANT__KEY);
     createEReference(chantEClass, CHANT__PHRASES);
@@ -457,6 +478,7 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
     lyricPhraseEClass = createEClass(LYRIC_PHRASE);
     createEReference(lyricPhraseEClass, LYRIC_PHRASE__NOTES);
     createEReference(lyricPhraseEClass, LYRIC_PHRASE__NOTE_GROUPS);
+    createEAttribute(lyricPhraseEClass, LYRIC_PHRASE__DOUBLE_BAR);
 
     noteGroupEClass = createEClass(NOTE_GROUP);
     createEAttribute(noteGroupEClass, NOTE_GROUP__SYLLABLES);
@@ -515,6 +537,7 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
     initEAttribute(getVoicePhrase_Notes(), ecorePackage.getEString(), "notes", null, 0, -1, VoicePhrase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(chantEClass, Chant.class, "Chant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getChant_Name(), ecorePackage.getEString(), "name", null, 0, 1, Chant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getChant_Tone(), this.getTone(), null, "tone", null, 0, 1, Chant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getChant_Key(), ecorePackage.getEString(), "key", null, 0, 1, Chant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getChant_Phrases(), this.getLyricPhrase(), null, "phrases", null, 0, -1, Chant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -522,6 +545,7 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
     initEClass(lyricPhraseEClass, LyricPhrase.class, "LyricPhrase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getLyricPhrase_Notes(), this.getTonePhrase(), null, "notes", null, 0, 1, LyricPhrase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLyricPhrase_NoteGroups(), this.getNoteGroup(), null, "noteGroups", null, 0, -1, LyricPhrase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLyricPhrase_DoubleBar(), ecorePackage.getEBoolean(), "doubleBar", null, 0, 1, LyricPhrase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(noteGroupEClass, NoteGroup.class, "NoteGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNoteGroup_Syllables(), ecorePackage.getEString(), "syllables", null, 0, -1, NoteGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

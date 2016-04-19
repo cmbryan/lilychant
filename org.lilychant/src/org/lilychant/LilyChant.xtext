@@ -61,7 +61,7 @@ VoicePhrase:
  */
 
 Chant:
-	'Chant' 'Tone' tone=[Tone] 'key' key=ID
+	'Chant' name=STRING 'Tone' tone=[Tone] 'key' key=ID
 		BEGIN
 		phrases+=LyricPhrase+
 		END
@@ -71,6 +71,7 @@ LyricPhrase:
 	'Phrase' notes=[TonePhrase]
 		BEGIN
 		noteGroups+=NoteGroup+
+		doubleBar?='||'?
 		END
 ;
 
@@ -102,6 +103,11 @@ Note:
  */
 
 terminal ID: '^'?('a'..'z'|'A'..'Z'|','|'\''|';'|'.'|':')*;
+terminal STRING	: 
+			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
+			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+;
+
 terminal DURATION: ('1'|'2'|'4'|'8'|'16'|'\breve')+;
 terminal HYPHEN: '--';
 terminal EXTENDER: '__';
@@ -116,4 +122,4 @@ terminal SL_COMMENT : '//' !('\n'|'\r')* ('\r'? '\n')?;
 
 terminal WS : (' '|'\t'|'\r'|'\n')+;
 
-terminal ANY_OTHER : '('|')'|'\\'|'&';
+terminal ANY_OTHER: .;
