@@ -712,7 +712,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal ID:
-	//	'^'? ('a'..'z' | 'A'..'Z' | ',' | '\'' | ';' | '.' | ':')*;
+	//	'^'? ('a'..'z' | 'A'..'Z' | '\\u0400'..'\\u04ff' | ',' | '\'' | ';' | '.' | ':')*;
 	public TerminalRule getIDRule() {
 		return tID;
 	}
