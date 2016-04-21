@@ -72,7 +72,7 @@ public class LilyChantParser extends AbstractContentAssistParser {
 					put(grammarAccess.getChantAccess().getNameAssignment_1(), "rule__Chant__NameAssignment_1");
 					put(grammarAccess.getChantAccess().getToneAssignment_3(), "rule__Chant__ToneAssignment_3");
 					put(grammarAccess.getChantAccess().getPhrasesAssignment_5(), "rule__Chant__PhrasesAssignment_5");
-					put(grammarAccess.getLyricPhraseAccess().getExplicitPhraseAssignment_0_2(), "rule__LyricPhrase__ExplicitPhraseAssignment_0_2");
+					put(grammarAccess.getLyricPhraseAccess().getExplicitPhraseAssignment_0_1(), "rule__LyricPhrase__ExplicitPhraseAssignment_0_1");
 					put(grammarAccess.getLyricPhraseAccess().getNoteGroupsAssignment_1(), "rule__LyricPhrase__NoteGroupsAssignment_1");
 					put(grammarAccess.getLyricPhraseAccess().getBarAssignment_2(), "rule__LyricPhrase__BarAssignment_2");
 					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_0_0_0(), "rule__NoteGroup__SyllablesAssignment_0_0_0_0");

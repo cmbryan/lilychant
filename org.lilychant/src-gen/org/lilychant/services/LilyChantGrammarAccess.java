@@ -303,45 +303,41 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Keyword cPhraseKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cExplicitPhraseAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final CrossReference cExplicitPhraseTonePhraseCrossReference_0_2_0 = (CrossReference)cExplicitPhraseAssignment_0_2.eContents().get(0);
-		private final RuleCall cExplicitPhraseTonePhraseIDTerminalRuleCall_0_2_0_1 = (RuleCall)cExplicitPhraseTonePhraseCrossReference_0_2_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Assignment cExplicitPhraseAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final CrossReference cExplicitPhraseTonePhraseCrossReference_0_1_0 = (CrossReference)cExplicitPhraseAssignment_0_1.eContents().get(0);
+		private final RuleCall cExplicitPhraseTonePhraseIDTerminalRuleCall_0_1_0_1 = (RuleCall)cExplicitPhraseTonePhraseCrossReference_0_1_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
 		private final Assignment cNoteGroupsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNoteGroupsNoteGroupParserRuleCall_1_0 = (RuleCall)cNoteGroupsAssignment_1.eContents().get(0);
 		private final Assignment cBarAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cBarBarlineEnumRuleCall_2_0 = (RuleCall)cBarAssignment_2.eContents().get(0);
 		
 		//LyricPhrase:
-		//	('(' 'Phrase' explicitPhrase=[TonePhrase] ')')?
+		//	('(' explicitPhrase=[TonePhrase] ')')?
 		//	noteGroups+=NoteGroup+
 		//	bar=Barline;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('(' 'Phrase' explicitPhrase=[TonePhrase] ')')? noteGroups+=NoteGroup+ bar=Barline
+		//('(' explicitPhrase=[TonePhrase] ')')? noteGroups+=NoteGroup+ bar=Barline
 		public Group getGroup() { return cGroup; }
 		
-		//('(' 'Phrase' explicitPhrase=[TonePhrase] ')')?
+		//('(' explicitPhrase=[TonePhrase] ')')?
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_0_0() { return cLeftParenthesisKeyword_0_0; }
 		
-		//'Phrase'
-		public Keyword getPhraseKeyword_0_1() { return cPhraseKeyword_0_1; }
-		
 		//explicitPhrase=[TonePhrase]
-		public Assignment getExplicitPhraseAssignment_0_2() { return cExplicitPhraseAssignment_0_2; }
+		public Assignment getExplicitPhraseAssignment_0_1() { return cExplicitPhraseAssignment_0_1; }
 		
 		//[TonePhrase]
-		public CrossReference getExplicitPhraseTonePhraseCrossReference_0_2_0() { return cExplicitPhraseTonePhraseCrossReference_0_2_0; }
+		public CrossReference getExplicitPhraseTonePhraseCrossReference_0_1_0() { return cExplicitPhraseTonePhraseCrossReference_0_1_0; }
 		
 		//ID
-		public RuleCall getExplicitPhraseTonePhraseIDTerminalRuleCall_0_2_0_1() { return cExplicitPhraseTonePhraseIDTerminalRuleCall_0_2_0_1; }
+		public RuleCall getExplicitPhraseTonePhraseIDTerminalRuleCall_0_1_0_1() { return cExplicitPhraseTonePhraseIDTerminalRuleCall_0_1_0_1; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_0_3() { return cRightParenthesisKeyword_0_3; }
+		public Keyword getRightParenthesisKeyword_0_2() { return cRightParenthesisKeyword_0_2; }
 		
 		//noteGroups+=NoteGroup+
 		public Assignment getNoteGroupsAssignment_1() { return cNoteGroupsAssignment_1; }
@@ -682,7 +678,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//LyricPhrase:
-	//	('(' 'Phrase' explicitPhrase=[TonePhrase] ')')?
+	//	('(' explicitPhrase=[TonePhrase] ')')?
 	//	noteGroups+=NoteGroup+
 	//	bar=Barline;
 	public LyricPhraseElements getLyricPhraseAccess() {

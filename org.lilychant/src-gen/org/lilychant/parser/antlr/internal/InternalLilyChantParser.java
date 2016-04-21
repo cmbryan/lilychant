@@ -1317,30 +1317,29 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLyricPhrase"
-    // InternalLilyChantParser.g:472:1: ruleLyricPhrase returns [EObject current=null] : ( (otherlv_0= LeftParenthesis otherlv_1= Phrase ( (otherlv_2= RULE_ID ) ) otherlv_3= RightParenthesis )? ( (lv_noteGroups_4_0= ruleNoteGroup ) )+ ( (lv_bar_5_0= ruleBarline ) ) ) ;
+    // InternalLilyChantParser.g:472:1: ruleLyricPhrase returns [EObject current=null] : ( (otherlv_0= LeftParenthesis ( (otherlv_1= RULE_ID ) ) otherlv_2= RightParenthesis )? ( (lv_noteGroups_3_0= ruleNoteGroup ) )+ ( (lv_bar_4_0= ruleBarline ) ) ) ;
     public final EObject ruleLyricPhrase() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
-        Token otherlv_3=null;
-        EObject lv_noteGroups_4_0 = null;
+        EObject lv_noteGroups_3_0 = null;
 
-        Enumerator lv_bar_5_0 = null;
+        Enumerator lv_bar_4_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalLilyChantParser.g:478:2: ( ( (otherlv_0= LeftParenthesis otherlv_1= Phrase ( (otherlv_2= RULE_ID ) ) otherlv_3= RightParenthesis )? ( (lv_noteGroups_4_0= ruleNoteGroup ) )+ ( (lv_bar_5_0= ruleBarline ) ) ) )
-            // InternalLilyChantParser.g:479:2: ( (otherlv_0= LeftParenthesis otherlv_1= Phrase ( (otherlv_2= RULE_ID ) ) otherlv_3= RightParenthesis )? ( (lv_noteGroups_4_0= ruleNoteGroup ) )+ ( (lv_bar_5_0= ruleBarline ) ) )
+            // InternalLilyChantParser.g:478:2: ( ( (otherlv_0= LeftParenthesis ( (otherlv_1= RULE_ID ) ) otherlv_2= RightParenthesis )? ( (lv_noteGroups_3_0= ruleNoteGroup ) )+ ( (lv_bar_4_0= ruleBarline ) ) ) )
+            // InternalLilyChantParser.g:479:2: ( (otherlv_0= LeftParenthesis ( (otherlv_1= RULE_ID ) ) otherlv_2= RightParenthesis )? ( (lv_noteGroups_3_0= ruleNoteGroup ) )+ ( (lv_bar_4_0= ruleBarline ) ) )
             {
-            // InternalLilyChantParser.g:479:2: ( (otherlv_0= LeftParenthesis otherlv_1= Phrase ( (otherlv_2= RULE_ID ) ) otherlv_3= RightParenthesis )? ( (lv_noteGroups_4_0= ruleNoteGroup ) )+ ( (lv_bar_5_0= ruleBarline ) ) )
-            // InternalLilyChantParser.g:480:3: (otherlv_0= LeftParenthesis otherlv_1= Phrase ( (otherlv_2= RULE_ID ) ) otherlv_3= RightParenthesis )? ( (lv_noteGroups_4_0= ruleNoteGroup ) )+ ( (lv_bar_5_0= ruleBarline ) )
+            // InternalLilyChantParser.g:479:2: ( (otherlv_0= LeftParenthesis ( (otherlv_1= RULE_ID ) ) otherlv_2= RightParenthesis )? ( (lv_noteGroups_3_0= ruleNoteGroup ) )+ ( (lv_bar_4_0= ruleBarline ) ) )
+            // InternalLilyChantParser.g:480:3: (otherlv_0= LeftParenthesis ( (otherlv_1= RULE_ID ) ) otherlv_2= RightParenthesis )? ( (lv_noteGroups_3_0= ruleNoteGroup ) )+ ( (lv_bar_4_0= ruleBarline ) )
             {
-            // InternalLilyChantParser.g:480:3: (otherlv_0= LeftParenthesis otherlv_1= Phrase ( (otherlv_2= RULE_ID ) ) otherlv_3= RightParenthesis )?
+            // InternalLilyChantParser.g:480:3: (otherlv_0= LeftParenthesis ( (otherlv_1= RULE_ID ) ) otherlv_2= RightParenthesis )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -1349,25 +1348,19 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalLilyChantParser.g:481:4: otherlv_0= LeftParenthesis otherlv_1= Phrase ( (otherlv_2= RULE_ID ) ) otherlv_3= RightParenthesis
+                    // InternalLilyChantParser.g:481:4: otherlv_0= LeftParenthesis ( (otherlv_1= RULE_ID ) ) otherlv_2= RightParenthesis
                     {
-                    otherlv_0=(Token)match(input,LeftParenthesis,FOLLOW_9); if (state.failed) return current;
+                    otherlv_0=(Token)match(input,LeftParenthesis,FOLLOW_5); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				newLeafNode(otherlv_0, grammarAccess.getLyricPhraseAccess().getLeftParenthesisKeyword_0_0());
                       			
                     }
-                    otherlv_1=(Token)match(input,Phrase,FOLLOW_5); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      				newLeafNode(otherlv_1, grammarAccess.getLyricPhraseAccess().getPhraseKeyword_0_1());
-                      			
-                    }
-                    // InternalLilyChantParser.g:489:4: ( (otherlv_2= RULE_ID ) )
-                    // InternalLilyChantParser.g:490:5: (otherlv_2= RULE_ID )
+                    // InternalLilyChantParser.g:485:4: ( (otherlv_1= RULE_ID ) )
+                    // InternalLilyChantParser.g:486:5: (otherlv_1= RULE_ID )
                     {
-                    // InternalLilyChantParser.g:490:5: (otherlv_2= RULE_ID )
-                    // InternalLilyChantParser.g:491:6: otherlv_2= RULE_ID
+                    // InternalLilyChantParser.g:486:5: (otherlv_1= RULE_ID )
+                    // InternalLilyChantParser.g:487:6: otherlv_1= RULE_ID
                     {
                     if ( state.backtracking==0 ) {
 
@@ -1376,10 +1369,10 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
                       						}
                       					
                     }
-                    otherlv_2=(Token)match(input,RULE_ID,FOLLOW_17); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,RULE_ID,FOLLOW_17); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      						newLeafNode(otherlv_2, grammarAccess.getLyricPhraseAccess().getExplicitPhraseTonePhraseCrossReference_0_2_0());
+                      						newLeafNode(otherlv_1, grammarAccess.getLyricPhraseAccess().getExplicitPhraseTonePhraseCrossReference_0_1_0());
                       					
                     }
 
@@ -1388,10 +1381,10 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_3=(Token)match(input,RightParenthesis,FOLLOW_15); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,RightParenthesis,FOLLOW_15); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(otherlv_3, grammarAccess.getLyricPhraseAccess().getRightParenthesisKeyword_0_3());
+                      				newLeafNode(otherlv_2, grammarAccess.getLyricPhraseAccess().getRightParenthesisKeyword_0_2());
                       			
                     }
 
@@ -1400,7 +1393,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalLilyChantParser.g:507:3: ( (lv_noteGroups_4_0= ruleNoteGroup ) )+
+            // InternalLilyChantParser.g:503:3: ( (lv_noteGroups_3_0= ruleNoteGroup ) )+
             int cnt10=0;
             loop10:
             do {
@@ -1414,10 +1407,10 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalLilyChantParser.g:508:4: (lv_noteGroups_4_0= ruleNoteGroup )
+            	    // InternalLilyChantParser.g:504:4: (lv_noteGroups_3_0= ruleNoteGroup )
             	    {
-            	    // InternalLilyChantParser.g:508:4: (lv_noteGroups_4_0= ruleNoteGroup )
-            	    // InternalLilyChantParser.g:509:5: lv_noteGroups_4_0= ruleNoteGroup
+            	    // InternalLilyChantParser.g:504:4: (lv_noteGroups_3_0= ruleNoteGroup )
+            	    // InternalLilyChantParser.g:505:5: lv_noteGroups_3_0= ruleNoteGroup
             	    {
             	    if ( state.backtracking==0 ) {
 
@@ -1425,7 +1418,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
             	      				
             	    }
             	    pushFollow(FOLLOW_18);
-            	    lv_noteGroups_4_0=ruleNoteGroup();
+            	    lv_noteGroups_3_0=ruleNoteGroup();
 
             	    state._fsp--;
             	    if (state.failed) return current;
@@ -1437,7 +1430,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
             	      					add(
             	      						current,
             	      						"noteGroups",
-            	      						lv_noteGroups_4_0,
+            	      						lv_noteGroups_3_0,
             	      						"org.lilychant.LilyChant.NoteGroup");
             	      					afterParserOrEnumRuleCall();
             	      				
@@ -1459,11 +1452,11 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
                 cnt10++;
             } while (true);
 
-            // InternalLilyChantParser.g:526:3: ( (lv_bar_5_0= ruleBarline ) )
-            // InternalLilyChantParser.g:527:4: (lv_bar_5_0= ruleBarline )
+            // InternalLilyChantParser.g:522:3: ( (lv_bar_4_0= ruleBarline ) )
+            // InternalLilyChantParser.g:523:4: (lv_bar_4_0= ruleBarline )
             {
-            // InternalLilyChantParser.g:527:4: (lv_bar_5_0= ruleBarline )
-            // InternalLilyChantParser.g:528:5: lv_bar_5_0= ruleBarline
+            // InternalLilyChantParser.g:523:4: (lv_bar_4_0= ruleBarline )
+            // InternalLilyChantParser.g:524:5: lv_bar_4_0= ruleBarline
             {
             if ( state.backtracking==0 ) {
 
@@ -1471,7 +1464,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
               				
             }
             pushFollow(FOLLOW_2);
-            lv_bar_5_0=ruleBarline();
+            lv_bar_4_0=ruleBarline();
 
             state._fsp--;
             if (state.failed) return current;
@@ -1483,7 +1476,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
               					set(
               						current,
               						"bar",
-              						lv_bar_5_0,
+              						lv_bar_4_0,
               						"org.lilychant.LilyChant.Barline");
               					afterParserOrEnumRuleCall();
               				
@@ -1519,7 +1512,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNoteGroup"
-    // InternalLilyChantParser.g:549:1: entryRuleNoteGroup returns [EObject current=null] : iv_ruleNoteGroup= ruleNoteGroup EOF ;
+    // InternalLilyChantParser.g:545:1: entryRuleNoteGroup returns [EObject current=null] : iv_ruleNoteGroup= ruleNoteGroup EOF ;
     public final EObject entryRuleNoteGroup() throws RecognitionException {
         EObject current = null;
 
@@ -1527,8 +1520,8 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLilyChantParser.g:549:50: (iv_ruleNoteGroup= ruleNoteGroup EOF )
-            // InternalLilyChantParser.g:550:2: iv_ruleNoteGroup= ruleNoteGroup EOF
+            // InternalLilyChantParser.g:545:50: (iv_ruleNoteGroup= ruleNoteGroup EOF )
+            // InternalLilyChantParser.g:546:2: iv_ruleNoteGroup= ruleNoteGroup EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNoteGroupRule()); 
@@ -1559,7 +1552,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNoteGroup"
-    // InternalLilyChantParser.g:556:1: ruleNoteGroup returns [EObject current=null] : ( ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )* ) | (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP ) ) ;
+    // InternalLilyChantParser.g:552:1: ruleNoteGroup returns [EObject current=null] : ( ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )* ) | (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP ) ) ;
     public final EObject ruleNoteGroup() throws RecognitionException {
         EObject current = null;
 
@@ -1577,10 +1570,10 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLilyChantParser.g:562:2: ( ( ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )* ) | (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP ) ) )
-            // InternalLilyChantParser.g:563:2: ( ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )* ) | (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP ) )
+            // InternalLilyChantParser.g:558:2: ( ( ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )* ) | (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP ) ) )
+            // InternalLilyChantParser.g:559:2: ( ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )* ) | (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP ) )
             {
-            // InternalLilyChantParser.g:563:2: ( ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )* ) | (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP ) )
+            // InternalLilyChantParser.g:559:2: ( ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )* ) | (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP ) )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -1599,12 +1592,12 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
             }
             switch (alt16) {
                 case 1 :
-                    // InternalLilyChantParser.g:564:3: ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )* )
+                    // InternalLilyChantParser.g:560:3: ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )* )
                     {
-                    // InternalLilyChantParser.g:564:3: ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )* )
-                    // InternalLilyChantParser.g:565:4: ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )*
+                    // InternalLilyChantParser.g:560:3: ( ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )* )
+                    // InternalLilyChantParser.g:561:4: ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) ) ( (lv_syllables_4_0= RULE_EXTENDER ) )*
                     {
-                    // InternalLilyChantParser.g:565:4: ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) )
+                    // InternalLilyChantParser.g:561:4: ( ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? ) | ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) ) )
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -1623,16 +1616,16 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
                     }
                     switch (alt12) {
                         case 1 :
-                            // InternalLilyChantParser.g:566:5: ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? )
+                            // InternalLilyChantParser.g:562:5: ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? )
                             {
-                            // InternalLilyChantParser.g:566:5: ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? )
-                            // InternalLilyChantParser.g:567:6: ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )?
+                            // InternalLilyChantParser.g:562:5: ( ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )? )
+                            // InternalLilyChantParser.g:563:6: ( (lv_syllables_0_0= RULE_ID ) ) ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )?
                             {
-                            // InternalLilyChantParser.g:567:6: ( (lv_syllables_0_0= RULE_ID ) )
-                            // InternalLilyChantParser.g:568:7: (lv_syllables_0_0= RULE_ID )
+                            // InternalLilyChantParser.g:563:6: ( (lv_syllables_0_0= RULE_ID ) )
+                            // InternalLilyChantParser.g:564:7: (lv_syllables_0_0= RULE_ID )
                             {
-                            // InternalLilyChantParser.g:568:7: (lv_syllables_0_0= RULE_ID )
-                            // InternalLilyChantParser.g:569:8: lv_syllables_0_0= RULE_ID
+                            // InternalLilyChantParser.g:564:7: (lv_syllables_0_0= RULE_ID )
+                            // InternalLilyChantParser.g:565:8: lv_syllables_0_0= RULE_ID
                             {
                             lv_syllables_0_0=(Token)match(input,RULE_ID,FOLLOW_19); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
@@ -1658,18 +1651,18 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
                             }
 
-                            // InternalLilyChantParser.g:585:6: ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )?
+                            // InternalLilyChantParser.g:581:6: ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )?
                             int alt11=2;
                             alt11 = dfa11.predict(input);
                             switch (alt11) {
                                 case 1 :
-                                    // InternalLilyChantParser.g:586:7: ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) )
+                                    // InternalLilyChantParser.g:582:7: ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) )
                                     {
-                                    // InternalLilyChantParser.g:592:7: ( (lv_syllables_1_0= RULE_HYPHEN ) )
-                                    // InternalLilyChantParser.g:593:8: (lv_syllables_1_0= RULE_HYPHEN )
+                                    // InternalLilyChantParser.g:588:7: ( (lv_syllables_1_0= RULE_HYPHEN ) )
+                                    // InternalLilyChantParser.g:589:8: (lv_syllables_1_0= RULE_HYPHEN )
                                     {
-                                    // InternalLilyChantParser.g:593:8: (lv_syllables_1_0= RULE_HYPHEN )
-                                    // InternalLilyChantParser.g:594:9: lv_syllables_1_0= RULE_HYPHEN
+                                    // InternalLilyChantParser.g:589:8: (lv_syllables_1_0= RULE_HYPHEN )
+                                    // InternalLilyChantParser.g:590:9: lv_syllables_1_0= RULE_HYPHEN
                                     {
                                     lv_syllables_1_0=(Token)match(input,RULE_HYPHEN,FOLLOW_20); if (state.failed) return current;
                                     if ( state.backtracking==0 ) {
@@ -1708,16 +1701,16 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // InternalLilyChantParser.g:613:5: ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) )
+                            // InternalLilyChantParser.g:609:5: ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) )
                             {
-                            // InternalLilyChantParser.g:613:5: ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) )
-                            // InternalLilyChantParser.g:614:6: ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) )
+                            // InternalLilyChantParser.g:609:5: ( ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) ) )
+                            // InternalLilyChantParser.g:610:6: ( (lv_syllables_2_0= RULE_HYPHEN ) ) ( (lv_syllables_3_0= RULE_ID ) )
                             {
-                            // InternalLilyChantParser.g:614:6: ( (lv_syllables_2_0= RULE_HYPHEN ) )
-                            // InternalLilyChantParser.g:615:7: (lv_syllables_2_0= RULE_HYPHEN )
+                            // InternalLilyChantParser.g:610:6: ( (lv_syllables_2_0= RULE_HYPHEN ) )
+                            // InternalLilyChantParser.g:611:7: (lv_syllables_2_0= RULE_HYPHEN )
                             {
-                            // InternalLilyChantParser.g:615:7: (lv_syllables_2_0= RULE_HYPHEN )
-                            // InternalLilyChantParser.g:616:8: lv_syllables_2_0= RULE_HYPHEN
+                            // InternalLilyChantParser.g:611:7: (lv_syllables_2_0= RULE_HYPHEN )
+                            // InternalLilyChantParser.g:612:8: lv_syllables_2_0= RULE_HYPHEN
                             {
                             lv_syllables_2_0=(Token)match(input,RULE_HYPHEN,FOLLOW_5); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
@@ -1743,11 +1736,11 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
                             }
 
-                            // InternalLilyChantParser.g:632:6: ( (lv_syllables_3_0= RULE_ID ) )
-                            // InternalLilyChantParser.g:633:7: (lv_syllables_3_0= RULE_ID )
+                            // InternalLilyChantParser.g:628:6: ( (lv_syllables_3_0= RULE_ID ) )
+                            // InternalLilyChantParser.g:629:7: (lv_syllables_3_0= RULE_ID )
                             {
-                            // InternalLilyChantParser.g:633:7: (lv_syllables_3_0= RULE_ID )
-                            // InternalLilyChantParser.g:634:8: lv_syllables_3_0= RULE_ID
+                            // InternalLilyChantParser.g:629:7: (lv_syllables_3_0= RULE_ID )
+                            // InternalLilyChantParser.g:630:8: lv_syllables_3_0= RULE_ID
                             {
                             lv_syllables_3_0=(Token)match(input,RULE_ID,FOLLOW_20); if (state.failed) return current;
                             if ( state.backtracking==0 ) {
@@ -1782,7 +1775,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalLilyChantParser.g:652:4: ( (lv_syllables_4_0= RULE_EXTENDER ) )*
+                    // InternalLilyChantParser.g:648:4: ( (lv_syllables_4_0= RULE_EXTENDER ) )*
                     loop13:
                     do {
                         int alt13=2;
@@ -1795,10 +1788,10 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
                         switch (alt13) {
                     	case 1 :
-                    	    // InternalLilyChantParser.g:653:5: (lv_syllables_4_0= RULE_EXTENDER )
+                    	    // InternalLilyChantParser.g:649:5: (lv_syllables_4_0= RULE_EXTENDER )
                     	    {
-                    	    // InternalLilyChantParser.g:653:5: (lv_syllables_4_0= RULE_EXTENDER )
-                    	    // InternalLilyChantParser.g:654:6: lv_syllables_4_0= RULE_EXTENDER
+                    	    // InternalLilyChantParser.g:649:5: (lv_syllables_4_0= RULE_EXTENDER )
+                    	    // InternalLilyChantParser.g:650:6: lv_syllables_4_0= RULE_EXTENDER
                     	    {
                     	    lv_syllables_4_0=(Token)match(input,RULE_EXTENDER,FOLLOW_20); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
@@ -1837,10 +1830,10 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLilyChantParser.g:672:3: (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP )
+                    // InternalLilyChantParser.g:668:3: (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP )
                     {
-                    // InternalLilyChantParser.g:672:3: (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP )
-                    // InternalLilyChantParser.g:673:4: this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP
+                    // InternalLilyChantParser.g:668:3: (this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP )
+                    // InternalLilyChantParser.g:669:4: this_START_NOTE_GROUP_5= RULE_START_NOTE_GROUP ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+ this_END_NOTE_GROUP_7= RULE_END_NOTE_GROUP
                     {
                     this_START_NOTE_GROUP_5=(Token)match(input,RULE_START_NOTE_GROUP,FOLLOW_21); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -1848,7 +1841,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
                       				newLeafNode(this_START_NOTE_GROUP_5, grammarAccess.getNoteGroupAccess().getSTART_NOTE_GROUPTerminalRuleCall_1_0());
                       			
                     }
-                    // InternalLilyChantParser.g:677:4: ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+
+                    // InternalLilyChantParser.g:673:4: ( ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) ) )+
                     int cnt15=0;
                     loop15:
                     do {
@@ -1862,12 +1855,12 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
                         switch (alt15) {
                     	case 1 :
-                    	    // InternalLilyChantParser.g:678:5: ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) )
+                    	    // InternalLilyChantParser.g:674:5: ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) )
                     	    {
-                    	    // InternalLilyChantParser.g:678:5: ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) )
-                    	    // InternalLilyChantParser.g:679:6: (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN )
+                    	    // InternalLilyChantParser.g:674:5: ( (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN ) )
+                    	    // InternalLilyChantParser.g:675:6: (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN )
                     	    {
-                    	    // InternalLilyChantParser.g:679:6: (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN )
+                    	    // InternalLilyChantParser.g:675:6: (lv_syllables_6_1= RULE_ID | lv_syllables_6_2= RULE_HYPHEN )
                     	    int alt14=2;
                     	    int LA14_0 = input.LA(1);
 
@@ -1886,7 +1879,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
                     	    }
                     	    switch (alt14) {
                     	        case 1 :
-                    	            // InternalLilyChantParser.g:680:7: lv_syllables_6_1= RULE_ID
+                    	            // InternalLilyChantParser.g:676:7: lv_syllables_6_1= RULE_ID
                     	            {
                     	            lv_syllables_6_1=(Token)match(input,RULE_ID,FOLLOW_22); if (state.failed) return current;
                     	            if ( state.backtracking==0 ) {
@@ -1910,7 +1903,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
                     	            }
                     	            break;
                     	        case 2 :
-                    	            // InternalLilyChantParser.g:695:7: lv_syllables_6_2= RULE_HYPHEN
+                    	            // InternalLilyChantParser.g:691:7: lv_syllables_6_2= RULE_HYPHEN
                     	            {
                     	            lv_syllables_6_2=(Token)match(input,RULE_HYPHEN,FOLLOW_22); if (state.failed) return current;
                     	            if ( state.backtracking==0 ) {
@@ -1990,7 +1983,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNote"
-    // InternalLilyChantParser.g:721:1: entryRuleNote returns [String current=null] : iv_ruleNote= ruleNote EOF ;
+    // InternalLilyChantParser.g:717:1: entryRuleNote returns [String current=null] : iv_ruleNote= ruleNote EOF ;
     public final String entryRuleNote() throws RecognitionException {
         String current = null;
 
@@ -1998,8 +1991,8 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLilyChantParser.g:721:44: (iv_ruleNote= ruleNote EOF )
-            // InternalLilyChantParser.g:722:2: iv_ruleNote= ruleNote EOF
+            // InternalLilyChantParser.g:717:44: (iv_ruleNote= ruleNote EOF )
+            // InternalLilyChantParser.g:718:2: iv_ruleNote= ruleNote EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNoteRule()); 
@@ -2030,7 +2023,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNote"
-    // InternalLilyChantParser.g:728:1: ruleNote returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? ) ;
+    // InternalLilyChantParser.g:724:1: ruleNote returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? ) ;
     public final AntlrDatatypeRuleToken ruleNote() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2041,11 +2034,11 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLilyChantParser.g:734:2: ( (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? ) )
-            // InternalLilyChantParser.g:735:2: (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? )
+            // InternalLilyChantParser.g:730:2: ( (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? ) )
+            // InternalLilyChantParser.g:731:2: (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? )
             {
-            // InternalLilyChantParser.g:735:2: (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? )
-            // InternalLilyChantParser.g:736:3: this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )?
+            // InternalLilyChantParser.g:731:2: (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? )
+            // InternalLilyChantParser.g:732:3: this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )?
             {
             this_ID_0=(Token)match(input,RULE_ID,FOLLOW_23); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -2058,7 +2051,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
               			newLeafNode(this_ID_0, grammarAccess.getNoteAccess().getIDTerminalRuleCall_0());
               		
             }
-            // InternalLilyChantParser.g:743:3: (this_DURATION_1= RULE_DURATION )?
+            // InternalLilyChantParser.g:739:3: (this_DURATION_1= RULE_DURATION )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2067,7 +2060,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
             }
             switch (alt17) {
                 case 1 :
-                    // InternalLilyChantParser.g:744:4: this_DURATION_1= RULE_DURATION
+                    // InternalLilyChantParser.g:740:4: this_DURATION_1= RULE_DURATION
                     {
                     this_DURATION_1=(Token)match(input,RULE_DURATION,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -2111,7 +2104,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBarline"
-    // InternalLilyChantParser.g:756:1: ruleBarline returns [Enumerator current=null] : ( (enumLiteral_0= VerticalLine ) | (enumLiteral_1= VerticalLineVerticalLine ) ) ;
+    // InternalLilyChantParser.g:752:1: ruleBarline returns [Enumerator current=null] : ( (enumLiteral_0= VerticalLine ) | (enumLiteral_1= VerticalLineVerticalLine ) ) ;
     public final Enumerator ruleBarline() throws RecognitionException {
         Enumerator current = null;
 
@@ -2122,10 +2115,10 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLilyChantParser.g:762:2: ( ( (enumLiteral_0= VerticalLine ) | (enumLiteral_1= VerticalLineVerticalLine ) ) )
-            // InternalLilyChantParser.g:763:2: ( (enumLiteral_0= VerticalLine ) | (enumLiteral_1= VerticalLineVerticalLine ) )
+            // InternalLilyChantParser.g:758:2: ( ( (enumLiteral_0= VerticalLine ) | (enumLiteral_1= VerticalLineVerticalLine ) ) )
+            // InternalLilyChantParser.g:759:2: ( (enumLiteral_0= VerticalLine ) | (enumLiteral_1= VerticalLineVerticalLine ) )
             {
-            // InternalLilyChantParser.g:763:2: ( (enumLiteral_0= VerticalLine ) | (enumLiteral_1= VerticalLineVerticalLine ) )
+            // InternalLilyChantParser.g:759:2: ( (enumLiteral_0= VerticalLine ) | (enumLiteral_1= VerticalLineVerticalLine ) )
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -2144,10 +2137,10 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
             }
             switch (alt18) {
                 case 1 :
-                    // InternalLilyChantParser.g:764:3: (enumLiteral_0= VerticalLine )
+                    // InternalLilyChantParser.g:760:3: (enumLiteral_0= VerticalLine )
                     {
-                    // InternalLilyChantParser.g:764:3: (enumLiteral_0= VerticalLine )
-                    // InternalLilyChantParser.g:765:4: enumLiteral_0= VerticalLine
+                    // InternalLilyChantParser.g:760:3: (enumLiteral_0= VerticalLine )
+                    // InternalLilyChantParser.g:761:4: enumLiteral_0= VerticalLine
                     {
                     enumLiteral_0=(Token)match(input,VerticalLine,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -2163,10 +2156,10 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLilyChantParser.g:772:3: (enumLiteral_1= VerticalLineVerticalLine )
+                    // InternalLilyChantParser.g:768:3: (enumLiteral_1= VerticalLineVerticalLine )
                     {
-                    // InternalLilyChantParser.g:772:3: (enumLiteral_1= VerticalLineVerticalLine )
-                    // InternalLilyChantParser.g:773:4: enumLiteral_1= VerticalLineVerticalLine
+                    // InternalLilyChantParser.g:768:3: (enumLiteral_1= VerticalLineVerticalLine )
+                    // InternalLilyChantParser.g:769:4: enumLiteral_1= VerticalLineVerticalLine
                     {
                     enumLiteral_1=(Token)match(input,VerticalLineVerticalLine,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -2206,14 +2199,14 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred1_InternalLilyChantParser
     public final void synpred1_InternalLilyChantParser_fragment() throws RecognitionException {   
-        // InternalLilyChantParser.g:586:7: ( ( ( RULE_HYPHEN ) ) )
-        // InternalLilyChantParser.g:586:8: ( ( RULE_HYPHEN ) )
+        // InternalLilyChantParser.g:582:7: ( ( ( RULE_HYPHEN ) ) )
+        // InternalLilyChantParser.g:582:8: ( ( RULE_HYPHEN ) )
         {
-        // InternalLilyChantParser.g:586:8: ( ( RULE_HYPHEN ) )
-        // InternalLilyChantParser.g:587:8: ( RULE_HYPHEN )
+        // InternalLilyChantParser.g:582:8: ( ( RULE_HYPHEN ) )
+        // InternalLilyChantParser.g:583:8: ( RULE_HYPHEN )
         {
-        // InternalLilyChantParser.g:587:8: ( RULE_HYPHEN )
-        // InternalLilyChantParser.g:588:9: RULE_HYPHEN
+        // InternalLilyChantParser.g:583:8: ( RULE_HYPHEN )
+        // InternalLilyChantParser.g:584:9: RULE_HYPHEN
         {
         match(input,RULE_HYPHEN,FOLLOW_2); if (state.failed) return ;
 
@@ -2287,7 +2280,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
             this.transition = dfa_7;
         }
         public String getDescription() {
-            return "585:6: ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )?";
+            return "581:6: ( ( ( ( RULE_HYPHEN ) ) )=> ( (lv_syllables_1_0= RULE_HYPHEN ) ) )?";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;

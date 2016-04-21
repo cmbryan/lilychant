@@ -4209,7 +4209,7 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
             // InternalLilyChantParser.g:1272:1: ( rule__LyricPhrase__Group_0__0__Impl rule__LyricPhrase__Group_0__1 )
             // InternalLilyChantParser.g:1273:2: rule__LyricPhrase__Group_0__0__Impl rule__LyricPhrase__Group_0__1
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_6);
             rule__LyricPhrase__Group_0__0__Impl();
 
             state._fsp--;
@@ -4288,7 +4288,7 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
             // InternalLilyChantParser.g:1299:1: ( rule__LyricPhrase__Group_0__1__Impl rule__LyricPhrase__Group_0__2 )
             // InternalLilyChantParser.g:1300:2: rule__LyricPhrase__Group_0__1__Impl rule__LyricPhrase__Group_0__2
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_19);
             rule__LyricPhrase__Group_0__1__Impl();
 
             state._fsp--;
@@ -4317,24 +4317,34 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__LyricPhrase__Group_0__1__Impl"
-    // InternalLilyChantParser.g:1307:1: rule__LyricPhrase__Group_0__1__Impl : ( Phrase ) ;
+    // InternalLilyChantParser.g:1307:1: rule__LyricPhrase__Group_0__1__Impl : ( ( rule__LyricPhrase__ExplicitPhraseAssignment_0_1 ) ) ;
     public final void rule__LyricPhrase__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1311:1: ( ( Phrase ) )
-            // InternalLilyChantParser.g:1312:1: ( Phrase )
+            // InternalLilyChantParser.g:1311:1: ( ( ( rule__LyricPhrase__ExplicitPhraseAssignment_0_1 ) ) )
+            // InternalLilyChantParser.g:1312:1: ( ( rule__LyricPhrase__ExplicitPhraseAssignment_0_1 ) )
             {
-            // InternalLilyChantParser.g:1312:1: ( Phrase )
-            // InternalLilyChantParser.g:1313:2: Phrase
+            // InternalLilyChantParser.g:1312:1: ( ( rule__LyricPhrase__ExplicitPhraseAssignment_0_1 ) )
+            // InternalLilyChantParser.g:1313:2: ( rule__LyricPhrase__ExplicitPhraseAssignment_0_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLyricPhraseAccess().getPhraseKeyword_0_1()); 
+               before(grammarAccess.getLyricPhraseAccess().getExplicitPhraseAssignment_0_1()); 
             }
-            match(input,Phrase,FOLLOW_2); if (state.failed) return ;
+            // InternalLilyChantParser.g:1314:2: ( rule__LyricPhrase__ExplicitPhraseAssignment_0_1 )
+            // InternalLilyChantParser.g:1314:3: rule__LyricPhrase__ExplicitPhraseAssignment_0_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__LyricPhrase__ExplicitPhraseAssignment_0_1();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLyricPhraseAccess().getPhraseKeyword_0_1()); 
+               after(grammarAccess.getLyricPhraseAccess().getExplicitPhraseAssignment_0_1()); 
             }
 
             }
@@ -4358,22 +4368,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__LyricPhrase__Group_0__2"
-    // InternalLilyChantParser.g:1322:1: rule__LyricPhrase__Group_0__2 : rule__LyricPhrase__Group_0__2__Impl rule__LyricPhrase__Group_0__3 ;
+    // InternalLilyChantParser.g:1322:1: rule__LyricPhrase__Group_0__2 : rule__LyricPhrase__Group_0__2__Impl ;
     public final void rule__LyricPhrase__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1326:1: ( rule__LyricPhrase__Group_0__2__Impl rule__LyricPhrase__Group_0__3 )
-            // InternalLilyChantParser.g:1327:2: rule__LyricPhrase__Group_0__2__Impl rule__LyricPhrase__Group_0__3
+            // InternalLilyChantParser.g:1326:1: ( rule__LyricPhrase__Group_0__2__Impl )
+            // InternalLilyChantParser.g:1327:2: rule__LyricPhrase__Group_0__2__Impl
             {
-            pushFollow(FOLLOW_19);
-            rule__LyricPhrase__Group_0__2__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__LyricPhrase__Group_0__3();
+            rule__LyricPhrase__Group_0__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -4396,34 +4401,24 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__LyricPhrase__Group_0__2__Impl"
-    // InternalLilyChantParser.g:1334:1: rule__LyricPhrase__Group_0__2__Impl : ( ( rule__LyricPhrase__ExplicitPhraseAssignment_0_2 ) ) ;
+    // InternalLilyChantParser.g:1333:1: rule__LyricPhrase__Group_0__2__Impl : ( RightParenthesis ) ;
     public final void rule__LyricPhrase__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1338:1: ( ( ( rule__LyricPhrase__ExplicitPhraseAssignment_0_2 ) ) )
-            // InternalLilyChantParser.g:1339:1: ( ( rule__LyricPhrase__ExplicitPhraseAssignment_0_2 ) )
+            // InternalLilyChantParser.g:1337:1: ( ( RightParenthesis ) )
+            // InternalLilyChantParser.g:1338:1: ( RightParenthesis )
             {
-            // InternalLilyChantParser.g:1339:1: ( ( rule__LyricPhrase__ExplicitPhraseAssignment_0_2 ) )
-            // InternalLilyChantParser.g:1340:2: ( rule__LyricPhrase__ExplicitPhraseAssignment_0_2 )
+            // InternalLilyChantParser.g:1338:1: ( RightParenthesis )
+            // InternalLilyChantParser.g:1339:2: RightParenthesis
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLyricPhraseAccess().getExplicitPhraseAssignment_0_2()); 
+               before(grammarAccess.getLyricPhraseAccess().getRightParenthesisKeyword_0_2()); 
             }
-            // InternalLilyChantParser.g:1341:2: ( rule__LyricPhrase__ExplicitPhraseAssignment_0_2 )
-            // InternalLilyChantParser.g:1341:3: rule__LyricPhrase__ExplicitPhraseAssignment_0_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__LyricPhrase__ExplicitPhraseAssignment_0_2();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
+            match(input,RightParenthesis,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLyricPhraseAccess().getExplicitPhraseAssignment_0_2()); 
+               after(grammarAccess.getLyricPhraseAccess().getRightParenthesisKeyword_0_2()); 
             }
 
             }
@@ -4446,89 +4441,15 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__LyricPhrase__Group_0__2__Impl"
 
 
-    // $ANTLR start "rule__LyricPhrase__Group_0__3"
-    // InternalLilyChantParser.g:1349:1: rule__LyricPhrase__Group_0__3 : rule__LyricPhrase__Group_0__3__Impl ;
-    public final void rule__LyricPhrase__Group_0__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLilyChantParser.g:1353:1: ( rule__LyricPhrase__Group_0__3__Impl )
-            // InternalLilyChantParser.g:1354:2: rule__LyricPhrase__Group_0__3__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__LyricPhrase__Group_0__3__Impl();
-
-            state._fsp--;
-            if (state.failed) return ;
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__LyricPhrase__Group_0__3"
-
-
-    // $ANTLR start "rule__LyricPhrase__Group_0__3__Impl"
-    // InternalLilyChantParser.g:1360:1: rule__LyricPhrase__Group_0__3__Impl : ( RightParenthesis ) ;
-    public final void rule__LyricPhrase__Group_0__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalLilyChantParser.g:1364:1: ( ( RightParenthesis ) )
-            // InternalLilyChantParser.g:1365:1: ( RightParenthesis )
-            {
-            // InternalLilyChantParser.g:1365:1: ( RightParenthesis )
-            // InternalLilyChantParser.g:1366:2: RightParenthesis
-            {
-            if ( state.backtracking==0 ) {
-               before(grammarAccess.getLyricPhraseAccess().getRightParenthesisKeyword_0_3()); 
-            }
-            match(input,RightParenthesis,FOLLOW_2); if (state.failed) return ;
-            if ( state.backtracking==0 ) {
-               after(grammarAccess.getLyricPhraseAccess().getRightParenthesisKeyword_0_3()); 
-            }
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__LyricPhrase__Group_0__3__Impl"
-
-
     // $ANTLR start "rule__NoteGroup__Group_0__0"
-    // InternalLilyChantParser.g:1376:1: rule__NoteGroup__Group_0__0 : rule__NoteGroup__Group_0__0__Impl rule__NoteGroup__Group_0__1 ;
+    // InternalLilyChantParser.g:1349:1: rule__NoteGroup__Group_0__0 : rule__NoteGroup__Group_0__0__Impl rule__NoteGroup__Group_0__1 ;
     public final void rule__NoteGroup__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1380:1: ( rule__NoteGroup__Group_0__0__Impl rule__NoteGroup__Group_0__1 )
-            // InternalLilyChantParser.g:1381:2: rule__NoteGroup__Group_0__0__Impl rule__NoteGroup__Group_0__1
+            // InternalLilyChantParser.g:1353:1: ( rule__NoteGroup__Group_0__0__Impl rule__NoteGroup__Group_0__1 )
+            // InternalLilyChantParser.g:1354:2: rule__NoteGroup__Group_0__0__Impl rule__NoteGroup__Group_0__1
             {
             pushFollow(FOLLOW_20);
             rule__NoteGroup__Group_0__0__Impl();
@@ -4559,23 +4480,23 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_0__0__Impl"
-    // InternalLilyChantParser.g:1388:1: rule__NoteGroup__Group_0__0__Impl : ( ( rule__NoteGroup__Alternatives_0_0 ) ) ;
+    // InternalLilyChantParser.g:1361:1: rule__NoteGroup__Group_0__0__Impl : ( ( rule__NoteGroup__Alternatives_0_0 ) ) ;
     public final void rule__NoteGroup__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1392:1: ( ( ( rule__NoteGroup__Alternatives_0_0 ) ) )
-            // InternalLilyChantParser.g:1393:1: ( ( rule__NoteGroup__Alternatives_0_0 ) )
+            // InternalLilyChantParser.g:1365:1: ( ( ( rule__NoteGroup__Alternatives_0_0 ) ) )
+            // InternalLilyChantParser.g:1366:1: ( ( rule__NoteGroup__Alternatives_0_0 ) )
             {
-            // InternalLilyChantParser.g:1393:1: ( ( rule__NoteGroup__Alternatives_0_0 ) )
-            // InternalLilyChantParser.g:1394:2: ( rule__NoteGroup__Alternatives_0_0 )
+            // InternalLilyChantParser.g:1366:1: ( ( rule__NoteGroup__Alternatives_0_0 ) )
+            // InternalLilyChantParser.g:1367:2: ( rule__NoteGroup__Alternatives_0_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteGroupAccess().getAlternatives_0_0()); 
             }
-            // InternalLilyChantParser.g:1395:2: ( rule__NoteGroup__Alternatives_0_0 )
-            // InternalLilyChantParser.g:1395:3: rule__NoteGroup__Alternatives_0_0
+            // InternalLilyChantParser.g:1368:2: ( rule__NoteGroup__Alternatives_0_0 )
+            // InternalLilyChantParser.g:1368:3: rule__NoteGroup__Alternatives_0_0
             {
             pushFollow(FOLLOW_2);
             rule__NoteGroup__Alternatives_0_0();
@@ -4610,14 +4531,14 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_0__1"
-    // InternalLilyChantParser.g:1403:1: rule__NoteGroup__Group_0__1 : rule__NoteGroup__Group_0__1__Impl ;
+    // InternalLilyChantParser.g:1376:1: rule__NoteGroup__Group_0__1 : rule__NoteGroup__Group_0__1__Impl ;
     public final void rule__NoteGroup__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1407:1: ( rule__NoteGroup__Group_0__1__Impl )
-            // InternalLilyChantParser.g:1408:2: rule__NoteGroup__Group_0__1__Impl
+            // InternalLilyChantParser.g:1380:1: ( rule__NoteGroup__Group_0__1__Impl )
+            // InternalLilyChantParser.g:1381:2: rule__NoteGroup__Group_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NoteGroup__Group_0__1__Impl();
@@ -4643,22 +4564,22 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_0__1__Impl"
-    // InternalLilyChantParser.g:1414:1: rule__NoteGroup__Group_0__1__Impl : ( ( rule__NoteGroup__SyllablesAssignment_0_1 )* ) ;
+    // InternalLilyChantParser.g:1387:1: rule__NoteGroup__Group_0__1__Impl : ( ( rule__NoteGroup__SyllablesAssignment_0_1 )* ) ;
     public final void rule__NoteGroup__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1418:1: ( ( ( rule__NoteGroup__SyllablesAssignment_0_1 )* ) )
-            // InternalLilyChantParser.g:1419:1: ( ( rule__NoteGroup__SyllablesAssignment_0_1 )* )
+            // InternalLilyChantParser.g:1391:1: ( ( ( rule__NoteGroup__SyllablesAssignment_0_1 )* ) )
+            // InternalLilyChantParser.g:1392:1: ( ( rule__NoteGroup__SyllablesAssignment_0_1 )* )
             {
-            // InternalLilyChantParser.g:1419:1: ( ( rule__NoteGroup__SyllablesAssignment_0_1 )* )
-            // InternalLilyChantParser.g:1420:2: ( rule__NoteGroup__SyllablesAssignment_0_1 )*
+            // InternalLilyChantParser.g:1392:1: ( ( rule__NoteGroup__SyllablesAssignment_0_1 )* )
+            // InternalLilyChantParser.g:1393:2: ( rule__NoteGroup__SyllablesAssignment_0_1 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_1()); 
             }
-            // InternalLilyChantParser.g:1421:2: ( rule__NoteGroup__SyllablesAssignment_0_1 )*
+            // InternalLilyChantParser.g:1394:2: ( rule__NoteGroup__SyllablesAssignment_0_1 )*
             loop15:
             do {
                 int alt15=2;
@@ -4671,7 +4592,7 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
                 switch (alt15) {
             	case 1 :
-            	    // InternalLilyChantParser.g:1421:3: rule__NoteGroup__SyllablesAssignment_0_1
+            	    // InternalLilyChantParser.g:1394:3: rule__NoteGroup__SyllablesAssignment_0_1
             	    {
             	    pushFollow(FOLLOW_21);
             	    rule__NoteGroup__SyllablesAssignment_0_1();
@@ -4712,14 +4633,14 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_0_0_0__0"
-    // InternalLilyChantParser.g:1430:1: rule__NoteGroup__Group_0_0_0__0 : rule__NoteGroup__Group_0_0_0__0__Impl rule__NoteGroup__Group_0_0_0__1 ;
+    // InternalLilyChantParser.g:1403:1: rule__NoteGroup__Group_0_0_0__0 : rule__NoteGroup__Group_0_0_0__0__Impl rule__NoteGroup__Group_0_0_0__1 ;
     public final void rule__NoteGroup__Group_0_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1434:1: ( rule__NoteGroup__Group_0_0_0__0__Impl rule__NoteGroup__Group_0_0_0__1 )
-            // InternalLilyChantParser.g:1435:2: rule__NoteGroup__Group_0_0_0__0__Impl rule__NoteGroup__Group_0_0_0__1
+            // InternalLilyChantParser.g:1407:1: ( rule__NoteGroup__Group_0_0_0__0__Impl rule__NoteGroup__Group_0_0_0__1 )
+            // InternalLilyChantParser.g:1408:2: rule__NoteGroup__Group_0_0_0__0__Impl rule__NoteGroup__Group_0_0_0__1
             {
             pushFollow(FOLLOW_22);
             rule__NoteGroup__Group_0_0_0__0__Impl();
@@ -4750,23 +4671,23 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_0_0_0__0__Impl"
-    // InternalLilyChantParser.g:1442:1: rule__NoteGroup__Group_0_0_0__0__Impl : ( ( rule__NoteGroup__SyllablesAssignment_0_0_0_0 ) ) ;
+    // InternalLilyChantParser.g:1415:1: rule__NoteGroup__Group_0_0_0__0__Impl : ( ( rule__NoteGroup__SyllablesAssignment_0_0_0_0 ) ) ;
     public final void rule__NoteGroup__Group_0_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1446:1: ( ( ( rule__NoteGroup__SyllablesAssignment_0_0_0_0 ) ) )
-            // InternalLilyChantParser.g:1447:1: ( ( rule__NoteGroup__SyllablesAssignment_0_0_0_0 ) )
+            // InternalLilyChantParser.g:1419:1: ( ( ( rule__NoteGroup__SyllablesAssignment_0_0_0_0 ) ) )
+            // InternalLilyChantParser.g:1420:1: ( ( rule__NoteGroup__SyllablesAssignment_0_0_0_0 ) )
             {
-            // InternalLilyChantParser.g:1447:1: ( ( rule__NoteGroup__SyllablesAssignment_0_0_0_0 ) )
-            // InternalLilyChantParser.g:1448:2: ( rule__NoteGroup__SyllablesAssignment_0_0_0_0 )
+            // InternalLilyChantParser.g:1420:1: ( ( rule__NoteGroup__SyllablesAssignment_0_0_0_0 ) )
+            // InternalLilyChantParser.g:1421:2: ( rule__NoteGroup__SyllablesAssignment_0_0_0_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_0_0_0()); 
             }
-            // InternalLilyChantParser.g:1449:2: ( rule__NoteGroup__SyllablesAssignment_0_0_0_0 )
-            // InternalLilyChantParser.g:1449:3: rule__NoteGroup__SyllablesAssignment_0_0_0_0
+            // InternalLilyChantParser.g:1422:2: ( rule__NoteGroup__SyllablesAssignment_0_0_0_0 )
+            // InternalLilyChantParser.g:1422:3: rule__NoteGroup__SyllablesAssignment_0_0_0_0
             {
             pushFollow(FOLLOW_2);
             rule__NoteGroup__SyllablesAssignment_0_0_0_0();
@@ -4801,14 +4722,14 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_0_0_0__1"
-    // InternalLilyChantParser.g:1457:1: rule__NoteGroup__Group_0_0_0__1 : rule__NoteGroup__Group_0_0_0__1__Impl ;
+    // InternalLilyChantParser.g:1430:1: rule__NoteGroup__Group_0_0_0__1 : rule__NoteGroup__Group_0_0_0__1__Impl ;
     public final void rule__NoteGroup__Group_0_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1461:1: ( rule__NoteGroup__Group_0_0_0__1__Impl )
-            // InternalLilyChantParser.g:1462:2: rule__NoteGroup__Group_0_0_0__1__Impl
+            // InternalLilyChantParser.g:1434:1: ( rule__NoteGroup__Group_0_0_0__1__Impl )
+            // InternalLilyChantParser.g:1435:2: rule__NoteGroup__Group_0_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NoteGroup__Group_0_0_0__1__Impl();
@@ -4834,42 +4755,42 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_0_0_0__1__Impl"
-    // InternalLilyChantParser.g:1468:1: rule__NoteGroup__Group_0_0_0__1__Impl : ( ( rule__NoteGroup__Group_0_0_0_1__0 )? ) ;
+    // InternalLilyChantParser.g:1441:1: rule__NoteGroup__Group_0_0_0__1__Impl : ( ( rule__NoteGroup__Group_0_0_0_1__0 )? ) ;
     public final void rule__NoteGroup__Group_0_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1472:1: ( ( ( rule__NoteGroup__Group_0_0_0_1__0 )? ) )
-            // InternalLilyChantParser.g:1473:1: ( ( rule__NoteGroup__Group_0_0_0_1__0 )? )
+            // InternalLilyChantParser.g:1445:1: ( ( ( rule__NoteGroup__Group_0_0_0_1__0 )? ) )
+            // InternalLilyChantParser.g:1446:1: ( ( rule__NoteGroup__Group_0_0_0_1__0 )? )
             {
-            // InternalLilyChantParser.g:1473:1: ( ( rule__NoteGroup__Group_0_0_0_1__0 )? )
-            // InternalLilyChantParser.g:1474:2: ( rule__NoteGroup__Group_0_0_0_1__0 )?
+            // InternalLilyChantParser.g:1446:1: ( ( rule__NoteGroup__Group_0_0_0_1__0 )? )
+            // InternalLilyChantParser.g:1447:2: ( rule__NoteGroup__Group_0_0_0_1__0 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteGroupAccess().getGroup_0_0_0_1()); 
             }
-            // InternalLilyChantParser.g:1475:2: ( rule__NoteGroup__Group_0_0_0_1__0 )?
+            // InternalLilyChantParser.g:1448:2: ( rule__NoteGroup__Group_0_0_0_1__0 )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
             if ( (LA16_0==RULE_HYPHEN) ) {
                 int LA16_1 = input.LA(2);
 
-                if ( (LA16_1==EOF||LA16_1==VerticalLineVerticalLine||LA16_1==VerticalLine||(LA16_1>=RULE_HYPHEN && LA16_1<=RULE_START_NOTE_GROUP)) ) {
-                    alt16=1;
-                }
-                else if ( (LA16_1==RULE_ID) ) {
-                    int LA16_4 = input.LA(3);
+                if ( (LA16_1==RULE_ID) ) {
+                    int LA16_3 = input.LA(3);
 
                     if ( (synpred16_InternalLilyChantParser()) ) {
                         alt16=1;
                     }
                 }
+                else if ( (LA16_1==EOF||LA16_1==VerticalLineVerticalLine||LA16_1==VerticalLine||(LA16_1>=RULE_HYPHEN && LA16_1<=RULE_START_NOTE_GROUP)) ) {
+                    alt16=1;
+                }
             }
             switch (alt16) {
                 case 1 :
-                    // InternalLilyChantParser.g:1475:3: rule__NoteGroup__Group_0_0_0_1__0
+                    // InternalLilyChantParser.g:1448:3: rule__NoteGroup__Group_0_0_0_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__NoteGroup__Group_0_0_0_1__0();
@@ -4907,14 +4828,14 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_0_0_0_1__0"
-    // InternalLilyChantParser.g:1484:1: rule__NoteGroup__Group_0_0_0_1__0 : rule__NoteGroup__Group_0_0_0_1__0__Impl ;
+    // InternalLilyChantParser.g:1457:1: rule__NoteGroup__Group_0_0_0_1__0 : rule__NoteGroup__Group_0_0_0_1__0__Impl ;
     public final void rule__NoteGroup__Group_0_0_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1488:1: ( rule__NoteGroup__Group_0_0_0_1__0__Impl )
-            // InternalLilyChantParser.g:1489:2: rule__NoteGroup__Group_0_0_0_1__0__Impl
+            // InternalLilyChantParser.g:1461:1: ( rule__NoteGroup__Group_0_0_0_1__0__Impl )
+            // InternalLilyChantParser.g:1462:2: rule__NoteGroup__Group_0_0_0_1__0__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NoteGroup__Group_0_0_0_1__0__Impl();
@@ -4940,23 +4861,23 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_0_0_0_1__0__Impl"
-    // InternalLilyChantParser.g:1495:1: rule__NoteGroup__Group_0_0_0_1__0__Impl : ( ( rule__NoteGroup__SyllablesAssignment_0_0_0_1_0 ) ) ;
+    // InternalLilyChantParser.g:1468:1: rule__NoteGroup__Group_0_0_0_1__0__Impl : ( ( rule__NoteGroup__SyllablesAssignment_0_0_0_1_0 ) ) ;
     public final void rule__NoteGroup__Group_0_0_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1499:1: ( ( ( rule__NoteGroup__SyllablesAssignment_0_0_0_1_0 ) ) )
-            // InternalLilyChantParser.g:1500:1: ( ( rule__NoteGroup__SyllablesAssignment_0_0_0_1_0 ) )
+            // InternalLilyChantParser.g:1472:1: ( ( ( rule__NoteGroup__SyllablesAssignment_0_0_0_1_0 ) ) )
+            // InternalLilyChantParser.g:1473:1: ( ( rule__NoteGroup__SyllablesAssignment_0_0_0_1_0 ) )
             {
-            // InternalLilyChantParser.g:1500:1: ( ( rule__NoteGroup__SyllablesAssignment_0_0_0_1_0 ) )
-            // InternalLilyChantParser.g:1501:2: ( rule__NoteGroup__SyllablesAssignment_0_0_0_1_0 )
+            // InternalLilyChantParser.g:1473:1: ( ( rule__NoteGroup__SyllablesAssignment_0_0_0_1_0 ) )
+            // InternalLilyChantParser.g:1474:2: ( rule__NoteGroup__SyllablesAssignment_0_0_0_1_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_0_0_1_0()); 
             }
-            // InternalLilyChantParser.g:1502:2: ( rule__NoteGroup__SyllablesAssignment_0_0_0_1_0 )
-            // InternalLilyChantParser.g:1502:3: rule__NoteGroup__SyllablesAssignment_0_0_0_1_0
+            // InternalLilyChantParser.g:1475:2: ( rule__NoteGroup__SyllablesAssignment_0_0_0_1_0 )
+            // InternalLilyChantParser.g:1475:3: rule__NoteGroup__SyllablesAssignment_0_0_0_1_0
             {
             pushFollow(FOLLOW_2);
             rule__NoteGroup__SyllablesAssignment_0_0_0_1_0();
@@ -4991,14 +4912,14 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_0_0_1__0"
-    // InternalLilyChantParser.g:1511:1: rule__NoteGroup__Group_0_0_1__0 : rule__NoteGroup__Group_0_0_1__0__Impl rule__NoteGroup__Group_0_0_1__1 ;
+    // InternalLilyChantParser.g:1484:1: rule__NoteGroup__Group_0_0_1__0 : rule__NoteGroup__Group_0_0_1__0__Impl rule__NoteGroup__Group_0_0_1__1 ;
     public final void rule__NoteGroup__Group_0_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1515:1: ( rule__NoteGroup__Group_0_0_1__0__Impl rule__NoteGroup__Group_0_0_1__1 )
-            // InternalLilyChantParser.g:1516:2: rule__NoteGroup__Group_0_0_1__0__Impl rule__NoteGroup__Group_0_0_1__1
+            // InternalLilyChantParser.g:1488:1: ( rule__NoteGroup__Group_0_0_1__0__Impl rule__NoteGroup__Group_0_0_1__1 )
+            // InternalLilyChantParser.g:1489:2: rule__NoteGroup__Group_0_0_1__0__Impl rule__NoteGroup__Group_0_0_1__1
             {
             pushFollow(FOLLOW_6);
             rule__NoteGroup__Group_0_0_1__0__Impl();
@@ -5029,23 +4950,23 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_0_0_1__0__Impl"
-    // InternalLilyChantParser.g:1523:1: rule__NoteGroup__Group_0_0_1__0__Impl : ( ( rule__NoteGroup__SyllablesAssignment_0_0_1_0 ) ) ;
+    // InternalLilyChantParser.g:1496:1: rule__NoteGroup__Group_0_0_1__0__Impl : ( ( rule__NoteGroup__SyllablesAssignment_0_0_1_0 ) ) ;
     public final void rule__NoteGroup__Group_0_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1527:1: ( ( ( rule__NoteGroup__SyllablesAssignment_0_0_1_0 ) ) )
-            // InternalLilyChantParser.g:1528:1: ( ( rule__NoteGroup__SyllablesAssignment_0_0_1_0 ) )
+            // InternalLilyChantParser.g:1500:1: ( ( ( rule__NoteGroup__SyllablesAssignment_0_0_1_0 ) ) )
+            // InternalLilyChantParser.g:1501:1: ( ( rule__NoteGroup__SyllablesAssignment_0_0_1_0 ) )
             {
-            // InternalLilyChantParser.g:1528:1: ( ( rule__NoteGroup__SyllablesAssignment_0_0_1_0 ) )
-            // InternalLilyChantParser.g:1529:2: ( rule__NoteGroup__SyllablesAssignment_0_0_1_0 )
+            // InternalLilyChantParser.g:1501:1: ( ( rule__NoteGroup__SyllablesAssignment_0_0_1_0 ) )
+            // InternalLilyChantParser.g:1502:2: ( rule__NoteGroup__SyllablesAssignment_0_0_1_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_0_1_0()); 
             }
-            // InternalLilyChantParser.g:1530:2: ( rule__NoteGroup__SyllablesAssignment_0_0_1_0 )
-            // InternalLilyChantParser.g:1530:3: rule__NoteGroup__SyllablesAssignment_0_0_1_0
+            // InternalLilyChantParser.g:1503:2: ( rule__NoteGroup__SyllablesAssignment_0_0_1_0 )
+            // InternalLilyChantParser.g:1503:3: rule__NoteGroup__SyllablesAssignment_0_0_1_0
             {
             pushFollow(FOLLOW_2);
             rule__NoteGroup__SyllablesAssignment_0_0_1_0();
@@ -5080,14 +5001,14 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_0_0_1__1"
-    // InternalLilyChantParser.g:1538:1: rule__NoteGroup__Group_0_0_1__1 : rule__NoteGroup__Group_0_0_1__1__Impl ;
+    // InternalLilyChantParser.g:1511:1: rule__NoteGroup__Group_0_0_1__1 : rule__NoteGroup__Group_0_0_1__1__Impl ;
     public final void rule__NoteGroup__Group_0_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1542:1: ( rule__NoteGroup__Group_0_0_1__1__Impl )
-            // InternalLilyChantParser.g:1543:2: rule__NoteGroup__Group_0_0_1__1__Impl
+            // InternalLilyChantParser.g:1515:1: ( rule__NoteGroup__Group_0_0_1__1__Impl )
+            // InternalLilyChantParser.g:1516:2: rule__NoteGroup__Group_0_0_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NoteGroup__Group_0_0_1__1__Impl();
@@ -5113,23 +5034,23 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_0_0_1__1__Impl"
-    // InternalLilyChantParser.g:1549:1: rule__NoteGroup__Group_0_0_1__1__Impl : ( ( rule__NoteGroup__SyllablesAssignment_0_0_1_1 ) ) ;
+    // InternalLilyChantParser.g:1522:1: rule__NoteGroup__Group_0_0_1__1__Impl : ( ( rule__NoteGroup__SyllablesAssignment_0_0_1_1 ) ) ;
     public final void rule__NoteGroup__Group_0_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1553:1: ( ( ( rule__NoteGroup__SyllablesAssignment_0_0_1_1 ) ) )
-            // InternalLilyChantParser.g:1554:1: ( ( rule__NoteGroup__SyllablesAssignment_0_0_1_1 ) )
+            // InternalLilyChantParser.g:1526:1: ( ( ( rule__NoteGroup__SyllablesAssignment_0_0_1_1 ) ) )
+            // InternalLilyChantParser.g:1527:1: ( ( rule__NoteGroup__SyllablesAssignment_0_0_1_1 ) )
             {
-            // InternalLilyChantParser.g:1554:1: ( ( rule__NoteGroup__SyllablesAssignment_0_0_1_1 ) )
-            // InternalLilyChantParser.g:1555:2: ( rule__NoteGroup__SyllablesAssignment_0_0_1_1 )
+            // InternalLilyChantParser.g:1527:1: ( ( rule__NoteGroup__SyllablesAssignment_0_0_1_1 ) )
+            // InternalLilyChantParser.g:1528:2: ( rule__NoteGroup__SyllablesAssignment_0_0_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_0_1_1()); 
             }
-            // InternalLilyChantParser.g:1556:2: ( rule__NoteGroup__SyllablesAssignment_0_0_1_1 )
-            // InternalLilyChantParser.g:1556:3: rule__NoteGroup__SyllablesAssignment_0_0_1_1
+            // InternalLilyChantParser.g:1529:2: ( rule__NoteGroup__SyllablesAssignment_0_0_1_1 )
+            // InternalLilyChantParser.g:1529:3: rule__NoteGroup__SyllablesAssignment_0_0_1_1
             {
             pushFollow(FOLLOW_2);
             rule__NoteGroup__SyllablesAssignment_0_0_1_1();
@@ -5164,14 +5085,14 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_1__0"
-    // InternalLilyChantParser.g:1565:1: rule__NoteGroup__Group_1__0 : rule__NoteGroup__Group_1__0__Impl rule__NoteGroup__Group_1__1 ;
+    // InternalLilyChantParser.g:1538:1: rule__NoteGroup__Group_1__0 : rule__NoteGroup__Group_1__0__Impl rule__NoteGroup__Group_1__1 ;
     public final void rule__NoteGroup__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1569:1: ( rule__NoteGroup__Group_1__0__Impl rule__NoteGroup__Group_1__1 )
-            // InternalLilyChantParser.g:1570:2: rule__NoteGroup__Group_1__0__Impl rule__NoteGroup__Group_1__1
+            // InternalLilyChantParser.g:1542:1: ( rule__NoteGroup__Group_1__0__Impl rule__NoteGroup__Group_1__1 )
+            // InternalLilyChantParser.g:1543:2: rule__NoteGroup__Group_1__0__Impl rule__NoteGroup__Group_1__1
             {
             pushFollow(FOLLOW_23);
             rule__NoteGroup__Group_1__0__Impl();
@@ -5202,17 +5123,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_1__0__Impl"
-    // InternalLilyChantParser.g:1577:1: rule__NoteGroup__Group_1__0__Impl : ( RULE_START_NOTE_GROUP ) ;
+    // InternalLilyChantParser.g:1550:1: rule__NoteGroup__Group_1__0__Impl : ( RULE_START_NOTE_GROUP ) ;
     public final void rule__NoteGroup__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1581:1: ( ( RULE_START_NOTE_GROUP ) )
-            // InternalLilyChantParser.g:1582:1: ( RULE_START_NOTE_GROUP )
+            // InternalLilyChantParser.g:1554:1: ( ( RULE_START_NOTE_GROUP ) )
+            // InternalLilyChantParser.g:1555:1: ( RULE_START_NOTE_GROUP )
             {
-            // InternalLilyChantParser.g:1582:1: ( RULE_START_NOTE_GROUP )
-            // InternalLilyChantParser.g:1583:2: RULE_START_NOTE_GROUP
+            // InternalLilyChantParser.g:1555:1: ( RULE_START_NOTE_GROUP )
+            // InternalLilyChantParser.g:1556:2: RULE_START_NOTE_GROUP
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteGroupAccess().getSTART_NOTE_GROUPTerminalRuleCall_1_0()); 
@@ -5243,14 +5164,14 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_1__1"
-    // InternalLilyChantParser.g:1592:1: rule__NoteGroup__Group_1__1 : rule__NoteGroup__Group_1__1__Impl rule__NoteGroup__Group_1__2 ;
+    // InternalLilyChantParser.g:1565:1: rule__NoteGroup__Group_1__1 : rule__NoteGroup__Group_1__1__Impl rule__NoteGroup__Group_1__2 ;
     public final void rule__NoteGroup__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1596:1: ( rule__NoteGroup__Group_1__1__Impl rule__NoteGroup__Group_1__2 )
-            // InternalLilyChantParser.g:1597:2: rule__NoteGroup__Group_1__1__Impl rule__NoteGroup__Group_1__2
+            // InternalLilyChantParser.g:1569:1: ( rule__NoteGroup__Group_1__1__Impl rule__NoteGroup__Group_1__2 )
+            // InternalLilyChantParser.g:1570:2: rule__NoteGroup__Group_1__1__Impl rule__NoteGroup__Group_1__2
             {
             pushFollow(FOLLOW_24);
             rule__NoteGroup__Group_1__1__Impl();
@@ -5281,26 +5202,26 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_1__1__Impl"
-    // InternalLilyChantParser.g:1604:1: rule__NoteGroup__Group_1__1__Impl : ( ( ( rule__NoteGroup__SyllablesAssignment_1_1 ) ) ( ( rule__NoteGroup__SyllablesAssignment_1_1 )* ) ) ;
+    // InternalLilyChantParser.g:1577:1: rule__NoteGroup__Group_1__1__Impl : ( ( ( rule__NoteGroup__SyllablesAssignment_1_1 ) ) ( ( rule__NoteGroup__SyllablesAssignment_1_1 )* ) ) ;
     public final void rule__NoteGroup__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1608:1: ( ( ( ( rule__NoteGroup__SyllablesAssignment_1_1 ) ) ( ( rule__NoteGroup__SyllablesAssignment_1_1 )* ) ) )
-            // InternalLilyChantParser.g:1609:1: ( ( ( rule__NoteGroup__SyllablesAssignment_1_1 ) ) ( ( rule__NoteGroup__SyllablesAssignment_1_1 )* ) )
+            // InternalLilyChantParser.g:1581:1: ( ( ( ( rule__NoteGroup__SyllablesAssignment_1_1 ) ) ( ( rule__NoteGroup__SyllablesAssignment_1_1 )* ) ) )
+            // InternalLilyChantParser.g:1582:1: ( ( ( rule__NoteGroup__SyllablesAssignment_1_1 ) ) ( ( rule__NoteGroup__SyllablesAssignment_1_1 )* ) )
             {
-            // InternalLilyChantParser.g:1609:1: ( ( ( rule__NoteGroup__SyllablesAssignment_1_1 ) ) ( ( rule__NoteGroup__SyllablesAssignment_1_1 )* ) )
-            // InternalLilyChantParser.g:1610:2: ( ( rule__NoteGroup__SyllablesAssignment_1_1 ) ) ( ( rule__NoteGroup__SyllablesAssignment_1_1 )* )
+            // InternalLilyChantParser.g:1582:1: ( ( ( rule__NoteGroup__SyllablesAssignment_1_1 ) ) ( ( rule__NoteGroup__SyllablesAssignment_1_1 )* ) )
+            // InternalLilyChantParser.g:1583:2: ( ( rule__NoteGroup__SyllablesAssignment_1_1 ) ) ( ( rule__NoteGroup__SyllablesAssignment_1_1 )* )
             {
-            // InternalLilyChantParser.g:1610:2: ( ( rule__NoteGroup__SyllablesAssignment_1_1 ) )
-            // InternalLilyChantParser.g:1611:3: ( rule__NoteGroup__SyllablesAssignment_1_1 )
+            // InternalLilyChantParser.g:1583:2: ( ( rule__NoteGroup__SyllablesAssignment_1_1 ) )
+            // InternalLilyChantParser.g:1584:3: ( rule__NoteGroup__SyllablesAssignment_1_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_1_1()); 
             }
-            // InternalLilyChantParser.g:1612:3: ( rule__NoteGroup__SyllablesAssignment_1_1 )
-            // InternalLilyChantParser.g:1612:4: rule__NoteGroup__SyllablesAssignment_1_1
+            // InternalLilyChantParser.g:1585:3: ( rule__NoteGroup__SyllablesAssignment_1_1 )
+            // InternalLilyChantParser.g:1585:4: rule__NoteGroup__SyllablesAssignment_1_1
             {
             pushFollow(FOLLOW_25);
             rule__NoteGroup__SyllablesAssignment_1_1();
@@ -5316,13 +5237,13 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
             }
 
-            // InternalLilyChantParser.g:1615:2: ( ( rule__NoteGroup__SyllablesAssignment_1_1 )* )
-            // InternalLilyChantParser.g:1616:3: ( rule__NoteGroup__SyllablesAssignment_1_1 )*
+            // InternalLilyChantParser.g:1588:2: ( ( rule__NoteGroup__SyllablesAssignment_1_1 )* )
+            // InternalLilyChantParser.g:1589:3: ( rule__NoteGroup__SyllablesAssignment_1_1 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_1_1()); 
             }
-            // InternalLilyChantParser.g:1617:3: ( rule__NoteGroup__SyllablesAssignment_1_1 )*
+            // InternalLilyChantParser.g:1590:3: ( rule__NoteGroup__SyllablesAssignment_1_1 )*
             loop17:
             do {
                 int alt17=2;
@@ -5335,7 +5256,7 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
                 switch (alt17) {
             	case 1 :
-            	    // InternalLilyChantParser.g:1617:4: rule__NoteGroup__SyllablesAssignment_1_1
+            	    // InternalLilyChantParser.g:1590:4: rule__NoteGroup__SyllablesAssignment_1_1
             	    {
             	    pushFollow(FOLLOW_25);
             	    rule__NoteGroup__SyllablesAssignment_1_1();
@@ -5379,14 +5300,14 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_1__2"
-    // InternalLilyChantParser.g:1626:1: rule__NoteGroup__Group_1__2 : rule__NoteGroup__Group_1__2__Impl ;
+    // InternalLilyChantParser.g:1599:1: rule__NoteGroup__Group_1__2 : rule__NoteGroup__Group_1__2__Impl ;
     public final void rule__NoteGroup__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1630:1: ( rule__NoteGroup__Group_1__2__Impl )
-            // InternalLilyChantParser.g:1631:2: rule__NoteGroup__Group_1__2__Impl
+            // InternalLilyChantParser.g:1603:1: ( rule__NoteGroup__Group_1__2__Impl )
+            // InternalLilyChantParser.g:1604:2: rule__NoteGroup__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NoteGroup__Group_1__2__Impl();
@@ -5412,17 +5333,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__Group_1__2__Impl"
-    // InternalLilyChantParser.g:1637:1: rule__NoteGroup__Group_1__2__Impl : ( RULE_END_NOTE_GROUP ) ;
+    // InternalLilyChantParser.g:1610:1: rule__NoteGroup__Group_1__2__Impl : ( RULE_END_NOTE_GROUP ) ;
     public final void rule__NoteGroup__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1641:1: ( ( RULE_END_NOTE_GROUP ) )
-            // InternalLilyChantParser.g:1642:1: ( RULE_END_NOTE_GROUP )
+            // InternalLilyChantParser.g:1614:1: ( ( RULE_END_NOTE_GROUP ) )
+            // InternalLilyChantParser.g:1615:1: ( RULE_END_NOTE_GROUP )
             {
-            // InternalLilyChantParser.g:1642:1: ( RULE_END_NOTE_GROUP )
-            // InternalLilyChantParser.g:1643:2: RULE_END_NOTE_GROUP
+            // InternalLilyChantParser.g:1615:1: ( RULE_END_NOTE_GROUP )
+            // InternalLilyChantParser.g:1616:2: RULE_END_NOTE_GROUP
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteGroupAccess().getEND_NOTE_GROUPTerminalRuleCall_1_2()); 
@@ -5453,14 +5374,14 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Note__Group__0"
-    // InternalLilyChantParser.g:1653:1: rule__Note__Group__0 : rule__Note__Group__0__Impl rule__Note__Group__1 ;
+    // InternalLilyChantParser.g:1626:1: rule__Note__Group__0 : rule__Note__Group__0__Impl rule__Note__Group__1 ;
     public final void rule__Note__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1657:1: ( rule__Note__Group__0__Impl rule__Note__Group__1 )
-            // InternalLilyChantParser.g:1658:2: rule__Note__Group__0__Impl rule__Note__Group__1
+            // InternalLilyChantParser.g:1630:1: ( rule__Note__Group__0__Impl rule__Note__Group__1 )
+            // InternalLilyChantParser.g:1631:2: rule__Note__Group__0__Impl rule__Note__Group__1
             {
             pushFollow(FOLLOW_26);
             rule__Note__Group__0__Impl();
@@ -5491,17 +5412,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Note__Group__0__Impl"
-    // InternalLilyChantParser.g:1665:1: rule__Note__Group__0__Impl : ( RULE_ID ) ;
+    // InternalLilyChantParser.g:1638:1: rule__Note__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__Note__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1669:1: ( ( RULE_ID ) )
-            // InternalLilyChantParser.g:1670:1: ( RULE_ID )
+            // InternalLilyChantParser.g:1642:1: ( ( RULE_ID ) )
+            // InternalLilyChantParser.g:1643:1: ( RULE_ID )
             {
-            // InternalLilyChantParser.g:1670:1: ( RULE_ID )
-            // InternalLilyChantParser.g:1671:2: RULE_ID
+            // InternalLilyChantParser.g:1643:1: ( RULE_ID )
+            // InternalLilyChantParser.g:1644:2: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteAccess().getIDTerminalRuleCall_0()); 
@@ -5532,14 +5453,14 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Note__Group__1"
-    // InternalLilyChantParser.g:1680:1: rule__Note__Group__1 : rule__Note__Group__1__Impl ;
+    // InternalLilyChantParser.g:1653:1: rule__Note__Group__1 : rule__Note__Group__1__Impl ;
     public final void rule__Note__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1684:1: ( rule__Note__Group__1__Impl )
-            // InternalLilyChantParser.g:1685:2: rule__Note__Group__1__Impl
+            // InternalLilyChantParser.g:1657:1: ( rule__Note__Group__1__Impl )
+            // InternalLilyChantParser.g:1658:2: rule__Note__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Note__Group__1__Impl();
@@ -5565,22 +5486,22 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Note__Group__1__Impl"
-    // InternalLilyChantParser.g:1691:1: rule__Note__Group__1__Impl : ( ( RULE_DURATION )? ) ;
+    // InternalLilyChantParser.g:1664:1: rule__Note__Group__1__Impl : ( ( RULE_DURATION )? ) ;
     public final void rule__Note__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1695:1: ( ( ( RULE_DURATION )? ) )
-            // InternalLilyChantParser.g:1696:1: ( ( RULE_DURATION )? )
+            // InternalLilyChantParser.g:1668:1: ( ( ( RULE_DURATION )? ) )
+            // InternalLilyChantParser.g:1669:1: ( ( RULE_DURATION )? )
             {
-            // InternalLilyChantParser.g:1696:1: ( ( RULE_DURATION )? )
-            // InternalLilyChantParser.g:1697:2: ( RULE_DURATION )?
+            // InternalLilyChantParser.g:1669:1: ( ( RULE_DURATION )? )
+            // InternalLilyChantParser.g:1670:2: ( RULE_DURATION )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteAccess().getDURATIONTerminalRuleCall_1()); 
             }
-            // InternalLilyChantParser.g:1698:2: ( RULE_DURATION )?
+            // InternalLilyChantParser.g:1671:2: ( RULE_DURATION )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -5589,7 +5510,7 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
             }
             switch (alt18) {
                 case 1 :
-                    // InternalLilyChantParser.g:1698:3: RULE_DURATION
+                    // InternalLilyChantParser.g:1671:3: RULE_DURATION
                     {
                     match(input,RULE_DURATION,FOLLOW_2); if (state.failed) return ;
 
@@ -5623,17 +5544,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Script__TonesAssignment_0"
-    // InternalLilyChantParser.g:1707:1: rule__Script__TonesAssignment_0 : ( ruleTone ) ;
+    // InternalLilyChantParser.g:1680:1: rule__Script__TonesAssignment_0 : ( ruleTone ) ;
     public final void rule__Script__TonesAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1711:1: ( ( ruleTone ) )
-            // InternalLilyChantParser.g:1712:2: ( ruleTone )
+            // InternalLilyChantParser.g:1684:1: ( ( ruleTone ) )
+            // InternalLilyChantParser.g:1685:2: ( ruleTone )
             {
-            // InternalLilyChantParser.g:1712:2: ( ruleTone )
-            // InternalLilyChantParser.g:1713:3: ruleTone
+            // InternalLilyChantParser.g:1685:2: ( ruleTone )
+            // InternalLilyChantParser.g:1686:3: ruleTone
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getTonesToneParserRuleCall_0_0()); 
@@ -5668,17 +5589,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Script__ChantsAssignment_1"
-    // InternalLilyChantParser.g:1722:1: rule__Script__ChantsAssignment_1 : ( ruleChant ) ;
+    // InternalLilyChantParser.g:1695:1: rule__Script__ChantsAssignment_1 : ( ruleChant ) ;
     public final void rule__Script__ChantsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1726:1: ( ( ruleChant ) )
-            // InternalLilyChantParser.g:1727:2: ( ruleChant )
+            // InternalLilyChantParser.g:1699:1: ( ( ruleChant ) )
+            // InternalLilyChantParser.g:1700:2: ( ruleChant )
             {
-            // InternalLilyChantParser.g:1727:2: ( ruleChant )
-            // InternalLilyChantParser.g:1728:3: ruleChant
+            // InternalLilyChantParser.g:1700:2: ( ruleChant )
+            // InternalLilyChantParser.g:1701:3: ruleChant
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getScriptAccess().getChantsChantParserRuleCall_1_0()); 
@@ -5713,17 +5634,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Tone__NameAssignment_1"
-    // InternalLilyChantParser.g:1737:1: rule__Tone__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalLilyChantParser.g:1710:1: rule__Tone__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Tone__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1741:1: ( ( RULE_ID ) )
-            // InternalLilyChantParser.g:1742:2: ( RULE_ID )
+            // InternalLilyChantParser.g:1714:1: ( ( RULE_ID ) )
+            // InternalLilyChantParser.g:1715:2: ( RULE_ID )
             {
-            // InternalLilyChantParser.g:1742:2: ( RULE_ID )
-            // InternalLilyChantParser.g:1743:3: RULE_ID
+            // InternalLilyChantParser.g:1715:2: ( RULE_ID )
+            // InternalLilyChantParser.g:1716:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getToneAccess().getNameIDTerminalRuleCall_1_0()); 
@@ -5754,17 +5675,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Tone__VoiceNamesAssignment_5"
-    // InternalLilyChantParser.g:1752:1: rule__Tone__VoiceNamesAssignment_5 : ( ruleVoiceName ) ;
+    // InternalLilyChantParser.g:1725:1: rule__Tone__VoiceNamesAssignment_5 : ( ruleVoiceName ) ;
     public final void rule__Tone__VoiceNamesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1756:1: ( ( ruleVoiceName ) )
-            // InternalLilyChantParser.g:1757:2: ( ruleVoiceName )
+            // InternalLilyChantParser.g:1729:1: ( ( ruleVoiceName ) )
+            // InternalLilyChantParser.g:1730:2: ( ruleVoiceName )
             {
-            // InternalLilyChantParser.g:1757:2: ( ruleVoiceName )
-            // InternalLilyChantParser.g:1758:3: ruleVoiceName
+            // InternalLilyChantParser.g:1730:2: ( ruleVoiceName )
+            // InternalLilyChantParser.g:1731:3: ruleVoiceName
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getToneAccess().getVoiceNamesVoiceNameParserRuleCall_5_0()); 
@@ -5799,17 +5720,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Tone__PhrasesAssignment_7"
-    // InternalLilyChantParser.g:1767:1: rule__Tone__PhrasesAssignment_7 : ( ruleTonePhrase ) ;
+    // InternalLilyChantParser.g:1740:1: rule__Tone__PhrasesAssignment_7 : ( ruleTonePhrase ) ;
     public final void rule__Tone__PhrasesAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1771:1: ( ( ruleTonePhrase ) )
-            // InternalLilyChantParser.g:1772:2: ( ruleTonePhrase )
+            // InternalLilyChantParser.g:1744:1: ( ( ruleTonePhrase ) )
+            // InternalLilyChantParser.g:1745:2: ( ruleTonePhrase )
             {
-            // InternalLilyChantParser.g:1772:2: ( ruleTonePhrase )
-            // InternalLilyChantParser.g:1773:3: ruleTonePhrase
+            // InternalLilyChantParser.g:1745:2: ( ruleTonePhrase )
+            // InternalLilyChantParser.g:1746:3: ruleTonePhrase
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getToneAccess().getPhrasesTonePhraseParserRuleCall_7_0()); 
@@ -5844,17 +5765,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__VoiceName__NameAssignment"
-    // InternalLilyChantParser.g:1782:1: rule__VoiceName__NameAssignment : ( RULE_ID ) ;
+    // InternalLilyChantParser.g:1755:1: rule__VoiceName__NameAssignment : ( RULE_ID ) ;
     public final void rule__VoiceName__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1786:1: ( ( RULE_ID ) )
-            // InternalLilyChantParser.g:1787:2: ( RULE_ID )
+            // InternalLilyChantParser.g:1759:1: ( ( RULE_ID ) )
+            // InternalLilyChantParser.g:1760:2: ( RULE_ID )
             {
-            // InternalLilyChantParser.g:1787:2: ( RULE_ID )
-            // InternalLilyChantParser.g:1788:3: RULE_ID
+            // InternalLilyChantParser.g:1760:2: ( RULE_ID )
+            // InternalLilyChantParser.g:1761:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVoiceNameAccess().getNameIDTerminalRuleCall_0()); 
@@ -5885,17 +5806,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TonePhrase__NameAssignment_1"
-    // InternalLilyChantParser.g:1797:1: rule__TonePhrase__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalLilyChantParser.g:1770:1: rule__TonePhrase__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__TonePhrase__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1801:1: ( ( RULE_ID ) )
-            // InternalLilyChantParser.g:1802:2: ( RULE_ID )
+            // InternalLilyChantParser.g:1774:1: ( ( RULE_ID ) )
+            // InternalLilyChantParser.g:1775:2: ( RULE_ID )
             {
-            // InternalLilyChantParser.g:1802:2: ( RULE_ID )
-            // InternalLilyChantParser.g:1803:3: RULE_ID
+            // InternalLilyChantParser.g:1775:2: ( RULE_ID )
+            // InternalLilyChantParser.g:1776:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getTonePhraseAccess().getNameIDTerminalRuleCall_1_0()); 
@@ -5926,17 +5847,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TonePhrase__VoicesAssignment_3"
-    // InternalLilyChantParser.g:1812:1: rule__TonePhrase__VoicesAssignment_3 : ( ruleVoicePhrase ) ;
+    // InternalLilyChantParser.g:1785:1: rule__TonePhrase__VoicesAssignment_3 : ( ruleVoicePhrase ) ;
     public final void rule__TonePhrase__VoicesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1816:1: ( ( ruleVoicePhrase ) )
-            // InternalLilyChantParser.g:1817:2: ( ruleVoicePhrase )
+            // InternalLilyChantParser.g:1789:1: ( ( ruleVoicePhrase ) )
+            // InternalLilyChantParser.g:1790:2: ( ruleVoicePhrase )
             {
-            // InternalLilyChantParser.g:1817:2: ( ruleVoicePhrase )
-            // InternalLilyChantParser.g:1818:3: ruleVoicePhrase
+            // InternalLilyChantParser.g:1790:2: ( ruleVoicePhrase )
+            // InternalLilyChantParser.g:1791:3: ruleVoicePhrase
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getTonePhraseAccess().getVoicesVoicePhraseParserRuleCall_3_0()); 
@@ -5971,23 +5892,23 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__VoicePhrase__NameAssignment_1"
-    // InternalLilyChantParser.g:1827:1: rule__VoicePhrase__NameAssignment_1 : ( ( RULE_ID ) ) ;
+    // InternalLilyChantParser.g:1800:1: rule__VoicePhrase__NameAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__VoicePhrase__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1831:1: ( ( ( RULE_ID ) ) )
-            // InternalLilyChantParser.g:1832:2: ( ( RULE_ID ) )
+            // InternalLilyChantParser.g:1804:1: ( ( ( RULE_ID ) ) )
+            // InternalLilyChantParser.g:1805:2: ( ( RULE_ID ) )
             {
-            // InternalLilyChantParser.g:1832:2: ( ( RULE_ID ) )
-            // InternalLilyChantParser.g:1833:3: ( RULE_ID )
+            // InternalLilyChantParser.g:1805:2: ( ( RULE_ID ) )
+            // InternalLilyChantParser.g:1806:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVoicePhraseAccess().getNameVoiceNameCrossReference_1_0()); 
             }
-            // InternalLilyChantParser.g:1834:3: ( RULE_ID )
-            // InternalLilyChantParser.g:1835:4: RULE_ID
+            // InternalLilyChantParser.g:1807:3: ( RULE_ID )
+            // InternalLilyChantParser.g:1808:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVoicePhraseAccess().getNameVoiceNameIDTerminalRuleCall_1_0_1()); 
@@ -6024,17 +5945,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__VoicePhrase__NotesAssignment_3"
-    // InternalLilyChantParser.g:1846:1: rule__VoicePhrase__NotesAssignment_3 : ( ruleNote ) ;
+    // InternalLilyChantParser.g:1819:1: rule__VoicePhrase__NotesAssignment_3 : ( ruleNote ) ;
     public final void rule__VoicePhrase__NotesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1850:1: ( ( ruleNote ) )
-            // InternalLilyChantParser.g:1851:2: ( ruleNote )
+            // InternalLilyChantParser.g:1823:1: ( ( ruleNote ) )
+            // InternalLilyChantParser.g:1824:2: ( ruleNote )
             {
-            // InternalLilyChantParser.g:1851:2: ( ruleNote )
-            // InternalLilyChantParser.g:1852:3: ruleNote
+            // InternalLilyChantParser.g:1824:2: ( ruleNote )
+            // InternalLilyChantParser.g:1825:3: ruleNote
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVoicePhraseAccess().getNotesNoteParserRuleCall_3_0()); 
@@ -6069,17 +5990,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Chant__NameAssignment_1"
-    // InternalLilyChantParser.g:1861:1: rule__Chant__NameAssignment_1 : ( RULE_STRING ) ;
+    // InternalLilyChantParser.g:1834:1: rule__Chant__NameAssignment_1 : ( RULE_STRING ) ;
     public final void rule__Chant__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1865:1: ( ( RULE_STRING ) )
-            // InternalLilyChantParser.g:1866:2: ( RULE_STRING )
+            // InternalLilyChantParser.g:1838:1: ( ( RULE_STRING ) )
+            // InternalLilyChantParser.g:1839:2: ( RULE_STRING )
             {
-            // InternalLilyChantParser.g:1866:2: ( RULE_STRING )
-            // InternalLilyChantParser.g:1867:3: RULE_STRING
+            // InternalLilyChantParser.g:1839:2: ( RULE_STRING )
+            // InternalLilyChantParser.g:1840:3: RULE_STRING
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getChantAccess().getNameSTRINGTerminalRuleCall_1_0()); 
@@ -6110,23 +6031,23 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Chant__ToneAssignment_3"
-    // InternalLilyChantParser.g:1876:1: rule__Chant__ToneAssignment_3 : ( ( RULE_ID ) ) ;
+    // InternalLilyChantParser.g:1849:1: rule__Chant__ToneAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__Chant__ToneAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1880:1: ( ( ( RULE_ID ) ) )
-            // InternalLilyChantParser.g:1881:2: ( ( RULE_ID ) )
+            // InternalLilyChantParser.g:1853:1: ( ( ( RULE_ID ) ) )
+            // InternalLilyChantParser.g:1854:2: ( ( RULE_ID ) )
             {
-            // InternalLilyChantParser.g:1881:2: ( ( RULE_ID ) )
-            // InternalLilyChantParser.g:1882:3: ( RULE_ID )
+            // InternalLilyChantParser.g:1854:2: ( ( RULE_ID ) )
+            // InternalLilyChantParser.g:1855:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getChantAccess().getToneToneCrossReference_3_0()); 
             }
-            // InternalLilyChantParser.g:1883:3: ( RULE_ID )
-            // InternalLilyChantParser.g:1884:4: RULE_ID
+            // InternalLilyChantParser.g:1856:3: ( RULE_ID )
+            // InternalLilyChantParser.g:1857:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getChantAccess().getToneToneIDTerminalRuleCall_3_0_1()); 
@@ -6163,17 +6084,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Chant__PhrasesAssignment_5"
-    // InternalLilyChantParser.g:1895:1: rule__Chant__PhrasesAssignment_5 : ( ruleLyricPhrase ) ;
+    // InternalLilyChantParser.g:1868:1: rule__Chant__PhrasesAssignment_5 : ( ruleLyricPhrase ) ;
     public final void rule__Chant__PhrasesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1899:1: ( ( ruleLyricPhrase ) )
-            // InternalLilyChantParser.g:1900:2: ( ruleLyricPhrase )
+            // InternalLilyChantParser.g:1872:1: ( ( ruleLyricPhrase ) )
+            // InternalLilyChantParser.g:1873:2: ( ruleLyricPhrase )
             {
-            // InternalLilyChantParser.g:1900:2: ( ruleLyricPhrase )
-            // InternalLilyChantParser.g:1901:3: ruleLyricPhrase
+            // InternalLilyChantParser.g:1873:2: ( ruleLyricPhrase )
+            // InternalLilyChantParser.g:1874:3: ruleLyricPhrase
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getChantAccess().getPhrasesLyricPhraseParserRuleCall_5_0()); 
@@ -6207,37 +6128,37 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__Chant__PhrasesAssignment_5"
 
 
-    // $ANTLR start "rule__LyricPhrase__ExplicitPhraseAssignment_0_2"
-    // InternalLilyChantParser.g:1910:1: rule__LyricPhrase__ExplicitPhraseAssignment_0_2 : ( ( RULE_ID ) ) ;
-    public final void rule__LyricPhrase__ExplicitPhraseAssignment_0_2() throws RecognitionException {
+    // $ANTLR start "rule__LyricPhrase__ExplicitPhraseAssignment_0_1"
+    // InternalLilyChantParser.g:1883:1: rule__LyricPhrase__ExplicitPhraseAssignment_0_1 : ( ( RULE_ID ) ) ;
+    public final void rule__LyricPhrase__ExplicitPhraseAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1914:1: ( ( ( RULE_ID ) ) )
-            // InternalLilyChantParser.g:1915:2: ( ( RULE_ID ) )
+            // InternalLilyChantParser.g:1887:1: ( ( ( RULE_ID ) ) )
+            // InternalLilyChantParser.g:1888:2: ( ( RULE_ID ) )
             {
-            // InternalLilyChantParser.g:1915:2: ( ( RULE_ID ) )
-            // InternalLilyChantParser.g:1916:3: ( RULE_ID )
+            // InternalLilyChantParser.g:1888:2: ( ( RULE_ID ) )
+            // InternalLilyChantParser.g:1889:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLyricPhraseAccess().getExplicitPhraseTonePhraseCrossReference_0_2_0()); 
+               before(grammarAccess.getLyricPhraseAccess().getExplicitPhraseTonePhraseCrossReference_0_1_0()); 
             }
-            // InternalLilyChantParser.g:1917:3: ( RULE_ID )
-            // InternalLilyChantParser.g:1918:4: RULE_ID
+            // InternalLilyChantParser.g:1890:3: ( RULE_ID )
+            // InternalLilyChantParser.g:1891:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLyricPhraseAccess().getExplicitPhraseTonePhraseIDTerminalRuleCall_0_2_0_1()); 
+               before(grammarAccess.getLyricPhraseAccess().getExplicitPhraseTonePhraseIDTerminalRuleCall_0_1_0_1()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLyricPhraseAccess().getExplicitPhraseTonePhraseIDTerminalRuleCall_0_2_0_1()); 
+               after(grammarAccess.getLyricPhraseAccess().getExplicitPhraseTonePhraseIDTerminalRuleCall_0_1_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLyricPhraseAccess().getExplicitPhraseTonePhraseCrossReference_0_2_0()); 
+               after(grammarAccess.getLyricPhraseAccess().getExplicitPhraseTonePhraseCrossReference_0_1_0()); 
             }
 
             }
@@ -6257,21 +6178,21 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__LyricPhrase__ExplicitPhraseAssignment_0_2"
+    // $ANTLR end "rule__LyricPhrase__ExplicitPhraseAssignment_0_1"
 
 
     // $ANTLR start "rule__LyricPhrase__NoteGroupsAssignment_1"
-    // InternalLilyChantParser.g:1929:1: rule__LyricPhrase__NoteGroupsAssignment_1 : ( ruleNoteGroup ) ;
+    // InternalLilyChantParser.g:1902:1: rule__LyricPhrase__NoteGroupsAssignment_1 : ( ruleNoteGroup ) ;
     public final void rule__LyricPhrase__NoteGroupsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1933:1: ( ( ruleNoteGroup ) )
-            // InternalLilyChantParser.g:1934:2: ( ruleNoteGroup )
+            // InternalLilyChantParser.g:1906:1: ( ( ruleNoteGroup ) )
+            // InternalLilyChantParser.g:1907:2: ( ruleNoteGroup )
             {
-            // InternalLilyChantParser.g:1934:2: ( ruleNoteGroup )
-            // InternalLilyChantParser.g:1935:3: ruleNoteGroup
+            // InternalLilyChantParser.g:1907:2: ( ruleNoteGroup )
+            // InternalLilyChantParser.g:1908:3: ruleNoteGroup
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLyricPhraseAccess().getNoteGroupsNoteGroupParserRuleCall_1_0()); 
@@ -6306,17 +6227,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__LyricPhrase__BarAssignment_2"
-    // InternalLilyChantParser.g:1944:1: rule__LyricPhrase__BarAssignment_2 : ( ruleBarline ) ;
+    // InternalLilyChantParser.g:1917:1: rule__LyricPhrase__BarAssignment_2 : ( ruleBarline ) ;
     public final void rule__LyricPhrase__BarAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1948:1: ( ( ruleBarline ) )
-            // InternalLilyChantParser.g:1949:2: ( ruleBarline )
+            // InternalLilyChantParser.g:1921:1: ( ( ruleBarline ) )
+            // InternalLilyChantParser.g:1922:2: ( ruleBarline )
             {
-            // InternalLilyChantParser.g:1949:2: ( ruleBarline )
-            // InternalLilyChantParser.g:1950:3: ruleBarline
+            // InternalLilyChantParser.g:1922:2: ( ruleBarline )
+            // InternalLilyChantParser.g:1923:3: ruleBarline
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getLyricPhraseAccess().getBarBarlineEnumRuleCall_2_0()); 
@@ -6351,17 +6272,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__SyllablesAssignment_0_0_0_0"
-    // InternalLilyChantParser.g:1959:1: rule__NoteGroup__SyllablesAssignment_0_0_0_0 : ( RULE_ID ) ;
+    // InternalLilyChantParser.g:1932:1: rule__NoteGroup__SyllablesAssignment_0_0_0_0 : ( RULE_ID ) ;
     public final void rule__NoteGroup__SyllablesAssignment_0_0_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1963:1: ( ( RULE_ID ) )
-            // InternalLilyChantParser.g:1964:2: ( RULE_ID )
+            // InternalLilyChantParser.g:1936:1: ( ( RULE_ID ) )
+            // InternalLilyChantParser.g:1937:2: ( RULE_ID )
             {
-            // InternalLilyChantParser.g:1964:2: ( RULE_ID )
-            // InternalLilyChantParser.g:1965:3: RULE_ID
+            // InternalLilyChantParser.g:1937:2: ( RULE_ID )
+            // InternalLilyChantParser.g:1938:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteGroupAccess().getSyllablesIDTerminalRuleCall_0_0_0_0_0()); 
@@ -6392,17 +6313,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__SyllablesAssignment_0_0_0_1_0"
-    // InternalLilyChantParser.g:1974:1: rule__NoteGroup__SyllablesAssignment_0_0_0_1_0 : ( RULE_HYPHEN ) ;
+    // InternalLilyChantParser.g:1947:1: rule__NoteGroup__SyllablesAssignment_0_0_0_1_0 : ( RULE_HYPHEN ) ;
     public final void rule__NoteGroup__SyllablesAssignment_0_0_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1978:1: ( ( RULE_HYPHEN ) )
-            // InternalLilyChantParser.g:1979:2: ( RULE_HYPHEN )
+            // InternalLilyChantParser.g:1951:1: ( ( RULE_HYPHEN ) )
+            // InternalLilyChantParser.g:1952:2: ( RULE_HYPHEN )
             {
-            // InternalLilyChantParser.g:1979:2: ( RULE_HYPHEN )
-            // InternalLilyChantParser.g:1980:3: RULE_HYPHEN
+            // InternalLilyChantParser.g:1952:2: ( RULE_HYPHEN )
+            // InternalLilyChantParser.g:1953:3: RULE_HYPHEN
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteGroupAccess().getSyllablesHYPHENTerminalRuleCall_0_0_0_1_0_0()); 
@@ -6433,17 +6354,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__SyllablesAssignment_0_0_1_0"
-    // InternalLilyChantParser.g:1989:1: rule__NoteGroup__SyllablesAssignment_0_0_1_0 : ( RULE_HYPHEN ) ;
+    // InternalLilyChantParser.g:1962:1: rule__NoteGroup__SyllablesAssignment_0_0_1_0 : ( RULE_HYPHEN ) ;
     public final void rule__NoteGroup__SyllablesAssignment_0_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1993:1: ( ( RULE_HYPHEN ) )
-            // InternalLilyChantParser.g:1994:2: ( RULE_HYPHEN )
+            // InternalLilyChantParser.g:1966:1: ( ( RULE_HYPHEN ) )
+            // InternalLilyChantParser.g:1967:2: ( RULE_HYPHEN )
             {
-            // InternalLilyChantParser.g:1994:2: ( RULE_HYPHEN )
-            // InternalLilyChantParser.g:1995:3: RULE_HYPHEN
+            // InternalLilyChantParser.g:1967:2: ( RULE_HYPHEN )
+            // InternalLilyChantParser.g:1968:3: RULE_HYPHEN
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteGroupAccess().getSyllablesHYPHENTerminalRuleCall_0_0_1_0_0()); 
@@ -6474,17 +6395,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__SyllablesAssignment_0_0_1_1"
-    // InternalLilyChantParser.g:2004:1: rule__NoteGroup__SyllablesAssignment_0_0_1_1 : ( RULE_ID ) ;
+    // InternalLilyChantParser.g:1977:1: rule__NoteGroup__SyllablesAssignment_0_0_1_1 : ( RULE_ID ) ;
     public final void rule__NoteGroup__SyllablesAssignment_0_0_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:2008:1: ( ( RULE_ID ) )
-            // InternalLilyChantParser.g:2009:2: ( RULE_ID )
+            // InternalLilyChantParser.g:1981:1: ( ( RULE_ID ) )
+            // InternalLilyChantParser.g:1982:2: ( RULE_ID )
             {
-            // InternalLilyChantParser.g:2009:2: ( RULE_ID )
-            // InternalLilyChantParser.g:2010:3: RULE_ID
+            // InternalLilyChantParser.g:1982:2: ( RULE_ID )
+            // InternalLilyChantParser.g:1983:3: RULE_ID
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteGroupAccess().getSyllablesIDTerminalRuleCall_0_0_1_1_0()); 
@@ -6515,17 +6436,17 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__SyllablesAssignment_0_1"
-    // InternalLilyChantParser.g:2019:1: rule__NoteGroup__SyllablesAssignment_0_1 : ( RULE_EXTENDER ) ;
+    // InternalLilyChantParser.g:1992:1: rule__NoteGroup__SyllablesAssignment_0_1 : ( RULE_EXTENDER ) ;
     public final void rule__NoteGroup__SyllablesAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:2023:1: ( ( RULE_EXTENDER ) )
-            // InternalLilyChantParser.g:2024:2: ( RULE_EXTENDER )
+            // InternalLilyChantParser.g:1996:1: ( ( RULE_EXTENDER ) )
+            // InternalLilyChantParser.g:1997:2: ( RULE_EXTENDER )
             {
-            // InternalLilyChantParser.g:2024:2: ( RULE_EXTENDER )
-            // InternalLilyChantParser.g:2025:3: RULE_EXTENDER
+            // InternalLilyChantParser.g:1997:2: ( RULE_EXTENDER )
+            // InternalLilyChantParser.g:1998:3: RULE_EXTENDER
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteGroupAccess().getSyllablesEXTENDERTerminalRuleCall_0_1_0()); 
@@ -6556,23 +6477,23 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__NoteGroup__SyllablesAssignment_1_1"
-    // InternalLilyChantParser.g:2034:1: rule__NoteGroup__SyllablesAssignment_1_1 : ( ( rule__NoteGroup__SyllablesAlternatives_1_1_0 ) ) ;
+    // InternalLilyChantParser.g:2007:1: rule__NoteGroup__SyllablesAssignment_1_1 : ( ( rule__NoteGroup__SyllablesAlternatives_1_1_0 ) ) ;
     public final void rule__NoteGroup__SyllablesAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:2038:1: ( ( ( rule__NoteGroup__SyllablesAlternatives_1_1_0 ) ) )
-            // InternalLilyChantParser.g:2039:2: ( ( rule__NoteGroup__SyllablesAlternatives_1_1_0 ) )
+            // InternalLilyChantParser.g:2011:1: ( ( ( rule__NoteGroup__SyllablesAlternatives_1_1_0 ) ) )
+            // InternalLilyChantParser.g:2012:2: ( ( rule__NoteGroup__SyllablesAlternatives_1_1_0 ) )
             {
-            // InternalLilyChantParser.g:2039:2: ( ( rule__NoteGroup__SyllablesAlternatives_1_1_0 ) )
-            // InternalLilyChantParser.g:2040:3: ( rule__NoteGroup__SyllablesAlternatives_1_1_0 )
+            // InternalLilyChantParser.g:2012:2: ( ( rule__NoteGroup__SyllablesAlternatives_1_1_0 ) )
+            // InternalLilyChantParser.g:2013:3: ( rule__NoteGroup__SyllablesAlternatives_1_1_0 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteGroupAccess().getSyllablesAlternatives_1_1_0()); 
             }
-            // InternalLilyChantParser.g:2041:3: ( rule__NoteGroup__SyllablesAlternatives_1_1_0 )
-            // InternalLilyChantParser.g:2041:4: rule__NoteGroup__SyllablesAlternatives_1_1_0
+            // InternalLilyChantParser.g:2014:3: ( rule__NoteGroup__SyllablesAlternatives_1_1_0 )
+            // InternalLilyChantParser.g:2014:4: rule__NoteGroup__SyllablesAlternatives_1_1_0
             {
             pushFollow(FOLLOW_2);
             rule__NoteGroup__SyllablesAlternatives_1_1_0();
@@ -6607,8 +6528,8 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
     // $ANTLR start synpred16_InternalLilyChantParser
     public final void synpred16_InternalLilyChantParser_fragment() throws RecognitionException {   
-        // InternalLilyChantParser.g:1475:3: ( rule__NoteGroup__Group_0_0_0_1__0 )
-        // InternalLilyChantParser.g:1475:3: rule__NoteGroup__Group_0_0_0_1__0
+        // InternalLilyChantParser.g:1448:3: ( rule__NoteGroup__Group_0_0_0_1__0 )
+        // InternalLilyChantParser.g:1448:3: rule__NoteGroup__Group_0_0_0_1__0
         {
         pushFollow(FOLLOW_2);
         rule__NoteGroup__Group_0_0_0_1__0();

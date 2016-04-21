@@ -482,10 +482,6 @@ ruleLyricPhrase returns [EObject current=null]
 			{
 				newLeafNode(otherlv_0, grammarAccess.getLyricPhraseAccess().getLeftParenthesisKeyword_0_0());
 			}
-			otherlv_1=Phrase
-			{
-				newLeafNode(otherlv_1, grammarAccess.getLyricPhraseAccess().getPhraseKeyword_0_1());
-			}
 			(
 				(
 					{
@@ -493,15 +489,15 @@ ruleLyricPhrase returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getLyricPhraseRule());
 						}
 					}
-					otherlv_2=RULE_ID
+					otherlv_1=RULE_ID
 					{
-						newLeafNode(otherlv_2, grammarAccess.getLyricPhraseAccess().getExplicitPhraseTonePhraseCrossReference_0_2_0());
+						newLeafNode(otherlv_1, grammarAccess.getLyricPhraseAccess().getExplicitPhraseTonePhraseCrossReference_0_1_0());
 					}
 				)
 			)
-			otherlv_3=RightParenthesis
+			otherlv_2=RightParenthesis
 			{
-				newLeafNode(otherlv_3, grammarAccess.getLyricPhraseAccess().getRightParenthesisKeyword_0_3());
+				newLeafNode(otherlv_2, grammarAccess.getLyricPhraseAccess().getRightParenthesisKeyword_0_2());
 			}
 		)?
 		(
@@ -509,7 +505,7 @@ ruleLyricPhrase returns [EObject current=null]
 				{
 					newCompositeNode(grammarAccess.getLyricPhraseAccess().getNoteGroupsNoteGroupParserRuleCall_1_0());
 				}
-				lv_noteGroups_4_0=ruleNoteGroup
+				lv_noteGroups_3_0=ruleNoteGroup
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getLyricPhraseRule());
@@ -517,7 +513,7 @@ ruleLyricPhrase returns [EObject current=null]
 					add(
 						$current,
 						"noteGroups",
-						lv_noteGroups_4_0,
+						lv_noteGroups_3_0,
 						"org.lilychant.LilyChant.NoteGroup");
 					afterParserOrEnumRuleCall();
 				}
@@ -528,7 +524,7 @@ ruleLyricPhrase returns [EObject current=null]
 				{
 					newCompositeNode(grammarAccess.getLyricPhraseAccess().getBarBarlineEnumRuleCall_2_0());
 				}
-				lv_bar_5_0=ruleBarline
+				lv_bar_4_0=ruleBarline
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getLyricPhraseRule());
@@ -536,7 +532,7 @@ ruleLyricPhrase returns [EObject current=null]
 					set(
 						$current,
 						"bar",
-						lv_bar_5_0,
+						lv_bar_4_0,
 						"org.lilychant.LilyChant.Barline");
 					afterParserOrEnumRuleCall();
 				}
