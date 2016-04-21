@@ -31,15 +31,24 @@ class LilyChantGenerator extends AbstractGenerator {
 	}
 		
 	def getVoiceNotes(Script model, Chant chant, VoiceName voiceName) {
-		var currentPhraseIndex = 0
+		var currentPhraseIndex = -1
 		var result = new ArrayList<String>()
 
 		for (lyricPhrase : chant.phrases) {
 			if (lyricPhrase.explicitPhrase != null) {
 				currentPhraseIndex = chant.tone.phrases.indexOf(lyricPhrase.explicitPhrase)
+				println(" "+currentPhraseIndex)
 			} else {
 				currentPhraseIndex = (currentPhraseIndex+1) % chant.tone.phrases.length
+				// Special case for 'final' phrase
+				while (
+					chant.tone.phrases.get(currentPhraseIndex).name.toLowerCase.endsWith("final")
+					&& currentPhraseIndex != 0
+				) {
+					currentPhraseIndex = (currentPhraseIndex+1) % chant.tone.phrases.length
+				}
 			}
+			println("!! "+currentPhraseIndex)
 			val notePhrase = chant.tone.phrases.get(currentPhraseIndex)
 			
 			var VoicePhrase targetVoice
@@ -52,7 +61,7 @@ class LilyChantGenerator extends AbstractGenerator {
 			// Match the notes to the syllables
 			var noteIndex = 0
 			for (noteGroup : lyricPhrase.noteGroups) {
-				println('''«FOR syllable : noteGroup.syllables» «syllable»«ENDFOR»''')
+//				println('''«FOR syllable : noteGroup.syllables» «syllable»«ENDFOR»''')
 				var syllableIndex = 0
 				var inSlur = false
 				while (syllableIndex < noteGroup.syllables.length) {
@@ -113,7 +122,7 @@ class LilyChantGenerator extends AbstractGenerator {
 
 	def private generateVoices(Script model, Chant chant) {
 		'''
-		«FOR voice : model.tones.get(0).voiceNames»
+		«FOR voice : chant.tone.voiceNames»
 		«voice.name» = {
 			«FOR note : getVoiceNotes(model, chant, voice)»«note» «ENDFOR»
 		}
