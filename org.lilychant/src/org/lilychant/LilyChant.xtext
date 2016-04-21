@@ -68,7 +68,7 @@ Chant:
 ;
 
 LyricPhrase:
-	('(' 'Phrase' explicitPhrase=[TonePhrase] ')')?
+	('(' explicitPhrase=[TonePhrase] ')')?
 	noteGroups+=NoteGroup+
 	bar=Barline
 ;
