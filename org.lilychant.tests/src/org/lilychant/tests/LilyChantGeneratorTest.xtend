@@ -43,6 +43,7 @@ class LilyChantGeneratorTest {
 			Chant Tone one
 				A--no--ther test |
 				A--no--ther test |
+				A--no--ther test ||
 			''')
 		model.assertParsedWithoutError;
 		
