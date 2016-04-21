@@ -9,7 +9,6 @@ import org.eclipse.xtext.junit4.validation.ValidationTestHelper
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.lilychant.lilyChantScript.NoteGroup
 import org.lilychant.lilyChantScript.Script
 
 @RunWith(XtextRunner)
@@ -20,9 +19,9 @@ class LilyChantParsingTest{
 	@Inject ValidationTestHelper validationHelper;
 
 	@Test 
-	def void loadModel() {
+	def void basicTest() {
 		val result = parseHelper.parse('''
-			Tone one key A
+			Tone one
 				Voices
 					Sop Alt
 				Phrase one
@@ -32,14 +31,13 @@ class LilyChantParsingTest{
 						g4 a b c2
 				Phrase two
 					Voice Sop
-						d4 e f1
+						d4 e e f1
 					Voice Alt
 						g4 a b c2
-			Chant "test" Tone one key F
-				Phrase one
-					<This--s> is__ <a test>
-				Phrase two
-					<This--s> is__ <a test>
+			Chant "test" Tone one
+				(Phrase one) <This--s> is__ <a test> |
+				Words in phrase two |
+				(Phrase two) ^Phrase two again ||
 			''')
 		
 		result.assertParsedWithoutError;
@@ -48,7 +46,7 @@ class LilyChantParsingTest{
 	@Test
 	def void cyrillicTest() {
 		parseHelper.parse('''
-			Tone one key A
+			Tone one
 				Voices
 					Sop Alt
 				Phrase one
@@ -61,11 +59,9 @@ class LilyChantParsingTest{
 						d4
 					Voice Alt
 						g4
-			Chant "test" Tone one key F
-				Phrase one
-					<English text>
-				Phrase two
-					<Руский техт>
+			Chant "test" Tone one
+				<English text> |
+				<Руский техт> |
 			''').assertParsedWithoutError
 	}
 

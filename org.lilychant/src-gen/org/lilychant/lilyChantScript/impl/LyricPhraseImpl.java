@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.lilychant.lilyChantScript.Barline;
 import org.lilychant.lilyChantScript.LilyChantScriptPackage;
 import org.lilychant.lilyChantScript.LyricPhrase;
 import org.lilychant.lilyChantScript.NoteGroup;
@@ -31,9 +32,9 @@ import org.lilychant.lilyChantScript.TonePhrase;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.lilychant.lilyChantScript.impl.LyricPhraseImpl#getNotes <em>Notes</em>}</li>
+ *   <li>{@link org.lilychant.lilyChantScript.impl.LyricPhraseImpl#getExplicitPhrase <em>Explicit Phrase</em>}</li>
  *   <li>{@link org.lilychant.lilyChantScript.impl.LyricPhraseImpl#getNoteGroups <em>Note Groups</em>}</li>
- *   <li>{@link org.lilychant.lilyChantScript.impl.LyricPhraseImpl#isDoubleBar <em>Double Bar</em>}</li>
+ *   <li>{@link org.lilychant.lilyChantScript.impl.LyricPhraseImpl#getBar <em>Bar</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,14 +43,14 @@ import org.lilychant.lilyChantScript.TonePhrase;
 public class LyricPhraseImpl extends MinimalEObjectImpl.Container implements LyricPhrase
 {
   /**
-   * The cached value of the '{@link #getNotes() <em>Notes</em>}' reference.
+   * The cached value of the '{@link #getExplicitPhrase() <em>Explicit Phrase</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNotes()
+   * @see #getExplicitPhrase()
    * @generated
    * @ordered
    */
-  protected TonePhrase notes;
+  protected TonePhrase explicitPhrase;
 
   /**
    * The cached value of the '{@link #getNoteGroups() <em>Note Groups</em>}' containment reference list.
@@ -62,24 +63,24 @@ public class LyricPhraseImpl extends MinimalEObjectImpl.Container implements Lyr
   protected EList<NoteGroup> noteGroups;
 
   /**
-   * The default value of the '{@link #isDoubleBar() <em>Double Bar</em>}' attribute.
+   * The default value of the '{@link #getBar() <em>Bar</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isDoubleBar()
+   * @see #getBar()
    * @generated
    * @ordered
    */
-  protected static final boolean DOUBLE_BAR_EDEFAULT = false;
+  protected static final Barline BAR_EDEFAULT = Barline.SINGLE;
 
   /**
-   * The cached value of the '{@link #isDoubleBar() <em>Double Bar</em>}' attribute.
+   * The cached value of the '{@link #getBar() <em>Bar</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isDoubleBar()
+   * @see #getBar()
    * @generated
    * @ordered
    */
-  protected boolean doubleBar = DOUBLE_BAR_EDEFAULT;
+  protected Barline bar = BAR_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -107,19 +108,19 @@ public class LyricPhraseImpl extends MinimalEObjectImpl.Container implements Lyr
    * <!-- end-user-doc -->
    * @generated
    */
-  public TonePhrase getNotes()
+  public TonePhrase getExplicitPhrase()
   {
-    if (notes != null && notes.eIsProxy())
+    if (explicitPhrase != null && explicitPhrase.eIsProxy())
     {
-      InternalEObject oldNotes = (InternalEObject)notes;
-      notes = (TonePhrase)eResolveProxy(oldNotes);
-      if (notes != oldNotes)
+      InternalEObject oldExplicitPhrase = (InternalEObject)explicitPhrase;
+      explicitPhrase = (TonePhrase)eResolveProxy(oldExplicitPhrase);
+      if (explicitPhrase != oldExplicitPhrase)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LilyChantScriptPackage.LYRIC_PHRASE__NOTES, oldNotes, notes));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, LilyChantScriptPackage.LYRIC_PHRASE__EXPLICIT_PHRASE, oldExplicitPhrase, explicitPhrase));
       }
     }
-    return notes;
+    return explicitPhrase;
   }
 
   /**
@@ -127,9 +128,9 @@ public class LyricPhraseImpl extends MinimalEObjectImpl.Container implements Lyr
    * <!-- end-user-doc -->
    * @generated
    */
-  public TonePhrase basicGetNotes()
+  public TonePhrase basicGetExplicitPhrase()
   {
-    return notes;
+    return explicitPhrase;
   }
 
   /**
@@ -137,12 +138,12 @@ public class LyricPhraseImpl extends MinimalEObjectImpl.Container implements Lyr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setNotes(TonePhrase newNotes)
+  public void setExplicitPhrase(TonePhrase newExplicitPhrase)
   {
-    TonePhrase oldNotes = notes;
-    notes = newNotes;
+    TonePhrase oldExplicitPhrase = explicitPhrase;
+    explicitPhrase = newExplicitPhrase;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilyChantScriptPackage.LYRIC_PHRASE__NOTES, oldNotes, notes));
+      eNotify(new ENotificationImpl(this, Notification.SET, LilyChantScriptPackage.LYRIC_PHRASE__EXPLICIT_PHRASE, oldExplicitPhrase, explicitPhrase));
   }
 
   /**
@@ -164,9 +165,9 @@ public class LyricPhraseImpl extends MinimalEObjectImpl.Container implements Lyr
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isDoubleBar()
+  public Barline getBar()
   {
-    return doubleBar;
+    return bar;
   }
 
   /**
@@ -174,12 +175,12 @@ public class LyricPhraseImpl extends MinimalEObjectImpl.Container implements Lyr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDoubleBar(boolean newDoubleBar)
+  public void setBar(Barline newBar)
   {
-    boolean oldDoubleBar = doubleBar;
-    doubleBar = newDoubleBar;
+    Barline oldBar = bar;
+    bar = newBar == null ? BAR_EDEFAULT : newBar;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilyChantScriptPackage.LYRIC_PHRASE__DOUBLE_BAR, oldDoubleBar, doubleBar));
+      eNotify(new ENotificationImpl(this, Notification.SET, LilyChantScriptPackage.LYRIC_PHRASE__BAR, oldBar, bar));
   }
 
   /**
@@ -208,13 +209,13 @@ public class LyricPhraseImpl extends MinimalEObjectImpl.Container implements Lyr
   {
     switch (featureID)
     {
-      case LilyChantScriptPackage.LYRIC_PHRASE__NOTES:
-        if (resolve) return getNotes();
-        return basicGetNotes();
+      case LilyChantScriptPackage.LYRIC_PHRASE__EXPLICIT_PHRASE:
+        if (resolve) return getExplicitPhrase();
+        return basicGetExplicitPhrase();
       case LilyChantScriptPackage.LYRIC_PHRASE__NOTE_GROUPS:
         return getNoteGroups();
-      case LilyChantScriptPackage.LYRIC_PHRASE__DOUBLE_BAR:
-        return isDoubleBar();
+      case LilyChantScriptPackage.LYRIC_PHRASE__BAR:
+        return getBar();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -230,15 +231,15 @@ public class LyricPhraseImpl extends MinimalEObjectImpl.Container implements Lyr
   {
     switch (featureID)
     {
-      case LilyChantScriptPackage.LYRIC_PHRASE__NOTES:
-        setNotes((TonePhrase)newValue);
+      case LilyChantScriptPackage.LYRIC_PHRASE__EXPLICIT_PHRASE:
+        setExplicitPhrase((TonePhrase)newValue);
         return;
       case LilyChantScriptPackage.LYRIC_PHRASE__NOTE_GROUPS:
         getNoteGroups().clear();
         getNoteGroups().addAll((Collection<? extends NoteGroup>)newValue);
         return;
-      case LilyChantScriptPackage.LYRIC_PHRASE__DOUBLE_BAR:
-        setDoubleBar((Boolean)newValue);
+      case LilyChantScriptPackage.LYRIC_PHRASE__BAR:
+        setBar((Barline)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -254,14 +255,14 @@ public class LyricPhraseImpl extends MinimalEObjectImpl.Container implements Lyr
   {
     switch (featureID)
     {
-      case LilyChantScriptPackage.LYRIC_PHRASE__NOTES:
-        setNotes((TonePhrase)null);
+      case LilyChantScriptPackage.LYRIC_PHRASE__EXPLICIT_PHRASE:
+        setExplicitPhrase((TonePhrase)null);
         return;
       case LilyChantScriptPackage.LYRIC_PHRASE__NOTE_GROUPS:
         getNoteGroups().clear();
         return;
-      case LilyChantScriptPackage.LYRIC_PHRASE__DOUBLE_BAR:
-        setDoubleBar(DOUBLE_BAR_EDEFAULT);
+      case LilyChantScriptPackage.LYRIC_PHRASE__BAR:
+        setBar(BAR_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -277,12 +278,12 @@ public class LyricPhraseImpl extends MinimalEObjectImpl.Container implements Lyr
   {
     switch (featureID)
     {
-      case LilyChantScriptPackage.LYRIC_PHRASE__NOTES:
-        return notes != null;
+      case LilyChantScriptPackage.LYRIC_PHRASE__EXPLICIT_PHRASE:
+        return explicitPhrase != null;
       case LilyChantScriptPackage.LYRIC_PHRASE__NOTE_GROUPS:
         return noteGroups != null && !noteGroups.isEmpty();
-      case LilyChantScriptPackage.LYRIC_PHRASE__DOUBLE_BAR:
-        return doubleBar != DOUBLE_BAR_EDEFAULT;
+      case LilyChantScriptPackage.LYRIC_PHRASE__BAR:
+        return bar != BAR_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -298,8 +299,8 @@ public class LyricPhraseImpl extends MinimalEObjectImpl.Container implements Lyr
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (doubleBar: ");
-    result.append(doubleBar);
+    result.append(" (bar: ");
+    result.append(bar);
     result.append(')');
     return result.toString();
   }

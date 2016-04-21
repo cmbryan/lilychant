@@ -5,6 +5,7 @@ package org.lilychant.lilyChantScript;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -114,22 +115,13 @@ public interface LilyChantScriptPackage extends EPackage
   int TONE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Key</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TONE__KEY = 1;
-
-  /**
    * The feature id for the '<em><b>Voice Names</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TONE__VOICE_NAMES = 2;
+  int TONE__VOICE_NAMES = 1;
 
   /**
    * The feature id for the '<em><b>Phrases</b></em>' containment reference list.
@@ -138,7 +130,7 @@ public interface LilyChantScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TONE__PHRASES = 3;
+  int TONE__PHRASES = 2;
 
   /**
    * The number of structural features of the '<em>Tone</em>' class.
@@ -147,7 +139,7 @@ public interface LilyChantScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TONE_FEATURE_COUNT = 4;
+  int TONE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.lilychant.lilyChantScript.impl.VoiceNameImpl <em>Voice Name</em>}' class.
@@ -280,22 +272,13 @@ public interface LilyChantScriptPackage extends EPackage
   int CHANT__TONE = 1;
 
   /**
-   * The feature id for the '<em><b>Key</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHANT__KEY = 2;
-
-  /**
    * The feature id for the '<em><b>Phrases</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CHANT__PHRASES = 3;
+  int CHANT__PHRASES = 2;
 
   /**
    * The number of structural features of the '<em>Chant</em>' class.
@@ -304,7 +287,7 @@ public interface LilyChantScriptPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CHANT_FEATURE_COUNT = 4;
+  int CHANT_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.lilychant.lilyChantScript.impl.LyricPhraseImpl <em>Lyric Phrase</em>}' class.
@@ -317,13 +300,13 @@ public interface LilyChantScriptPackage extends EPackage
   int LYRIC_PHRASE = 6;
 
   /**
-   * The feature id for the '<em><b>Notes</b></em>' reference.
+   * The feature id for the '<em><b>Explicit Phrase</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LYRIC_PHRASE__NOTES = 0;
+  int LYRIC_PHRASE__EXPLICIT_PHRASE = 0;
 
   /**
    * The feature id for the '<em><b>Note Groups</b></em>' containment reference list.
@@ -335,13 +318,13 @@ public interface LilyChantScriptPackage extends EPackage
   int LYRIC_PHRASE__NOTE_GROUPS = 1;
 
   /**
-   * The feature id for the '<em><b>Double Bar</b></em>' attribute.
+   * The feature id for the '<em><b>Bar</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LYRIC_PHRASE__DOUBLE_BAR = 2;
+  int LYRIC_PHRASE__BAR = 2;
 
   /**
    * The number of structural features of the '<em>Lyric Phrase</em>' class.
@@ -379,6 +362,16 @@ public interface LilyChantScriptPackage extends EPackage
    * @ordered
    */
   int NOTE_GROUP_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.lilychant.lilyChantScript.Barline <em>Barline</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.lilychant.lilyChantScript.Barline
+   * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getBarline()
+   * @generated
+   */
+  int BARLINE = 8;
 
 
   /**
@@ -433,17 +426,6 @@ public interface LilyChantScriptPackage extends EPackage
    * @generated
    */
   EAttribute getTone_Name();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.lilychant.lilyChantScript.Tone#getKey <em>Key</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Key</em>'.
-   * @see org.lilychant.lilyChantScript.Tone#getKey()
-   * @see #getTone()
-   * @generated
-   */
-  EAttribute getTone_Key();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.lilychant.lilyChantScript.Tone#getVoiceNames <em>Voice Names</em>}'.
@@ -585,17 +567,6 @@ public interface LilyChantScriptPackage extends EPackage
   EReference getChant_Tone();
 
   /**
-   * Returns the meta object for the attribute '{@link org.lilychant.lilyChantScript.Chant#getKey <em>Key</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Key</em>'.
-   * @see org.lilychant.lilyChantScript.Chant#getKey()
-   * @see #getChant()
-   * @generated
-   */
-  EAttribute getChant_Key();
-
-  /**
    * Returns the meta object for the containment reference list '{@link org.lilychant.lilyChantScript.Chant#getPhrases <em>Phrases</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -617,15 +588,15 @@ public interface LilyChantScriptPackage extends EPackage
   EClass getLyricPhrase();
 
   /**
-   * Returns the meta object for the reference '{@link org.lilychant.lilyChantScript.LyricPhrase#getNotes <em>Notes</em>}'.
+   * Returns the meta object for the reference '{@link org.lilychant.lilyChantScript.LyricPhrase#getExplicitPhrase <em>Explicit Phrase</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Notes</em>'.
-   * @see org.lilychant.lilyChantScript.LyricPhrase#getNotes()
+   * @return the meta object for the reference '<em>Explicit Phrase</em>'.
+   * @see org.lilychant.lilyChantScript.LyricPhrase#getExplicitPhrase()
    * @see #getLyricPhrase()
    * @generated
    */
-  EReference getLyricPhrase_Notes();
+  EReference getLyricPhrase_ExplicitPhrase();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.lilychant.lilyChantScript.LyricPhrase#getNoteGroups <em>Note Groups</em>}'.
@@ -639,15 +610,15 @@ public interface LilyChantScriptPackage extends EPackage
   EReference getLyricPhrase_NoteGroups();
 
   /**
-   * Returns the meta object for the attribute '{@link org.lilychant.lilyChantScript.LyricPhrase#isDoubleBar <em>Double Bar</em>}'.
+   * Returns the meta object for the attribute '{@link org.lilychant.lilyChantScript.LyricPhrase#getBar <em>Bar</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Double Bar</em>'.
-   * @see org.lilychant.lilyChantScript.LyricPhrase#isDoubleBar()
+   * @return the meta object for the attribute '<em>Bar</em>'.
+   * @see org.lilychant.lilyChantScript.LyricPhrase#getBar()
    * @see #getLyricPhrase()
    * @generated
    */
-  EAttribute getLyricPhrase_DoubleBar();
+  EAttribute getLyricPhrase_Bar();
 
   /**
    * Returns the meta object for class '{@link org.lilychant.lilyChantScript.NoteGroup <em>Note Group</em>}'.
@@ -669,6 +640,16 @@ public interface LilyChantScriptPackage extends EPackage
    * @generated
    */
   EAttribute getNoteGroup_Syllables();
+
+  /**
+   * Returns the meta object for enum '{@link org.lilychant.lilyChantScript.Barline <em>Barline</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Barline</em>'.
+   * @see org.lilychant.lilyChantScript.Barline
+   * @generated
+   */
+  EEnum getBarline();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -736,14 +717,6 @@ public interface LilyChantScriptPackage extends EPackage
      * @generated
      */
     EAttribute TONE__NAME = eINSTANCE.getTone_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TONE__KEY = eINSTANCE.getTone_Key();
 
     /**
      * The meta object literal for the '<em><b>Voice Names</b></em>' containment reference list feature.
@@ -858,14 +831,6 @@ public interface LilyChantScriptPackage extends EPackage
     EReference CHANT__TONE = eINSTANCE.getChant_Tone();
 
     /**
-     * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CHANT__KEY = eINSTANCE.getChant_Key();
-
-    /**
      * The meta object literal for the '<em><b>Phrases</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -884,12 +849,12 @@ public interface LilyChantScriptPackage extends EPackage
     EClass LYRIC_PHRASE = eINSTANCE.getLyricPhrase();
 
     /**
-     * The meta object literal for the '<em><b>Notes</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Explicit Phrase</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LYRIC_PHRASE__NOTES = eINSTANCE.getLyricPhrase_Notes();
+    EReference LYRIC_PHRASE__EXPLICIT_PHRASE = eINSTANCE.getLyricPhrase_ExplicitPhrase();
 
     /**
      * The meta object literal for the '<em><b>Note Groups</b></em>' containment reference list feature.
@@ -900,12 +865,12 @@ public interface LilyChantScriptPackage extends EPackage
     EReference LYRIC_PHRASE__NOTE_GROUPS = eINSTANCE.getLyricPhrase_NoteGroups();
 
     /**
-     * The meta object literal for the '<em><b>Double Bar</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Bar</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LYRIC_PHRASE__DOUBLE_BAR = eINSTANCE.getLyricPhrase_DoubleBar();
+    EAttribute LYRIC_PHRASE__BAR = eINSTANCE.getLyricPhrase_Bar();
 
     /**
      * The meta object literal for the '{@link org.lilychant.lilyChantScript.impl.NoteGroupImpl <em>Note Group</em>}' class.
@@ -924,6 +889,16 @@ public interface LilyChantScriptPackage extends EPackage
      * @generated
      */
     EAttribute NOTE_GROUP__SYLLABLES = eINSTANCE.getNoteGroup_Syllables();
+
+    /**
+     * The meta object literal for the '{@link org.lilychant.lilyChantScript.Barline <em>Barline</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.lilychant.lilyChantScript.Barline
+     * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getBarline()
+     * @generated
+     */
+    EEnum BARLINE = eINSTANCE.getBarline();
 
   }
 

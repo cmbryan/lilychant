@@ -73,7 +73,7 @@ public class LilyChantSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Chant returns Chant
 	 *
 	 * Constraint:
-	 *     (name=STRING tone=[Tone|ID] key=ID phrases+=LyricPhrase+)
+	 *     (name=STRING? tone=[Tone|ID] phrases+=LyricPhrase+)
 	 */
 	protected void sequence_Chant(ISerializationContext context, Chant semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -85,7 +85,7 @@ public class LilyChantSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     LyricPhrase returns LyricPhrase
 	 *
 	 * Constraint:
-	 *     (notes=[TonePhrase|ID] noteGroups+=NoteGroup+ doubleBar?='||'?)
+	 *     (explicitPhrase=[TonePhrase|ID]? noteGroups+=NoteGroup+ bar=Barline)
 	 */
 	protected void sequence_LyricPhrase(ISerializationContext context, LyricPhrase semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -133,7 +133,7 @@ public class LilyChantSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Tone returns Tone
 	 *
 	 * Constraint:
-	 *     (name=ID key=ID voiceNames+=VoiceName+ phrases+=TonePhrase+)
+	 *     (name=ID voiceNames+=VoiceName+ phrases+=TonePhrase+)
 	 */
 	protected void sequence_Tone(ISerializationContext context, Tone semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -2,7 +2,6 @@ package org.lilychant.tests
 
 import com.google.inject.Inject
 import org.eclipse.emf.ecore.EObject
-import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator2
 import org.eclipse.xtext.generator.InMemoryFileSystemAccess
 import org.eclipse.xtext.junit4.InjectWith
@@ -25,7 +24,7 @@ class LilyChantGeneratorTest {
 	@Test 
 	def void basicGenerationTest() {
 		val model = parseHelper.parse('''
-			Tone one in A
+			Tone one
 				Voices
 					Sop Bass
 				Phrase one
@@ -38,22 +37,18 @@ class LilyChantGeneratorTest {
 						a4 g f e1
 					Voice Bass
 						f4 e d c1
-			Chant in Tone one in F
-				Phrase one
-					This __ <is a> test
-				Phrase two
-					This __ __ <is a ve -- ry long test>
-			Chant in Tone one in F
-				Phrase one
-					A--no--ther test
-				Phrase two
-					A--no--ther test
+			Chant Tone one
+				This __ <is a> test |
+				This __ __ <is a ve -- ry long test> |
+			Chant Tone one
+				A--no--ther test |
+				A--no--ther test |
 			''')
 		model.assertParsedWithoutError;
 		
 		val fsa = new InMemoryFileSystemAccess()
 		generator.doGenerate(model.eResource, fsa, null)
-//		println(fsa.textFiles)
+		println(fsa.textFiles)
 		
 		// Assert one output file
 		Assert.assertEquals(1, fsa.textFiles.size)

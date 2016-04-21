@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.lilychant.lilyChantScript.Tone#getName <em>Name</em>}</li>
- *   <li>{@link org.lilychant.lilyChantScript.Tone#getKey <em>Key</em>}</li>
  *   <li>{@link org.lilychant.lilyChantScript.Tone#getVoiceNames <em>Voice Names</em>}</li>
  *   <li>{@link org.lilychant.lilyChantScript.Tone#getPhrases <em>Phrases</em>}</li>
  * </ul>
@@ -53,32 +52,6 @@ public interface Tone extends EObject
    * @generated
    */
   void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Key</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Key</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Key</em>' attribute.
-   * @see #setKey(String)
-   * @see org.lilychant.lilyChantScript.LilyChantScriptPackage#getTone_Key()
-   * @model
-   * @generated
-   */
-  String getKey();
-
-  /**
-   * Sets the value of the '{@link org.lilychant.lilyChantScript.Tone#getKey <em>Key</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Key</em>' attribute.
-   * @see #getKey()
-   * @generated
-   */
-  void setKey(String value);
 
   /**
    * Returns the value of the '<em><b>Voice Names</b></em>' containment reference list.

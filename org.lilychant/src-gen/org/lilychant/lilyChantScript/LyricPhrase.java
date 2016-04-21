@@ -15,9 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.lilychant.lilyChantScript.LyricPhrase#getNotes <em>Notes</em>}</li>
+ *   <li>{@link org.lilychant.lilyChantScript.LyricPhrase#getExplicitPhrase <em>Explicit Phrase</em>}</li>
  *   <li>{@link org.lilychant.lilyChantScript.LyricPhrase#getNoteGroups <em>Note Groups</em>}</li>
- *   <li>{@link org.lilychant.lilyChantScript.LyricPhrase#isDoubleBar <em>Double Bar</em>}</li>
+ *   <li>{@link org.lilychant.lilyChantScript.LyricPhrase#getBar <em>Bar</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,30 +28,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface LyricPhrase extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Notes</b></em>' reference.
+   * Returns the value of the '<em><b>Explicit Phrase</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Notes</em>' reference isn't clear,
+   * If the meaning of the '<em>Explicit Phrase</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Notes</em>' reference.
-   * @see #setNotes(TonePhrase)
-   * @see org.lilychant.lilyChantScript.LilyChantScriptPackage#getLyricPhrase_Notes()
+   * @return the value of the '<em>Explicit Phrase</em>' reference.
+   * @see #setExplicitPhrase(TonePhrase)
+   * @see org.lilychant.lilyChantScript.LilyChantScriptPackage#getLyricPhrase_ExplicitPhrase()
    * @model
    * @generated
    */
-  TonePhrase getNotes();
+  TonePhrase getExplicitPhrase();
 
   /**
-   * Sets the value of the '{@link org.lilychant.lilyChantScript.LyricPhrase#getNotes <em>Notes</em>}' reference.
+   * Sets the value of the '{@link org.lilychant.lilyChantScript.LyricPhrase#getExplicitPhrase <em>Explicit Phrase</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Notes</em>' reference.
-   * @see #getNotes()
+   * @param value the new value of the '<em>Explicit Phrase</em>' reference.
+   * @see #getExplicitPhrase()
    * @generated
    */
-  void setNotes(TonePhrase value);
+  void setExplicitPhrase(TonePhrase value);
 
   /**
    * Returns the value of the '<em><b>Note Groups</b></em>' containment reference list.
@@ -70,29 +70,32 @@ public interface LyricPhrase extends EObject
   EList<NoteGroup> getNoteGroups();
 
   /**
-   * Returns the value of the '<em><b>Double Bar</b></em>' attribute.
+   * Returns the value of the '<em><b>Bar</b></em>' attribute.
+   * The literals are from the enumeration {@link org.lilychant.lilyChantScript.Barline}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Double Bar</em>' attribute isn't clear,
+   * If the meaning of the '<em>Bar</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Double Bar</em>' attribute.
-   * @see #setDoubleBar(boolean)
-   * @see org.lilychant.lilyChantScript.LilyChantScriptPackage#getLyricPhrase_DoubleBar()
+   * @return the value of the '<em>Bar</em>' attribute.
+   * @see org.lilychant.lilyChantScript.Barline
+   * @see #setBar(Barline)
+   * @see org.lilychant.lilyChantScript.LilyChantScriptPackage#getLyricPhrase_Bar()
    * @model
    * @generated
    */
-  boolean isDoubleBar();
+  Barline getBar();
 
   /**
-   * Sets the value of the '{@link org.lilychant.lilyChantScript.LyricPhrase#isDoubleBar <em>Double Bar</em>}' attribute.
+   * Sets the value of the '{@link org.lilychant.lilyChantScript.LyricPhrase#getBar <em>Bar</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Double Bar</em>' attribute.
-   * @see #isDoubleBar()
+   * @param value the new value of the '<em>Bar</em>' attribute.
+   * @see org.lilychant.lilyChantScript.Barline
+   * @see #getBar()
    * @generated
    */
-  void setDoubleBar(boolean value);
+  void setBar(Barline value);
 
 } // LyricPhrase

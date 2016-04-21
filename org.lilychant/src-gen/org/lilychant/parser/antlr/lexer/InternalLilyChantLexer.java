@@ -12,27 +12,29 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalLilyChantLexer extends Lexer {
-    public static final int RULE_DURATION=13;
-    public static final int RULE_ID=11;
-    public static final int Key=9;
-    public static final int VerticalLineVerticalLine=10;
-    public static final int RULE_BEGIN=18;
-    public static final int RULE_ANY_OTHER=23;
+    public static final int RULE_DURATION=15;
+    public static final int RULE_ID=13;
+    public static final int VerticalLineVerticalLine=9;
+    public static final int RightParenthesis=11;
+    public static final int RULE_BEGIN=20;
+    public static final int RULE_ANY_OTHER=25;
     public static final int Phrase=4;
     public static final int Voices=5;
+    public static final int LeftParenthesis=10;
     public static final int Chant=6;
-    public static final int RULE_SL_COMMENT=21;
+    public static final int RULE_SL_COMMENT=23;
     public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=20;
-    public static final int RULE_STRING=12;
-    public static final int RULE_HYPHEN=14;
+    public static final int RULE_ML_COMMENT=22;
+    public static final int RULE_STRING=14;
+    public static final int RULE_HYPHEN=16;
     public static final int Voice=7;
-    public static final int RULE_END=19;
-    public static final int RULE_END_NOTE_GROUP=17;
+    public static final int VerticalLine=12;
+    public static final int RULE_END=21;
+    public static final int RULE_END_NOTE_GROUP=19;
     public static final int Tone=8;
-    public static final int RULE_EXTENDER=15;
-    public static final int RULE_WS=22;
-    public static final int RULE_START_NOTE_GROUP=16;
+    public static final int RULE_EXTENDER=17;
+    public static final int RULE_WS=24;
+    public static final int RULE_START_NOTE_GROUP=18;
 
     // delegates
     // delegators
@@ -152,34 +154,13 @@ public class InternalLilyChantLexer extends Lexer {
     }
     // $ANTLR end "Tone"
 
-    // $ANTLR start "Key"
-    public final void mKey() throws RecognitionException {
-        try {
-            int _type = Key;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLilyChantLexer.g:24:5: ( 'key' )
-            // InternalLilyChantLexer.g:24:7: 'key'
-            {
-            match("key"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "Key"
-
     // $ANTLR start "VerticalLineVerticalLine"
     public final void mVerticalLineVerticalLine() throws RecognitionException {
         try {
             int _type = VerticalLineVerticalLine;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLilyChantLexer.g:26:26: ( '||' )
-            // InternalLilyChantLexer.g:26:28: '||'
+            // InternalLilyChantLexer.g:24:26: ( '||' )
+            // InternalLilyChantLexer.g:24:28: '||'
             {
             match("||"); 
 
@@ -194,15 +175,75 @@ public class InternalLilyChantLexer extends Lexer {
     }
     // $ANTLR end "VerticalLineVerticalLine"
 
+    // $ANTLR start "LeftParenthesis"
+    public final void mLeftParenthesis() throws RecognitionException {
+        try {
+            int _type = LeftParenthesis;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalLilyChantLexer.g:26:17: ( '(' )
+            // InternalLilyChantLexer.g:26:19: '('
+            {
+            match('('); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "LeftParenthesis"
+
+    // $ANTLR start "RightParenthesis"
+    public final void mRightParenthesis() throws RecognitionException {
+        try {
+            int _type = RightParenthesis;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalLilyChantLexer.g:28:18: ( ')' )
+            // InternalLilyChantLexer.g:28:20: ')'
+            {
+            match(')'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RightParenthesis"
+
+    // $ANTLR start "VerticalLine"
+    public final void mVerticalLine() throws RecognitionException {
+        try {
+            int _type = VerticalLine;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // InternalLilyChantLexer.g:30:14: ( '|' )
+            // InternalLilyChantLexer.g:30:16: '|'
+            {
+            match('|'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "VerticalLine"
+
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLilyChantLexer.g:30:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '\\u0400' .. '\\u04FF' | ',' | '\\'' | ';' | '.' | ':' )* )
-            // InternalLilyChantLexer.g:30:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '\\u0400' .. '\\u04FF' | ',' | '\\'' | ';' | '.' | ':' )*
+            // InternalLilyChantLexer.g:34:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '\\u0400' .. '\\u04FF' | ',' | '\\'' | ';' | '.' )* )
+            // InternalLilyChantLexer.g:34:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '\\u0400' .. '\\u04FF' | ',' | '\\'' | ';' | '.' )*
             {
-            // InternalLilyChantLexer.g:30:11: ( '^' )?
+            // InternalLilyChantLexer.g:34:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -211,7 +252,7 @@ public class InternalLilyChantLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalLilyChantLexer.g:30:11: '^'
+                    // InternalLilyChantLexer.g:34:11: '^'
                     {
                     match('^'); 
 
@@ -220,13 +261,13 @@ public class InternalLilyChantLexer extends Lexer {
 
             }
 
-            // InternalLilyChantLexer.g:30:16: ( 'a' .. 'z' | 'A' .. 'Z' | '\\u0400' .. '\\u04FF' | ',' | '\\'' | ';' | '.' | ':' )*
+            // InternalLilyChantLexer.g:34:16: ( 'a' .. 'z' | 'A' .. 'Z' | '\\u0400' .. '\\u04FF' | ',' | '\\'' | ';' | '.' )*
             loop2:
             do {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0=='\''||LA2_0==','||LA2_0=='.'||(LA2_0>=':' && LA2_0<=';')||(LA2_0>='A' && LA2_0<='Z')||(LA2_0>='a' && LA2_0<='z')||(LA2_0>='\u0400' && LA2_0<='\u04FF')) ) {
+                if ( (LA2_0=='\''||LA2_0==','||LA2_0=='.'||LA2_0==';'||(LA2_0>='A' && LA2_0<='Z')||(LA2_0>='a' && LA2_0<='z')||(LA2_0>='\u0400' && LA2_0<='\u04FF')) ) {
                     alt2=1;
                 }
 
@@ -235,7 +276,7 @@ public class InternalLilyChantLexer extends Lexer {
             	case 1 :
             	    // InternalLilyChantLexer.g:
             	    {
-            	    if ( input.LA(1)=='\''||input.LA(1)==','||input.LA(1)=='.'||(input.LA(1)>=':' && input.LA(1)<=';')||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u0400' && input.LA(1)<='\u04FF') ) {
+            	    if ( input.LA(1)=='\''||input.LA(1)==','||input.LA(1)=='.'||input.LA(1)==';'||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u0400' && input.LA(1)<='\u04FF') ) {
             	        input.consume();
 
             	    }
@@ -269,10 +310,10 @@ public class InternalLilyChantLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLilyChantLexer.g:32:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalLilyChantLexer.g:32:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalLilyChantLexer.g:36:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalLilyChantLexer.g:36:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalLilyChantLexer.g:32:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalLilyChantLexer.g:36:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -290,10 +331,10 @@ public class InternalLilyChantLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // InternalLilyChantLexer.g:32:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalLilyChantLexer.g:36:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalLilyChantLexer.g:32:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalLilyChantLexer.g:36:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop3:
                     do {
                         int alt3=3;
@@ -309,7 +350,7 @@ public class InternalLilyChantLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // InternalLilyChantLexer.g:32:21: '\\\\' .
+                    	    // InternalLilyChantLexer.g:36:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -317,7 +358,7 @@ public class InternalLilyChantLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalLilyChantLexer.g:32:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalLilyChantLexer.g:36:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -342,10 +383,10 @@ public class InternalLilyChantLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalLilyChantLexer.g:32:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalLilyChantLexer.g:36:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalLilyChantLexer.g:32:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalLilyChantLexer.g:36:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -361,7 +402,7 @@ public class InternalLilyChantLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalLilyChantLexer.g:32:54: '\\\\' .
+                    	    // InternalLilyChantLexer.g:36:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -369,7 +410,7 @@ public class InternalLilyChantLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalLilyChantLexer.g:32:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalLilyChantLexer.g:36:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -412,10 +453,10 @@ public class InternalLilyChantLexer extends Lexer {
         try {
             int _type = RULE_DURATION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLilyChantLexer.g:34:15: ( ( '1' | '2' | '4' | '8' | '16' | '\\breve' )+ )
-            // InternalLilyChantLexer.g:34:17: ( '1' | '2' | '4' | '8' | '16' | '\\breve' )+
+            // InternalLilyChantLexer.g:38:15: ( ( '1' | '2' | '4' | '8' | '16' | '\\breve' )+ )
+            // InternalLilyChantLexer.g:38:17: ( '1' | '2' | '4' | '8' | '16' | '\\breve' )+
             {
-            // InternalLilyChantLexer.g:34:17: ( '1' | '2' | '4' | '8' | '16' | '\\breve' )+
+            // InternalLilyChantLexer.g:38:17: ( '1' | '2' | '4' | '8' | '16' | '\\breve' )+
             int cnt6=0;
             loop6:
             do {
@@ -460,35 +501,35 @@ public class InternalLilyChantLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalLilyChantLexer.g:34:18: '1'
+            	    // InternalLilyChantLexer.g:38:18: '1'
             	    {
             	    match('1'); 
 
             	    }
             	    break;
             	case 2 :
-            	    // InternalLilyChantLexer.g:34:22: '2'
+            	    // InternalLilyChantLexer.g:38:22: '2'
             	    {
             	    match('2'); 
 
             	    }
             	    break;
             	case 3 :
-            	    // InternalLilyChantLexer.g:34:26: '4'
+            	    // InternalLilyChantLexer.g:38:26: '4'
             	    {
             	    match('4'); 
 
             	    }
             	    break;
             	case 4 :
-            	    // InternalLilyChantLexer.g:34:30: '8'
+            	    // InternalLilyChantLexer.g:38:30: '8'
             	    {
             	    match('8'); 
 
             	    }
             	    break;
             	case 5 :
-            	    // InternalLilyChantLexer.g:34:34: '16'
+            	    // InternalLilyChantLexer.g:38:34: '16'
             	    {
             	    match("16"); 
 
@@ -496,7 +537,7 @@ public class InternalLilyChantLexer extends Lexer {
             	    }
             	    break;
             	case 6 :
-            	    // InternalLilyChantLexer.g:34:39: '\\breve'
+            	    // InternalLilyChantLexer.g:38:39: '\\breve'
             	    {
             	    match("\breve"); 
 
@@ -529,8 +570,8 @@ public class InternalLilyChantLexer extends Lexer {
         try {
             int _type = RULE_HYPHEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLilyChantLexer.g:36:13: ( '--' )
-            // InternalLilyChantLexer.g:36:15: '--'
+            // InternalLilyChantLexer.g:40:13: ( '--' )
+            // InternalLilyChantLexer.g:40:15: '--'
             {
             match("--"); 
 
@@ -550,8 +591,8 @@ public class InternalLilyChantLexer extends Lexer {
         try {
             int _type = RULE_EXTENDER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLilyChantLexer.g:38:15: ( '__' )
-            // InternalLilyChantLexer.g:38:17: '__'
+            // InternalLilyChantLexer.g:42:15: ( '__' )
+            // InternalLilyChantLexer.g:42:17: '__'
             {
             match("__"); 
 
@@ -571,8 +612,8 @@ public class InternalLilyChantLexer extends Lexer {
         try {
             int _type = RULE_START_NOTE_GROUP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLilyChantLexer.g:40:23: ( '<' )
-            // InternalLilyChantLexer.g:40:25: '<'
+            // InternalLilyChantLexer.g:44:23: ( '<' )
+            // InternalLilyChantLexer.g:44:25: '<'
             {
             match('<'); 
 
@@ -591,8 +632,8 @@ public class InternalLilyChantLexer extends Lexer {
         try {
             int _type = RULE_END_NOTE_GROUP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLilyChantLexer.g:42:21: ( '>' )
-            // InternalLilyChantLexer.g:42:23: '>'
+            // InternalLilyChantLexer.g:46:21: ( '>' )
+            // InternalLilyChantLexer.g:46:23: '>'
             {
             match('>'); 
 
@@ -609,8 +650,8 @@ public class InternalLilyChantLexer extends Lexer {
     // $ANTLR start "RULE_BEGIN"
     public final void mRULE_BEGIN() throws RecognitionException {
         try {
-            // InternalLilyChantLexer.g:44:21: ()
-            // InternalLilyChantLexer.g:44:23: 
+            // InternalLilyChantLexer.g:48:21: ()
+            // InternalLilyChantLexer.g:48:23: 
             {
             }
 
@@ -623,8 +664,8 @@ public class InternalLilyChantLexer extends Lexer {
     // $ANTLR start "RULE_END"
     public final void mRULE_END() throws RecognitionException {
         try {
-            // InternalLilyChantLexer.g:46:19: ()
-            // InternalLilyChantLexer.g:46:21: 
+            // InternalLilyChantLexer.g:50:19: ()
+            // InternalLilyChantLexer.g:50:21: 
             {
             }
 
@@ -639,12 +680,12 @@ public class InternalLilyChantLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLilyChantLexer.g:48:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalLilyChantLexer.g:48:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalLilyChantLexer.g:52:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalLilyChantLexer.g:52:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalLilyChantLexer.g:48:24: ( options {greedy=false; } : . )*
+            // InternalLilyChantLexer.g:52:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -669,7 +710,7 @@ public class InternalLilyChantLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalLilyChantLexer.g:48:52: .
+            	    // InternalLilyChantLexer.g:52:52: .
             	    {
             	    matchAny(); 
 
@@ -699,12 +740,12 @@ public class InternalLilyChantLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLilyChantLexer.g:50:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalLilyChantLexer.g:50:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalLilyChantLexer.g:54:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalLilyChantLexer.g:54:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalLilyChantLexer.g:50:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalLilyChantLexer.g:54:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -717,7 +758,7 @@ public class InternalLilyChantLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalLilyChantLexer.g:50:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalLilyChantLexer.g:54:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -737,7 +778,7 @@ public class InternalLilyChantLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalLilyChantLexer.g:50:40: ( ( '\\r' )? '\\n' )?
+            // InternalLilyChantLexer.g:54:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -746,9 +787,9 @@ public class InternalLilyChantLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalLilyChantLexer.g:50:41: ( '\\r' )? '\\n'
+                    // InternalLilyChantLexer.g:54:41: ( '\\r' )? '\\n'
                     {
-                    // InternalLilyChantLexer.g:50:41: ( '\\r' )?
+                    // InternalLilyChantLexer.g:54:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -757,7 +798,7 @@ public class InternalLilyChantLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalLilyChantLexer.g:50:41: '\\r'
+                            // InternalLilyChantLexer.g:54:41: '\\r'
                             {
                             match('\r'); 
 
@@ -789,10 +830,10 @@ public class InternalLilyChantLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLilyChantLexer.g:52:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalLilyChantLexer.g:52:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalLilyChantLexer.g:56:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalLilyChantLexer.g:56:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalLilyChantLexer.g:52:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalLilyChantLexer.g:56:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -846,8 +887,8 @@ public class InternalLilyChantLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLilyChantLexer.g:54:16: ( . )
-            // InternalLilyChantLexer.g:54:18: .
+            // InternalLilyChantLexer.g:58:16: ( . )
+            // InternalLilyChantLexer.g:58:18: .
             {
             matchAny(); 
 
@@ -862,8 +903,8 @@ public class InternalLilyChantLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // InternalLilyChantLexer.g:1:8: ( Phrase | Voices | Chant | Voice | Tone | Key | VerticalLineVerticalLine | RULE_ID | RULE_STRING | RULE_DURATION | RULE_HYPHEN | RULE_EXTENDER | RULE_START_NOTE_GROUP | RULE_END_NOTE_GROUP | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=18;
+        // InternalLilyChantLexer.g:1:8: ( Phrase | Voices | Chant | Voice | Tone | VerticalLineVerticalLine | LeftParenthesis | RightParenthesis | VerticalLine | RULE_ID | RULE_STRING | RULE_DURATION | RULE_HYPHEN | RULE_EXTENDER | RULE_START_NOTE_GROUP | RULE_END_NOTE_GROUP | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=20;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -902,91 +943,105 @@ public class InternalLilyChantLexer extends Lexer {
                 }
                 break;
             case 6 :
-                // InternalLilyChantLexer.g:1:41: Key
-                {
-                mKey(); 
-
-                }
-                break;
-            case 7 :
-                // InternalLilyChantLexer.g:1:45: VerticalLineVerticalLine
+                // InternalLilyChantLexer.g:1:41: VerticalLineVerticalLine
                 {
                 mVerticalLineVerticalLine(); 
 
                 }
                 break;
+            case 7 :
+                // InternalLilyChantLexer.g:1:66: LeftParenthesis
+                {
+                mLeftParenthesis(); 
+
+                }
+                break;
             case 8 :
-                // InternalLilyChantLexer.g:1:70: RULE_ID
+                // InternalLilyChantLexer.g:1:82: RightParenthesis
+                {
+                mRightParenthesis(); 
+
+                }
+                break;
+            case 9 :
+                // InternalLilyChantLexer.g:1:99: VerticalLine
+                {
+                mVerticalLine(); 
+
+                }
+                break;
+            case 10 :
+                // InternalLilyChantLexer.g:1:112: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 9 :
-                // InternalLilyChantLexer.g:1:78: RULE_STRING
+            case 11 :
+                // InternalLilyChantLexer.g:1:120: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 10 :
-                // InternalLilyChantLexer.g:1:90: RULE_DURATION
+            case 12 :
+                // InternalLilyChantLexer.g:1:132: RULE_DURATION
                 {
                 mRULE_DURATION(); 
 
                 }
                 break;
-            case 11 :
-                // InternalLilyChantLexer.g:1:104: RULE_HYPHEN
+            case 13 :
+                // InternalLilyChantLexer.g:1:146: RULE_HYPHEN
                 {
                 mRULE_HYPHEN(); 
 
                 }
                 break;
-            case 12 :
-                // InternalLilyChantLexer.g:1:116: RULE_EXTENDER
+            case 14 :
+                // InternalLilyChantLexer.g:1:158: RULE_EXTENDER
                 {
                 mRULE_EXTENDER(); 
 
                 }
                 break;
-            case 13 :
-                // InternalLilyChantLexer.g:1:130: RULE_START_NOTE_GROUP
+            case 15 :
+                // InternalLilyChantLexer.g:1:172: RULE_START_NOTE_GROUP
                 {
                 mRULE_START_NOTE_GROUP(); 
 
                 }
                 break;
-            case 14 :
-                // InternalLilyChantLexer.g:1:152: RULE_END_NOTE_GROUP
+            case 16 :
+                // InternalLilyChantLexer.g:1:194: RULE_END_NOTE_GROUP
                 {
                 mRULE_END_NOTE_GROUP(); 
 
                 }
                 break;
-            case 15 :
-                // InternalLilyChantLexer.g:1:172: RULE_ML_COMMENT
+            case 17 :
+                // InternalLilyChantLexer.g:1:214: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 16 :
-                // InternalLilyChantLexer.g:1:188: RULE_SL_COMMENT
+            case 18 :
+                // InternalLilyChantLexer.g:1:230: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 17 :
-                // InternalLilyChantLexer.g:1:204: RULE_WS
+            case 19 :
+                // InternalLilyChantLexer.g:1:246: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 18 :
-                // InternalLilyChantLexer.g:1:212: RULE_ANY_OTHER
+            case 20 :
+                // InternalLilyChantLexer.g:1:254: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1000,75 +1055,76 @@ public class InternalLilyChantLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\6\11\1\27\1\uffff\1\11\1\uffff\1\27\5\uffff\3\27\2\uffff\1\27\2\uffff\5\11\2\uffff\1\11\11\uffff\4\11\1\62\3\11\1\66\1\uffff\1\11\1\71\1\72\1\uffff\1\73\1\74\4\uffff";
+        "\5\12\1\36\3\uffff\1\12\1\uffff\1\30\5\uffff\3\30\2\uffff\1\30\2\uffff\4\12\4\uffff\1\12\12\uffff\7\12\1\67\1\12\1\72\1\73\1\uffff\1\74\1\75\4\uffff";
     static final String DFA12_eofS =
-        "\75\uffff";
+        "\76\uffff";
     static final String DFA12_minS =
-        "\1\0\1\150\1\157\1\150\1\157\1\145\1\174\1\uffff\1\0\1\uffff\1\0\5\uffff\1\162\1\55\1\137\2\uffff\1\52\2\uffff\1\162\1\151\1\141\1\156\1\171\2\uffff\1\0\11\uffff\1\141\1\143\1\156\1\145\1\47\1\163\1\145\1\164\1\47\1\uffff\1\145\2\47\1\uffff\2\47\4\uffff";
+        "\1\0\1\150\1\157\1\150\1\157\1\174\3\uffff\1\0\1\uffff\1\0\5\uffff\1\162\1\55\1\137\2\uffff\1\52\2\uffff\1\162\1\151\1\141\1\156\4\uffff\1\0\12\uffff\1\141\1\143\1\156\1\145\1\163\1\145\1\164\1\47\1\145\2\47\1\uffff\2\47\4\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\150\1\157\1\150\1\157\1\145\1\174\1\uffff\1\uffff\1\uffff\1\uffff\5\uffff\1\162\1\55\1\137\2\uffff\1\57\2\uffff\1\162\1\151\1\141\1\156\1\171\2\uffff\1\uffff\11\uffff\1\141\1\143\1\156\1\145\1\u04ff\1\163\1\145\1\164\1\u04ff\1\uffff\1\145\2\u04ff\1\uffff\2\u04ff\4\uffff";
+        "\1\uffff\1\150\1\157\1\150\1\157\1\174\3\uffff\1\uffff\1\uffff\1\uffff\5\uffff\1\162\1\55\1\137\2\uffff\1\57\2\uffff\1\162\1\151\1\141\1\156\4\uffff\1\uffff\12\uffff\1\141\1\143\1\156\1\145\1\163\1\145\1\164\1\u04ff\1\145\2\u04ff\1\uffff\2\u04ff\4\uffff";
     static final String DFA12_acceptS =
-        "\7\uffff\1\10\1\uffff\1\10\1\uffff\1\10\4\12\3\uffff\1\15\1\16\1\uffff\1\21\1\22\5\uffff\1\7\1\11\1\uffff\1\10\1\12\1\13\1\14\1\15\1\16\1\17\1\20\1\21\11\uffff\1\6\3\uffff\1\5\2\uffff\1\4\1\3\1\1\1\2";
+        "\6\uffff\1\7\1\10\1\12\1\uffff\1\12\1\uffff\1\12\4\14\3\uffff\1\17\1\20\1\uffff\1\23\1\24\4\uffff\1\6\1\11\1\7\1\10\1\uffff\1\13\1\12\1\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\13\uffff\1\5\2\uffff\1\4\1\3\1\1\1\2";
     static final String DFA12_specialS =
-        "\1\3\7\uffff\1\2\1\uffff\1\0\24\uffff\1\1\35\uffff}>";
+        "\1\2\10\uffff\1\0\1\uffff\1\1\25\uffff\1\3\34\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\10\27\1\20\2\26\2\27\1\26\22\27\1\26\1\27\1\12\4\27\1\10\4\27\1\13\1\21\1\13\1\25\1\27\1\14\1\15\1\27\1\16\3\27\1\17\1\27\2\13\1\23\1\27\1\24\2\27\2\13\1\3\14\13\1\1\3\13\1\4\1\13\1\2\4\13\3\27\1\7\1\22\1\27\12\13\1\5\17\13\1\27\1\6\u0383\27\u0100\13\ufb00\27",
-            "\1\30",
+            "\10\30\1\21\2\27\2\30\1\27\22\30\1\27\1\30\1\13\4\30\1\11\1\6\1\7\2\30\1\14\1\22\1\14\1\26\1\30\1\15\1\16\1\30\1\17\3\30\1\20\2\30\1\14\1\24\1\30\1\25\2\30\2\14\1\3\14\14\1\1\3\14\1\4\1\14\1\2\4\14\3\30\1\10\1\23\1\30\32\14\1\30\1\5\u0383\30\u0100\14\ufb00\30",
             "\1\31",
             "\1\32",
             "\1\33",
             "\1\34",
             "\1\35",
             "",
-            "\47\36\1\40\4\36\1\37\1\36\1\37\13\36\2\37\5\36\32\37\6\36\32\37\u0385\36\u0100\37\ufb00\36",
-            "",
-            "\0\36",
             "",
             "",
+            "\47\42\1\43\4\42\1\41\1\42\1\41\14\42\1\41\5\42\32\41\6\42\32\41\u0385\42\u0100\41\ufb00\42",
+            "",
+            "\0\42",
             "",
             "",
             "",
-            "\1\41",
-            "\1\42",
-            "\1\43",
             "",
             "",
-            "\1\46\4\uffff\1\47",
+            "\1\44",
+            "\1\45",
+            "\1\46",
             "",
             "",
-            "\1\51",
-            "\1\52",
-            "\1\53",
+            "\1\51\4\uffff\1\52",
+            "",
+            "",
             "\1\54",
             "\1\55",
-            "",
-            "",
-            "\47\36\1\40\4\36\1\37\1\36\1\37\13\36\2\37\5\36\32\37\6\36\32\37\u0385\36\u0100\37\ufb00\36",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\56",
             "\1\57",
+            "",
+            "",
+            "",
+            "",
+            "\47\42\1\43\4\42\1\41\1\42\1\41\14\42\1\41\5\42\32\41\6\42\32\41\u0385\42\u0100\41\ufb00\42",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\60",
             "\1\61",
-            "\1\11\4\uffff\1\11\1\uffff\1\11\13\uffff\2\11\5\uffff\32\11\6\uffff\32\11\u0385\uffff\u0100\11",
+            "\1\62",
             "\1\63",
             "\1\64",
             "\1\65",
-            "\1\11\4\uffff\1\11\1\uffff\1\11\13\uffff\2\11\5\uffff\32\11\6\uffff\32\11\u0385\uffff\u0100\11",
+            "\1\66",
+            "\1\12\4\uffff\1\12\1\uffff\1\12\14\uffff\1\12\5\uffff\32\12\6\uffff\32\12\u0385\uffff\u0100\12",
+            "\1\70",
+            "\1\12\4\uffff\1\12\1\uffff\1\12\14\uffff\1\12\5\uffff\32\12\6\uffff\22\12\1\71\7\12\u0385\uffff\u0100\12",
+            "\1\12\4\uffff\1\12\1\uffff\1\12\14\uffff\1\12\5\uffff\32\12\6\uffff\32\12\u0385\uffff\u0100\12",
             "",
-            "\1\67",
-            "\1\11\4\uffff\1\11\1\uffff\1\11\13\uffff\2\11\5\uffff\32\11\6\uffff\22\11\1\70\7\11\u0385\uffff\u0100\11",
-            "\1\11\4\uffff\1\11\1\uffff\1\11\13\uffff\2\11\5\uffff\32\11\6\uffff\32\11\u0385\uffff\u0100\11",
-            "",
-            "\1\11\4\uffff\1\11\1\uffff\1\11\13\uffff\2\11\5\uffff\32\11\6\uffff\32\11\u0385\uffff\u0100\11",
-            "\1\11\4\uffff\1\11\1\uffff\1\11\13\uffff\2\11\5\uffff\32\11\6\uffff\32\11\u0385\uffff\u0100\11",
+            "\1\12\4\uffff\1\12\1\uffff\1\12\14\uffff\1\12\5\uffff\32\12\6\uffff\32\12\u0385\uffff\u0100\12",
+            "\1\12\4\uffff\1\12\1\uffff\1\12\14\uffff\1\12\5\uffff\32\12\6\uffff\32\12\u0385\uffff\u0100\12",
             "",
             "",
             "",
@@ -1105,51 +1161,37 @@ public class InternalLilyChantLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( Phrase | Voices | Chant | Voice | Tone | Key | VerticalLineVerticalLine | RULE_ID | RULE_STRING | RULE_DURATION | RULE_HYPHEN | RULE_EXTENDER | RULE_START_NOTE_GROUP | RULE_END_NOTE_GROUP | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( Phrase | Voices | Chant | Voice | Tone | VerticalLineVerticalLine | LeftParenthesis | RightParenthesis | VerticalLine | RULE_ID | RULE_STRING | RULE_DURATION | RULE_HYPHEN | RULE_EXTENDER | RULE_START_NOTE_GROUP | RULE_END_NOTE_GROUP | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_10 = input.LA(1);
+                        int LA12_9 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_10>='\u0000' && LA12_10<='\uFFFF')) ) {s = 30;}
+                        if ( (LA12_9==','||LA12_9=='.'||LA12_9==';'||(LA12_9>='A' && LA12_9<='Z')||(LA12_9>='a' && LA12_9<='z')||(LA12_9>='\u0400' && LA12_9<='\u04FF')) ) {s = 33;}
 
-                        else s = 23;
+                        else if ( ((LA12_9>='\u0000' && LA12_9<='&')||(LA12_9>='(' && LA12_9<='+')||LA12_9=='-'||(LA12_9>='/' && LA12_9<=':')||(LA12_9>='<' && LA12_9<='@')||(LA12_9>='[' && LA12_9<='`')||(LA12_9>='{' && LA12_9<='\u03FF')||(LA12_9>='\u0500' && LA12_9<='\uFFFF')) ) {s = 34;}
+
+                        else if ( (LA12_9=='\'') ) {s = 35;}
+
+                        else s = 10;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA12_31 = input.LA(1);
+                        int LA12_11 = input.LA(1);
 
                         s = -1;
-                        if ( (LA12_31=='\'') ) {s = 32;}
+                        if ( ((LA12_11>='\u0000' && LA12_11<='\uFFFF')) ) {s = 34;}
 
-                        else if ( (LA12_31==','||LA12_31=='.'||(LA12_31>=':' && LA12_31<=';')||(LA12_31>='A' && LA12_31<='Z')||(LA12_31>='a' && LA12_31<='z')||(LA12_31>='\u0400' && LA12_31<='\u04FF')) ) {s = 31;}
-
-                        else if ( ((LA12_31>='\u0000' && LA12_31<='&')||(LA12_31>='(' && LA12_31<='+')||LA12_31=='-'||(LA12_31>='/' && LA12_31<='9')||(LA12_31>='<' && LA12_31<='@')||(LA12_31>='[' && LA12_31<='`')||(LA12_31>='{' && LA12_31<='\u03FF')||(LA12_31>='\u0500' && LA12_31<='\uFFFF')) ) {s = 30;}
-
-                        else s = 9;
+                        else s = 24;
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_8 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_8>='\u0000' && LA12_8<='&')||(LA12_8>='(' && LA12_8<='+')||LA12_8=='-'||(LA12_8>='/' && LA12_8<='9')||(LA12_8>='<' && LA12_8<='@')||(LA12_8>='[' && LA12_8<='`')||(LA12_8>='{' && LA12_8<='\u03FF')||(LA12_8>='\u0500' && LA12_8<='\uFFFF')) ) {s = 30;}
-
-                        else if ( (LA12_8==','||LA12_8=='.'||(LA12_8>=':' && LA12_8<=';')||(LA12_8>='A' && LA12_8<='Z')||(LA12_8>='a' && LA12_8<='z')||(LA12_8>='\u0400' && LA12_8<='\u04FF')) ) {s = 31;}
-
-                        else if ( (LA12_8=='\'') ) {s = 32;}
-
-                        else s = 9;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -1161,43 +1203,59 @@ public class InternalLilyChantLexer extends Lexer {
 
                         else if ( (LA12_0=='T') ) {s = 4;}
 
-                        else if ( (LA12_0=='k') ) {s = 5;}
+                        else if ( (LA12_0=='|') ) {s = 5;}
 
-                        else if ( (LA12_0=='|') ) {s = 6;}
+                        else if ( (LA12_0=='(') ) {s = 6;}
 
-                        else if ( (LA12_0=='^') ) {s = 7;}
+                        else if ( (LA12_0==')') ) {s = 7;}
 
-                        else if ( (LA12_0=='\'') ) {s = 8;}
+                        else if ( (LA12_0=='^') ) {s = 8;}
 
-                        else if ( (LA12_0=='\"') ) {s = 10;}
+                        else if ( (LA12_0=='\'') ) {s = 9;}
 
-                        else if ( (LA12_0==','||LA12_0=='.'||(LA12_0>=':' && LA12_0<=';')||(LA12_0>='A' && LA12_0<='B')||(LA12_0>='D' && LA12_0<='O')||(LA12_0>='Q' && LA12_0<='S')||LA12_0=='U'||(LA12_0>='W' && LA12_0<='Z')||(LA12_0>='a' && LA12_0<='j')||(LA12_0>='l' && LA12_0<='z')||(LA12_0>='\u0400' && LA12_0<='\u04FF')) ) {s = 11;}
+                        else if ( (LA12_0=='\"') ) {s = 11;}
 
-                        else if ( (LA12_0=='1') ) {s = 12;}
+                        else if ( (LA12_0==','||LA12_0=='.'||LA12_0==';'||(LA12_0>='A' && LA12_0<='B')||(LA12_0>='D' && LA12_0<='O')||(LA12_0>='Q' && LA12_0<='S')||LA12_0=='U'||(LA12_0>='W' && LA12_0<='Z')||(LA12_0>='a' && LA12_0<='z')||(LA12_0>='\u0400' && LA12_0<='\u04FF')) ) {s = 12;}
 
-                        else if ( (LA12_0=='2') ) {s = 13;}
+                        else if ( (LA12_0=='1') ) {s = 13;}
 
-                        else if ( (LA12_0=='4') ) {s = 14;}
+                        else if ( (LA12_0=='2') ) {s = 14;}
 
-                        else if ( (LA12_0=='8') ) {s = 15;}
+                        else if ( (LA12_0=='4') ) {s = 15;}
 
-                        else if ( (LA12_0=='\b') ) {s = 16;}
+                        else if ( (LA12_0=='8') ) {s = 16;}
 
-                        else if ( (LA12_0=='-') ) {s = 17;}
+                        else if ( (LA12_0=='\b') ) {s = 17;}
 
-                        else if ( (LA12_0=='_') ) {s = 18;}
+                        else if ( (LA12_0=='-') ) {s = 18;}
 
-                        else if ( (LA12_0=='<') ) {s = 19;}
+                        else if ( (LA12_0=='_') ) {s = 19;}
 
-                        else if ( (LA12_0=='>') ) {s = 20;}
+                        else if ( (LA12_0=='<') ) {s = 20;}
 
-                        else if ( (LA12_0=='/') ) {s = 21;}
+                        else if ( (LA12_0=='>') ) {s = 21;}
 
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 22;}
+                        else if ( (LA12_0=='/') ) {s = 22;}
 
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\u0007')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='+')||LA12_0=='0'||LA12_0=='3'||(LA12_0>='5' && LA12_0<='7')||LA12_0=='9'||LA12_0=='='||(LA12_0>='?' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='{'||(LA12_0>='}' && LA12_0<='\u03FF')||(LA12_0>='\u0500' && LA12_0<='\uFFFF')) ) {s = 23;}
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 23;}
 
-                        else s = 9;
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\u0007')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='*' && LA12_0<='+')||LA12_0=='0'||LA12_0=='3'||(LA12_0>='5' && LA12_0<='7')||(LA12_0>='9' && LA12_0<=':')||LA12_0=='='||(LA12_0>='?' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='{'||(LA12_0>='}' && LA12_0<='\u03FF')||(LA12_0>='\u0500' && LA12_0<='\uFFFF')) ) {s = 24;}
+
+                        else s = 10;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 3 : 
+                        int LA12_33 = input.LA(1);
+
+                        s = -1;
+                        if ( (LA12_33=='\'') ) {s = 35;}
+
+                        else if ( (LA12_33==','||LA12_33=='.'||LA12_33==';'||(LA12_33>='A' && LA12_33<='Z')||(LA12_33>='a' && LA12_33<='z')||(LA12_33>='\u0400' && LA12_33<='\u04FF')) ) {s = 33;}
+
+                        else if ( ((LA12_33>='\u0000' && LA12_33<='&')||(LA12_33>='(' && LA12_33<='+')||LA12_33=='-'||(LA12_33>='/' && LA12_33<=':')||(LA12_33>='<' && LA12_33<='@')||(LA12_33>='[' && LA12_33<='`')||(LA12_33>='{' && LA12_33<='\u03FF')||(LA12_33>='\u0500' && LA12_33<='\uFFFF')) ) {s = 34;}
+
+                        else s = 10;
 
                         if ( s>=0 ) return s;
                         break;

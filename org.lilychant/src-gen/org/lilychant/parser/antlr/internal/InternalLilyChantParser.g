@@ -16,6 +16,7 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -148,46 +149,24 @@ ruleTone returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2=Key
+		this_BEGIN_2=RULE_BEGIN
 		{
-			newLeafNode(otherlv_2, grammarAccess.getToneAccess().getKeyKeyword_2());
+			newLeafNode(this_BEGIN_2, grammarAccess.getToneAccess().getBEGINTerminalRuleCall_2());
 		}
-		(
-			(
-				lv_key_3_0=RULE_ID
-				{
-					newLeafNode(lv_key_3_0, grammarAccess.getToneAccess().getKeyIDTerminalRuleCall_3_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getToneRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"key",
-						lv_key_3_0,
-						"org.lilychant.LilyChant.ID");
-				}
-			)
-		)
+		otherlv_3=Voices
+		{
+			newLeafNode(otherlv_3, grammarAccess.getToneAccess().getVoicesKeyword_3());
+		}
 		this_BEGIN_4=RULE_BEGIN
 		{
 			newLeafNode(this_BEGIN_4, grammarAccess.getToneAccess().getBEGINTerminalRuleCall_4());
 		}
-		otherlv_5=Voices
-		{
-			newLeafNode(otherlv_5, grammarAccess.getToneAccess().getVoicesKeyword_5());
-		}
-		this_BEGIN_6=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_6, grammarAccess.getToneAccess().getBEGINTerminalRuleCall_6());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getToneAccess().getVoiceNamesVoiceNameParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getToneAccess().getVoiceNamesVoiceNameParserRuleCall_5_0());
 				}
-				lv_voiceNames_7_0=ruleVoiceName
+				lv_voiceNames_5_0=ruleVoiceName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getToneRule());
@@ -195,22 +174,22 @@ ruleTone returns [EObject current=null]
 					add(
 						$current,
 						"voiceNames",
-						lv_voiceNames_7_0,
+						lv_voiceNames_5_0,
 						"org.lilychant.LilyChant.VoiceName");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)+
-		this_END_8=RULE_END
+		this_END_6=RULE_END
 		{
-			newLeafNode(this_END_8, grammarAccess.getToneAccess().getENDTerminalRuleCall_8());
+			newLeafNode(this_END_6, grammarAccess.getToneAccess().getENDTerminalRuleCall_6());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getToneAccess().getPhrasesTonePhraseParserRuleCall_9_0());
+					newCompositeNode(grammarAccess.getToneAccess().getPhrasesTonePhraseParserRuleCall_7_0());
 				}
-				lv_phrases_9_0=ruleTonePhrase
+				lv_phrases_7_0=ruleTonePhrase
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getToneRule());
@@ -218,15 +197,15 @@ ruleTone returns [EObject current=null]
 					add(
 						$current,
 						"phrases",
-						lv_phrases_9_0,
+						lv_phrases_7_0,
 						"org.lilychant.LilyChant.TonePhrase");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)+
-		this_END_10=RULE_END
+		this_END_8=RULE_END
 		{
-			newLeafNode(this_END_10, grammarAccess.getToneAccess().getENDTerminalRuleCall_10());
+			newLeafNode(this_END_8, grammarAccess.getToneAccess().getENDTerminalRuleCall_8());
 		}
 	)
 ;
@@ -434,7 +413,7 @@ ruleChant returns [EObject current=null]
 						"org.lilychant.LilyChant.STRING");
 				}
 			)
-		)
+		)?
 		otherlv_2=Tone
 		{
 			newLeafNode(otherlv_2, grammarAccess.getChantAccess().getToneKeyword_2());
@@ -452,38 +431,16 @@ ruleChant returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4=Key
+		this_BEGIN_4=RULE_BEGIN
 		{
-			newLeafNode(otherlv_4, grammarAccess.getChantAccess().getKeyKeyword_4());
-		}
-		(
-			(
-				lv_key_5_0=RULE_ID
-				{
-					newLeafNode(lv_key_5_0, grammarAccess.getChantAccess().getKeyIDTerminalRuleCall_5_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getChantRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"key",
-						lv_key_5_0,
-						"org.lilychant.LilyChant.ID");
-				}
-			)
-		)
-		this_BEGIN_6=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_6, grammarAccess.getChantAccess().getBEGINTerminalRuleCall_6());
+			newLeafNode(this_BEGIN_4, grammarAccess.getChantAccess().getBEGINTerminalRuleCall_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getChantAccess().getPhrasesLyricPhraseParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getChantAccess().getPhrasesLyricPhraseParserRuleCall_5_0());
 				}
-				lv_phrases_7_0=ruleLyricPhrase
+				lv_phrases_5_0=ruleLyricPhrase
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getChantRule());
@@ -491,15 +448,15 @@ ruleChant returns [EObject current=null]
 					add(
 						$current,
 						"phrases",
-						lv_phrases_7_0,
+						lv_phrases_5_0,
 						"org.lilychant.LilyChant.LyricPhrase");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)+
-		this_END_8=RULE_END
+		this_END_6=RULE_END
 		{
-			newLeafNode(this_END_8, grammarAccess.getChantAccess().getENDTerminalRuleCall_8());
+			newLeafNode(this_END_6, grammarAccess.getChantAccess().getENDTerminalRuleCall_6());
 		}
 	)
 ;
@@ -520,33 +477,39 @@ ruleLyricPhrase returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0=Phrase
-		{
-			newLeafNode(otherlv_0, grammarAccess.getLyricPhraseAccess().getPhraseKeyword_0());
-		}
 		(
+			otherlv_0=LeftParenthesis
+			{
+				newLeafNode(otherlv_0, grammarAccess.getLyricPhraseAccess().getLeftParenthesisKeyword_0_0());
+			}
+			otherlv_1=Phrase
+			{
+				newLeafNode(otherlv_1, grammarAccess.getLyricPhraseAccess().getPhraseKeyword_0_1());
+			}
 			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLyricPhraseRule());
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getLyricPhraseRule());
+						}
 					}
-				}
-				otherlv_1=RULE_ID
-				{
-					newLeafNode(otherlv_1, grammarAccess.getLyricPhraseAccess().getNotesTonePhraseCrossReference_1_0());
-				}
+					otherlv_2=RULE_ID
+					{
+						newLeafNode(otherlv_2, grammarAccess.getLyricPhraseAccess().getExplicitPhraseTonePhraseCrossReference_0_2_0());
+					}
+				)
 			)
-		)
-		this_BEGIN_2=RULE_BEGIN
-		{
-			newLeafNode(this_BEGIN_2, grammarAccess.getLyricPhraseAccess().getBEGINTerminalRuleCall_2());
-		}
+			otherlv_3=RightParenthesis
+			{
+				newLeafNode(otherlv_3, grammarAccess.getLyricPhraseAccess().getRightParenthesisKeyword_0_3());
+			}
+		)?
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getLyricPhraseAccess().getNoteGroupsNoteGroupParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getLyricPhraseAccess().getNoteGroupsNoteGroupParserRuleCall_1_0());
 				}
-				lv_noteGroups_3_0=ruleNoteGroup
+				lv_noteGroups_4_0=ruleNoteGroup
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getLyricPhraseRule());
@@ -554,7 +517,7 @@ ruleLyricPhrase returns [EObject current=null]
 					add(
 						$current,
 						"noteGroups",
-						lv_noteGroups_3_0,
+						lv_noteGroups_4_0,
 						"org.lilychant.LilyChant.NoteGroup");
 					afterParserOrEnumRuleCall();
 				}
@@ -562,22 +525,23 @@ ruleLyricPhrase returns [EObject current=null]
 		)+
 		(
 			(
-				lv_doubleBar_4_0=VerticalLineVerticalLine
 				{
-					newLeafNode(lv_doubleBar_4_0, grammarAccess.getLyricPhraseAccess().getDoubleBarVerticalLineVerticalLineKeyword_4_0());
+					newCompositeNode(grammarAccess.getLyricPhraseAccess().getBarBarlineEnumRuleCall_2_0());
 				}
+				lv_bar_5_0=ruleBarline
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLyricPhraseRule());
+						$current = createModelElementForParent(grammarAccess.getLyricPhraseRule());
 					}
-					setWithLastConsumed($current, "doubleBar", true, "||");
+					set(
+						$current,
+						"bar",
+						lv_bar_5_0,
+						"org.lilychant.LilyChant.Barline");
+					afterParserOrEnumRuleCall();
 				}
 			)
-		)?
-		this_END_5=RULE_END
-		{
-			newLeafNode(this_END_5, grammarAccess.getLyricPhraseAccess().getENDTerminalRuleCall_5());
-		}
+		)
 	)
 ;
 
@@ -785,5 +749,32 @@ ruleNote returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 				newLeafNode(this_DURATION_1, grammarAccess.getNoteAccess().getDURATIONTerminalRuleCall_1());
 			}
 		)?
+	)
+;
+
+// Rule Barline
+ruleBarline returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0=VerticalLine
+			{
+				$current = grammarAccess.getBarlineAccess().getSingleEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getBarlineAccess().getSingleEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1=VerticalLineVerticalLine
+			{
+				$current = grammarAccess.getBarlineAccess().getDoubleEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getBarlineAccess().getDoubleEnumLiteralDeclaration_1());
+			}
+		)
 	)
 ;

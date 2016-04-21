@@ -33,7 +33,6 @@ import org.lilychant.lilyChantScript.Tone;
  * <ul>
  *   <li>{@link org.lilychant.lilyChantScript.impl.ChantImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.lilychant.lilyChantScript.impl.ChantImpl#getTone <em>Tone</em>}</li>
- *   <li>{@link org.lilychant.lilyChantScript.impl.ChantImpl#getKey <em>Key</em>}</li>
  *   <li>{@link org.lilychant.lilyChantScript.impl.ChantImpl#getPhrases <em>Phrases</em>}</li>
  * </ul>
  * </p>
@@ -71,26 +70,6 @@ public class ChantImpl extends MinimalEObjectImpl.Container implements Chant
    * @ordered
    */
   protected Tone tone;
-
-  /**
-   * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getKey()
-   * @generated
-   * @ordered
-   */
-  protected static final String KEY_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getKey() <em>Key</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getKey()
-   * @generated
-   * @ordered
-   */
-  protected String key = KEY_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getPhrases() <em>Phrases</em>}' containment reference list.
@@ -194,29 +173,6 @@ public class ChantImpl extends MinimalEObjectImpl.Container implements Chant
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getKey()
-  {
-    return key;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setKey(String newKey)
-  {
-    String oldKey = key;
-    key = newKey;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilyChantScriptPackage.CHANT__KEY, oldKey, key));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<LyricPhrase> getPhrases()
   {
     if (phrases == null)
@@ -257,8 +213,6 @@ public class ChantImpl extends MinimalEObjectImpl.Container implements Chant
       case LilyChantScriptPackage.CHANT__TONE:
         if (resolve) return getTone();
         return basicGetTone();
-      case LilyChantScriptPackage.CHANT__KEY:
-        return getKey();
       case LilyChantScriptPackage.CHANT__PHRASES:
         return getPhrases();
     }
@@ -281,9 +235,6 @@ public class ChantImpl extends MinimalEObjectImpl.Container implements Chant
         return;
       case LilyChantScriptPackage.CHANT__TONE:
         setTone((Tone)newValue);
-        return;
-      case LilyChantScriptPackage.CHANT__KEY:
-        setKey((String)newValue);
         return;
       case LilyChantScriptPackage.CHANT__PHRASES:
         getPhrases().clear();
@@ -309,9 +260,6 @@ public class ChantImpl extends MinimalEObjectImpl.Container implements Chant
       case LilyChantScriptPackage.CHANT__TONE:
         setTone((Tone)null);
         return;
-      case LilyChantScriptPackage.CHANT__KEY:
-        setKey(KEY_EDEFAULT);
-        return;
       case LilyChantScriptPackage.CHANT__PHRASES:
         getPhrases().clear();
         return;
@@ -333,8 +281,6 @@ public class ChantImpl extends MinimalEObjectImpl.Container implements Chant
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case LilyChantScriptPackage.CHANT__TONE:
         return tone != null;
-      case LilyChantScriptPackage.CHANT__KEY:
-        return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
       case LilyChantScriptPackage.CHANT__PHRASES:
         return phrases != null && !phrases.isEmpty();
     }
@@ -354,8 +300,6 @@ public class ChantImpl extends MinimalEObjectImpl.Container implements Chant
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", key: ");
-    result.append(key);
     result.append(')');
     return result.toString();
   }

@@ -17,7 +17,7 @@ Script:
 // TODO VOICE NAMES SHOULD BE GLOBAL
 
 Tone:
-	'Tone' name=ID 'key' key=ID
+	'Tone' name=ID //'key' key=ID
 		BEGIN
 		'Voices'
 			BEGIN
@@ -61,18 +61,19 @@ VoicePhrase:
  */
 
 Chant:
-	'Chant' name=STRING 'Tone' tone=[Tone] 'key' key=ID
+	'Chant' name=STRING? 'Tone' tone=[Tone] //'key' key=ID
 		BEGIN
 		phrases+=LyricPhrase+
 		END
 ;
 
 LyricPhrase:
-	'Phrase' notes=[TonePhrase]
-		BEGIN
-		noteGroups+=NoteGroup+
-		doubleBar?='||'?
-		END
+	('(' 'Phrase' explicitPhrase=[TonePhrase] ')')?
+	noteGroups+=NoteGroup+
+	bar=Barline
+;
+enum Barline:
+	single='|' | double='||'
 ;
 
 NoteGroup:
@@ -102,7 +103,7 @@ Note:
  * Terminals
  */
 
-terminal ID: '^'?('a'..'z'|'A'..'Z'|'\u0400'..'\u04ff'|','|'\''|';'|'.'|':')*;
+terminal ID: '^'?('a'..'z'|'A'..'Z'|'\u0400'..'\u04ff'|','|'\''|';'|'.')*;
 terminal STRING	: 
 			'"' ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|'"') )* '"' |
 			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
@@ -114,6 +115,9 @@ terminal EXTENDER: '__';
 terminal START_NOTE_GROUP: '<';
 terminal END_NOTE_GROUP: '>';
 
+// white-space aware
+// See https://eclipse.org/Xtext/documentation/307_special_languages.html,
+// and LilyChantTokenSource.java
 terminal BEGIN: 'synthetic:BEGIN';
 terminal END: 'synthetic:END';
 

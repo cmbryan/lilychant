@@ -21,13 +21,17 @@ Voice : 'Voice';
 
 Tone : 'Tone';
 
-Key : 'key';
-
 VerticalLineVerticalLine : '||';
+
+LeftParenthesis : '(';
+
+RightParenthesis : ')';
+
+VerticalLine : '|';
 
 // Rules duplicated to allow inter-rule references
 
-RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'\u0400'..'\u04FF'|','|'\''|';'|'.'|':')*;
+RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'\u0400'..'\u04FF'|','|'\''|';'|'.')*;
 
 RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
 

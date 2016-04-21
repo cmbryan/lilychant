@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import org.lilychant.lilyChantScript.Barline
 import org.lilychant.lilyChantScript.Chant
 import org.lilychant.lilyChantScript.Script
 import org.lilychant.lilyChantScript.Tone
@@ -30,11 +31,19 @@ class LilyChantGenerator extends AbstractGenerator {
 	}
 		
 	def getVoiceNotes(Script model, Chant chant, VoiceName voiceName) {
+		var currentPhraseIndex = 0
 		var result = new ArrayList<String>()
 
 		for (lyricPhrase : chant.phrases) {
+			if (lyricPhrase.explicitPhrase != null) {
+				currentPhraseIndex = chant.tone.phrases.indexOf(lyricPhrase.explicitPhrase)
+			} else {
+				currentPhraseIndex = (currentPhraseIndex+1) % chant.tone.phrases.length
+			}
+			val notePhrase = chant.tone.phrases.get(currentPhraseIndex)
+			
 			var VoicePhrase targetVoice
-			for (voice : lyricPhrase.notes.voices) {
+			for (voice : notePhrase.voices) {
 				if (voice.name == voiceName) {
 					targetVoice = voice
 				}
@@ -84,10 +93,14 @@ class LilyChantGenerator extends AbstractGenerator {
 				syllableIndex++
 				noteIndex++
 			}
-			if (lyricPhrase.doubleBar)
-				result.add('''\bar "||"''')
-			else
-				result.add('''\bar "|"''')
+			switch (lyricPhrase.bar) {
+				case Barline.SINGLE: {
+					result.add('''\bar "|"''')
+				}
+				case Barline.DOUBLE: {
+					result.add('''\bar "||"''')
+				}
+			}
 		}
 		
 		// replace last barline with double-bar
@@ -137,10 +150,11 @@ class LilyChantGenerator extends AbstractGenerator {
 			alignleft = \once \override LyricText #'self-alignment-X = #-1
 			
 			«FOR chant : model.chants»
+			«IF chant.name != null»
 			% =======================
-			% Score for «chant.name»
+			% Score «IF chant.name != null»for «chant.name»«ENDIF»
 			% =======================
-			
+			«ENDIF»
 			%
 			% voices
 			%
@@ -153,8 +167,10 @@ class LilyChantGenerator extends AbstractGenerator {
 			
 			\score {
 
+			«IF chant.name != null»
 			  % This produces a lilypond error, but still seems to render OK, so...
 			  \header { title = "«chant.name»" }
+			«ENDIF»
 
 			  \new ChoirStaff \with {
 			    instrumentName = \markup \bold "Choir:"

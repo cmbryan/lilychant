@@ -5,11 +5,13 @@ package org.lilychant.lilyChantScript.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.lilychant.lilyChantScript.Barline;
 import org.lilychant.lilyChantScript.Chant;
 import org.lilychant.lilyChantScript.LilyChantScriptFactory;
 import org.lilychant.lilyChantScript.LilyChantScriptPackage;
@@ -84,6 +86,13 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
    * @generated
    */
   private EClass noteGroupEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum barlineEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -203,19 +212,9 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTone_Key()
-  {
-    return (EAttribute)toneEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getTone_VoiceNames()
   {
-    return (EReference)toneEClass.getEStructuralFeatures().get(2);
+    return (EReference)toneEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -225,7 +224,7 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
    */
   public EReference getTone_Phrases()
   {
-    return (EReference)toneEClass.getEStructuralFeatures().get(3);
+    return (EReference)toneEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -343,19 +342,9 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getChant_Key()
-  {
-    return (EAttribute)chantEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getChant_Phrases()
   {
-    return (EReference)chantEClass.getEStructuralFeatures().get(3);
+    return (EReference)chantEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -373,7 +362,7 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLyricPhrase_Notes()
+  public EReference getLyricPhrase_ExplicitPhrase()
   {
     return (EReference)lyricPhraseEClass.getEStructuralFeatures().get(0);
   }
@@ -393,7 +382,7 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLyricPhrase_DoubleBar()
+  public EAttribute getLyricPhrase_Bar()
   {
     return (EAttribute)lyricPhraseEClass.getEStructuralFeatures().get(2);
   }
@@ -416,6 +405,16 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
   public EAttribute getNoteGroup_Syllables()
   {
     return (EAttribute)noteGroupEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getBarline()
+  {
+    return barlineEEnum;
   }
 
   /**
@@ -454,7 +453,6 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
 
     toneEClass = createEClass(TONE);
     createEAttribute(toneEClass, TONE__NAME);
-    createEAttribute(toneEClass, TONE__KEY);
     createEReference(toneEClass, TONE__VOICE_NAMES);
     createEReference(toneEClass, TONE__PHRASES);
 
@@ -472,16 +470,18 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
     chantEClass = createEClass(CHANT);
     createEAttribute(chantEClass, CHANT__NAME);
     createEReference(chantEClass, CHANT__TONE);
-    createEAttribute(chantEClass, CHANT__KEY);
     createEReference(chantEClass, CHANT__PHRASES);
 
     lyricPhraseEClass = createEClass(LYRIC_PHRASE);
-    createEReference(lyricPhraseEClass, LYRIC_PHRASE__NOTES);
+    createEReference(lyricPhraseEClass, LYRIC_PHRASE__EXPLICIT_PHRASE);
     createEReference(lyricPhraseEClass, LYRIC_PHRASE__NOTE_GROUPS);
-    createEAttribute(lyricPhraseEClass, LYRIC_PHRASE__DOUBLE_BAR);
+    createEAttribute(lyricPhraseEClass, LYRIC_PHRASE__BAR);
 
     noteGroupEClass = createEClass(NOTE_GROUP);
     createEAttribute(noteGroupEClass, NOTE_GROUP__SYLLABLES);
+
+    // Create enums
+    barlineEEnum = createEEnum(BARLINE);
   }
 
   /**
@@ -521,7 +521,6 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
 
     initEClass(toneEClass, Tone.class, "Tone", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTone_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTone_Key(), ecorePackage.getEString(), "key", null, 0, 1, Tone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTone_VoiceNames(), this.getVoiceName(), null, "voiceNames", null, 0, -1, Tone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTone_Phrases(), this.getTonePhrase(), null, "phrases", null, 0, -1, Tone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -539,16 +538,20 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
     initEClass(chantEClass, Chant.class, "Chant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getChant_Name(), ecorePackage.getEString(), "name", null, 0, 1, Chant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getChant_Tone(), this.getTone(), null, "tone", null, 0, 1, Chant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getChant_Key(), ecorePackage.getEString(), "key", null, 0, 1, Chant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getChant_Phrases(), this.getLyricPhrase(), null, "phrases", null, 0, -1, Chant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(lyricPhraseEClass, LyricPhrase.class, "LyricPhrase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getLyricPhrase_Notes(), this.getTonePhrase(), null, "notes", null, 0, 1, LyricPhrase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLyricPhrase_ExplicitPhrase(), this.getTonePhrase(), null, "explicitPhrase", null, 0, 1, LyricPhrase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLyricPhrase_NoteGroups(), this.getNoteGroup(), null, "noteGroups", null, 0, -1, LyricPhrase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLyricPhrase_DoubleBar(), ecorePackage.getEBoolean(), "doubleBar", null, 0, 1, LyricPhrase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLyricPhrase_Bar(), this.getBarline(), "bar", null, 0, 1, LyricPhrase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(noteGroupEClass, NoteGroup.class, "NoteGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNoteGroup_Syllables(), ecorePackage.getEString(), "syllables", null, 0, -1, NoteGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    // Initialize enums and add enum literals
+    initEEnum(barlineEEnum, Barline.class, "Barline");
+    addEEnumLiteral(barlineEEnum, Barline.SINGLE);
+    addEEnumLiteral(barlineEEnum, Barline.DOUBLE);
 
     // Create resource
     createResource(eNS_URI);

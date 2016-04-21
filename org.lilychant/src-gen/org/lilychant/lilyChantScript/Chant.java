@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.lilychant.lilyChantScript.Chant#getName <em>Name</em>}</li>
  *   <li>{@link org.lilychant.lilyChantScript.Chant#getTone <em>Tone</em>}</li>
- *   <li>{@link org.lilychant.lilyChantScript.Chant#getKey <em>Key</em>}</li>
  *   <li>{@link org.lilychant.lilyChantScript.Chant#getPhrases <em>Phrases</em>}</li>
  * </ul>
  * </p>
@@ -79,32 +78,6 @@ public interface Chant extends EObject
    * @generated
    */
   void setTone(Tone value);
-
-  /**
-   * Returns the value of the '<em><b>Key</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Key</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Key</em>' attribute.
-   * @see #setKey(String)
-   * @see org.lilychant.lilyChantScript.LilyChantScriptPackage#getChant_Key()
-   * @model
-   * @generated
-   */
-  String getKey();
-
-  /**
-   * Sets the value of the '{@link org.lilychant.lilyChantScript.Chant#getKey <em>Key</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Key</em>' attribute.
-   * @see #getKey()
-   * @generated
-   */
-  void setKey(String value);
 
   /**
    * Returns the value of the '<em><b>Phrases</b></em>' containment reference list.

@@ -32,7 +32,6 @@ import org.lilychant.lilyChantScript.VoiceName;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.lilychant.lilyChantScript.impl.ToneImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.lilychant.lilyChantScript.impl.ToneImpl#getKey <em>Key</em>}</li>
  *   <li>{@link org.lilychant.lilyChantScript.impl.ToneImpl#getVoiceNames <em>Voice Names</em>}</li>
  *   <li>{@link org.lilychant.lilyChantScript.impl.ToneImpl#getPhrases <em>Phrases</em>}</li>
  * </ul>
@@ -61,26 +60,6 @@ public class ToneImpl extends MinimalEObjectImpl.Container implements Tone
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getKey()
-   * @generated
-   * @ordered
-   */
-  protected static final String KEY_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getKey() <em>Key</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getKey()
-   * @generated
-   * @ordered
-   */
-  protected String key = KEY_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getVoiceNames() <em>Voice Names</em>}' containment reference list.
@@ -151,29 +130,6 @@ public class ToneImpl extends MinimalEObjectImpl.Container implements Tone
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getKey()
-  {
-    return key;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setKey(String newKey)
-  {
-    String oldKey = key;
-    key = newKey;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LilyChantScriptPackage.TONE__KEY, oldKey, key));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<VoiceName> getVoiceNames()
   {
     if (voiceNames == null)
@@ -227,8 +183,6 @@ public class ToneImpl extends MinimalEObjectImpl.Container implements Tone
     {
       case LilyChantScriptPackage.TONE__NAME:
         return getName();
-      case LilyChantScriptPackage.TONE__KEY:
-        return getKey();
       case LilyChantScriptPackage.TONE__VOICE_NAMES:
         return getVoiceNames();
       case LilyChantScriptPackage.TONE__PHRASES:
@@ -250,9 +204,6 @@ public class ToneImpl extends MinimalEObjectImpl.Container implements Tone
     {
       case LilyChantScriptPackage.TONE__NAME:
         setName((String)newValue);
-        return;
-      case LilyChantScriptPackage.TONE__KEY:
-        setKey((String)newValue);
         return;
       case LilyChantScriptPackage.TONE__VOICE_NAMES:
         getVoiceNames().clear();
@@ -279,9 +230,6 @@ public class ToneImpl extends MinimalEObjectImpl.Container implements Tone
       case LilyChantScriptPackage.TONE__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case LilyChantScriptPackage.TONE__KEY:
-        setKey(KEY_EDEFAULT);
-        return;
       case LilyChantScriptPackage.TONE__VOICE_NAMES:
         getVoiceNames().clear();
         return;
@@ -304,8 +252,6 @@ public class ToneImpl extends MinimalEObjectImpl.Container implements Tone
     {
       case LilyChantScriptPackage.TONE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case LilyChantScriptPackage.TONE__KEY:
-        return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
       case LilyChantScriptPackage.TONE__VOICE_NAMES:
         return voiceNames != null && !voiceNames.isEmpty();
       case LilyChantScriptPackage.TONE__PHRASES:
@@ -327,8 +273,6 @@ public class ToneImpl extends MinimalEObjectImpl.Container implements Tone
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", key: ");
-    result.append(key);
     result.append(')');
     return result.toString();
   }
