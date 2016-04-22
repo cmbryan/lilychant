@@ -16,6 +16,7 @@ import org.lilychant.lilyChantScript.VoiceName
 import org.lilychant.lilyChantScript.VoicePhrase
 
 import static extension org.eclipse.xtext.EcoreUtil2.*
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils
 
 /**
  * Generates code from your model files on save.
