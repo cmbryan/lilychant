@@ -103,7 +103,7 @@ class LilyChantGenerator extends AbstractGenerator {
 							  Phrase: «notePhrase.name»
 							  Line: «NodeModelUtils.getNode(noteGroup).startLine»
 						''')
-						return result
+						throw e
 					}
 					syllableIndex++
 				}
