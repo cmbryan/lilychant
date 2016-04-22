@@ -41,6 +41,8 @@ RULE_HYPHEN : '--';
 
 RULE_EXTENDER : '__';
 
+RULE_SKIP : '_';
+
 RULE_START_NOTE_GROUP : '<';
 
 RULE_END_NOTE_GROUP : '>';

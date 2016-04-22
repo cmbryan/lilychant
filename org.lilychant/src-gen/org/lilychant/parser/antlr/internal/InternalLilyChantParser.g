@@ -666,16 +666,35 @@ ruleNoteGroup returns [EObject current=null]
 		)
 		    |
 		(
-			this_START_NOTE_GROUP_5=RULE_START_NOTE_GROUP
+			(
+				lv_syllables_5_0=RULE_SKIP
+				{
+					newLeafNode(lv_syllables_5_0, grammarAccess.getNoteGroupAccess().getSyllablesSKIPTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getNoteGroupRule());
+					}
+					addWithLastConsumed(
+						$current,
+						"syllables",
+						lv_syllables_5_0,
+						"org.lilychant.LilyChant.SKIP");
+				}
+			)
+		)
+		    |
+		(
+			this_START_NOTE_GROUP_6=RULE_START_NOTE_GROUP
 			{
-				newLeafNode(this_START_NOTE_GROUP_5, grammarAccess.getNoteGroupAccess().getSTART_NOTE_GROUPTerminalRuleCall_1_0());
+				newLeafNode(this_START_NOTE_GROUP_6, grammarAccess.getNoteGroupAccess().getSTART_NOTE_GROUPTerminalRuleCall_2_0());
 			}
 			(
 				(
 					(
-						lv_syllables_6_1=RULE_ID
+						lv_syllables_7_1=RULE_ID
 						{
-							newLeafNode(lv_syllables_6_1, grammarAccess.getNoteGroupAccess().getSyllablesIDTerminalRuleCall_1_1_0_0());
+							newLeafNode(lv_syllables_7_1, grammarAccess.getNoteGroupAccess().getSyllablesIDTerminalRuleCall_2_1_0_0());
 						}
 						{
 							if ($current==null) {
@@ -684,13 +703,13 @@ ruleNoteGroup returns [EObject current=null]
 							addWithLastConsumed(
 								$current,
 								"syllables",
-								lv_syllables_6_1,
+								lv_syllables_7_1,
 								"org.lilychant.LilyChant.ID");
 						}
 						    |
-						lv_syllables_6_2=RULE_HYPHEN
+						lv_syllables_7_2=RULE_HYPHEN
 						{
-							newLeafNode(lv_syllables_6_2, grammarAccess.getNoteGroupAccess().getSyllablesHYPHENTerminalRuleCall_1_1_0_1());
+							newLeafNode(lv_syllables_7_2, grammarAccess.getNoteGroupAccess().getSyllablesHYPHENTerminalRuleCall_2_1_0_1());
 						}
 						{
 							if ($current==null) {
@@ -699,15 +718,30 @@ ruleNoteGroup returns [EObject current=null]
 							addWithLastConsumed(
 								$current,
 								"syllables",
-								lv_syllables_6_2,
+								lv_syllables_7_2,
 								"org.lilychant.LilyChant.HYPHEN");
+						}
+						    |
+						lv_syllables_7_3=RULE_EXTENDER
+						{
+							newLeafNode(lv_syllables_7_3, grammarAccess.getNoteGroupAccess().getSyllablesEXTENDERTerminalRuleCall_2_1_0_2());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getNoteGroupRule());
+							}
+							addWithLastConsumed(
+								$current,
+								"syllables",
+								lv_syllables_7_3,
+								"org.lilychant.LilyChant.EXTENDER");
 						}
 					)
 				)
 			)+
-			this_END_NOTE_GROUP_7=RULE_END_NOTE_GROUP
+			this_END_NOTE_GROUP_8=RULE_END_NOTE_GROUP
 			{
-				newLeafNode(this_END_NOTE_GROUP_7, grammarAccess.getNoteGroupAccess().getEND_NOTE_GROUPTerminalRuleCall_1_2());
+				newLeafNode(this_END_NOTE_GROUP_8, grammarAccess.getNoteGroupAccess().getEND_NOTE_GROUPTerminalRuleCall_2_2());
 			}
 		)
 	)

@@ -369,31 +369,32 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSyllablesIDTerminalRuleCall_0_0_1_1_0 = (RuleCall)cSyllablesAssignment_0_0_1_1.eContents().get(0);
 		private final Assignment cSyllablesAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
 		private final RuleCall cSyllablesEXTENDERTerminalRuleCall_0_1_0 = (RuleCall)cSyllablesAssignment_0_1.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final RuleCall cSTART_NOTE_GROUPTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final Assignment cSyllablesAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final Alternatives cSyllablesAlternatives_1_1_0 = (Alternatives)cSyllablesAssignment_1_1.eContents().get(0);
-		private final RuleCall cSyllablesIDTerminalRuleCall_1_1_0_0 = (RuleCall)cSyllablesAlternatives_1_1_0.eContents().get(0);
-		private final RuleCall cSyllablesHYPHENTerminalRuleCall_1_1_0_1 = (RuleCall)cSyllablesAlternatives_1_1_0.eContents().get(1);
-		private final RuleCall cEND_NOTE_GROUPTerminalRuleCall_1_2 = (RuleCall)cGroup_1.eContents().get(2);
+		private final Assignment cSyllablesAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cSyllablesSKIPTerminalRuleCall_1_0 = (RuleCall)cSyllablesAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final RuleCall cSTART_NOTE_GROUPTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final Assignment cSyllablesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final Alternatives cSyllablesAlternatives_2_1_0 = (Alternatives)cSyllablesAssignment_2_1.eContents().get(0);
+		private final RuleCall cSyllablesIDTerminalRuleCall_2_1_0_0 = (RuleCall)cSyllablesAlternatives_2_1_0.eContents().get(0);
+		private final RuleCall cSyllablesHYPHENTerminalRuleCall_2_1_0_1 = (RuleCall)cSyllablesAlternatives_2_1_0.eContents().get(1);
+		private final RuleCall cSyllablesEXTENDERTerminalRuleCall_2_1_0_2 = (RuleCall)cSyllablesAlternatives_2_1_0.eContents().get(2);
+		private final RuleCall cEND_NOTE_GROUPTerminalRuleCall_2_2 = (RuleCall)cGroup_2.eContents().get(2);
 		
 		//NoteGroup:
 		//	(syllables+=ID => (syllables+=HYPHEN)?
 		//	| syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER*
+		//	| syllables+=SKIP
 		//	// group of syllables to be repeated on the same pitch
-		//	// Note that '__' is not allowed within a group, as this implies a slur
-		//	| START_NOTE_GROUP syllables+=(ID | HYPHEN)+ END_NOTE_GROUP;
+		//	| START_NOTE_GROUP syllables+=(ID | HYPHEN | EXTENDER)+ END_NOTE_GROUP;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(syllables+=ID => (syllables+=HYPHEN)? | syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER* // group of syllables to be repeated on the same pitch
-		//// Note that '__' is not allowed within a group, as this implies a slur
-		//| START_NOTE_GROUP syllables+=(ID | HYPHEN)+ END_NOTE_GROUP
+		//(syllables+=ID => (syllables+=HYPHEN)? | syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER* | syllables+=SKIP // group of syllables to be repeated on the same pitch
+		//| START_NOTE_GROUP syllables+=(ID | HYPHEN | EXTENDER)+ END_NOTE_GROUP
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//(syllables+=ID => (syllables+=HYPHEN)? | syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER*
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//// single syllable
 		//syllables+=ID => (syllables+=HYPHEN)? | syllables+=HYPHEN syllables+=ID
 		public Alternatives getAlternatives_0_0() { return cAlternatives_0_0; }
 		
@@ -436,26 +437,35 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		//EXTENDER
 		public RuleCall getSyllablesEXTENDERTerminalRuleCall_0_1_0() { return cSyllablesEXTENDERTerminalRuleCall_0_1_0; }
 		
-		//START_NOTE_GROUP syllables+=(ID | HYPHEN)+ END_NOTE_GROUP
-		public Group getGroup_1() { return cGroup_1; }
+		//syllables+=SKIP
+		public Assignment getSyllablesAssignment_1() { return cSyllablesAssignment_1; }
+		
+		//SKIP
+		public RuleCall getSyllablesSKIPTerminalRuleCall_1_0() { return cSyllablesSKIPTerminalRuleCall_1_0; }
+		
+		//START_NOTE_GROUP syllables+=(ID | HYPHEN | EXTENDER)+ END_NOTE_GROUP
+		public Group getGroup_2() { return cGroup_2; }
 		
 		//START_NOTE_GROUP
-		public RuleCall getSTART_NOTE_GROUPTerminalRuleCall_1_0() { return cSTART_NOTE_GROUPTerminalRuleCall_1_0; }
+		public RuleCall getSTART_NOTE_GROUPTerminalRuleCall_2_0() { return cSTART_NOTE_GROUPTerminalRuleCall_2_0; }
 		
-		//syllables+=(ID | HYPHEN)+
-		public Assignment getSyllablesAssignment_1_1() { return cSyllablesAssignment_1_1; }
+		//syllables+=(ID | HYPHEN | EXTENDER)+
+		public Assignment getSyllablesAssignment_2_1() { return cSyllablesAssignment_2_1; }
 		
-		//(ID | HYPHEN)
-		public Alternatives getSyllablesAlternatives_1_1_0() { return cSyllablesAlternatives_1_1_0; }
+		//(ID | HYPHEN | EXTENDER)
+		public Alternatives getSyllablesAlternatives_2_1_0() { return cSyllablesAlternatives_2_1_0; }
 		
 		//ID
-		public RuleCall getSyllablesIDTerminalRuleCall_1_1_0_0() { return cSyllablesIDTerminalRuleCall_1_1_0_0; }
+		public RuleCall getSyllablesIDTerminalRuleCall_2_1_0_0() { return cSyllablesIDTerminalRuleCall_2_1_0_0; }
 		
 		//HYPHEN
-		public RuleCall getSyllablesHYPHENTerminalRuleCall_1_1_0_1() { return cSyllablesHYPHENTerminalRuleCall_1_1_0_1; }
+		public RuleCall getSyllablesHYPHENTerminalRuleCall_2_1_0_1() { return cSyllablesHYPHENTerminalRuleCall_2_1_0_1; }
+		
+		//EXTENDER
+		public RuleCall getSyllablesEXTENDERTerminalRuleCall_2_1_0_2() { return cSyllablesEXTENDERTerminalRuleCall_2_1_0_2; }
 		
 		//END_NOTE_GROUP
-		public RuleCall getEND_NOTE_GROUPTerminalRuleCall_1_2() { return cEND_NOTE_GROUPTerminalRuleCall_1_2; }
+		public RuleCall getEND_NOTE_GROUPTerminalRuleCall_2_2() { return cEND_NOTE_GROUPTerminalRuleCall_2_2; }
 	}
 	public class NoteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.Note");
@@ -525,6 +535,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tDURATION;
 	private final TerminalRule tHYPHEN;
 	private final TerminalRule tEXTENDER;
+	private final TerminalRule tSKIP;
 	private final TerminalRule tSTART_NOTE_GROUP;
 	private final TerminalRule tEND_NOTE_GROUP;
 	private final TerminalRule tBEGIN;
@@ -554,6 +565,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		this.tDURATION = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.DURATION");
 		this.tHYPHEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.HYPHEN");
 		this.tEXTENDER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.EXTENDER");
+		this.tSKIP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.SKIP");
 		this.tSTART_NOTE_GROUP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.START_NOTE_GROUP");
 		this.tEND_NOTE_GROUP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.END_NOTE_GROUP");
 		this.tBEGIN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.BEGIN");
@@ -702,9 +714,9 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	//NoteGroup:
 	//	(syllables+=ID => (syllables+=HYPHEN)?
 	//	| syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER*
+	//	| syllables+=SKIP
 	//	// group of syllables to be repeated on the same pitch
-	//	// Note that '__' is not allowed within a group, as this implies a slur
-	//	| START_NOTE_GROUP syllables+=(ID | HYPHEN)+ END_NOTE_GROUP;
+	//	| START_NOTE_GROUP syllables+=(ID | HYPHEN | EXTENDER)+ END_NOTE_GROUP;
 	public NoteGroupElements getNoteGroupAccess() {
 		return pNoteGroup;
 	}
@@ -757,6 +769,12 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	//	'__';
 	public TerminalRule getEXTENDERRule() {
 		return tEXTENDER;
+	}
+	
+	//terminal SKIP:
+	//	'_';
+	public TerminalRule getSKIPRule() {
+		return tSKIP;
 	}
 	
 	//terminal START_NOTE_GROUP:
