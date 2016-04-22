@@ -78,9 +78,14 @@ enum Barline:
 
 NoteGroup:
 	// single syllable
-	(syllables+=ID =>(syllables+=HYPHEN)?
-	| syllables+=HYPHEN syllables+=ID)
-	syllables+=EXTENDER*
+	(
+		(
+			syllables+=ID =>(syllables+=HYPHEN)?
+			| syllables+=HYPHEN syllables+=ID
+		)
+		syllables+=EXTENDER*
+	)
+	| syllables+=SKIP
 	
 	// group of syllables to be repeated on the same pitch
 	// Note that '__' is not allowed within a group, as this implies a slur
@@ -112,6 +117,7 @@ terminal STRING	:
 terminal DURATION: ('1'|'2'|'4'|'8'|'16'|'\breve')+;
 terminal HYPHEN: '--';
 terminal EXTENDER: '__';
+terminal SKIP: '_';
 terminal START_NOTE_GROUP: '<';
 terminal END_NOTE_GROUP: '>';
 

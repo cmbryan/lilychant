@@ -37,7 +37,6 @@ class LilyChantGenerator extends AbstractGenerator {
 		for (lyricPhrase : chant.phrases) {
 			if (lyricPhrase.explicitPhrase != null) {
 				currentPhraseIndex = chant.tone.phrases.indexOf(lyricPhrase.explicitPhrase)
-				println(" "+currentPhraseIndex)
 			} else {
 				currentPhraseIndex = (currentPhraseIndex+1) % chant.tone.phrases.length
 				// Special case for 'final' phrase
@@ -48,7 +47,6 @@ class LilyChantGenerator extends AbstractGenerator {
 					currentPhraseIndex = (currentPhraseIndex+1) % chant.tone.phrases.length
 				}
 			}
-			println("!! "+currentPhraseIndex)
 			val notePhrase = chant.tone.phrases.get(currentPhraseIndex)
 			
 			var VoicePhrase targetVoice
@@ -61,41 +59,50 @@ class LilyChantGenerator extends AbstractGenerator {
 			// Match the notes to the syllables
 			var noteIndex = 0
 			for (noteGroup : lyricPhrase.noteGroups) {
-//				println('''«FOR syllable : noteGroup.syllables» «syllable»«ENDFOR»''')
 				var syllableIndex = 0
 				var inSlur = false
 				while (syllableIndex < noteGroup.syllables.length) {
 					// TODO use terminal definitions for hyphens and extenders, but where do they live?
-					val note = targetVoice.notes.get(noteIndex)
-					val syllable = noteGroup.syllables.get(syllableIndex)
-					switch (syllable) {
-						case "--": {
-							// skip to the next syllable
-						}
-						case "__": {
-//							// slurring implies advance to the next note
-							if (!inSlur) {
-								result.add("(")
-								inSlur = true
+					// TODO Better error handling
+					try {
+						val note = targetVoice.notes.get(noteIndex)
+						switch (noteGroup.syllables.get(syllableIndex)) {
+							case "--",
+							case "_": {
+								// skip to the next syllable
 							}
-							noteIndex++
-							result.add(targetVoice.notes.get(noteIndex))
-							if (syllableIndex+1 == noteGroup.syllables.length
-									|| noteGroup.syllables.get(syllableIndex+1) != "__")
-								result.add(")")
-						}
-						default: {
-							if (inSlur) {
-								result.add(")")
-								inSlur = false
+							case "__": {
+	//							// slurring implies advance to the next note
+								if (!inSlur) {
+									result.add("(")
+									inSlur = true
+								}
+								noteIndex++
+								result.add(targetVoice.notes.get(noteIndex))
+								if (syllableIndex+1 == noteGroup.syllables.length
+										|| noteGroup.syllables.get(syllableIndex+1) != "__")
+									result.add(")")
 							}
-
-							if (result.length == 0 || result.get(result.length-1).indexOf("bar") == -1) {
-								// allow for natural line breaking
-								result.add('''\bar ""''')
+							default: {
+								if (inSlur) {
+									result.add(")")
+									inSlur = false
+								}
+	
+								if (result.length == 0 || result.get(result.length-1).indexOf("bar") == -1) {
+									// allow for natural line breaking
+									result.add('''\bar ""''')
+								}
+								result.add(note)
 							}
-							result.add(note)
 						}
+					} catch (IndexOutOfBoundsException e) {
+						System.err.println('''
+							More syllabels than notes! («noteIndex» >= «targetVoice.notes.length»)
+							  Phrase: «notePhrase.name»
+							  Line: «NodeModelUtils.getNode(noteGroup).startLine»
+						''')
+						return result
 					}
 					syllableIndex++
 				}
@@ -135,7 +142,11 @@ class LilyChantGenerator extends AbstractGenerator {
 		'''
 		words = \lyricmode {
 			«FOR lyricPhrase : chant.phrases»
-			«FOR noteGroup : lyricPhrase.noteGroups»«FOR syllable : noteGroup.syllables»«syllable» «ENDFOR»«ENDFOR»
+			«FOR noteGroup : lyricPhrase.noteGroups»
+«««			"_" implies a skipped note in the NotePhrase
+«««			TODO Don't use a string literal!
+			«FOR syllable : noteGroup.syllables.filter[!equals("_")]»«syllable» «ENDFOR»
+			«ENDFOR»
 			«ENDFOR»
 		}
 		'''
