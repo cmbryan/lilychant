@@ -88,8 +88,7 @@ NoteGroup:
 	| syllables+=SKIP
 	
 	// group of syllables to be repeated on the same pitch
-	// Note that '__' is not allowed within a group, as this implies a slur
-	| START_NOTE_GROUP syllables+=(ID|HYPHEN)+ END_NOTE_GROUP
+	| START_NOTE_GROUP syllables+=(ID|HYPHEN|EXTENDER)+ END_NOTE_GROUP
 ;
 
 /*

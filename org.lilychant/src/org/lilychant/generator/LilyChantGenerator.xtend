@@ -73,12 +73,15 @@ class LilyChantGenerator extends AbstractGenerator {
 								// skip to the next syllable
 							}
 							case "__": {
-	//							// slurring implies advance to the next note
 								if (!inSlur) {
 									result.add("(")
 									inSlur = true
 								}
-								noteIndex++
+								// slurring implies advance to the next note,
+								// *unless* it's the first of a note-group, in which case
+								// the advance has already happened!
+								if (syllableIndex > 0)
+									noteIndex++
 								result.add(targetVoice.notes.get(noteIndex))
 								if (syllableIndex+1 == noteGroup.syllables.length
 										|| noteGroup.syllables.get(syllableIndex+1) != "__")
