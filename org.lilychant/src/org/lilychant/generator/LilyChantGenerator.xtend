@@ -8,15 +8,16 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils
 import org.lilychant.lilyChantScript.Barline
 import org.lilychant.lilyChantScript.Chant
+import org.lilychant.lilyChantScript.Note
 import org.lilychant.lilyChantScript.Script
 import org.lilychant.lilyChantScript.Tone
 import org.lilychant.lilyChantScript.VoiceName
 import org.lilychant.lilyChantScript.VoicePhrase
 
 import static extension org.eclipse.xtext.EcoreUtil2.*
-import org.eclipse.xtext.nodemodel.util.NodeModelUtils
 
 /**
  * Generates code from your model files on save.
@@ -31,7 +32,7 @@ class LilyChantGenerator extends AbstractGenerator {
 		'''
 	}
 		
-	def getVoiceNotes(Script model, Chant chant, VoiceName voiceName) {
+	def private getVoiceNotes(Script model, Chant chant, VoiceName voiceName) {
 		var currentPhraseIndex = -1
 		var result = new ArrayList<String>()
 
@@ -60,6 +61,10 @@ class LilyChantGenerator extends AbstractGenerator {
 			// Match the notes to the syllables
 			var noteIndex = 0
 			for (noteGroup : lyricPhrase.noteGroups) {
+				val syllables = noteGroup.syllables.filter[!#['_', '__', '--'].contains(it)]
+				var insideGroup = false
+				
+				// Print the notes
 				var syllableIndex = 0
 				var inSlur = false
 				while (syllableIndex < noteGroup.syllables.length) {
@@ -73,31 +78,61 @@ class LilyChantGenerator extends AbstractGenerator {
 								// skip to the next syllable
 							}
 							case "__": {
-								if (!inSlur) {
-									result.add("(")
-									inSlur = true
+								if (doGroupSyllables(syllables.length)) {
+									// error
+								} else {
+									if (!inSlur) {
+										while (result.last.contains('bar')) {
+											result.remove(result.last)
+										}
+										result.add("(")
+										inSlur = true
+									}
+									// slurring implies advance to the next note,
+									// *unless* it's the first of a note-group, in which case
+									// the advance has already happened!
+									if (syllableIndex > 0)
+										noteIndex++
+									
+									// This adds the actual note:
+									val nextNote = targetVoice.notes.get(noteIndex)
+									result.add(nextNote.toLyString)
+									
+									if (syllableIndex+1 == noteGroup.syllables.length
+											|| noteGroup.syllables.get(syllableIndex+1) != "__")
+										result.add(")")
 								}
-								// slurring implies advance to the next note,
-								// *unless* it's the first of a note-group, in which case
-								// the advance has already happened!
-								if (syllableIndex > 0)
-									noteIndex++
-								result.add(targetVoice.notes.get(noteIndex))
-								if (syllableIndex+1 == noteGroup.syllables.length
-										|| noteGroup.syllables.get(syllableIndex+1) != "__")
-									result.add(")")
 							}
 							default: {
 								if (inSlur) {
 									result.add(")")
 									inSlur = false
 								}
-	
-								if (result.length == 0 || result.get(result.length-1).indexOf("bar") == -1) {
-									// allow for natural line breaking
+
+								if (doGroupSyllables(syllables.length)) {
+									if (syllableIndex == 0) {
+										// First and last of the group get their own notes
+										result.add(note.toLyString)
+									} else if (syllableIndex==1 && noteGroup.syllables.get(0)=='--') {
+										// First and last of the group get their own notes
+										result.add(note.toLyString)
+									} else if (syllableIndex == noteGroup.syllables.length-1) {
+										// First and last of the group get their own notes
+										result.add(note.toLyString)
+										result.add('''\bar ""''')
+										insideGroup = false
+									} else if (!insideGroup) {
+										// Print the group 'breve' note
+										result.add(note.pitch + '''\breve''')
+										insideGroup = true
+									} else {
+										// No new note: falls under the previous breve
+									}
+								} else {
+									// This adds the actual note:
+									result.add(note.toLyString)
 									result.add('''\bar ""''')
 								}
-								result.add(note)
 							}
 						}
 					} catch (IndexOutOfBoundsException e) {
@@ -110,21 +145,25 @@ class LilyChantGenerator extends AbstractGenerator {
 					}
 					syllableIndex++
 				}
+//				if (insideGroup) {
+//					// FIXME This shouldn't happen!
+//					result.add(targetVoice.notes.get(noteIndex).toLyString)
+//				}
 				syllableIndex++
 				noteIndex++
 			}
 			switch (lyricPhrase.bar) {
 				case Barline.SINGLE: {
 					result.add('''\bar "|"''')
+					result.add('\n')
 				}
 				case Barline.DOUBLE: {
 					result.add('''\bar "||"''')
+					result.add('\n')
 				}
 			}
 		}
 		
-		// replace last barline with double-bar
-		result.remove(result.length-1)
 		result.add('''\bar "|."''')
 		
 //		println('''Notes for voice: «FOR note : result» «note»«ENDFOR»''')
@@ -143,17 +182,74 @@ class LilyChantGenerator extends AbstractGenerator {
 	}
 	
 	def private generateLyrics(Script model, Chant chant) {
-		'''
-		words = \lyricmode {
-			«FOR lyricPhrase : chant.phrases»
-			«FOR noteGroup : lyricPhrase.noteGroups»
-«««			"_" implies a skipped note in the NotePhrase
-«««			TODO Don't use a string literal!
-			«FOR syllable : noteGroup.syllables.filter[!equals("_")]»«syllable» «ENDFOR»
-			«ENDFOR»
-			«ENDFOR»
+		var result = new StringBuilder('''
+			words = \lyricmode {
+		''')
+		
+		for (lyricPhrase : chant.phrases) {
+			for (noteGroup : lyricPhrase.noteGroups) {
+				val printSyllables = noteGroup.syllables.filter[!#['_'].contains(it)]
+				val lyricSyllables = noteGroup.syllables.filter[!#['_', '__', '--'].contains(it)]
+				
+				// "_" implies a skipped note in the NotePhrase
+				// TODO Don't use a string literal!
+				result.append('\t')
+				
+				if (doGroupSyllables(lyricSyllables.length)) {
+					// Group all but the first and last syllables into a single quoted string
+					
+					var sylIdx = 0
+
+					// First syllable
+					do {
+						result.append(' ')
+						result.append(printSyllables.get(sylIdx))
+						sylIdx++
+					} while (printSyllables.get(sylIdx-1) == '--')
+					
+					// Middle syllables
+					result.append(' "')
+					while (sylIdx < printSyllables.length-1) {
+						if (printSyllables.get(sylIdx) != '--') {
+							result.append(printSyllables.get(sylIdx))
+							if (printSyllables.get(sylIdx+1) != '--') {
+								// next is a new word
+								result.append(' ')
+							}
+						}
+						sylIdx++
+					}
+					result.append('" ')
+					
+					// Last
+					if (printSyllables.get(sylIdx) == '--') {
+						result.append(' --')
+					}
+					result.append(printSyllables.last)
+
+				} else {
+					for (syllable : printSyllables) {
+						result.append(syllable)
+						result.append(' ')
+					}
+				}
+				result.append('\n')
+			}
 		}
-		'''
+		
+		result.append('''
+			}
+		''')
+		
+		return result.toString
+	}
+	
+	def private toLyString(Note it) {
+		return '''«pitch»«IF duration!=""»«duration»«ENDIF»''' 
+	}
+	
+	def private doGroupSyllables(int numSyllables) {
+		return (numSyllables >=5)
 	}
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
