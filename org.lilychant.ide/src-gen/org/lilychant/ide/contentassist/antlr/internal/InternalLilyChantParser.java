@@ -27,30 +27,30 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "Phrase", "Voices", "Chant", "Voice", "Tone", "VerticalLineVerticalLine", "LeftParenthesis", "RightParenthesis", "VerticalLine", "RULE_ID", "RULE_STRING", "RULE_DURATION", "RULE_HYPHEN", "RULE_EXTENDER", "RULE_SKIP", "RULE_START_NOTE_GROUP", "RULE_END_NOTE_GROUP", "RULE_BEGIN", "RULE_END", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
     };
-    public static final int RULE_DURATION=15;
-    public static final int RULE_ID=13;
-    public static final int VerticalLineVerticalLine=9;
-    public static final int RightParenthesis=11;
-    public static final int RULE_BEGIN=21;
-    public static final int RULE_ANY_OTHER=26;
-    public static final int Phrase=4;
-    public static final int Voices=5;
-    public static final int LeftParenthesis=10;
-    public static final int Chant=6;
-    public static final int EOF=-1;
-    public static final int RULE_SL_COMMENT=24;
-    public static final int RULE_ML_COMMENT=23;
-    public static final int RULE_STRING=14;
-    public static final int RULE_HYPHEN=16;
-    public static final int RULE_SKIP=18;
-    public static final int Voice=7;
-    public static final int VerticalLine=12;
     public static final int RULE_END=22;
+    public static final int RULE_BEGIN=21;
+    public static final int RULE_DURATION=15;
+    public static final int VerticalLineVerticalLine=9;
+    public static final int RULE_STRING=14;
+    public static final int RULE_SKIP=18;
+    public static final int RULE_EXTENDER=17;
+    public static final int RULE_SL_COMMENT=24;
+    public static final int RULE_START_NOTE_GROUP=19;
+    public static final int LeftParenthesis=10;
+    public static final int EOF=-1;
+    public static final int Chant=6;
+    public static final int RULE_ID=13;
+    public static final int RULE_WS=25;
+    public static final int RightParenthesis=11;
+    public static final int Phrase=4;
+    public static final int RULE_HYPHEN=16;
+    public static final int RULE_ANY_OTHER=26;
+    public static final int Voices=5;
     public static final int RULE_END_NOTE_GROUP=20;
     public static final int Tone=8;
-    public static final int RULE_EXTENDER=17;
-    public static final int RULE_WS=25;
-    public static final int RULE_START_NOTE_GROUP=19;
+    public static final int VerticalLine=12;
+    public static final int RULE_ML_COMMENT=23;
+    public static final int Voice=7;
 
     // delegates
     // delegators
@@ -4845,15 +4845,15 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
             if ( (LA16_0==RULE_HYPHEN) ) {
                 int LA16_1 = input.LA(2);
 
-                if ( (LA16_1==RULE_ID) ) {
-                    int LA16_3 = input.LA(3);
+                if ( (LA16_1==EOF||LA16_1==VerticalLineVerticalLine||LA16_1==VerticalLine||(LA16_1>=RULE_HYPHEN && LA16_1<=RULE_START_NOTE_GROUP)) ) {
+                    alt16=1;
+                }
+                else if ( (LA16_1==RULE_ID) ) {
+                    int LA16_4 = input.LA(3);
 
                     if ( (synpred18_InternalLilyChantParser()) ) {
                         alt16=1;
                     }
-                }
-                else if ( (LA16_1==EOF||LA16_1==VerticalLineVerticalLine||LA16_1==VerticalLine||(LA16_1>=RULE_HYPHEN && LA16_1<=RULE_START_NOTE_GROUP)) ) {
-                    alt16=1;
                 }
             }
             switch (alt16) {

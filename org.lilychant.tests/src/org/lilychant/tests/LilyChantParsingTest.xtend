@@ -2,10 +2,10 @@ package org.lilychant.tests
 
 import com.google.inject.Inject
 import org.eclipse.emf.ecore.EObject
-import org.eclipse.xtext.junit4.InjectWith
-import org.eclipse.xtext.junit4.XtextRunner
-import org.eclipse.xtext.junit4.util.ParseHelper
-import org.eclipse.xtext.junit4.validation.ValidationTestHelper
+import org.eclipse.xtext.testing.InjectWith
+import org.eclipse.xtext.testing.XtextRunner
+import org.eclipse.xtext.testing.util.ParseHelper
+import org.eclipse.xtext.testing.validation.ValidationTestHelper
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -34,11 +34,11 @@ class LilyChantParsingTest{
 						d4 e e f1
 					Voice Alt
 						g4 a b c2
-			Chant "test" Tone one
-				(Phrase one) <This--s> is__ <a test> |
+			Chant Tone one
+				<This--s> is__ <a test> |
 				Words in phrase two |
-				(Phrase two) ^Phrase two again ||
-			''')
+				(two) ^Phrase two again ||
+		''')
 		
 		result.assertParsedWithoutError;
 	}

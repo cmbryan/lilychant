@@ -25,30 +25,30 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "Phrase", "Voices", "Chant", "Voice", "Tone", "VerticalLineVerticalLine", "LeftParenthesis", "RightParenthesis", "VerticalLine", "RULE_ID", "RULE_STRING", "RULE_DURATION", "RULE_HYPHEN", "RULE_EXTENDER", "RULE_SKIP", "RULE_START_NOTE_GROUP", "RULE_END_NOTE_GROUP", "RULE_BEGIN", "RULE_END", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
     };
-    public static final int RULE_DURATION=15;
-    public static final int RULE_ID=13;
-    public static final int VerticalLineVerticalLine=9;
-    public static final int RightParenthesis=11;
-    public static final int RULE_BEGIN=21;
-    public static final int RULE_ANY_OTHER=26;
-    public static final int Phrase=4;
-    public static final int Voices=5;
-    public static final int LeftParenthesis=10;
-    public static final int Chant=6;
-    public static final int EOF=-1;
-    public static final int RULE_SL_COMMENT=24;
-    public static final int RULE_ML_COMMENT=23;
-    public static final int RULE_STRING=14;
-    public static final int RULE_HYPHEN=16;
-    public static final int RULE_SKIP=18;
-    public static final int Voice=7;
-    public static final int VerticalLine=12;
     public static final int RULE_END=22;
+    public static final int RULE_BEGIN=21;
+    public static final int RULE_DURATION=15;
+    public static final int VerticalLineVerticalLine=9;
+    public static final int RULE_STRING=14;
+    public static final int RULE_SKIP=18;
+    public static final int RULE_EXTENDER=17;
+    public static final int RULE_SL_COMMENT=24;
+    public static final int RULE_START_NOTE_GROUP=19;
+    public static final int LeftParenthesis=10;
+    public static final int EOF=-1;
+    public static final int Chant=6;
+    public static final int RULE_ID=13;
+    public static final int RULE_WS=25;
+    public static final int RightParenthesis=11;
+    public static final int Phrase=4;
+    public static final int RULE_HYPHEN=16;
+    public static final int RULE_ANY_OTHER=26;
+    public static final int Voices=5;
     public static final int RULE_END_NOTE_GROUP=20;
     public static final int Tone=8;
-    public static final int RULE_EXTENDER=17;
-    public static final int RULE_WS=25;
-    public static final int RULE_START_NOTE_GROUP=19;
+    public static final int VerticalLine=12;
+    public static final int RULE_ML_COMMENT=23;
+    public static final int Voice=7;
 
     // delegates
     // delegators
@@ -2326,7 +2326,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
     static final String dfa_3s = "\2\11\1\uffff\1\0\7\uffff";
     static final String dfa_4s = "\2\23\1\uffff\1\0\7\uffff";
     static final String dfa_5s = "\2\uffff\1\2\1\uffff\7\1";
-    static final String dfa_6s = "\1\uffff\1\1\1\uffff\1\0\7\uffff}>";
+    static final String dfa_6s = "\1\uffff\1\0\1\uffff\1\1\7\uffff}>";
     static final String[] dfa_7s = {
             "\1\2\2\uffff\2\2\2\uffff\1\1\3\2",
             "\1\6\2\uffff\1\5\1\3\2\uffff\1\7\1\4\1\10\1\11",
@@ -2370,21 +2370,6 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA11_3 = input.LA(1);
-
-                         
-                        int index11_3 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred1_InternalLilyChantParser()) ) {s = 10;}
-
-                        else if ( (true) ) {s = 2;}
-
-                         
-                        input.seek(index11_3);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
                         int LA11_1 = input.LA(1);
 
                          
@@ -2409,6 +2394,21 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
                          
                         input.seek(index11_1);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA11_3 = input.LA(1);
+
+                         
+                        int index11_3 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1_InternalLilyChantParser()) ) {s = 10;}
+
+                        else if ( (true) ) {s = 2;}
+
+                         
+                        input.seek(index11_3);
                         if ( s>=0 ) return s;
                         break;
             }

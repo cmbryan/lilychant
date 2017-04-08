@@ -4,10 +4,10 @@ import com.google.inject.Inject
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.generator.IGenerator2
 import org.eclipse.xtext.generator.InMemoryFileSystemAccess
-import org.eclipse.xtext.junit4.InjectWith
-import org.eclipse.xtext.junit4.XtextRunner
-import org.eclipse.xtext.junit4.util.ParseHelper
-import org.eclipse.xtext.junit4.validation.ValidationTestHelper
+import org.eclipse.xtext.testing.InjectWith
+import org.eclipse.xtext.testing.XtextRunner
+import org.eclipse.xtext.testing.util.ParseHelper
+import org.eclipse.xtext.testing.validation.ValidationTestHelper
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -44,7 +44,7 @@ class LilyChantGeneratorTest {
 				A--no--ther test |
 				A--no--ther test |
 				A--no--ther test ||
-			''')
+		''')
 		model.assertParsedWithoutError;
 		
 		val fsa = new InMemoryFileSystemAccess()
@@ -60,89 +60,146 @@ class LilyChantGeneratorTest {
 		println("Checking " + fileName)
 		Assert.assertEquals(
 			'''
-			\version "2.16.2"
-			
-			% =======================
-			% Global Variables
-			% =======================
-			alignleft = \once \override LyricText #'self-alignment-X = #-1
-			
-			%
-			% voices
-			%
-			Sop = {
-				e4( f) g a2 a4( g) f e1
-			}
-			Alt = {
-				c4( d) e f2 f4( e) d c1
-			}
-			
-			% =======================
-			% Lyrics
-			% =======================
-			words = \lyricmode {
-				This __ is -- a test This __ is -- a test
-			}
-			
-			% =======================
-			% Score
-			% =======================
-			\score {
-				\new ChoirStaff \with {
-				instrumentName = \markup \bold "Choir:"
-			}
-			<<
-				#(set-accidental-style 'neo-modern 'Score)
+				\version "2.16.2"
 				
-				% Upper Staff
-				\new Staff {
-					\key f \major
-					\cadenzaOn
-					<<{
-						\new Voice = "Sop" {
-							\voiceOne
-							\sop
-						}
-					}>>
-				}
-			    \new Lyrics \lyricsto "Sop" {
-			    	\words
-			    }
+				% =======================
+				% Global Variables
+				% =======================
+				alignleft = \once \override LyricText #'self-alignment-X = #-1
 				
-				% Lower Staff
-				\new Staff {
-					\key f \major
-					\cadenzaOn
-					<<{
-						\new Voice = "Bass" {
-							\voiceOne
-							\bass
-						}
-					}\\{
-						\new Voice = "Alt" {
-							\voiceTwo
-							\alt
-						}
+				%
+				% voices
+				%
+				Sop = {
+					\bar "" e4 ( f ) \bar "" g \bar "" g \bar "" a2 \bar "|" a4 ( g f ) \bar "" e1 \bar "" e1 \bar "" e1 \bar "" e1 \bar "" e1 \bar "" e1 \bar "|." 
+				}
+				
+				Bass = {
+					\bar "" c4 ( d ) \bar "" e \bar "" e \bar "" f2 \bar "|" f4 ( e d ) \bar "" c1 \bar "" c1 \bar "" c1 \bar "" c1 \bar "" c1 \bar "" c1 \bar "|." 
+				}
+				
+				
+				% =======================
+				% Lyrics
+				% =======================
+				words = \lyricmode {
+					This __ 
+					is a 
+					test 
+					This __ __ 
+					is a ve -- ry long test 
+				}
+				
+				\score {
+				
+				
+				  \new ChoirStaff \with {
+				    instrumentName = \markup \bold "Choir:"
+				  }
+				  <<
+				    #(set-accidental-style 'neo-modern 'Score)
+				    \new Staff {
+				      \key g \major
+				      \cadenzaOn
+				      <<{
+					  \new Voice = "Sop" {
+					    %\voiceOne
+					    \Sop
+					  }
 					}>>
+				    }
+				    \new Lyrics \lyricsto "Sop" { \words }
+				    \new Staff {
+				      \key g \major
+				      \clef bass
+				      \cadenzaOn
+				      <<{
+					  \new Voice = "Bass" {
+					    %\voiceOne
+					    \Bass
+					  }
+					}>>
+				    }
+				  >>
 				}
-			    \new Lyrics \lyricsto "Sop" {
-			    	\words
-			    }
-			}
-			
-			% =======================
-			% Layout
-			% =======================
-			\layout {
-				\context {
-					\Score
-					\remove "Bar_number_engraver"
+				
+				%
+				% voices
+				%
+				Sop = {
+					\bar "" e4 \bar "" f \bar "" g \bar "" a2 \bar "|" a4 \bar "" g \bar "" f \bar "" e1 \bar "|" e4 \bar "" f \bar "" g \bar "" a2 \bar "|." 
 				}
-				\context {
-					\Staff
-					\remove "Time_signature_engraver"
+				
+				Bass = {
+					\bar "" c4 \bar "" d \bar "" e \bar "" f2 \bar "|" f4 \bar "" e \bar "" d \bar "" c1 \bar "|" c4 \bar "" d \bar "" e \bar "" f2 \bar "|." 
 				}
-			}
+				
+				
+				% =======================
+				% Lyrics
+				% =======================
+				words = \lyricmode {
+					A -- 
+					no -- 
+					ther 
+					test 
+					A -- 
+					no -- 
+					ther 
+					test 
+					A -- 
+					no -- 
+					ther 
+					test 
+				}
+				
+				\score {
+				
+				
+				  \new ChoirStaff \with {
+				    instrumentName = \markup \bold "Choir:"
+				  }
+				  <<
+				    #(set-accidental-style 'neo-modern 'Score)
+				    \new Staff {
+				      \key g \major
+				      \cadenzaOn
+				      <<{
+					  \new Voice = "Sop" {
+					    %\voiceOne
+					    \Sop
+					  }
+					}>>
+				    }
+				    \new Lyrics \lyricsto "Sop" { \words }
+				    \new Staff {
+				      \key g \major
+				      \clef bass
+				      \cadenzaOn
+				      <<{
+					  \new Voice = "Bass" {
+					    %\voiceOne
+					    \Bass
+					  }
+					}>>
+				    }
+				  >>
+				}
+				
+				
+				% =======================
+				% Layout
+				% =======================
+				\layout {
+				  \context {
+				    \Score
+				    \remove "Bar_number_engraver"
+				  }
+				  \context {
+				    \Staff
+				    \remove "Time_signature_engraver"
+				  }
+				}			
 			'''.toString,
 			fsa.textFiles.get(fileName)
 		)
