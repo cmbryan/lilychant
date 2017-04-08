@@ -78,6 +78,8 @@ public class LilyChantParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_1(), "rule__NoteGroup__SyllablesAssignment_0_1");
 					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_1(), "rule__NoteGroup__SyllablesAssignment_1");
 					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_2_1(), "rule__NoteGroup__SyllablesAssignment_2_1");
+					put(grammarAccess.getNoteAccess().getPitchAssignment_0(), "rule__Note__PitchAssignment_0");
+					put(grammarAccess.getNoteAccess().getDurationAssignment_1(), "rule__Note__DurationAssignment_1");
 				}
 			};
 		}

@@ -16,6 +16,7 @@ import org.lilychant.lilyChantScript.Chant;
 import org.lilychant.lilyChantScript.LilyChantScriptFactory;
 import org.lilychant.lilyChantScript.LilyChantScriptPackage;
 import org.lilychant.lilyChantScript.LyricPhrase;
+import org.lilychant.lilyChantScript.Note;
 import org.lilychant.lilyChantScript.NoteGroup;
 import org.lilychant.lilyChantScript.Script;
 import org.lilychant.lilyChantScript.Tone;
@@ -86,6 +87,13 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
    * @generated
    */
   private EClass noteGroupEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass noteEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -302,9 +310,9 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVoicePhrase_Notes()
+  public EReference getVoicePhrase_Notes()
   {
-    return (EAttribute)voicePhraseEClass.getEStructuralFeatures().get(1);
+    return (EReference)voicePhraseEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -412,6 +420,36 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getNote()
+  {
+    return noteEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNote_Pitch()
+  {
+    return (EAttribute)noteEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNote_Duration()
+  {
+    return (EAttribute)noteEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EEnum getBarline()
   {
     return barlineEEnum;
@@ -465,7 +503,7 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
 
     voicePhraseEClass = createEClass(VOICE_PHRASE);
     createEReference(voicePhraseEClass, VOICE_PHRASE__NAME);
-    createEAttribute(voicePhraseEClass, VOICE_PHRASE__NOTES);
+    createEReference(voicePhraseEClass, VOICE_PHRASE__NOTES);
 
     chantEClass = createEClass(CHANT);
     createEAttribute(chantEClass, CHANT__NAME);
@@ -479,6 +517,10 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
 
     noteGroupEClass = createEClass(NOTE_GROUP);
     createEAttribute(noteGroupEClass, NOTE_GROUP__SYLLABLES);
+
+    noteEClass = createEClass(NOTE);
+    createEAttribute(noteEClass, NOTE__PITCH);
+    createEAttribute(noteEClass, NOTE__DURATION);
 
     // Create enums
     barlineEEnum = createEEnum(BARLINE);
@@ -533,7 +575,7 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
 
     initEClass(voicePhraseEClass, VoicePhrase.class, "VoicePhrase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVoicePhrase_Name(), this.getVoiceName(), null, "name", null, 0, 1, VoicePhrase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVoicePhrase_Notes(), ecorePackage.getEString(), "notes", null, 0, -1, VoicePhrase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVoicePhrase_Notes(), this.getNote(), null, "notes", null, 0, -1, VoicePhrase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(chantEClass, Chant.class, "Chant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getChant_Name(), ecorePackage.getEString(), "name", null, 0, 1, Chant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -547,6 +589,10 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
 
     initEClass(noteGroupEClass, NoteGroup.class, "NoteGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNoteGroup_Syllables(), ecorePackage.getEString(), "syllables", null, 0, -1, NoteGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(noteEClass, Note.class, "Note", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNote_Pitch(), ecorePackage.getEString(), "pitch", null, 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNote_Duration(), ecorePackage.getEString(), "duration", null, 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(barlineEEnum, Barline.class, "Barline");

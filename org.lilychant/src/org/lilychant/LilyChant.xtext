@@ -100,7 +100,7 @@ NoteGroup:
 //;
 
 Note:
-	ID DURATION?
+	pitch=ID duration=DURATION?
 ;
 
 /*

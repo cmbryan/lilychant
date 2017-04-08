@@ -53,19 +53,19 @@ public interface VoicePhrase extends EObject
   void setName(VoiceName value);
 
   /**
-   * Returns the value of the '<em><b>Notes</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Notes</b></em>' containment reference list.
+   * The list contents are of type {@link org.lilychant.lilyChantScript.Note}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Notes</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Notes</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Notes</em>' attribute list.
+   * @return the value of the '<em>Notes</em>' containment reference list.
    * @see org.lilychant.lilyChantScript.LilyChantScriptPackage#getVoicePhrase_Notes()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getNotes();
+  EList<Note> getNotes();
 
 } // VoicePhrase

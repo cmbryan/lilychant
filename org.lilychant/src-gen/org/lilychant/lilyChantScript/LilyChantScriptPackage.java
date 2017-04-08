@@ -226,7 +226,7 @@ public interface LilyChantScriptPackage extends EPackage
   int VOICE_PHRASE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Notes</b></em>' attribute list.
+   * The feature id for the '<em><b>Notes</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -364,6 +364,43 @@ public interface LilyChantScriptPackage extends EPackage
   int NOTE_GROUP_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.lilychant.lilyChantScript.impl.NoteImpl <em>Note</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.lilychant.lilyChantScript.impl.NoteImpl
+   * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getNote()
+   * @generated
+   */
+  int NOTE = 8;
+
+  /**
+   * The feature id for the '<em><b>Pitch</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOTE__PITCH = 0;
+
+  /**
+   * The feature id for the '<em><b>Duration</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOTE__DURATION = 1;
+
+  /**
+   * The number of structural features of the '<em>Note</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOTE_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.lilychant.lilyChantScript.Barline <em>Barline</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -371,7 +408,7 @@ public interface LilyChantScriptPackage extends EPackage
    * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getBarline()
    * @generated
    */
-  int BARLINE = 8;
+  int BARLINE = 9;
 
 
   /**
@@ -524,15 +561,15 @@ public interface LilyChantScriptPackage extends EPackage
   EReference getVoicePhrase_Name();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.lilychant.lilyChantScript.VoicePhrase#getNotes <em>Notes</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.lilychant.lilyChantScript.VoicePhrase#getNotes <em>Notes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Notes</em>'.
+   * @return the meta object for the containment reference list '<em>Notes</em>'.
    * @see org.lilychant.lilyChantScript.VoicePhrase#getNotes()
    * @see #getVoicePhrase()
    * @generated
    */
-  EAttribute getVoicePhrase_Notes();
+  EReference getVoicePhrase_Notes();
 
   /**
    * Returns the meta object for class '{@link org.lilychant.lilyChantScript.Chant <em>Chant</em>}'.
@@ -640,6 +677,38 @@ public interface LilyChantScriptPackage extends EPackage
    * @generated
    */
   EAttribute getNoteGroup_Syllables();
+
+  /**
+   * Returns the meta object for class '{@link org.lilychant.lilyChantScript.Note <em>Note</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Note</em>'.
+   * @see org.lilychant.lilyChantScript.Note
+   * @generated
+   */
+  EClass getNote();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.lilychant.lilyChantScript.Note#getPitch <em>Pitch</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Pitch</em>'.
+   * @see org.lilychant.lilyChantScript.Note#getPitch()
+   * @see #getNote()
+   * @generated
+   */
+  EAttribute getNote_Pitch();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.lilychant.lilyChantScript.Note#getDuration <em>Duration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Duration</em>'.
+   * @see org.lilychant.lilyChantScript.Note#getDuration()
+   * @see #getNote()
+   * @generated
+   */
+  EAttribute getNote_Duration();
 
   /**
    * Returns the meta object for enum '{@link org.lilychant.lilyChantScript.Barline <em>Barline</em>}'.
@@ -797,12 +866,12 @@ public interface LilyChantScriptPackage extends EPackage
     EReference VOICE_PHRASE__NAME = eINSTANCE.getVoicePhrase_Name();
 
     /**
-     * The meta object literal for the '<em><b>Notes</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Notes</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VOICE_PHRASE__NOTES = eINSTANCE.getVoicePhrase_Notes();
+    EReference VOICE_PHRASE__NOTES = eINSTANCE.getVoicePhrase_Notes();
 
     /**
      * The meta object literal for the '{@link org.lilychant.lilyChantScript.impl.ChantImpl <em>Chant</em>}' class.
@@ -889,6 +958,32 @@ public interface LilyChantScriptPackage extends EPackage
      * @generated
      */
     EAttribute NOTE_GROUP__SYLLABLES = eINSTANCE.getNoteGroup_Syllables();
+
+    /**
+     * The meta object literal for the '{@link org.lilychant.lilyChantScript.impl.NoteImpl <em>Note</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.lilychant.lilyChantScript.impl.NoteImpl
+     * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getNote()
+     * @generated
+     */
+    EClass NOTE = eINSTANCE.getNote();
+
+    /**
+     * The meta object literal for the '<em><b>Pitch</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NOTE__PITCH = eINSTANCE.getNote_Pitch();
+
+    /**
+     * The meta object literal for the '<em><b>Duration</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NOTE__DURATION = eINSTANCE.getNote_Duration();
 
     /**
      * The meta object literal for the '{@link org.lilychant.lilyChantScript.Barline <em>Barline</em>}' enum.

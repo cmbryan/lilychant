@@ -116,6 +116,11 @@ public class LilyChantScriptAdapterFactory extends AdapterFactoryImpl
         return createNoteGroupAdapter();
       }
       @Override
+      public Adapter caseNote(Note object)
+      {
+        return createNoteAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -253,6 +258,21 @@ public class LilyChantScriptAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNoteGroupAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.lilychant.lilyChantScript.Note <em>Note</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.lilychant.lilyChantScript.Note
+   * @generated
+   */
+  public Adapter createNoteAdapter()
   {
     return null;
   }

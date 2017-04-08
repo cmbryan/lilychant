@@ -470,8 +470,10 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	public class NoteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.Note");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final RuleCall cDURATIONTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cPitchAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cPitchIDTerminalRuleCall_0_0 = (RuleCall)cPitchAssignment_0.eContents().get(0);
+		private final Assignment cDurationAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cDurationDURATIONTerminalRuleCall_1_0 = (RuleCall)cDurationAssignment_1.eContents().get(0);
 		
 		///*
 		// * Notes and keys
@@ -479,17 +481,23 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		////	major='major' | minor='minor'
 		////;
 		//Note:
-		//	ID DURATION?;
+		//	pitch=ID duration=DURATION?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ID DURATION?
+		//pitch=ID duration=DURATION?
 		public Group getGroup() { return cGroup; }
 		
-		//ID
-		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+		//pitch=ID
+		public Assignment getPitchAssignment_0() { return cPitchAssignment_0; }
 		
-		//DURATION?
-		public RuleCall getDURATIONTerminalRuleCall_1() { return cDURATIONTerminalRuleCall_1; }
+		//ID
+		public RuleCall getPitchIDTerminalRuleCall_0_0() { return cPitchIDTerminalRuleCall_0_0; }
+		
+		//duration=DURATION?
+		public Assignment getDurationAssignment_1() { return cDurationAssignment_1; }
+		
+		//DURATION
+		public RuleCall getDurationDURATIONTerminalRuleCall_1_0() { return cDurationDURATIONTerminalRuleCall_1_0; }
 	}
 	
 	public class BarlineElements extends AbstractEnumRuleElementFinder {
@@ -731,7 +739,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	////	major='major' | minor='minor'
 	////;
 	//Note:
-	//	ID DURATION?;
+	//	pitch=ID duration=DURATION?;
 	public NoteElements getNoteAccess() {
 		return pNote;
 	}

@@ -4845,15 +4845,15 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
             if ( (LA16_0==RULE_HYPHEN) ) {
                 int LA16_1 = input.LA(2);
 
-                if ( (LA16_1==EOF||LA16_1==VerticalLineVerticalLine||LA16_1==VerticalLine||(LA16_1>=RULE_HYPHEN && LA16_1<=RULE_START_NOTE_GROUP)) ) {
-                    alt16=1;
-                }
-                else if ( (LA16_1==RULE_ID) ) {
-                    int LA16_4 = input.LA(3);
+                if ( (LA16_1==RULE_ID) ) {
+                    int LA16_3 = input.LA(3);
 
                     if ( (synpred18_InternalLilyChantParser()) ) {
                         alt16=1;
                     }
+                }
+                else if ( (LA16_1==EOF||LA16_1==VerticalLineVerticalLine||LA16_1==VerticalLine||(LA16_1>=RULE_HYPHEN && LA16_1<=RULE_START_NOTE_GROUP)) ) {
+                    alt16=1;
                 }
             }
             switch (alt16) {
@@ -5480,24 +5480,34 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Note__Group__0__Impl"
-    // InternalLilyChantParser.g:1650:1: rule__Note__Group__0__Impl : ( RULE_ID ) ;
+    // InternalLilyChantParser.g:1650:1: rule__Note__Group__0__Impl : ( ( rule__Note__PitchAssignment_0 ) ) ;
     public final void rule__Note__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1654:1: ( ( RULE_ID ) )
-            // InternalLilyChantParser.g:1655:1: ( RULE_ID )
+            // InternalLilyChantParser.g:1654:1: ( ( ( rule__Note__PitchAssignment_0 ) ) )
+            // InternalLilyChantParser.g:1655:1: ( ( rule__Note__PitchAssignment_0 ) )
             {
-            // InternalLilyChantParser.g:1655:1: ( RULE_ID )
-            // InternalLilyChantParser.g:1656:2: RULE_ID
+            // InternalLilyChantParser.g:1655:1: ( ( rule__Note__PitchAssignment_0 ) )
+            // InternalLilyChantParser.g:1656:2: ( rule__Note__PitchAssignment_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getNoteAccess().getIDTerminalRuleCall_0()); 
+               before(grammarAccess.getNoteAccess().getPitchAssignment_0()); 
             }
-            match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
+            // InternalLilyChantParser.g:1657:2: ( rule__Note__PitchAssignment_0 )
+            // InternalLilyChantParser.g:1657:3: rule__Note__PitchAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Note__PitchAssignment_0();
+
+            state._fsp--;
+            if (state.failed) return ;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getNoteAccess().getIDTerminalRuleCall_0()); 
+               after(grammarAccess.getNoteAccess().getPitchAssignment_0()); 
             }
 
             }
@@ -5554,22 +5564,22 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Note__Group__1__Impl"
-    // InternalLilyChantParser.g:1676:1: rule__Note__Group__1__Impl : ( ( RULE_DURATION )? ) ;
+    // InternalLilyChantParser.g:1676:1: rule__Note__Group__1__Impl : ( ( rule__Note__DurationAssignment_1 )? ) ;
     public final void rule__Note__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:1680:1: ( ( ( RULE_DURATION )? ) )
-            // InternalLilyChantParser.g:1681:1: ( ( RULE_DURATION )? )
+            // InternalLilyChantParser.g:1680:1: ( ( ( rule__Note__DurationAssignment_1 )? ) )
+            // InternalLilyChantParser.g:1681:1: ( ( rule__Note__DurationAssignment_1 )? )
             {
-            // InternalLilyChantParser.g:1681:1: ( ( RULE_DURATION )? )
-            // InternalLilyChantParser.g:1682:2: ( RULE_DURATION )?
+            // InternalLilyChantParser.g:1681:1: ( ( rule__Note__DurationAssignment_1 )? )
+            // InternalLilyChantParser.g:1682:2: ( rule__Note__DurationAssignment_1 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getNoteAccess().getDURATIONTerminalRuleCall_1()); 
+               before(grammarAccess.getNoteAccess().getDurationAssignment_1()); 
             }
-            // InternalLilyChantParser.g:1683:2: ( RULE_DURATION )?
+            // InternalLilyChantParser.g:1683:2: ( rule__Note__DurationAssignment_1 )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -5578,9 +5588,13 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
             }
             switch (alt18) {
                 case 1 :
-                    // InternalLilyChantParser.g:1683:3: RULE_DURATION
+                    // InternalLilyChantParser.g:1683:3: rule__Note__DurationAssignment_1
                     {
-                    match(input,RULE_DURATION,FOLLOW_2); if (state.failed) return ;
+                    pushFollow(FOLLOW_2);
+                    rule__Note__DurationAssignment_1();
+
+                    state._fsp--;
+                    if (state.failed) return ;
 
                     }
                     break;
@@ -5588,7 +5602,7 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getNoteAccess().getDURATIONTerminalRuleCall_1()); 
+               after(grammarAccess.getNoteAccess().getDurationAssignment_1()); 
             }
 
             }
@@ -6634,6 +6648,88 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
         return ;
     }
     // $ANTLR end "rule__NoteGroup__SyllablesAssignment_2_1"
+
+
+    // $ANTLR start "rule__Note__PitchAssignment_0"
+    // InternalLilyChantParser.g:2049:1: rule__Note__PitchAssignment_0 : ( RULE_ID ) ;
+    public final void rule__Note__PitchAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLilyChantParser.g:2053:1: ( ( RULE_ID ) )
+            // InternalLilyChantParser.g:2054:2: ( RULE_ID )
+            {
+            // InternalLilyChantParser.g:2054:2: ( RULE_ID )
+            // InternalLilyChantParser.g:2055:3: RULE_ID
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getNoteAccess().getPitchIDTerminalRuleCall_0_0()); 
+            }
+            match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getNoteAccess().getPitchIDTerminalRuleCall_0_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Note__PitchAssignment_0"
+
+
+    // $ANTLR start "rule__Note__DurationAssignment_1"
+    // InternalLilyChantParser.g:2064:1: rule__Note__DurationAssignment_1 : ( RULE_DURATION ) ;
+    public final void rule__Note__DurationAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLilyChantParser.g:2068:1: ( ( RULE_DURATION ) )
+            // InternalLilyChantParser.g:2069:2: ( RULE_DURATION )
+            {
+            // InternalLilyChantParser.g:2069:2: ( RULE_DURATION )
+            // InternalLilyChantParser.g:2070:3: RULE_DURATION
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getNoteAccess().getDurationDURATIONTerminalRuleCall_1_0()); 
+            }
+            match(input,RULE_DURATION,FOLLOW_2); if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getNoteAccess().getDurationDURATIONTerminalRuleCall_1_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Note__DurationAssignment_1"
 
     // $ANTLR start synpred18_InternalLilyChantParser
     public final void synpred18_InternalLilyChantParser_fragment() throws RecognitionException {   

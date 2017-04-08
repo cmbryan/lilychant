@@ -6,6 +6,7 @@ package org.lilychant.lilyChantScript.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -15,9 +16,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.lilychant.lilyChantScript.LilyChantScriptPackage;
+import org.lilychant.lilyChantScript.Note;
 import org.lilychant.lilyChantScript.VoiceName;
 import org.lilychant.lilyChantScript.VoicePhrase;
 
@@ -48,14 +51,14 @@ public class VoicePhraseImpl extends MinimalEObjectImpl.Container implements Voi
   protected VoiceName name;
 
   /**
-   * The cached value of the '{@link #getNotes() <em>Notes</em>}' attribute list.
+   * The cached value of the '{@link #getNotes() <em>Notes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getNotes()
    * @generated
    * @ordered
    */
-  protected EList<String> notes;
+  protected EList<Note> notes;
 
   /**
    * <!-- begin-user-doc -->
@@ -126,13 +129,29 @@ public class VoicePhraseImpl extends MinimalEObjectImpl.Container implements Voi
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getNotes()
+  public EList<Note> getNotes()
   {
     if (notes == null)
     {
-      notes = new EDataTypeEList<String>(String.class, this, LilyChantScriptPackage.VOICE_PHRASE__NOTES);
+      notes = new EObjectContainmentEList<Note>(Note.class, this, LilyChantScriptPackage.VOICE_PHRASE__NOTES);
     }
     return notes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case LilyChantScriptPackage.VOICE_PHRASE__NOTES:
+        return ((InternalEList<?>)getNotes()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -170,7 +189,7 @@ public class VoicePhraseImpl extends MinimalEObjectImpl.Container implements Voi
         return;
       case LilyChantScriptPackage.VOICE_PHRASE__NOTES:
         getNotes().clear();
-        getNotes().addAll((Collection<? extends String>)newValue);
+        getNotes().addAll((Collection<? extends Note>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -212,23 +231,6 @@ public class VoicePhraseImpl extends MinimalEObjectImpl.Container implements Voi
         return notes != null && !notes.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (notes: ");
-    result.append(notes);
-    result.append(')');
-    return result.toString();
   }
 
 } //VoicePhraseImpl

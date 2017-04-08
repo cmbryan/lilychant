@@ -748,14 +748,14 @@ ruleNoteGroup returns [EObject current=null]
 ;
 
 // Entry rule entryRuleNote
-entryRuleNote returns [String current=null]:
+entryRuleNote returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getNoteRule()); }
 	iv_ruleNote=ruleNote
-	{ $current=$iv_ruleNote.current.getText(); }
+	{ $current=$iv_ruleNote.current; }
 	EOF;
 
 // Rule Note
-ruleNote returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleNote returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -763,21 +763,41 @@ ruleNote returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 	leaveRule();
 }:
 	(
-		this_ID_0=RULE_ID
-		{
-			$current.merge(this_ID_0);
-		}
-		{
-			newLeafNode(this_ID_0, grammarAccess.getNoteAccess().getIDTerminalRuleCall_0());
-		}
 		(
-			this_DURATION_1=RULE_DURATION
-			{
-				$current.merge(this_DURATION_1);
-			}
-			{
-				newLeafNode(this_DURATION_1, grammarAccess.getNoteAccess().getDURATIONTerminalRuleCall_1());
-			}
+			(
+				lv_pitch_0_0=RULE_ID
+				{
+					newLeafNode(lv_pitch_0_0, grammarAccess.getNoteAccess().getPitchIDTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getNoteRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"pitch",
+						lv_pitch_0_0,
+						"org.lilychant.LilyChant.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_duration_1_0=RULE_DURATION
+				{
+					newLeafNode(lv_duration_1_0, grammarAccess.getNoteAccess().getDurationDURATIONTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getNoteRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"duration",
+						lv_duration_1_0,
+						"org.lilychant.LilyChant.DURATION");
+				}
+			)
 		)?
 	)
 ;

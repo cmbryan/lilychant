@@ -901,7 +901,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
         Token this_BEGIN_2=null;
         Token this_END_4=null;
-        AntlrDatatypeRuleToken lv_notes_3_0 = null;
+        EObject lv_notes_3_0 = null;
 
 
 
@@ -2065,15 +2065,15 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNote"
-    // InternalLilyChantParser.g:751:1: entryRuleNote returns [String current=null] : iv_ruleNote= ruleNote EOF ;
-    public final String entryRuleNote() throws RecognitionException {
-        String current = null;
+    // InternalLilyChantParser.g:751:1: entryRuleNote returns [EObject current=null] : iv_ruleNote= ruleNote EOF ;
+    public final EObject entryRuleNote() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleNote = null;
+        EObject iv_ruleNote = null;
 
 
         try {
-            // InternalLilyChantParser.g:751:44: (iv_ruleNote= ruleNote EOF )
+            // InternalLilyChantParser.g:751:45: (iv_ruleNote= ruleNote EOF )
             // InternalLilyChantParser.g:752:2: iv_ruleNote= ruleNote EOF
             {
             if ( state.backtracking==0 ) {
@@ -2085,7 +2085,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleNote.getText(); 
+               current =iv_ruleNote; 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return current;
 
@@ -2105,35 +2105,54 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNote"
-    // InternalLilyChantParser.g:758:1: ruleNote returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? ) ;
-    public final AntlrDatatypeRuleToken ruleNote() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // InternalLilyChantParser.g:758:1: ruleNote returns [EObject current=null] : ( ( (lv_pitch_0_0= RULE_ID ) ) ( (lv_duration_1_0= RULE_DURATION ) )? ) ;
+    public final EObject ruleNote() throws RecognitionException {
+        EObject current = null;
 
-        Token this_ID_0=null;
-        Token this_DURATION_1=null;
+        Token lv_pitch_0_0=null;
+        Token lv_duration_1_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalLilyChantParser.g:764:2: ( (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? ) )
-            // InternalLilyChantParser.g:765:2: (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? )
+            // InternalLilyChantParser.g:764:2: ( ( ( (lv_pitch_0_0= RULE_ID ) ) ( (lv_duration_1_0= RULE_DURATION ) )? ) )
+            // InternalLilyChantParser.g:765:2: ( ( (lv_pitch_0_0= RULE_ID ) ) ( (lv_duration_1_0= RULE_DURATION ) )? )
             {
-            // InternalLilyChantParser.g:765:2: (this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )? )
-            // InternalLilyChantParser.g:766:3: this_ID_0= RULE_ID (this_DURATION_1= RULE_DURATION )?
+            // InternalLilyChantParser.g:765:2: ( ( (lv_pitch_0_0= RULE_ID ) ) ( (lv_duration_1_0= RULE_DURATION ) )? )
+            // InternalLilyChantParser.g:766:3: ( (lv_pitch_0_0= RULE_ID ) ) ( (lv_duration_1_0= RULE_DURATION ) )?
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_23); if (state.failed) return current;
+            // InternalLilyChantParser.g:766:3: ( (lv_pitch_0_0= RULE_ID ) )
+            // InternalLilyChantParser.g:767:4: (lv_pitch_0_0= RULE_ID )
+            {
+            // InternalLilyChantParser.g:767:4: (lv_pitch_0_0= RULE_ID )
+            // InternalLilyChantParser.g:768:5: lv_pitch_0_0= RULE_ID
+            {
+            lv_pitch_0_0=(Token)match(input,RULE_ID,FOLLOW_23); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			current.merge(this_ID_0);
-              		
+              					newLeafNode(lv_pitch_0_0, grammarAccess.getNoteAccess().getPitchIDTerminalRuleCall_0_0());
+              				
             }
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(this_ID_0, grammarAccess.getNoteAccess().getIDTerminalRuleCall_0());
-              		
+              					if (current==null) {
+              						current = createModelElement(grammarAccess.getNoteRule());
+              					}
+              					setWithLastConsumed(
+              						current,
+              						"pitch",
+              						lv_pitch_0_0,
+              						"org.lilychant.LilyChant.ID");
+              				
             }
-            // InternalLilyChantParser.g:773:3: (this_DURATION_1= RULE_DURATION )?
+
+            }
+
+
+            }
+
+            // InternalLilyChantParser.g:784:3: ( (lv_duration_1_0= RULE_DURATION ) )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2142,19 +2161,32 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
             }
             switch (alt17) {
                 case 1 :
-                    // InternalLilyChantParser.g:774:4: this_DURATION_1= RULE_DURATION
+                    // InternalLilyChantParser.g:785:4: (lv_duration_1_0= RULE_DURATION )
                     {
-                    this_DURATION_1=(Token)match(input,RULE_DURATION,FOLLOW_2); if (state.failed) return current;
+                    // InternalLilyChantParser.g:785:4: (lv_duration_1_0= RULE_DURATION )
+                    // InternalLilyChantParser.g:786:5: lv_duration_1_0= RULE_DURATION
+                    {
+                    lv_duration_1_0=(Token)match(input,RULE_DURATION,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      				current.merge(this_DURATION_1);
-                      			
+                      					newLeafNode(lv_duration_1_0, grammarAccess.getNoteAccess().getDurationDURATIONTerminalRuleCall_1_0());
+                      				
                     }
                     if ( state.backtracking==0 ) {
 
-                      				newLeafNode(this_DURATION_1, grammarAccess.getNoteAccess().getDURATIONTerminalRuleCall_1());
-                      			
+                      					if (current==null) {
+                      						current = createModelElement(grammarAccess.getNoteRule());
+                      					}
+                      					setWithLastConsumed(
+                      						current,
+                      						"duration",
+                      						lv_duration_1_0,
+                      						"org.lilychant.LilyChant.DURATION");
+                      				
                     }
+
+                    }
+
 
                     }
                     break;
@@ -2186,7 +2218,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBarline"
-    // InternalLilyChantParser.g:786:1: ruleBarline returns [Enumerator current=null] : ( (enumLiteral_0= VerticalLine ) | (enumLiteral_1= VerticalLineVerticalLine ) ) ;
+    // InternalLilyChantParser.g:806:1: ruleBarline returns [Enumerator current=null] : ( (enumLiteral_0= VerticalLine ) | (enumLiteral_1= VerticalLineVerticalLine ) ) ;
     public final Enumerator ruleBarline() throws RecognitionException {
         Enumerator current = null;
 
@@ -2197,10 +2229,10 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLilyChantParser.g:792:2: ( ( (enumLiteral_0= VerticalLine ) | (enumLiteral_1= VerticalLineVerticalLine ) ) )
-            // InternalLilyChantParser.g:793:2: ( (enumLiteral_0= VerticalLine ) | (enumLiteral_1= VerticalLineVerticalLine ) )
+            // InternalLilyChantParser.g:812:2: ( ( (enumLiteral_0= VerticalLine ) | (enumLiteral_1= VerticalLineVerticalLine ) ) )
+            // InternalLilyChantParser.g:813:2: ( (enumLiteral_0= VerticalLine ) | (enumLiteral_1= VerticalLineVerticalLine ) )
             {
-            // InternalLilyChantParser.g:793:2: ( (enumLiteral_0= VerticalLine ) | (enumLiteral_1= VerticalLineVerticalLine ) )
+            // InternalLilyChantParser.g:813:2: ( (enumLiteral_0= VerticalLine ) | (enumLiteral_1= VerticalLineVerticalLine ) )
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -2219,10 +2251,10 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
             }
             switch (alt18) {
                 case 1 :
-                    // InternalLilyChantParser.g:794:3: (enumLiteral_0= VerticalLine )
+                    // InternalLilyChantParser.g:814:3: (enumLiteral_0= VerticalLine )
                     {
-                    // InternalLilyChantParser.g:794:3: (enumLiteral_0= VerticalLine )
-                    // InternalLilyChantParser.g:795:4: enumLiteral_0= VerticalLine
+                    // InternalLilyChantParser.g:814:3: (enumLiteral_0= VerticalLine )
+                    // InternalLilyChantParser.g:815:4: enumLiteral_0= VerticalLine
                     {
                     enumLiteral_0=(Token)match(input,VerticalLine,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
@@ -2238,10 +2270,10 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLilyChantParser.g:802:3: (enumLiteral_1= VerticalLineVerticalLine )
+                    // InternalLilyChantParser.g:822:3: (enumLiteral_1= VerticalLineVerticalLine )
                     {
-                    // InternalLilyChantParser.g:802:3: (enumLiteral_1= VerticalLineVerticalLine )
-                    // InternalLilyChantParser.g:803:4: enumLiteral_1= VerticalLineVerticalLine
+                    // InternalLilyChantParser.g:822:3: (enumLiteral_1= VerticalLineVerticalLine )
+                    // InternalLilyChantParser.g:823:4: enumLiteral_1= VerticalLineVerticalLine
                     {
                     enumLiteral_1=(Token)match(input,VerticalLineVerticalLine,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {

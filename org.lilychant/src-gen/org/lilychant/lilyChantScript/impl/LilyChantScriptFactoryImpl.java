@@ -74,6 +74,7 @@ public class LilyChantScriptFactoryImpl extends EFactoryImpl implements LilyChan
       case LilyChantScriptPackage.CHANT: return createChant();
       case LilyChantScriptPackage.LYRIC_PHRASE: return createLyricPhrase();
       case LilyChantScriptPackage.NOTE_GROUP: return createNoteGroup();
+      case LilyChantScriptPackage.NOTE: return createNote();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -199,6 +200,17 @@ public class LilyChantScriptFactoryImpl extends EFactoryImpl implements LilyChan
   {
     NoteGroupImpl noteGroup = new NoteGroupImpl();
     return noteGroup;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Note createNote()
+  {
+    NoteImpl note = new NoteImpl();
+    return note;
   }
 
   /**

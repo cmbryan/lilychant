@@ -17,6 +17,7 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import org.lilychant.lilyChantScript.Chant;
 import org.lilychant.lilyChantScript.LilyChantScriptPackage;
 import org.lilychant.lilyChantScript.LyricPhrase;
+import org.lilychant.lilyChantScript.Note;
 import org.lilychant.lilyChantScript.NoteGroup;
 import org.lilychant.lilyChantScript.Script;
 import org.lilychant.lilyChantScript.Tone;
@@ -44,6 +45,9 @@ public class LilyChantSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case LilyChantScriptPackage.LYRIC_PHRASE:
 				sequence_LyricPhrase(context, (LyricPhrase) semanticObject); 
+				return; 
+			case LilyChantScriptPackage.NOTE:
+				sequence_Note(context, (Note) semanticObject); 
 				return; 
 			case LilyChantScriptPackage.NOTE_GROUP:
 				sequence_NoteGroup(context, (NoteGroup) semanticObject); 
@@ -104,6 +108,18 @@ public class LilyChantSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     )
 	 */
 	protected void sequence_NoteGroup(ISerializationContext context, NoteGroup semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Note returns Note
+	 *
+	 * Constraint:
+	 *     (pitch=ID duration=DURATION?)
+	 */
+	protected void sequence_Note(ISerializationContext context, Note semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
