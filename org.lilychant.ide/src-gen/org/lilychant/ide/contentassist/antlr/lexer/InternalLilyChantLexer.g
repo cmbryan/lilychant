@@ -21,11 +21,21 @@ Voice : 'Voice';
 
 Tone : 'Tone';
 
+HyphenMinusHyphenMinus : '--';
+
+KW___ : '__';
+
 VerticalLineVerticalLine : '||';
 
 LeftParenthesis : '(';
 
 RightParenthesis : ')';
+
+Asterisk : '*';
+
+Solidus : '/';
+
+KW__ : '_';
 
 VerticalLine : '|';
 
@@ -34,12 +44,6 @@ RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'\u0400'..'\u04FF'|','|'\''|';'|':'|'.')*;
 RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
 
 RULE_DURATION : ('1'|'2'|'4'|'8'|'16'|'\breve')+;
-
-RULE_HYPHEN : '--';
-
-RULE_EXTENDER : '__';
-
-RULE_SKIP : '_';
 
 RULE_START_NOTE_GROUP : '<';
 

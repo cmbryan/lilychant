@@ -96,6 +96,15 @@ public interface LilyChantScriptFactory extends EFactory
   NoteGroup createNoteGroup();
 
   /**
+   * Returns a new object of class '<em>Syllable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Syllable</em>'.
+   * @generated
+   */
+  Syllable createSyllable();
+
+  /**
    * Returns a new object of class '<em>Note</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -103,6 +112,33 @@ public interface LilyChantScriptFactory extends EFactory
    * @generated
    */
   Note createNote();
+
+  /**
+   * Returns a new object of class '<em>Hyphen Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Hyphen Rule</em>'.
+   * @generated
+   */
+  HyphenRule createHyphenRule();
+
+  /**
+   * Returns a new object of class '<em>Extender Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Extender Rule</em>'.
+   * @generated
+   */
+  ExtenderRule createExtenderRule();
+
+  /**
+   * Returns a new object of class '<em>Skip Rule</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Skip Rule</em>'.
+   * @generated
+   */
+  SkipRule createSkipRule();
 
   /**
    * Returns the package supported by this factory.

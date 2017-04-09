@@ -129,10 +129,41 @@ public class LilyChantScriptSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LilyChantScriptPackage.SYLLABLE:
+      {
+        Syllable syllable = (Syllable)theEObject;
+        T result = caseSyllable(syllable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LilyChantScriptPackage.NOTE:
       {
         Note note = (Note)theEObject;
         T result = caseNote(note);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilyChantScriptPackage.HYPHEN_RULE:
+      {
+        HyphenRule hyphenRule = (HyphenRule)theEObject;
+        T result = caseHyphenRule(hyphenRule);
+        if (result == null) result = caseSyllable(hyphenRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilyChantScriptPackage.EXTENDER_RULE:
+      {
+        ExtenderRule extenderRule = (ExtenderRule)theEObject;
+        T result = caseExtenderRule(extenderRule);
+        if (result == null) result = caseSyllable(extenderRule);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LilyChantScriptPackage.SKIP_RULE:
+      {
+        SkipRule skipRule = (SkipRule)theEObject;
+        T result = caseSkipRule(skipRule);
+        if (result == null) result = caseSyllable(skipRule);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -269,6 +300,22 @@ public class LilyChantScriptSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Syllable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Syllable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSyllable(Syllable object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Note</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -280,6 +327,54 @@ public class LilyChantScriptSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseNote(Note object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Hyphen Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Hyphen Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHyphenRule(HyphenRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Extender Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Extender Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExtenderRule(ExtenderRule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Skip Rule</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Skip Rule</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSkipRule(SkipRule object)
   {
     return null;
   }

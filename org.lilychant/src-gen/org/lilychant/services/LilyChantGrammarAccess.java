@@ -6,6 +6,7 @@ package org.lilychant.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
+import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.CrossReference;
@@ -358,114 +359,220 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_0_0 = (Alternatives)cGroup_0.eContents().get(0);
 		private final Group cGroup_0_0_0 = (Group)cAlternatives_0_0.eContents().get(0);
 		private final Assignment cSyllablesAssignment_0_0_0_0 = (Assignment)cGroup_0_0_0.eContents().get(0);
-		private final RuleCall cSyllablesIDTerminalRuleCall_0_0_0_0_0 = (RuleCall)cSyllablesAssignment_0_0_0_0.eContents().get(0);
+		private final RuleCall cSyllablesIdRuleParserRuleCall_0_0_0_0_0 = (RuleCall)cSyllablesAssignment_0_0_0_0.eContents().get(0);
 		private final Group cGroup_0_0_0_1 = (Group)cGroup_0_0_0.eContents().get(1);
 		private final Assignment cSyllablesAssignment_0_0_0_1_0 = (Assignment)cGroup_0_0_0_1.eContents().get(0);
-		private final RuleCall cSyllablesHYPHENTerminalRuleCall_0_0_0_1_0_0 = (RuleCall)cSyllablesAssignment_0_0_0_1_0.eContents().get(0);
+		private final RuleCall cSyllablesHyphenRuleParserRuleCall_0_0_0_1_0_0 = (RuleCall)cSyllablesAssignment_0_0_0_1_0.eContents().get(0);
 		private final Group cGroup_0_0_1 = (Group)cAlternatives_0_0.eContents().get(1);
 		private final Assignment cSyllablesAssignment_0_0_1_0 = (Assignment)cGroup_0_0_1.eContents().get(0);
-		private final RuleCall cSyllablesHYPHENTerminalRuleCall_0_0_1_0_0 = (RuleCall)cSyllablesAssignment_0_0_1_0.eContents().get(0);
+		private final RuleCall cSyllablesHyphenRuleParserRuleCall_0_0_1_0_0 = (RuleCall)cSyllablesAssignment_0_0_1_0.eContents().get(0);
 		private final Assignment cSyllablesAssignment_0_0_1_1 = (Assignment)cGroup_0_0_1.eContents().get(1);
-		private final RuleCall cSyllablesIDTerminalRuleCall_0_0_1_1_0 = (RuleCall)cSyllablesAssignment_0_0_1_1.eContents().get(0);
+		private final RuleCall cSyllablesIdRuleParserRuleCall_0_0_1_1_0 = (RuleCall)cSyllablesAssignment_0_0_1_1.eContents().get(0);
 		private final Assignment cSyllablesAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cSyllablesEXTENDERTerminalRuleCall_0_1_0 = (RuleCall)cSyllablesAssignment_0_1.eContents().get(0);
+		private final RuleCall cSyllablesExtenderRuleParserRuleCall_0_1_0 = (RuleCall)cSyllablesAssignment_0_1.eContents().get(0);
 		private final Assignment cSyllablesAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cSyllablesSKIPTerminalRuleCall_1_0 = (RuleCall)cSyllablesAssignment_1.eContents().get(0);
+		private final RuleCall cSyllablesSkipRuleParserRuleCall_1_0 = (RuleCall)cSyllablesAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final RuleCall cSTART_NOTE_GROUPTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
-		private final Assignment cSyllablesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final Alternatives cSyllablesAlternatives_2_1_0 = (Alternatives)cSyllablesAssignment_2_1.eContents().get(0);
-		private final RuleCall cSyllablesIDTerminalRuleCall_2_1_0_0 = (RuleCall)cSyllablesAlternatives_2_1_0.eContents().get(0);
-		private final RuleCall cSyllablesHYPHENTerminalRuleCall_2_1_0_1 = (RuleCall)cSyllablesAlternatives_2_1_0.eContents().get(1);
-		private final RuleCall cSyllablesEXTENDERTerminalRuleCall_2_1_0_2 = (RuleCall)cSyllablesAlternatives_2_1_0.eContents().get(2);
-		private final RuleCall cEND_NOTE_GROUPTerminalRuleCall_2_2 = (RuleCall)cGroup_2.eContents().get(2);
+		private final Assignment cNoemphasisAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final Keyword cNoemphasisSolidusKeyword_2_1_0 = (Keyword)cNoemphasisAssignment_2_1.eContents().get(0);
+		private final Assignment cSyllablesAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final Alternatives cSyllablesAlternatives_2_2_0 = (Alternatives)cSyllablesAssignment_2_2.eContents().get(0);
+		private final RuleCall cSyllablesIdRuleParserRuleCall_2_2_0_0 = (RuleCall)cSyllablesAlternatives_2_2_0.eContents().get(0);
+		private final RuleCall cSyllablesHyphenRuleParserRuleCall_2_2_0_1 = (RuleCall)cSyllablesAlternatives_2_2_0.eContents().get(1);
+		private final RuleCall cSyllablesExtenderRuleParserRuleCall_2_2_0_2 = (RuleCall)cSyllablesAlternatives_2_2_0.eContents().get(2);
+		private final RuleCall cEND_NOTE_GROUPTerminalRuleCall_2_3 = (RuleCall)cGroup_2.eContents().get(3);
 		
 		//NoteGroup:
-		//	(syllables+=ID => (syllables+=HYPHEN)?
-		//	| syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER*
-		//	| syllables+=SKIP
+		//	(syllables+=IdRule => (syllables+=HyphenRule)?
+		//	| syllables+=HyphenRule syllables+=IdRule) syllables+=ExtenderRule*
+		//	| syllables+=SkipRule
 		//	// group of syllables to be repeated on the same pitch
-		//	| START_NOTE_GROUP syllables+=(ID | HYPHEN | EXTENDER)+ END_NOTE_GROUP;
+		//	| START_NOTE_GROUP noemphasis?='/'? syllables+=(IdRule | HyphenRule | ExtenderRule)+ END_NOTE_GROUP;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(syllables+=ID => (syllables+=HYPHEN)? | syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER* | syllables+=SKIP // group of syllables to be repeated on the same pitch
-		//| START_NOTE_GROUP syllables+=(ID | HYPHEN | EXTENDER)+ END_NOTE_GROUP
+		//(syllables+=IdRule => (syllables+=HyphenRule)? | syllables+=HyphenRule syllables+=IdRule) syllables+=ExtenderRule* |
+		//syllables+=SkipRule // group of syllables to be repeated on the same pitch
+		//| START_NOTE_GROUP noemphasis?='/'? syllables+=(IdRule | HyphenRule | ExtenderRule)+ END_NOTE_GROUP
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//(syllables+=ID => (syllables+=HYPHEN)? | syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER*
+		//(syllables+=IdRule => (syllables+=HyphenRule)? | syllables+=HyphenRule syllables+=IdRule) syllables+=ExtenderRule*
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//syllables+=ID => (syllables+=HYPHEN)? | syllables+=HYPHEN syllables+=ID
+		//syllables+=IdRule => (syllables+=HyphenRule)? | syllables+=HyphenRule syllables+=IdRule
 		public Alternatives getAlternatives_0_0() { return cAlternatives_0_0; }
 		
-		//syllables+=ID => (syllables+=HYPHEN)?
+		//syllables+=IdRule => (syllables+=HyphenRule)?
 		public Group getGroup_0_0_0() { return cGroup_0_0_0; }
 		
-		//syllables+=ID
+		//syllables+=IdRule
 		public Assignment getSyllablesAssignment_0_0_0_0() { return cSyllablesAssignment_0_0_0_0; }
 		
-		//ID
-		public RuleCall getSyllablesIDTerminalRuleCall_0_0_0_0_0() { return cSyllablesIDTerminalRuleCall_0_0_0_0_0; }
+		//IdRule
+		public RuleCall getSyllablesIdRuleParserRuleCall_0_0_0_0_0() { return cSyllablesIdRuleParserRuleCall_0_0_0_0_0; }
 		
-		//=> (syllables+=HYPHEN)?
+		//=> (syllables+=HyphenRule)?
 		public Group getGroup_0_0_0_1() { return cGroup_0_0_0_1; }
 		
-		//syllables+=HYPHEN
+		//syllables+=HyphenRule
 		public Assignment getSyllablesAssignment_0_0_0_1_0() { return cSyllablesAssignment_0_0_0_1_0; }
 		
-		//HYPHEN
-		public RuleCall getSyllablesHYPHENTerminalRuleCall_0_0_0_1_0_0() { return cSyllablesHYPHENTerminalRuleCall_0_0_0_1_0_0; }
+		//HyphenRule
+		public RuleCall getSyllablesHyphenRuleParserRuleCall_0_0_0_1_0_0() { return cSyllablesHyphenRuleParserRuleCall_0_0_0_1_0_0; }
 		
-		//syllables+=HYPHEN syllables+=ID
+		//syllables+=HyphenRule syllables+=IdRule
 		public Group getGroup_0_0_1() { return cGroup_0_0_1; }
 		
-		//syllables+=HYPHEN
+		//syllables+=HyphenRule
 		public Assignment getSyllablesAssignment_0_0_1_0() { return cSyllablesAssignment_0_0_1_0; }
 		
-		//HYPHEN
-		public RuleCall getSyllablesHYPHENTerminalRuleCall_0_0_1_0_0() { return cSyllablesHYPHENTerminalRuleCall_0_0_1_0_0; }
+		//HyphenRule
+		public RuleCall getSyllablesHyphenRuleParserRuleCall_0_0_1_0_0() { return cSyllablesHyphenRuleParserRuleCall_0_0_1_0_0; }
 		
-		//syllables+=ID
+		//syllables+=IdRule
 		public Assignment getSyllablesAssignment_0_0_1_1() { return cSyllablesAssignment_0_0_1_1; }
 		
-		//ID
-		public RuleCall getSyllablesIDTerminalRuleCall_0_0_1_1_0() { return cSyllablesIDTerminalRuleCall_0_0_1_1_0; }
+		//IdRule
+		public RuleCall getSyllablesIdRuleParserRuleCall_0_0_1_1_0() { return cSyllablesIdRuleParserRuleCall_0_0_1_1_0; }
 		
-		//syllables+=EXTENDER*
+		//syllables+=ExtenderRule*
 		public Assignment getSyllablesAssignment_0_1() { return cSyllablesAssignment_0_1; }
 		
-		//EXTENDER
-		public RuleCall getSyllablesEXTENDERTerminalRuleCall_0_1_0() { return cSyllablesEXTENDERTerminalRuleCall_0_1_0; }
+		//ExtenderRule
+		public RuleCall getSyllablesExtenderRuleParserRuleCall_0_1_0() { return cSyllablesExtenderRuleParserRuleCall_0_1_0; }
 		
-		//syllables+=SKIP
+		//syllables+=SkipRule
 		public Assignment getSyllablesAssignment_1() { return cSyllablesAssignment_1; }
 		
-		//SKIP
-		public RuleCall getSyllablesSKIPTerminalRuleCall_1_0() { return cSyllablesSKIPTerminalRuleCall_1_0; }
+		//SkipRule
+		public RuleCall getSyllablesSkipRuleParserRuleCall_1_0() { return cSyllablesSkipRuleParserRuleCall_1_0; }
 		
-		//START_NOTE_GROUP syllables+=(ID | HYPHEN | EXTENDER)+ END_NOTE_GROUP
+		//START_NOTE_GROUP noemphasis?='/'? syllables+=(IdRule | HyphenRule | ExtenderRule)+ END_NOTE_GROUP
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//START_NOTE_GROUP
 		public RuleCall getSTART_NOTE_GROUPTerminalRuleCall_2_0() { return cSTART_NOTE_GROUPTerminalRuleCall_2_0; }
 		
-		//syllables+=(ID | HYPHEN | EXTENDER)+
-		public Assignment getSyllablesAssignment_2_1() { return cSyllablesAssignment_2_1; }
+		//noemphasis?='/'?
+		public Assignment getNoemphasisAssignment_2_1() { return cNoemphasisAssignment_2_1; }
 		
-		//(ID | HYPHEN | EXTENDER)
-		public Alternatives getSyllablesAlternatives_2_1_0() { return cSyllablesAlternatives_2_1_0; }
+		//'/'
+		public Keyword getNoemphasisSolidusKeyword_2_1_0() { return cNoemphasisSolidusKeyword_2_1_0; }
 		
-		//ID
-		public RuleCall getSyllablesIDTerminalRuleCall_2_1_0_0() { return cSyllablesIDTerminalRuleCall_2_1_0_0; }
+		//syllables+=(IdRule | HyphenRule | ExtenderRule)+
+		public Assignment getSyllablesAssignment_2_2() { return cSyllablesAssignment_2_2; }
 		
-		//HYPHEN
-		public RuleCall getSyllablesHYPHENTerminalRuleCall_2_1_0_1() { return cSyllablesHYPHENTerminalRuleCall_2_1_0_1; }
+		//(IdRule | HyphenRule | ExtenderRule)
+		public Alternatives getSyllablesAlternatives_2_2_0() { return cSyllablesAlternatives_2_2_0; }
 		
-		//EXTENDER
-		public RuleCall getSyllablesEXTENDERTerminalRuleCall_2_1_0_2() { return cSyllablesEXTENDERTerminalRuleCall_2_1_0_2; }
+		//IdRule
+		public RuleCall getSyllablesIdRuleParserRuleCall_2_2_0_0() { return cSyllablesIdRuleParserRuleCall_2_2_0_0; }
+		
+		//HyphenRule
+		public RuleCall getSyllablesHyphenRuleParserRuleCall_2_2_0_1() { return cSyllablesHyphenRuleParserRuleCall_2_2_0_1; }
+		
+		//ExtenderRule
+		public RuleCall getSyllablesExtenderRuleParserRuleCall_2_2_0_2() { return cSyllablesExtenderRuleParserRuleCall_2_2_0_2; }
 		
 		//END_NOTE_GROUP
-		public RuleCall getEND_NOTE_GROUPTerminalRuleCall_2_2() { return cEND_NOTE_GROUPTerminalRuleCall_2_2; }
+		public RuleCall getEND_NOTE_GROUPTerminalRuleCall_2_3() { return cEND_NOTE_GROUPTerminalRuleCall_2_3; }
+	}
+	public class IdRuleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.IdRule");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cEmphasisAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cEmphasisAsteriskKeyword_0_0 = (Keyword)cEmphasisAssignment_0.eContents().get(0);
+		private final Assignment cLiteralAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cLiteralIDTerminalRuleCall_1_0 = (RuleCall)cLiteralAssignment_1.eContents().get(0);
+		
+		//IdRule Syllable:
+		//	emphasis?='*'?
+		//	literal=ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//emphasis?='*'? literal=ID
+		public Group getGroup() { return cGroup; }
+		
+		//emphasis?='*'?
+		public Assignment getEmphasisAssignment_0() { return cEmphasisAssignment_0; }
+		
+		//'*'
+		public Keyword getEmphasisAsteriskKeyword_0_0() { return cEmphasisAsteriskKeyword_0_0; }
+		
+		//literal=ID
+		public Assignment getLiteralAssignment_1() { return cLiteralAssignment_1; }
+		
+		//ID
+		public RuleCall getLiteralIDTerminalRuleCall_1_0() { return cLiteralIDTerminalRuleCall_1_0; }
+	}
+	public class HyphenRuleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.HyphenRule");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cHyphenRuleAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cLiteralAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cLiteralHyphenMinusHyphenMinusKeyword_1_0 = (Keyword)cLiteralAssignment_1.eContents().get(0);
+		
+		//HyphenRule Syllable:
+		//	{HyphenRule} literal='--';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{HyphenRule} literal='--'
+		public Group getGroup() { return cGroup; }
+		
+		//{HyphenRule}
+		public Action getHyphenRuleAction_0() { return cHyphenRuleAction_0; }
+		
+		//literal='--'
+		public Assignment getLiteralAssignment_1() { return cLiteralAssignment_1; }
+		
+		//'--'
+		public Keyword getLiteralHyphenMinusHyphenMinusKeyword_1_0() { return cLiteralHyphenMinusHyphenMinusKeyword_1_0; }
+	}
+	public class ExtenderRuleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.ExtenderRule");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cExtenderRuleAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cLiteralAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cLiteral__Keyword_1_0 = (Keyword)cLiteralAssignment_1.eContents().get(0);
+		
+		//ExtenderRule Syllable:
+		//	{ExtenderRule} literal='__';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ExtenderRule} literal='__'
+		public Group getGroup() { return cGroup; }
+		
+		//{ExtenderRule}
+		public Action getExtenderRuleAction_0() { return cExtenderRuleAction_0; }
+		
+		//literal='__'
+		public Assignment getLiteralAssignment_1() { return cLiteralAssignment_1; }
+		
+		//'__'
+		public Keyword getLiteral__Keyword_1_0() { return cLiteral__Keyword_1_0; }
+	}
+	public class SkipRuleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.SkipRule");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cSkipRuleAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cLiteralAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cLiteral_Keyword_1_0 = (Keyword)cLiteralAssignment_1.eContents().get(0);
+		
+		//SkipRule Syllable:
+		//	{SkipRule} literal='_';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{SkipRule} literal='_'
+		public Group getGroup() { return cGroup; }
+		
+		//{SkipRule}
+		public Action getSkipRuleAction_0() { return cSkipRuleAction_0; }
+		
+		//literal='_'
+		public Assignment getLiteralAssignment_1() { return cLiteralAssignment_1; }
+		
+		//'_'
+		public Keyword getLiteral_Keyword_1_0() { return cLiteral_Keyword_1_0; }
 	}
 	public class NoteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.Note");
@@ -537,13 +644,14 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	private final LyricPhraseElements pLyricPhrase;
 	private final BarlineElements eBarline;
 	private final NoteGroupElements pNoteGroup;
+	private final IdRuleElements pIdRule;
+	private final HyphenRuleElements pHyphenRule;
+	private final ExtenderRuleElements pExtenderRule;
+	private final SkipRuleElements pSkipRule;
 	private final NoteElements pNote;
 	private final TerminalRule tID;
 	private final TerminalRule tSTRING;
 	private final TerminalRule tDURATION;
-	private final TerminalRule tHYPHEN;
-	private final TerminalRule tEXTENDER;
-	private final TerminalRule tSKIP;
 	private final TerminalRule tSTART_NOTE_GROUP;
 	private final TerminalRule tEND_NOTE_GROUP;
 	private final TerminalRule tBEGIN;
@@ -567,13 +675,14 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		this.pLyricPhrase = new LyricPhraseElements();
 		this.eBarline = new BarlineElements();
 		this.pNoteGroup = new NoteGroupElements();
+		this.pIdRule = new IdRuleElements();
+		this.pHyphenRule = new HyphenRuleElements();
+		this.pExtenderRule = new ExtenderRuleElements();
+		this.pSkipRule = new SkipRuleElements();
 		this.pNote = new NoteElements();
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.ID");
 		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.STRING");
 		this.tDURATION = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.DURATION");
-		this.tHYPHEN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.HYPHEN");
-		this.tEXTENDER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.EXTENDER");
-		this.tSKIP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.SKIP");
 		this.tSTART_NOTE_GROUP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.START_NOTE_GROUP");
 		this.tEND_NOTE_GROUP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.END_NOTE_GROUP");
 		this.tBEGIN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.BEGIN");
@@ -720,17 +829,58 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//NoteGroup:
-	//	(syllables+=ID => (syllables+=HYPHEN)?
-	//	| syllables+=HYPHEN syllables+=ID) syllables+=EXTENDER*
-	//	| syllables+=SKIP
+	//	(syllables+=IdRule => (syllables+=HyphenRule)?
+	//	| syllables+=HyphenRule syllables+=IdRule) syllables+=ExtenderRule*
+	//	| syllables+=SkipRule
 	//	// group of syllables to be repeated on the same pitch
-	//	| START_NOTE_GROUP syllables+=(ID | HYPHEN | EXTENDER)+ END_NOTE_GROUP;
+	//	| START_NOTE_GROUP noemphasis?='/'? syllables+=(IdRule | HyphenRule | ExtenderRule)+ END_NOTE_GROUP;
 	public NoteGroupElements getNoteGroupAccess() {
 		return pNoteGroup;
 	}
 	
 	public ParserRule getNoteGroupRule() {
 		return getNoteGroupAccess().getRule();
+	}
+	
+	//IdRule Syllable:
+	//	emphasis?='*'?
+	//	literal=ID;
+	public IdRuleElements getIdRuleAccess() {
+		return pIdRule;
+	}
+	
+	public ParserRule getIdRuleRule() {
+		return getIdRuleAccess().getRule();
+	}
+	
+	//HyphenRule Syllable:
+	//	{HyphenRule} literal='--';
+	public HyphenRuleElements getHyphenRuleAccess() {
+		return pHyphenRule;
+	}
+	
+	public ParserRule getHyphenRuleRule() {
+		return getHyphenRuleAccess().getRule();
+	}
+	
+	//ExtenderRule Syllable:
+	//	{ExtenderRule} literal='__';
+	public ExtenderRuleElements getExtenderRuleAccess() {
+		return pExtenderRule;
+	}
+	
+	public ParserRule getExtenderRuleRule() {
+		return getExtenderRuleAccess().getRule();
+	}
+	
+	//SkipRule Syllable:
+	//	{SkipRule} literal='_';
+	public SkipRuleElements getSkipRuleAccess() {
+		return pSkipRule;
+	}
+	
+	public ParserRule getSkipRuleRule() {
+		return getSkipRuleAccess().getRule();
 	}
 	
 	///*
@@ -765,24 +915,6 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	//	'1' | '2' | '4' | '8' | '16' | '\breve'+;
 	public TerminalRule getDURATIONRule() {
 		return tDURATION;
-	}
-	
-	//terminal HYPHEN:
-	//	'--';
-	public TerminalRule getHYPHENRule() {
-		return tHYPHEN;
-	}
-	
-	//terminal EXTENDER:
-	//	'__';
-	public TerminalRule getEXTENDERRule() {
-		return tEXTENDER;
-	}
-	
-	//terminal SKIP:
-	//	'_';
-	public TerminalRule getSKIPRule() {
-		return tSKIP;
 	}
 	
 	//terminal START_NOTE_GROUP:

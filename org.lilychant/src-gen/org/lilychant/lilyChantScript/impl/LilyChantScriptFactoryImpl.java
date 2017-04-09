@@ -74,7 +74,11 @@ public class LilyChantScriptFactoryImpl extends EFactoryImpl implements LilyChan
       case LilyChantScriptPackage.CHANT: return createChant();
       case LilyChantScriptPackage.LYRIC_PHRASE: return createLyricPhrase();
       case LilyChantScriptPackage.NOTE_GROUP: return createNoteGroup();
+      case LilyChantScriptPackage.SYLLABLE: return createSyllable();
       case LilyChantScriptPackage.NOTE: return createNote();
+      case LilyChantScriptPackage.HYPHEN_RULE: return createHyphenRule();
+      case LilyChantScriptPackage.EXTENDER_RULE: return createExtenderRule();
+      case LilyChantScriptPackage.SKIP_RULE: return createSkipRule();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -207,10 +211,54 @@ public class LilyChantScriptFactoryImpl extends EFactoryImpl implements LilyChan
    * <!-- end-user-doc -->
    * @generated
    */
+  public Syllable createSyllable()
+  {
+    SyllableImpl syllable = new SyllableImpl();
+    return syllable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Note createNote()
   {
     NoteImpl note = new NoteImpl();
     return note;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public HyphenRule createHyphenRule()
+  {
+    HyphenRuleImpl hyphenRule = new HyphenRuleImpl();
+    return hyphenRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExtenderRule createExtenderRule()
+  {
+    ExtenderRuleImpl extenderRule = new ExtenderRuleImpl();
+    return extenderRule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SkipRule createSkipRule()
+  {
+    SkipRuleImpl skipRule = new SkipRuleImpl();
+    return skipRule;
   }
 
   /**

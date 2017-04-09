@@ -5,16 +5,23 @@ package org.lilychant.lilyChantScript.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.lilychant.lilyChantScript.LilyChantScriptPackage;
 import org.lilychant.lilyChantScript.NoteGroup;
+import org.lilychant.lilyChantScript.Syllable;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +31,7 @@ import org.lilychant.lilyChantScript.NoteGroup;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.lilychant.lilyChantScript.impl.NoteGroupImpl#getSyllables <em>Syllables</em>}</li>
+ *   <li>{@link org.lilychant.lilyChantScript.impl.NoteGroupImpl#isNoemphasis <em>Noemphasis</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,14 +40,34 @@ import org.lilychant.lilyChantScript.NoteGroup;
 public class NoteGroupImpl extends MinimalEObjectImpl.Container implements NoteGroup
 {
   /**
-   * The cached value of the '{@link #getSyllables() <em>Syllables</em>}' attribute list.
+   * The cached value of the '{@link #getSyllables() <em>Syllables</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSyllables()
    * @generated
    * @ordered
    */
-  protected EList<String> syllables;
+  protected EList<Syllable> syllables;
+
+  /**
+   * The default value of the '{@link #isNoemphasis() <em>Noemphasis</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNoemphasis()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean NOEMPHASIS_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isNoemphasis() <em>Noemphasis</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNoemphasis()
+   * @generated
+   * @ordered
+   */
+  protected boolean noemphasis = NOEMPHASIS_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,13 +95,52 @@ public class NoteGroupImpl extends MinimalEObjectImpl.Container implements NoteG
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getSyllables()
+  public EList<Syllable> getSyllables()
   {
     if (syllables == null)
     {
-      syllables = new EDataTypeEList<String>(String.class, this, LilyChantScriptPackage.NOTE_GROUP__SYLLABLES);
+      syllables = new EObjectContainmentEList<Syllable>(Syllable.class, this, LilyChantScriptPackage.NOTE_GROUP__SYLLABLES);
     }
     return syllables;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isNoemphasis()
+  {
+    return noemphasis;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNoemphasis(boolean newNoemphasis)
+  {
+    boolean oldNoemphasis = noemphasis;
+    noemphasis = newNoemphasis;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LilyChantScriptPackage.NOTE_GROUP__NOEMPHASIS, oldNoemphasis, noemphasis));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case LilyChantScriptPackage.NOTE_GROUP__SYLLABLES:
+        return ((InternalEList<?>)getSyllables()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -88,6 +155,8 @@ public class NoteGroupImpl extends MinimalEObjectImpl.Container implements NoteG
     {
       case LilyChantScriptPackage.NOTE_GROUP__SYLLABLES:
         return getSyllables();
+      case LilyChantScriptPackage.NOTE_GROUP__NOEMPHASIS:
+        return isNoemphasis();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -105,7 +174,10 @@ public class NoteGroupImpl extends MinimalEObjectImpl.Container implements NoteG
     {
       case LilyChantScriptPackage.NOTE_GROUP__SYLLABLES:
         getSyllables().clear();
-        getSyllables().addAll((Collection<? extends String>)newValue);
+        getSyllables().addAll((Collection<? extends Syllable>)newValue);
+        return;
+      case LilyChantScriptPackage.NOTE_GROUP__NOEMPHASIS:
+        setNoemphasis((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -124,6 +196,9 @@ public class NoteGroupImpl extends MinimalEObjectImpl.Container implements NoteG
       case LilyChantScriptPackage.NOTE_GROUP__SYLLABLES:
         getSyllables().clear();
         return;
+      case LilyChantScriptPackage.NOTE_GROUP__NOEMPHASIS:
+        setNoemphasis(NOEMPHASIS_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -140,6 +215,8 @@ public class NoteGroupImpl extends MinimalEObjectImpl.Container implements NoteG
     {
       case LilyChantScriptPackage.NOTE_GROUP__SYLLABLES:
         return syllables != null && !syllables.isEmpty();
+      case LilyChantScriptPackage.NOTE_GROUP__NOEMPHASIS:
+        return noemphasis != NOEMPHASIS_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -155,8 +232,8 @@ public class NoteGroupImpl extends MinimalEObjectImpl.Container implements NoteG
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (syllables: ");
-    result.append(syllables);
+    result.append(" (noemphasis: ");
+    result.append(noemphasis);
     result.append(')');
     return result.toString();
   }

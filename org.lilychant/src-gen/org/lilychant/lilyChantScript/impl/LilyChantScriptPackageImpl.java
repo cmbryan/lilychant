@@ -13,12 +13,16 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.lilychant.lilyChantScript.Barline;
 import org.lilychant.lilyChantScript.Chant;
+import org.lilychant.lilyChantScript.ExtenderRule;
+import org.lilychant.lilyChantScript.HyphenRule;
 import org.lilychant.lilyChantScript.LilyChantScriptFactory;
 import org.lilychant.lilyChantScript.LilyChantScriptPackage;
 import org.lilychant.lilyChantScript.LyricPhrase;
 import org.lilychant.lilyChantScript.Note;
 import org.lilychant.lilyChantScript.NoteGroup;
 import org.lilychant.lilyChantScript.Script;
+import org.lilychant.lilyChantScript.SkipRule;
+import org.lilychant.lilyChantScript.Syllable;
 import org.lilychant.lilyChantScript.Tone;
 import org.lilychant.lilyChantScript.TonePhrase;
 import org.lilychant.lilyChantScript.VoiceName;
@@ -93,7 +97,35 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass syllableEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass noteEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass hyphenRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass extenderRuleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass skipRuleEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -410,9 +442,49 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getNoteGroup_Syllables()
+  public EReference getNoteGroup_Syllables()
   {
-    return (EAttribute)noteGroupEClass.getEStructuralFeatures().get(0);
+    return (EReference)noteGroupEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNoteGroup_Noemphasis()
+  {
+    return (EAttribute)noteGroupEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSyllable()
+  {
+    return syllableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSyllable_Emphasis()
+  {
+    return (EAttribute)syllableEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSyllable_Literal()
+  {
+    return (EAttribute)syllableEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -443,6 +515,36 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
   public EAttribute getNote_Duration()
   {
     return (EAttribute)noteEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getHyphenRule()
+  {
+    return hyphenRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExtenderRule()
+  {
+    return extenderRuleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSkipRule()
+  {
+    return skipRuleEClass;
   }
 
   /**
@@ -516,11 +618,22 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
     createEAttribute(lyricPhraseEClass, LYRIC_PHRASE__BAR);
 
     noteGroupEClass = createEClass(NOTE_GROUP);
-    createEAttribute(noteGroupEClass, NOTE_GROUP__SYLLABLES);
+    createEReference(noteGroupEClass, NOTE_GROUP__SYLLABLES);
+    createEAttribute(noteGroupEClass, NOTE_GROUP__NOEMPHASIS);
+
+    syllableEClass = createEClass(SYLLABLE);
+    createEAttribute(syllableEClass, SYLLABLE__EMPHASIS);
+    createEAttribute(syllableEClass, SYLLABLE__LITERAL);
 
     noteEClass = createEClass(NOTE);
     createEAttribute(noteEClass, NOTE__PITCH);
     createEAttribute(noteEClass, NOTE__DURATION);
+
+    hyphenRuleEClass = createEClass(HYPHEN_RULE);
+
+    extenderRuleEClass = createEClass(EXTENDER_RULE);
+
+    skipRuleEClass = createEClass(SKIP_RULE);
 
     // Create enums
     barlineEEnum = createEEnum(BARLINE);
@@ -555,6 +668,9 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    hyphenRuleEClass.getESuperTypes().add(this.getSyllable());
+    extenderRuleEClass.getESuperTypes().add(this.getSyllable());
+    skipRuleEClass.getESuperTypes().add(this.getSyllable());
 
     // Initialize classes and features; add operations and parameters
     initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -588,11 +704,22 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
     initEAttribute(getLyricPhrase_Bar(), this.getBarline(), "bar", null, 0, 1, LyricPhrase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(noteGroupEClass, NoteGroup.class, "NoteGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNoteGroup_Syllables(), ecorePackage.getEString(), "syllables", null, 0, -1, NoteGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNoteGroup_Syllables(), this.getSyllable(), null, "syllables", null, 0, -1, NoteGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNoteGroup_Noemphasis(), ecorePackage.getEBoolean(), "noemphasis", null, 0, 1, NoteGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(syllableEClass, Syllable.class, "Syllable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSyllable_Emphasis(), ecorePackage.getEBoolean(), "emphasis", null, 0, 1, Syllable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSyllable_Literal(), ecorePackage.getEString(), "literal", null, 0, 1, Syllable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(noteEClass, Note.class, "Note", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNote_Pitch(), ecorePackage.getEString(), "pitch", null, 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getNote_Duration(), ecorePackage.getEString(), "duration", null, 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(hyphenRuleEClass, HyphenRule.class, "HyphenRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(extenderRuleEClass, ExtenderRule.class, "ExtenderRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(skipRuleEClass, SkipRule.class, "SkipRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Initialize enums and add enum literals
     initEEnum(barlineEEnum, Barline.class, "Barline");

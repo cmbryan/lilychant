@@ -80,15 +80,31 @@ NoteGroup:
 	// single syllable
 	(
 		(
-			syllables+=ID =>(syllables+=HYPHEN)?
-			| syllables+=HYPHEN syllables+=ID
+			syllables+=IdRule =>(syllables+=HyphenRule)?
+			| syllables+=HyphenRule syllables+=IdRule
 		)
-		syllables+=EXTENDER*
+		syllables+=ExtenderRule*
 	)
-	| syllables+=SKIP
+	| syllables+=SkipRule
 	
 	// group of syllables to be repeated on the same pitch
-	| START_NOTE_GROUP syllables+=(ID|HYPHEN|EXTENDER)+ END_NOTE_GROUP
+	| START_NOTE_GROUP noemphasis?='/'? syllables+=(IdRule|HyphenRule|ExtenderRule)+ END_NOTE_GROUP
+;
+IdRule returns Syllable:
+	emphasis?='*'?
+	literal=ID
+;
+HyphenRule returns Syllable:
+	{HyphenRule}
+	literal='--'
+;
+ExtenderRule returns Syllable:
+	{ExtenderRule}
+	literal='__'
+;
+SkipRule returns Syllable:
+	{SkipRule}
+	literal='_'
 ;
 
 /*
@@ -114,9 +130,9 @@ terminal STRING	:
 ;
 
 terminal DURATION: ('1'|'2'|'4'|'8'|'16'|'\breve')+;
-terminal HYPHEN: '--';
-terminal EXTENDER: '__';
-terminal SKIP: '_';
+//terminal HYPHEN: '--';
+//terminal EXTENDER: '__';
+//terminal SKIP: '_';
 terminal START_NOTE_GROUP: '<';
 terminal END_NOTE_GROUP: '>';
 

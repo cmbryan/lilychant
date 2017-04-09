@@ -40,7 +40,7 @@ public class LilyChantParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getNoteGroupAccess().getAlternatives(), "rule__NoteGroup__Alternatives");
 					put(grammarAccess.getNoteGroupAccess().getAlternatives_0_0(), "rule__NoteGroup__Alternatives_0_0");
-					put(grammarAccess.getNoteGroupAccess().getSyllablesAlternatives_2_1_0(), "rule__NoteGroup__SyllablesAlternatives_2_1_0");
+					put(grammarAccess.getNoteGroupAccess().getSyllablesAlternatives_2_2_0(), "rule__NoteGroup__SyllablesAlternatives_2_2_0");
 					put(grammarAccess.getBarlineAccess().getAlternatives(), "rule__Barline__Alternatives");
 					put(grammarAccess.getScriptAccess().getGroup(), "rule__Script__Group__0");
 					put(grammarAccess.getToneAccess().getGroup(), "rule__Tone__Group__0");
@@ -54,6 +54,10 @@ public class LilyChantParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNoteGroupAccess().getGroup_0_0_0_1(), "rule__NoteGroup__Group_0_0_0_1__0");
 					put(grammarAccess.getNoteGroupAccess().getGroup_0_0_1(), "rule__NoteGroup__Group_0_0_1__0");
 					put(grammarAccess.getNoteGroupAccess().getGroup_2(), "rule__NoteGroup__Group_2__0");
+					put(grammarAccess.getIdRuleAccess().getGroup(), "rule__IdRule__Group__0");
+					put(grammarAccess.getHyphenRuleAccess().getGroup(), "rule__HyphenRule__Group__0");
+					put(grammarAccess.getExtenderRuleAccess().getGroup(), "rule__ExtenderRule__Group__0");
+					put(grammarAccess.getSkipRuleAccess().getGroup(), "rule__SkipRule__Group__0");
 					put(grammarAccess.getNoteAccess().getGroup(), "rule__Note__Group__0");
 					put(grammarAccess.getScriptAccess().getTonesAssignment_0(), "rule__Script__TonesAssignment_0");
 					put(grammarAccess.getScriptAccess().getChantsAssignment_1(), "rule__Script__ChantsAssignment_1");
@@ -77,7 +81,13 @@ public class LilyChantParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_0_1_1(), "rule__NoteGroup__SyllablesAssignment_0_0_1_1");
 					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_0_1(), "rule__NoteGroup__SyllablesAssignment_0_1");
 					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_1(), "rule__NoteGroup__SyllablesAssignment_1");
-					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_2_1(), "rule__NoteGroup__SyllablesAssignment_2_1");
+					put(grammarAccess.getNoteGroupAccess().getNoemphasisAssignment_2_1(), "rule__NoteGroup__NoemphasisAssignment_2_1");
+					put(grammarAccess.getNoteGroupAccess().getSyllablesAssignment_2_2(), "rule__NoteGroup__SyllablesAssignment_2_2");
+					put(grammarAccess.getIdRuleAccess().getEmphasisAssignment_0(), "rule__IdRule__EmphasisAssignment_0");
+					put(grammarAccess.getIdRuleAccess().getLiteralAssignment_1(), "rule__IdRule__LiteralAssignment_1");
+					put(grammarAccess.getHyphenRuleAccess().getLiteralAssignment_1(), "rule__HyphenRule__LiteralAssignment_1");
+					put(grammarAccess.getExtenderRuleAccess().getLiteralAssignment_1(), "rule__ExtenderRule__LiteralAssignment_1");
+					put(grammarAccess.getSkipRuleAccess().getLiteralAssignment_1(), "rule__SkipRule__LiteralAssignment_1");
 					put(grammarAccess.getNoteAccess().getPitchAssignment_0(), "rule__Note__PitchAssignment_0");
 					put(grammarAccess.getNoteAccess().getDurationAssignment_1(), "rule__Note__DurationAssignment_1");
 				}

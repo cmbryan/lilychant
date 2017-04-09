@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.lilychant.lilyChantScript.NoteGroup#getSyllables <em>Syllables</em>}</li>
+ *   <li>{@link org.lilychant.lilyChantScript.NoteGroup#isNoemphasis <em>Noemphasis</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,19 +27,45 @@ import org.eclipse.emf.ecore.EObject;
 public interface NoteGroup extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Syllables</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Syllables</b></em>' containment reference list.
+   * The list contents are of type {@link org.lilychant.lilyChantScript.Syllable}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Syllables</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Syllables</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Syllables</em>' attribute list.
+   * @return the value of the '<em>Syllables</em>' containment reference list.
    * @see org.lilychant.lilyChantScript.LilyChantScriptPackage#getNoteGroup_Syllables()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getSyllables();
+  EList<Syllable> getSyllables();
+
+  /**
+   * Returns the value of the '<em><b>Noemphasis</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Noemphasis</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Noemphasis</em>' attribute.
+   * @see #setNoemphasis(boolean)
+   * @see org.lilychant.lilyChantScript.LilyChantScriptPackage#getNoteGroup_Noemphasis()
+   * @model
+   * @generated
+   */
+  boolean isNoemphasis();
+
+  /**
+   * Sets the value of the '{@link org.lilychant.lilyChantScript.NoteGroup#isNoemphasis <em>Noemphasis</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Noemphasis</em>' attribute.
+   * @see #isNoemphasis()
+   * @generated
+   */
+  void setNoemphasis(boolean value);
 
 } // NoteGroup

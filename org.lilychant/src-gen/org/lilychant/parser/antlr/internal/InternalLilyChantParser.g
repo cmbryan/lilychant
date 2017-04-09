@@ -562,44 +562,46 @@ ruleNoteGroup returns [EObject current=null]
 				(
 					(
 						(
-							lv_syllables_0_0=RULE_ID
 							{
-								newLeafNode(lv_syllables_0_0, grammarAccess.getNoteGroupAccess().getSyllablesIDTerminalRuleCall_0_0_0_0_0());
+								newCompositeNode(grammarAccess.getNoteGroupAccess().getSyllablesIdRuleParserRuleCall_0_0_0_0_0());
 							}
+							lv_syllables_0_0=ruleIdRule
 							{
 								if ($current==null) {
-									$current = createModelElement(grammarAccess.getNoteGroupRule());
+									$current = createModelElementForParent(grammarAccess.getNoteGroupRule());
 								}
-								addWithLastConsumed(
+								add(
 									$current,
 									"syllables",
 									lv_syllables_0_0,
-									"org.lilychant.LilyChant.ID");
+									"org.lilychant.LilyChant.IdRule");
+								afterParserOrEnumRuleCall();
 							}
 						)
 					)
 					(
 						((
 							(
-								RULE_HYPHEN
+								ruleHyphenRule
 							)
 						)
 						)=>
 						(
 							(
-								lv_syllables_1_0=RULE_HYPHEN
 								{
-									newLeafNode(lv_syllables_1_0, grammarAccess.getNoteGroupAccess().getSyllablesHYPHENTerminalRuleCall_0_0_0_1_0_0());
+									newCompositeNode(grammarAccess.getNoteGroupAccess().getSyllablesHyphenRuleParserRuleCall_0_0_0_1_0_0());
 								}
+								lv_syllables_1_0=ruleHyphenRule
 								{
 									if ($current==null) {
-										$current = createModelElement(grammarAccess.getNoteGroupRule());
+										$current = createModelElementForParent(grammarAccess.getNoteGroupRule());
 									}
-									addWithLastConsumed(
+									add(
 										$current,
 										"syllables",
 										lv_syllables_1_0,
-										"org.lilychant.LilyChant.HYPHEN");
+										"org.lilychant.LilyChant.HyphenRule");
+									afterParserOrEnumRuleCall();
 								}
 							)
 						)
@@ -609,37 +611,39 @@ ruleNoteGroup returns [EObject current=null]
 				(
 					(
 						(
-							lv_syllables_2_0=RULE_HYPHEN
 							{
-								newLeafNode(lv_syllables_2_0, grammarAccess.getNoteGroupAccess().getSyllablesHYPHENTerminalRuleCall_0_0_1_0_0());
+								newCompositeNode(grammarAccess.getNoteGroupAccess().getSyllablesHyphenRuleParserRuleCall_0_0_1_0_0());
 							}
+							lv_syllables_2_0=ruleHyphenRule
 							{
 								if ($current==null) {
-									$current = createModelElement(grammarAccess.getNoteGroupRule());
+									$current = createModelElementForParent(grammarAccess.getNoteGroupRule());
 								}
-								addWithLastConsumed(
+								add(
 									$current,
 									"syllables",
 									lv_syllables_2_0,
-									"org.lilychant.LilyChant.HYPHEN");
+									"org.lilychant.LilyChant.HyphenRule");
+								afterParserOrEnumRuleCall();
 							}
 						)
 					)
 					(
 						(
-							lv_syllables_3_0=RULE_ID
 							{
-								newLeafNode(lv_syllables_3_0, grammarAccess.getNoteGroupAccess().getSyllablesIDTerminalRuleCall_0_0_1_1_0());
+								newCompositeNode(grammarAccess.getNoteGroupAccess().getSyllablesIdRuleParserRuleCall_0_0_1_1_0());
 							}
+							lv_syllables_3_0=ruleIdRule
 							{
 								if ($current==null) {
-									$current = createModelElement(grammarAccess.getNoteGroupRule());
+									$current = createModelElementForParent(grammarAccess.getNoteGroupRule());
 								}
-								addWithLastConsumed(
+								add(
 									$current,
 									"syllables",
 									lv_syllables_3_0,
-									"org.lilychant.LilyChant.ID");
+									"org.lilychant.LilyChant.IdRule");
+								afterParserOrEnumRuleCall();
 							}
 						)
 					)
@@ -647,19 +651,20 @@ ruleNoteGroup returns [EObject current=null]
 			)
 			(
 				(
-					lv_syllables_4_0=RULE_EXTENDER
 					{
-						newLeafNode(lv_syllables_4_0, grammarAccess.getNoteGroupAccess().getSyllablesEXTENDERTerminalRuleCall_0_1_0());
+						newCompositeNode(grammarAccess.getNoteGroupAccess().getSyllablesExtenderRuleParserRuleCall_0_1_0());
 					}
+					lv_syllables_4_0=ruleExtenderRule
 					{
 						if ($current==null) {
-							$current = createModelElement(grammarAccess.getNoteGroupRule());
+							$current = createModelElementForParent(grammarAccess.getNoteGroupRule());
 						}
-						addWithLastConsumed(
+						add(
 							$current,
 							"syllables",
 							lv_syllables_4_0,
-							"org.lilychant.LilyChant.EXTENDER");
+							"org.lilychant.LilyChant.ExtenderRule");
+						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
@@ -667,19 +672,20 @@ ruleNoteGroup returns [EObject current=null]
 		    |
 		(
 			(
-				lv_syllables_5_0=RULE_SKIP
 				{
-					newLeafNode(lv_syllables_5_0, grammarAccess.getNoteGroupAccess().getSyllablesSKIPTerminalRuleCall_1_0());
+					newCompositeNode(grammarAccess.getNoteGroupAccess().getSyllablesSkipRuleParserRuleCall_1_0());
 				}
+				lv_syllables_5_0=ruleSkipRule
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getNoteGroupRule());
+						$current = createModelElementForParent(grammarAccess.getNoteGroupRule());
 					}
-					addWithLastConsumed(
+					add(
 						$current,
 						"syllables",
 						lv_syllables_5_0,
-						"org.lilychant.LilyChant.SKIP");
+						"org.lilychant.LilyChant.SkipRule");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -691,58 +697,246 @@ ruleNoteGroup returns [EObject current=null]
 			}
 			(
 				(
+					lv_noemphasis_7_0=Solidus
+					{
+						newLeafNode(lv_noemphasis_7_0, grammarAccess.getNoteGroupAccess().getNoemphasisSolidusKeyword_2_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getNoteGroupRule());
+						}
+						setWithLastConsumed($current, "noemphasis", true, "/");
+					}
+				)
+			)?
+			(
+				(
 					(
-						lv_syllables_7_1=RULE_ID
 						{
-							newLeafNode(lv_syllables_7_1, grammarAccess.getNoteGroupAccess().getSyllablesIDTerminalRuleCall_2_1_0_0());
+							newCompositeNode(grammarAccess.getNoteGroupAccess().getSyllablesIdRuleParserRuleCall_2_2_0_0());
 						}
+						lv_syllables_8_1=ruleIdRule
 						{
 							if ($current==null) {
-								$current = createModelElement(grammarAccess.getNoteGroupRule());
+								$current = createModelElementForParent(grammarAccess.getNoteGroupRule());
 							}
-							addWithLastConsumed(
+							add(
 								$current,
 								"syllables",
-								lv_syllables_7_1,
-								"org.lilychant.LilyChant.ID");
+								lv_syllables_8_1,
+								"org.lilychant.LilyChant.IdRule");
+							afterParserOrEnumRuleCall();
 						}
 						    |
-						lv_syllables_7_2=RULE_HYPHEN
 						{
-							newLeafNode(lv_syllables_7_2, grammarAccess.getNoteGroupAccess().getSyllablesHYPHENTerminalRuleCall_2_1_0_1());
+							newCompositeNode(grammarAccess.getNoteGroupAccess().getSyllablesHyphenRuleParserRuleCall_2_2_0_1());
 						}
+						lv_syllables_8_2=ruleHyphenRule
 						{
 							if ($current==null) {
-								$current = createModelElement(grammarAccess.getNoteGroupRule());
+								$current = createModelElementForParent(grammarAccess.getNoteGroupRule());
 							}
-							addWithLastConsumed(
+							add(
 								$current,
 								"syllables",
-								lv_syllables_7_2,
-								"org.lilychant.LilyChant.HYPHEN");
+								lv_syllables_8_2,
+								"org.lilychant.LilyChant.HyphenRule");
+							afterParserOrEnumRuleCall();
 						}
 						    |
-						lv_syllables_7_3=RULE_EXTENDER
 						{
-							newLeafNode(lv_syllables_7_3, grammarAccess.getNoteGroupAccess().getSyllablesEXTENDERTerminalRuleCall_2_1_0_2());
+							newCompositeNode(grammarAccess.getNoteGroupAccess().getSyllablesExtenderRuleParserRuleCall_2_2_0_2());
 						}
+						lv_syllables_8_3=ruleExtenderRule
 						{
 							if ($current==null) {
-								$current = createModelElement(grammarAccess.getNoteGroupRule());
+								$current = createModelElementForParent(grammarAccess.getNoteGroupRule());
 							}
-							addWithLastConsumed(
+							add(
 								$current,
 								"syllables",
-								lv_syllables_7_3,
-								"org.lilychant.LilyChant.EXTENDER");
+								lv_syllables_8_3,
+								"org.lilychant.LilyChant.ExtenderRule");
+							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)+
-			this_END_NOTE_GROUP_8=RULE_END_NOTE_GROUP
+			this_END_NOTE_GROUP_9=RULE_END_NOTE_GROUP
 			{
-				newLeafNode(this_END_NOTE_GROUP_8, grammarAccess.getNoteGroupAccess().getEND_NOTE_GROUPTerminalRuleCall_2_2());
+				newLeafNode(this_END_NOTE_GROUP_9, grammarAccess.getNoteGroupAccess().getEND_NOTE_GROUPTerminalRuleCall_2_3());
 			}
+		)
+	)
+;
+
+// Entry rule entryRuleIdRule
+entryRuleIdRule returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getIdRuleRule()); }
+	iv_ruleIdRule=ruleIdRule
+	{ $current=$iv_ruleIdRule.current; }
+	EOF;
+
+// Rule IdRule
+ruleIdRule returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_emphasis_0_0=Asterisk
+				{
+					newLeafNode(lv_emphasis_0_0, grammarAccess.getIdRuleAccess().getEmphasisAsteriskKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getIdRuleRule());
+					}
+					setWithLastConsumed($current, "emphasis", true, "*");
+				}
+			)
+		)?
+		(
+			(
+				lv_literal_1_0=RULE_ID
+				{
+					newLeafNode(lv_literal_1_0, grammarAccess.getIdRuleAccess().getLiteralIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getIdRuleRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"literal",
+						lv_literal_1_0,
+						"org.lilychant.LilyChant.ID");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleHyphenRule
+entryRuleHyphenRule returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getHyphenRuleRule()); }
+	iv_ruleHyphenRule=ruleHyphenRule
+	{ $current=$iv_ruleHyphenRule.current; }
+	EOF;
+
+// Rule HyphenRule
+ruleHyphenRule returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getHyphenRuleAccess().getHyphenRuleAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_literal_1_0=HyphenMinusHyphenMinus
+				{
+					newLeafNode(lv_literal_1_0, grammarAccess.getHyphenRuleAccess().getLiteralHyphenMinusHyphenMinusKeyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getHyphenRuleRule());
+					}
+					setWithLastConsumed($current, "literal", lv_literal_1_0, "--");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleExtenderRule
+entryRuleExtenderRule returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getExtenderRuleRule()); }
+	iv_ruleExtenderRule=ruleExtenderRule
+	{ $current=$iv_ruleExtenderRule.current; }
+	EOF;
+
+// Rule ExtenderRule
+ruleExtenderRule returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getExtenderRuleAccess().getExtenderRuleAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_literal_1_0=KW___
+				{
+					newLeafNode(lv_literal_1_0, grammarAccess.getExtenderRuleAccess().getLiteral__Keyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getExtenderRuleRule());
+					}
+					setWithLastConsumed($current, "literal", lv_literal_1_0, "__");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleSkipRule
+entryRuleSkipRule returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSkipRuleRule()); }
+	iv_ruleSkipRule=ruleSkipRule
+	{ $current=$iv_ruleSkipRule.current; }
+	EOF;
+
+// Rule SkipRule
+ruleSkipRule returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getSkipRuleAccess().getSkipRuleAction_0(),
+					$current);
+			}
+		)
+		(
+			(
+				lv_literal_1_0=KW__
+				{
+					newLeafNode(lv_literal_1_0, grammarAccess.getSkipRuleAccess().getLiteral_Keyword_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSkipRuleRule());
+					}
+					setWithLastConsumed($current, "literal", lv_literal_1_0, "_");
+				}
+			)
 		)
 	)
 ;

@@ -116,9 +116,29 @@ public class LilyChantScriptAdapterFactory extends AdapterFactoryImpl
         return createNoteGroupAdapter();
       }
       @Override
+      public Adapter caseSyllable(Syllable object)
+      {
+        return createSyllableAdapter();
+      }
+      @Override
       public Adapter caseNote(Note object)
       {
         return createNoteAdapter();
+      }
+      @Override
+      public Adapter caseHyphenRule(HyphenRule object)
+      {
+        return createHyphenRuleAdapter();
+      }
+      @Override
+      public Adapter caseExtenderRule(ExtenderRule object)
+      {
+        return createExtenderRuleAdapter();
+      }
+      @Override
+      public Adapter caseSkipRule(SkipRule object)
+      {
+        return createSkipRuleAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -263,6 +283,21 @@ public class LilyChantScriptAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.lilychant.lilyChantScript.Syllable <em>Syllable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.lilychant.lilyChantScript.Syllable
+   * @generated
+   */
+  public Adapter createSyllableAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.lilychant.lilyChantScript.Note <em>Note</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -273,6 +308,51 @@ public class LilyChantScriptAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNoteAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.lilychant.lilyChantScript.HyphenRule <em>Hyphen Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.lilychant.lilyChantScript.HyphenRule
+   * @generated
+   */
+  public Adapter createHyphenRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.lilychant.lilyChantScript.ExtenderRule <em>Extender Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.lilychant.lilyChantScript.ExtenderRule
+   * @generated
+   */
+  public Adapter createExtenderRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.lilychant.lilyChantScript.SkipRule <em>Skip Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.lilychant.lilyChantScript.SkipRule
+   * @generated
+   */
+  public Adapter createSkipRuleAdapter()
   {
     return null;
   }

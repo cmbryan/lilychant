@@ -346,7 +346,7 @@ public interface LilyChantScriptPackage extends EPackage
   int NOTE_GROUP = 7;
 
   /**
-   * The feature id for the '<em><b>Syllables</b></em>' attribute list.
+   * The feature id for the '<em><b>Syllables</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -355,13 +355,59 @@ public interface LilyChantScriptPackage extends EPackage
   int NOTE_GROUP__SYLLABLES = 0;
 
   /**
+   * The feature id for the '<em><b>Noemphasis</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOTE_GROUP__NOEMPHASIS = 1;
+
+  /**
    * The number of structural features of the '<em>Note Group</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NOTE_GROUP_FEATURE_COUNT = 1;
+  int NOTE_GROUP_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.lilychant.lilyChantScript.impl.SyllableImpl <em>Syllable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.lilychant.lilyChantScript.impl.SyllableImpl
+   * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getSyllable()
+   * @generated
+   */
+  int SYLLABLE = 8;
+
+  /**
+   * The feature id for the '<em><b>Emphasis</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYLLABLE__EMPHASIS = 0;
+
+  /**
+   * The feature id for the '<em><b>Literal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYLLABLE__LITERAL = 1;
+
+  /**
+   * The number of structural features of the '<em>Syllable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYLLABLE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.lilychant.lilyChantScript.impl.NoteImpl <em>Note</em>}' class.
@@ -371,7 +417,7 @@ public interface LilyChantScriptPackage extends EPackage
    * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getNote()
    * @generated
    */
-  int NOTE = 8;
+  int NOTE = 9;
 
   /**
    * The feature id for the '<em><b>Pitch</b></em>' attribute.
@@ -401,6 +447,117 @@ public interface LilyChantScriptPackage extends EPackage
   int NOTE_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link org.lilychant.lilyChantScript.impl.HyphenRuleImpl <em>Hyphen Rule</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.lilychant.lilyChantScript.impl.HyphenRuleImpl
+   * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getHyphenRule()
+   * @generated
+   */
+  int HYPHEN_RULE = 10;
+
+  /**
+   * The feature id for the '<em><b>Emphasis</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HYPHEN_RULE__EMPHASIS = SYLLABLE__EMPHASIS;
+
+  /**
+   * The feature id for the '<em><b>Literal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HYPHEN_RULE__LITERAL = SYLLABLE__LITERAL;
+
+  /**
+   * The number of structural features of the '<em>Hyphen Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HYPHEN_RULE_FEATURE_COUNT = SYLLABLE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.lilychant.lilyChantScript.impl.ExtenderRuleImpl <em>Extender Rule</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.lilychant.lilyChantScript.impl.ExtenderRuleImpl
+   * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getExtenderRule()
+   * @generated
+   */
+  int EXTENDER_RULE = 11;
+
+  /**
+   * The feature id for the '<em><b>Emphasis</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENDER_RULE__EMPHASIS = SYLLABLE__EMPHASIS;
+
+  /**
+   * The feature id for the '<em><b>Literal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENDER_RULE__LITERAL = SYLLABLE__LITERAL;
+
+  /**
+   * The number of structural features of the '<em>Extender Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTENDER_RULE_FEATURE_COUNT = SYLLABLE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.lilychant.lilyChantScript.impl.SkipRuleImpl <em>Skip Rule</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.lilychant.lilyChantScript.impl.SkipRuleImpl
+   * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getSkipRule()
+   * @generated
+   */
+  int SKIP_RULE = 12;
+
+  /**
+   * The feature id for the '<em><b>Emphasis</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SKIP_RULE__EMPHASIS = SYLLABLE__EMPHASIS;
+
+  /**
+   * The feature id for the '<em><b>Literal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SKIP_RULE__LITERAL = SYLLABLE__LITERAL;
+
+  /**
+   * The number of structural features of the '<em>Skip Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SKIP_RULE_FEATURE_COUNT = SYLLABLE_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link org.lilychant.lilyChantScript.Barline <em>Barline</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -408,7 +565,7 @@ public interface LilyChantScriptPackage extends EPackage
    * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getBarline()
    * @generated
    */
-  int BARLINE = 9;
+  int BARLINE = 13;
 
 
   /**
@@ -668,15 +825,58 @@ public interface LilyChantScriptPackage extends EPackage
   EClass getNoteGroup();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.lilychant.lilyChantScript.NoteGroup#getSyllables <em>Syllables</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.lilychant.lilyChantScript.NoteGroup#getSyllables <em>Syllables</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Syllables</em>'.
+   * @return the meta object for the containment reference list '<em>Syllables</em>'.
    * @see org.lilychant.lilyChantScript.NoteGroup#getSyllables()
    * @see #getNoteGroup()
    * @generated
    */
-  EAttribute getNoteGroup_Syllables();
+  EReference getNoteGroup_Syllables();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.lilychant.lilyChantScript.NoteGroup#isNoemphasis <em>Noemphasis</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Noemphasis</em>'.
+   * @see org.lilychant.lilyChantScript.NoteGroup#isNoemphasis()
+   * @see #getNoteGroup()
+   * @generated
+   */
+  EAttribute getNoteGroup_Noemphasis();
+
+  /**
+   * Returns the meta object for class '{@link org.lilychant.lilyChantScript.Syllable <em>Syllable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Syllable</em>'.
+   * @see org.lilychant.lilyChantScript.Syllable
+   * @generated
+   */
+  EClass getSyllable();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.lilychant.lilyChantScript.Syllable#isEmphasis <em>Emphasis</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Emphasis</em>'.
+   * @see org.lilychant.lilyChantScript.Syllable#isEmphasis()
+   * @see #getSyllable()
+   * @generated
+   */
+  EAttribute getSyllable_Emphasis();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.lilychant.lilyChantScript.Syllable#getLiteral <em>Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Literal</em>'.
+   * @see org.lilychant.lilyChantScript.Syllable#getLiteral()
+   * @see #getSyllable()
+   * @generated
+   */
+  EAttribute getSyllable_Literal();
 
   /**
    * Returns the meta object for class '{@link org.lilychant.lilyChantScript.Note <em>Note</em>}'.
@@ -709,6 +909,36 @@ public interface LilyChantScriptPackage extends EPackage
    * @generated
    */
   EAttribute getNote_Duration();
+
+  /**
+   * Returns the meta object for class '{@link org.lilychant.lilyChantScript.HyphenRule <em>Hyphen Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Hyphen Rule</em>'.
+   * @see org.lilychant.lilyChantScript.HyphenRule
+   * @generated
+   */
+  EClass getHyphenRule();
+
+  /**
+   * Returns the meta object for class '{@link org.lilychant.lilyChantScript.ExtenderRule <em>Extender Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Extender Rule</em>'.
+   * @see org.lilychant.lilyChantScript.ExtenderRule
+   * @generated
+   */
+  EClass getExtenderRule();
+
+  /**
+   * Returns the meta object for class '{@link org.lilychant.lilyChantScript.SkipRule <em>Skip Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Skip Rule</em>'.
+   * @see org.lilychant.lilyChantScript.SkipRule
+   * @generated
+   */
+  EClass getSkipRule();
 
   /**
    * Returns the meta object for enum '{@link org.lilychant.lilyChantScript.Barline <em>Barline</em>}'.
@@ -952,12 +1182,46 @@ public interface LilyChantScriptPackage extends EPackage
     EClass NOTE_GROUP = eINSTANCE.getNoteGroup();
 
     /**
-     * The meta object literal for the '<em><b>Syllables</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Syllables</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NOTE_GROUP__SYLLABLES = eINSTANCE.getNoteGroup_Syllables();
+    EReference NOTE_GROUP__SYLLABLES = eINSTANCE.getNoteGroup_Syllables();
+
+    /**
+     * The meta object literal for the '<em><b>Noemphasis</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NOTE_GROUP__NOEMPHASIS = eINSTANCE.getNoteGroup_Noemphasis();
+
+    /**
+     * The meta object literal for the '{@link org.lilychant.lilyChantScript.impl.SyllableImpl <em>Syllable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.lilychant.lilyChantScript.impl.SyllableImpl
+     * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getSyllable()
+     * @generated
+     */
+    EClass SYLLABLE = eINSTANCE.getSyllable();
+
+    /**
+     * The meta object literal for the '<em><b>Emphasis</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SYLLABLE__EMPHASIS = eINSTANCE.getSyllable_Emphasis();
+
+    /**
+     * The meta object literal for the '<em><b>Literal</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SYLLABLE__LITERAL = eINSTANCE.getSyllable_Literal();
 
     /**
      * The meta object literal for the '{@link org.lilychant.lilyChantScript.impl.NoteImpl <em>Note</em>}' class.
@@ -984,6 +1248,36 @@ public interface LilyChantScriptPackage extends EPackage
      * @generated
      */
     EAttribute NOTE__DURATION = eINSTANCE.getNote_Duration();
+
+    /**
+     * The meta object literal for the '{@link org.lilychant.lilyChantScript.impl.HyphenRuleImpl <em>Hyphen Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.lilychant.lilyChantScript.impl.HyphenRuleImpl
+     * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getHyphenRule()
+     * @generated
+     */
+    EClass HYPHEN_RULE = eINSTANCE.getHyphenRule();
+
+    /**
+     * The meta object literal for the '{@link org.lilychant.lilyChantScript.impl.ExtenderRuleImpl <em>Extender Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.lilychant.lilyChantScript.impl.ExtenderRuleImpl
+     * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getExtenderRule()
+     * @generated
+     */
+    EClass EXTENDER_RULE = eINSTANCE.getExtenderRule();
+
+    /**
+     * The meta object literal for the '{@link org.lilychant.lilyChantScript.impl.SkipRuleImpl <em>Skip Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.lilychant.lilyChantScript.impl.SkipRuleImpl
+     * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getSkipRule()
+     * @generated
+     */
+    EClass SKIP_RULE = eINSTANCE.getSkipRule();
 
     /**
      * The meta object literal for the '{@link org.lilychant.lilyChantScript.Barline <em>Barline</em>}' enum.

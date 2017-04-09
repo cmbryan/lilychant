@@ -15,11 +15,15 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.lilychant.lilyChantScript.Chant;
+import org.lilychant.lilyChantScript.ExtenderRule;
+import org.lilychant.lilyChantScript.HyphenRule;
 import org.lilychant.lilyChantScript.LilyChantScriptPackage;
 import org.lilychant.lilyChantScript.LyricPhrase;
 import org.lilychant.lilyChantScript.Note;
 import org.lilychant.lilyChantScript.NoteGroup;
 import org.lilychant.lilyChantScript.Script;
+import org.lilychant.lilyChantScript.SkipRule;
+import org.lilychant.lilyChantScript.Syllable;
 import org.lilychant.lilyChantScript.Tone;
 import org.lilychant.lilyChantScript.TonePhrase;
 import org.lilychant.lilyChantScript.VoiceName;
@@ -43,6 +47,12 @@ public class LilyChantSemanticSequencer extends AbstractDelegatingSemanticSequen
 			case LilyChantScriptPackage.CHANT:
 				sequence_Chant(context, (Chant) semanticObject); 
 				return; 
+			case LilyChantScriptPackage.EXTENDER_RULE:
+				sequence_ExtenderRule(context, (ExtenderRule) semanticObject); 
+				return; 
+			case LilyChantScriptPackage.HYPHEN_RULE:
+				sequence_HyphenRule(context, (HyphenRule) semanticObject); 
+				return; 
 			case LilyChantScriptPackage.LYRIC_PHRASE:
 				sequence_LyricPhrase(context, (LyricPhrase) semanticObject); 
 				return; 
@@ -54,6 +64,12 @@ public class LilyChantSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case LilyChantScriptPackage.SCRIPT:
 				sequence_Script(context, (Script) semanticObject); 
+				return; 
+			case LilyChantScriptPackage.SKIP_RULE:
+				sequence_SkipRule(context, (SkipRule) semanticObject); 
+				return; 
+			case LilyChantScriptPackage.SYLLABLE:
+				sequence_IdRule(context, (Syllable) semanticObject); 
 				return; 
 			case LilyChantScriptPackage.TONE:
 				sequence_Tone(context, (Tone) semanticObject); 
@@ -86,6 +102,54 @@ public class LilyChantSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Contexts:
+	 *     ExtenderRule returns ExtenderRule
+	 *
+	 * Constraint:
+	 *     literal='__'
+	 */
+	protected void sequence_ExtenderRule(ISerializationContext context, ExtenderRule semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LilyChantScriptPackage.Literals.SYLLABLE__LITERAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilyChantScriptPackage.Literals.SYLLABLE__LITERAL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getExtenderRuleAccess().getLiteral__Keyword_1_0(), semanticObject.getLiteral());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     HyphenRule returns HyphenRule
+	 *
+	 * Constraint:
+	 *     literal='--'
+	 */
+	protected void sequence_HyphenRule(ISerializationContext context, HyphenRule semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LilyChantScriptPackage.Literals.SYLLABLE__LITERAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilyChantScriptPackage.Literals.SYLLABLE__LITERAL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getHyphenRuleAccess().getLiteralHyphenMinusHyphenMinusKeyword_1_0(), semanticObject.getLiteral());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     IdRule returns Syllable
+	 *
+	 * Constraint:
+	 *     (emphasis?='*'? literal=ID)
+	 */
+	protected void sequence_IdRule(ISerializationContext context, Syllable semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     LyricPhrase returns LyricPhrase
 	 *
 	 * Constraint:
@@ -102,9 +166,9 @@ public class LilyChantSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *
 	 * Constraint:
 	 *     (
-	 *         (((syllables+=ID syllables+=HYPHEN?) | (syllables+=HYPHEN syllables+=ID)) syllables+=EXTENDER*) | 
-	 *         syllables+=SKIP | 
-	 *         (syllables+=ID | syllables+=HYPHEN | syllables+=EXTENDER)+
+	 *         (((syllables+=IdRule syllables+=HyphenRule?) | (syllables+=HyphenRule syllables+=IdRule)) syllables+=ExtenderRule*) | 
+	 *         syllables+=SkipRule | 
+	 *         (noemphasis?='/'? (syllables+=IdRule | syllables+=HyphenRule | syllables+=ExtenderRule)+)
 	 *     )
 	 */
 	protected void sequence_NoteGroup(ISerializationContext context, NoteGroup semanticObject) {
@@ -133,6 +197,24 @@ public class LilyChantSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 */
 	protected void sequence_Script(ISerializationContext context, Script semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SkipRule returns SkipRule
+	 *
+	 * Constraint:
+	 *     literal='_'
+	 */
+	protected void sequence_SkipRule(ISerializationContext context, SkipRule semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LilyChantScriptPackage.Literals.SYLLABLE__LITERAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilyChantScriptPackage.Literals.SYLLABLE__LITERAL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSkipRuleAccess().getLiteral_Keyword_1_0(), semanticObject.getLiteral());
+		feeder.finish();
 	}
 	
 	

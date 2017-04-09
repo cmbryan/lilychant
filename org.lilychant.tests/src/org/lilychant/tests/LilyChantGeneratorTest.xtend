@@ -473,6 +473,199 @@ words = \lyricmode {
 			fsa.textFiles.get(fileName))
 	}
 	
+	@Test 
+	def void emphasisInGroupTest() {
+		val model = parseHelper.parse('''
+			Tone one
+				Voices
+					Sop Bass
+				Phrase one
+					Voice Sop
+						g4 a4 g2
+					Voice Bass
+						g4 a4 g2
+			Tone two
+				Voices
+					Sop Bass
+				Phrase one
+					Voice Sop
+						g4 a2 g2
+					Voice Bass
+						g4 a2 g2
+			Chant Tone one
+				Place the <*em -- pha -- sis here> |
+				<Place the> <*em -- pha -- sis> here |
+				Place <the *em -- pha -- sis> here |
+				Place <the em -- pha -- *sis> here |
+			Chant Tone two
+				No </em -- pha -- sis> here |
+		''')
+		model.assertParsedWithoutError;
+		
+		val fsa = new InMemoryFileSystemAccess()
+		generator.doGenerate(model.eResource, fsa, null)
+		println(fsa.textFiles)
+		
+		// Assert one output file
+		Assert.assertEquals(1, fsa.textFiles.size)
+
+		// Assert output file contents
+		var iterator = fsa.textFiles.entrySet.iterator
+		var fileName = iterator.next.key
+		println("Checking " + fileName)
+		Assert.assertEquals('''
+\version "2.16.2"
+
+% =======================
+% Global Variables
+% =======================
+alignleft = \once \override LyricText #'self-alignment-X = #-1
+
+%
+% voices
+%
+Sop = {
+	g4 \bar "" a4 \bar "" g2 \bar "" g4 \bar "" g4 \bar "" g2 \bar "" \bar "|" 
+	 g4 \bar "" g4 \bar "" a2 \bar "" a4 \bar "" a4 \bar "" g2 \bar "" \bar "|" 
+	 g4 \bar "" a4 \bar "" a2 \bar "" a4 \bar "" a4 \bar "" g2 \bar "" \bar "|" 
+	 g4 \bar "" a4 \bar "" a4 \bar "" a4 \bar "" a2 \bar "" g2 \bar "" \bar "|" 
+	 \bar "|." 
+}
+
+Bass = {
+	g4 \bar "" a4 \bar "" g2 \bar "" g4 \bar "" g4 \bar "" g2 \bar "" \bar "|" 
+	 g4 \bar "" g4 \bar "" a2 \bar "" a4 \bar "" a4 \bar "" g2 \bar "" \bar "|" 
+	 g4 \bar "" a4 \bar "" a2 \bar "" a4 \bar "" a4 \bar "" g2 \bar "" \bar "|" 
+	 g4 \bar "" a4 \bar "" a4 \bar "" a4 \bar "" a2 \bar "" g2 \bar "" \bar "|" 
+	 \bar "|." 
+}
+
+
+% =======================
+% Lyrics
+% =======================
+words = \lyricmode {
+	Place 
+	the 
+	em -- pha -- sis here 
+	Place the 
+	em -- pha -- sis 
+	here 
+	Place 
+	the em -- pha -- sis 
+	here 
+	Place 
+	the em -- pha -- sis 
+	here 
+}
+
+\score {
+
+
+  \new ChoirStaff \with {
+    instrumentName = \markup \bold "Choir:"
+  }
+  <<
+    #(set-accidental-style 'neo-modern 'Score)
+    \new Staff {
+      \key g \major
+      \cadenzaOn
+      <<{
+	  \new Voice = "Sop" {
+	    %\voiceOne
+	    \Sop
+	  }
+	}>>
+    }
+    \new Lyrics \lyricsto "Sop" { \words }
+    \new Staff {
+      \key g \major
+      \clef bass
+      \cadenzaOn
+      <<{
+	  \new Voice = "Bass" {
+	    %\voiceOne
+	    \Bass
+	  }
+	}>>
+    }
+  >>
+}
+
+%
+% voices
+%
+Sop = {
+	g4 \bar "" a4 \bar "" a4 \bar "" a4 \bar "" g2 \bar "" \bar "|" 
+	 \bar "|." 
+}
+
+Bass = {
+	g4 \bar "" a4 \bar "" a4 \bar "" a4 \bar "" g2 \bar "" \bar "|" 
+	 \bar "|." 
+}
+
+
+% =======================
+% Lyrics
+% =======================
+words = \lyricmode {
+	No 
+	em -- pha -- sis 
+	here 
+}
+
+\score {
+
+
+  \new ChoirStaff \with {
+    instrumentName = \markup \bold "Choir:"
+  }
+  <<
+    #(set-accidental-style 'neo-modern 'Score)
+    \new Staff {
+      \key g \major
+      \cadenzaOn
+      <<{
+	  \new Voice = "Sop" {
+	    %\voiceOne
+	    \Sop
+	  }
+	}>>
+    }
+    \new Lyrics \lyricsto "Sop" { \words }
+    \new Staff {
+      \key g \major
+      \clef bass
+      \cadenzaOn
+      <<{
+	  \new Voice = "Bass" {
+	    %\voiceOne
+	    \Bass
+	  }
+	}>>
+    }
+  >>
+}
+
+
+% =======================
+% Layout
+% =======================
+\layout {
+  \context {
+    \Score
+    \remove "Bar_number_engraver"
+  }
+  \context {
+    \Staff
+    \remove "Time_signature_engraver"
+  }
+}			
+			'''.toString,
+			fsa.textFiles.get(fileName))
+	}
+	
 
 	private def assertParsedWithoutError(EObject obj) {
 		Assert.assertNotNull(obj)

@@ -18,6 +18,7 @@ import org.lilychant.lilyChantScript.VoiceName
 import org.lilychant.lilyChantScript.VoicePhrase
 
 import static extension org.eclipse.xtext.EcoreUtil2.*
+import org.lilychant.lilyChantScript.Syllable
 
 /**
  * Generates code from your model files on save.
@@ -61,18 +62,21 @@ class LilyChantGenerator extends AbstractGenerator {
 			// Match the notes to the syllables
 			var noteIndex = 0
 			for (noteGroup : lyricPhrase.noteGroups) {
-				val syllables = noteGroup.syllables.filter[!#['_', '__', '--'].contains(it)]
+				val syllables = noteGroup.syllables.filter[!#['_', '__', '--'].contains(literal)]
 				var insideGroup = false
 				
 				// Print the notes
 				var syllableIndex = 0
 				var inSlur = false
+				var emphasisAdded = false
 				while (syllableIndex < noteGroup.syllables.length) {
+					
 					// TODO use terminal definitions for hyphens and extenders, but where do they live?
 					// TODO Better error handling
 					try {
 						val note = targetVoice.notes.get(noteIndex)
-						switch (noteGroup.syllables.get(syllableIndex)) {
+						val syllable = noteGroup.syllables.get(syllableIndex)
+						switch (syllable.literal) {
 							case "--",
 							case "_": {
 								// skip to the next syllable
@@ -99,7 +103,7 @@ class LilyChantGenerator extends AbstractGenerator {
 									result.add(nextNote.toLyString)
 									
 									if (syllableIndex+1 == noteGroup.syllables.length
-											|| noteGroup.syllables.get(syllableIndex+1) != "__")
+											|| noteGroup.syllables.get(syllableIndex+1).literal != "__")
 										result.add(")")
 								}
 							}
@@ -113,7 +117,7 @@ class LilyChantGenerator extends AbstractGenerator {
 									if (syllableIndex == 0) {
 										// First and last of the group get their own notes
 										result.add(note.toLyString)
-									} else if (syllableIndex==1 && noteGroup.syllables.get(0)=='--') {
+									} else if (syllableIndex==1 && noteGroup.syllables.get(0).literal=='--') {
 										// First and last of the group get their own notes
 										result.add(note.toLyString)
 									} else if (syllableIndex == noteGroup.syllables.length-1) {
@@ -130,7 +134,27 @@ class LilyChantGenerator extends AbstractGenerator {
 									}
 								} else {
 									// This adds the actual note:
-									result.add(note.toLyString)
+									if (noteGroup.noemphasis) {
+										// enforce no emphasis in this group
+										// (even if the note in the tone specifies it!)
+										result.add(note.pitch + '4')
+									} else if (syllable.emphasis && !emphasisAdded) {
+										// emphasis on this syllable in the group ('*')
+										result.add(note.pitch + '2')
+										emphasisAdded = true
+									} else if (emphasisAdded) {
+										if (syllableIndex==noteGroup.syllables.length-1
+											&& noteGroup===lyricPhrase.noteGroups.last) {
+											// this is the last syllable in the phrase.
+											// Even though emphasis has been added, this one needs to be long 
+											result.add(note.pitch + '2')
+										} else {
+											// emphasis is already added, so make this one short
+											result.add(note.pitch + '4')
+										}
+									} else
+										// no emphasis requested, and none applied previously
+										result.add(note.toLyString)
 									result.add('''\bar ""''')
 								}
 							}
@@ -145,10 +169,6 @@ class LilyChantGenerator extends AbstractGenerator {
 					}
 					syllableIndex++
 				}
-//				if (insideGroup) {
-//					// FIXME This shouldn't happen!
-//					result.add(targetVoice.notes.get(noteIndex).toLyString)
-//				}
 				syllableIndex++
 				noteIndex++
 			}
@@ -188,8 +208,8 @@ class LilyChantGenerator extends AbstractGenerator {
 		
 		for (lyricPhrase : chant.phrases) {
 			for (noteGroup : lyricPhrase.noteGroups) {
-				val printSyllables = noteGroup.syllables.filter[!#['_'].contains(it)]
-				val lyricSyllables = noteGroup.syllables.filter[!#['_', '__', '--'].contains(it)]
+				val printSyllables = noteGroup.syllables.filter[!#['_'].contains(literal)]
+				val lyricSyllables = noteGroup.syllables.filter[!#['_', '__', '--'].contains(literal)]
 				
 				// "_" implies a skipped note in the NotePhrase
 				// TODO Don't use a string literal!
@@ -203,16 +223,16 @@ class LilyChantGenerator extends AbstractGenerator {
 					// First syllable
 					do {
 						result.append(' ')
-						result.append(printSyllables.get(sylIdx))
+						result.append(printSyllables.get(sylIdx).toLyString)
 						sylIdx++
-					} while (printSyllables.get(sylIdx-1) == '--')
+					} while (printSyllables.get(sylIdx-1).literal == '--')
 					
 					// Middle syllables
 					result.append(' "')
 					while (sylIdx < printSyllables.length-1) {
-						if (printSyllables.get(sylIdx) != '--') {
-							result.append(printSyllables.get(sylIdx))
-							if (printSyllables.get(sylIdx+1) != '--') {
+						if (printSyllables.get(sylIdx).literal != '--') {
+							result.append(printSyllables.get(sylIdx).toLyString)
+							if (printSyllables.get(sylIdx+1).literal != '--') {
 								// next is a new word
 								result.append(' ')
 							}
@@ -222,14 +242,14 @@ class LilyChantGenerator extends AbstractGenerator {
 					result.append('" ')
 					
 					// Last
-					if (printSyllables.get(sylIdx) == '--') {
+					if (printSyllables.get(sylIdx).literal == '--') {
 						result.append(' --')
 					}
-					result.append(printSyllables.last)
+					result.append(printSyllables.last.toLyString)
 
 				} else {
 					for (syllable : printSyllables) {
-						result.append(syllable)
+						result.append(syllable.toLyString)
 						result.append(' ')
 					}
 				}
@@ -245,7 +265,11 @@ class LilyChantGenerator extends AbstractGenerator {
 	}
 	
 	def private toLyString(Note it) {
-		return '''«pitch»«IF duration!=""»«duration»«ENDIF»''' 
+		return '''«pitch»«IF duration!=""»«duration»«ENDIF»'''
+	}
+	
+	def private toLyString(Syllable it) {
+		return literal
 	}
 	
 	def private doGroupSyllables(int numSyllables) {

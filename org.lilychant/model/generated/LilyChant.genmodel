@@ -41,11 +41,19 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LilyChant.ecore#//LyricPhrase/bar"/>
     </genClasses>
     <genClasses ecoreClass="LilyChant.ecore#//NoteGroup">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LilyChant.ecore#//NoteGroup/syllables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LilyChant.ecore#//NoteGroup/syllables"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LilyChant.ecore#//NoteGroup/noemphasis"/>
+    </genClasses>
+    <genClasses ecoreClass="LilyChant.ecore#//Syllable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LilyChant.ecore#//Syllable/emphasis"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LilyChant.ecore#//Syllable/literal"/>
     </genClasses>
     <genClasses ecoreClass="LilyChant.ecore#//Note">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LilyChant.ecore#//Note/pitch"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LilyChant.ecore#//Note/duration"/>
     </genClasses>
+    <genClasses ecoreClass="LilyChant.ecore#//HyphenRule"/>
+    <genClasses ecoreClass="LilyChant.ecore#//ExtenderRule"/>
+    <genClasses ecoreClass="LilyChant.ecore#//SkipRule"/>
   </genPackages>
 </genmodel:GenModel>
