@@ -309,13 +309,11 @@ class LilyChantGenerator extends AbstractGenerator {
 			% =======================
 			«model.generateLyrics(chant)»
 			
-			\score {
-
 			«IF chant.name != null»
-			  % This produces a lilypond error, but still seems to render OK, so...
 			  \header { title = "«chant.name»" }
 			«ENDIF»
 
+			\score {
 			  \new ChoirStaff \with {
 			    instrumentName = \markup \bold "Choir:"
 			  }

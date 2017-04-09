@@ -93,9 +93,8 @@ words = \lyricmode {
 	is a test 
 }
 
+
 \score {
-
-
   \new ChoirStaff \with {
     instrumentName = \markup \bold "Choir:"
   }
@@ -162,9 +161,8 @@ words = \lyricmode {
 	test 
 }
 
+
 \score {
-
-
   \new ChoirStaff \with {
     instrumentName = \markup \bold "Choir:"
   }
@@ -290,9 +288,8 @@ words = \lyricmode {
 	-- ens. 
 }
 
+
 \score {
-
-
   \new ChoirStaff \with {
     instrumentName = \markup \bold "Choir:"
   }
@@ -422,9 +419,8 @@ words = \lyricmode {
 	-- ness, 
 }
 
+
 \score {
-
-
   \new ChoirStaff \with {
     instrumentName = \markup \bold "Choir:"
   }
@@ -559,9 +555,8 @@ words = \lyricmode {
 	here 
 }
 
+
 \score {
-
-
   \new ChoirStaff \with {
     instrumentName = \markup \bold "Choir:"
   }
@@ -615,9 +610,8 @@ words = \lyricmode {
 	here 
 }
 
+
 \score {
-
-
   \new ChoirStaff \with {
     instrumentName = \markup \bold "Choir:"
   }
@@ -664,6 +658,117 @@ words = \lyricmode {
 }			
 			'''.toString,
 			fsa.textFiles.get(fileName))
+	}
+	
+	@Test 
+	def void titleTest() {
+		val model = parseHelper.parse('''
+			Tone one
+				Voices
+					Sop Bass
+				Phrase one
+					Voice Sop
+						e4
+					Voice Bass
+						c4
+			Chant "My chant" Tone one
+				One |
+		''')
+		model.assertParsedWithoutError;
+		
+		val fsa = new InMemoryFileSystemAccess()
+		generator.doGenerate(model.eResource, fsa, null)
+		println(fsa.textFiles)
+		
+		// Assert one output file
+		Assert.assertEquals(1, fsa.textFiles.size)
+
+		// Assert output file contents
+		var iterator = fsa.textFiles.entrySet.iterator
+		var fileName = iterator.next.key
+		println("Checking " + fileName)
+		Assert.assertEquals('''
+\version "2.16.2"
+
+% =======================
+% Global Variables
+% =======================
+alignleft = \once \override LyricText #'self-alignment-X = #-1
+
+% =======================
+% Score for My chant
+% =======================
+%
+% voices
+%
+Sop = {
+	e4 \bar "" \bar "|" 
+	 \bar "|." 
+}
+
+Bass = {
+	c4 \bar "" \bar "|" 
+	 \bar "|." 
+}
+
+
+% =======================
+% Lyrics
+% =======================
+words = \lyricmode {
+	One 
+}
+
+\header { title = "My chant" }
+
+\score {
+  \new ChoirStaff \with {
+    instrumentName = \markup \bold "Choir:"
+  }
+  <<
+    #(set-accidental-style 'neo-modern 'Score)
+    \new Staff {
+      \key g \major
+      \cadenzaOn
+      <<{
+	  \new Voice = "Sop" {
+	    %\voiceOne
+	    \Sop
+	  }
+	}>>
+    }
+    \new Lyrics \lyricsto "Sop" { \words }
+    \new Staff {
+      \key g \major
+      \clef bass
+      \cadenzaOn
+      <<{
+	  \new Voice = "Bass" {
+	    %\voiceOne
+	    \Bass
+	  }
+	}>>
+    }
+  >>
+}
+
+
+% =======================
+% Layout
+% =======================
+\layout {
+  \context {
+    \Score
+    \remove "Bar_number_engraver"
+  }
+  \context {
+    \Staff
+    \remove "Time_signature_engraver"
+  }
+}			
+			'''.toString,
+			fsa.textFiles.get(fileName)
+		)
 	}
 	
 
