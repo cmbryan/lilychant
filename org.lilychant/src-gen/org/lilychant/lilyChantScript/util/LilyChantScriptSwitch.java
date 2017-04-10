@@ -143,6 +143,13 @@ public class LilyChantScriptSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LilyChantScriptPackage.FORMAT:
+      {
+        Format format = (Format)theEObject;
+        T result = caseFormat(format);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LilyChantScriptPackage.HYPHEN_RULE:
       {
         HyphenRule hyphenRule = (HyphenRule)theEObject;
@@ -327,6 +334,22 @@ public class LilyChantScriptSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseNote(Note object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Format</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Format</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFormat(Format object)
   {
     return null;
   }

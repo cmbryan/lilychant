@@ -19,6 +19,7 @@ import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
+import org.eclipse.xtext.UnorderedGroup;
 import org.eclipse.xtext.service.AbstractElementFinder.AbstractEnumRuleElementFinder;
 import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
@@ -33,15 +34,18 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTonesToneParserRuleCall_0_0 = (RuleCall)cTonesAssignment_0.eContents().get(0);
 		private final Assignment cChantsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cChantsChantParserRuleCall_1_0 = (RuleCall)cChantsAssignment_1.eContents().get(0);
+		private final Assignment cFormatAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cFormatFormatParserRuleCall_2_0 = (RuleCall)cFormatAssignment_2.eContents().get(0);
 		
 		//Script:
 		//	tones+=Tone*
 		//	//	ensemble=Ensemble
-		//	chants+=Chant*;
+		//	chants+=Chant*
+		//	format=Format?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//tones+=Tone* //	ensemble=Ensemble
-		//chants+=Chant*
+		//chants+=Chant* format=Format?
 		public Group getGroup() { return cGroup; }
 		
 		//tones+=Tone*
@@ -56,6 +60,12 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Chant
 		public RuleCall getChantsChantParserRuleCall_1_0() { return cChantsChantParserRuleCall_1_0; }
+		
+		//format=Format?
+		public Assignment getFormatAssignment_2() { return cFormatAssignment_2; }
+		
+		//Format
+		public RuleCall getFormatFormatParserRuleCall_2_0() { return cFormatFormatParserRuleCall_2_0; }
 	}
 	public class ToneElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.Tone");
@@ -606,6 +616,51 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		//DURATION
 		public RuleCall getDurationDURATIONTerminalRuleCall_1_0() { return cDurationDURATIONTerminalRuleCall_1_0; }
 	}
+	public class FormatElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.Format");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cFormatKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cBEGINTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final UnorderedGroup cUnorderedGroup_2 = (UnorderedGroup)cGroup.eContents().get(2);
+		private final Assignment cRaggedbottomAssignment_2_0 = (Assignment)cUnorderedGroup_2.eContents().get(0);
+		private final Keyword cRaggedbottomRaggedBottomKeyword_2_0_0 = (Keyword)cRaggedbottomAssignment_2_0.eContents().get(0);
+		private final Assignment cRaggedlastbottomAssignment_2_1 = (Assignment)cUnorderedGroup_2.eContents().get(1);
+		private final Keyword cRaggedlastbottomRaggedLastBottomKeyword_2_1_0 = (Keyword)cRaggedlastbottomAssignment_2_1.eContents().get(0);
+		private final RuleCall cENDTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		
+		//Format:
+		//	'Format'
+		//	BEGIN (raggedbottom?='ragged-bottom'?
+		//	& raggedlastbottom?='ragged-last-bottom'?) END;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Format' BEGIN (raggedbottom?='ragged-bottom'? & raggedlastbottom?='ragged-last-bottom'?) END
+		public Group getGroup() { return cGroup; }
+		
+		//'Format'
+		public Keyword getFormatKeyword_0() { return cFormatKeyword_0; }
+		
+		//BEGIN
+		public RuleCall getBEGINTerminalRuleCall_1() { return cBEGINTerminalRuleCall_1; }
+		
+		//raggedbottom?='ragged-bottom'? & raggedlastbottom?='ragged-last-bottom'?
+		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
+		
+		//raggedbottom?='ragged-bottom'?
+		public Assignment getRaggedbottomAssignment_2_0() { return cRaggedbottomAssignment_2_0; }
+		
+		//'ragged-bottom'
+		public Keyword getRaggedbottomRaggedBottomKeyword_2_0_0() { return cRaggedbottomRaggedBottomKeyword_2_0_0; }
+		
+		//raggedlastbottom?='ragged-last-bottom'?
+		public Assignment getRaggedlastbottomAssignment_2_1() { return cRaggedlastbottomAssignment_2_1; }
+		
+		//'ragged-last-bottom'
+		public Keyword getRaggedlastbottomRaggedLastBottomKeyword_2_1_0() { return cRaggedlastbottomRaggedLastBottomKeyword_2_1_0; }
+		
+		//END
+		public RuleCall getENDTerminalRuleCall_3() { return cENDTerminalRuleCall_3; }
+	}
 	
 	public class BarlineElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.Barline");
@@ -649,6 +704,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	private final ExtenderRuleElements pExtenderRule;
 	private final SkipRuleElements pSkipRule;
 	private final NoteElements pNote;
+	private final FormatElements pFormat;
 	private final TerminalRule tID;
 	private final TerminalRule tSTRING;
 	private final TerminalRule tDURATION;
@@ -680,6 +736,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		this.pExtenderRule = new ExtenderRuleElements();
 		this.pSkipRule = new SkipRuleElements();
 		this.pNote = new NoteElements();
+		this.pFormat = new FormatElements();
 		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.ID");
 		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.STRING");
 		this.tDURATION = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.lilychant.LilyChant.DURATION");
@@ -719,7 +776,8 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	//Script:
 	//	tones+=Tone*
 	//	//	ensemble=Ensemble
-	//	chants+=Chant*;
+	//	chants+=Chant*
+	//	format=Format?;
 	public ScriptElements getScriptAccess() {
 		return pScript;
 	}
@@ -896,6 +954,18 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getNoteRule() {
 		return getNoteAccess().getRule();
+	}
+	
+	//Format:
+	//	'Format'
+	//	BEGIN (raggedbottom?='ragged-bottom'?
+	//	& raggedlastbottom?='ragged-last-bottom'?) END;
+	public FormatElements getFormatAccess() {
+		return pFormat;
+	}
+	
+	public ParserRule getFormatRule() {
+		return getFormatAccess().getRule();
 	}
 	
 	//terminal ID:

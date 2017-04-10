@@ -76,6 +76,7 @@ public class LilyChantScriptFactoryImpl extends EFactoryImpl implements LilyChan
       case LilyChantScriptPackage.NOTE_GROUP: return createNoteGroup();
       case LilyChantScriptPackage.SYLLABLE: return createSyllable();
       case LilyChantScriptPackage.NOTE: return createNote();
+      case LilyChantScriptPackage.FORMAT: return createFormat();
       case LilyChantScriptPackage.HYPHEN_RULE: return createHyphenRule();
       case LilyChantScriptPackage.EXTENDER_RULE: return createExtenderRule();
       case LilyChantScriptPackage.SKIP_RULE: return createSkipRule();
@@ -226,6 +227,17 @@ public class LilyChantScriptFactoryImpl extends EFactoryImpl implements LilyChan
   {
     NoteImpl note = new NoteImpl();
     return note;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Format createFormat()
+  {
+    FormatImpl format = new FormatImpl();
+    return format;
   }
 
   /**

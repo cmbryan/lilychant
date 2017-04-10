@@ -319,8 +319,12 @@ class LilyChantGenerator extends AbstractGenerator {
 			% =======================
 			«model.generateLyrics(chant)»
 			
-			«IF chant.name != null»
+			«IF chant.name !== null»
+			«IF model.chants.length > 1»
+			  \markup { \bold \fontsize #6 \pad-markup #3 "«chant.name»" }
+			«ELSE»
 			  \header { title = "«chant.name»" }
+			«ENDIF»
 			«ENDIF»
 
 			\score {
@@ -359,7 +363,18 @@ class LilyChantGenerator extends AbstractGenerator {
 			% =======================
 			% Layout
 			% =======================
-			\paper { ragged-last-bottom = ##f }
+			\paper {
+				«IF model.format?.raggedbottom»
+				ragged-bottom = ##t
+				«ELSE»
+				ragged-bottom = ##f
+				«ENDIF»
+				«IF model.format?.raggedlastbottom»
+				ragged-last-bottom = ##t
+				«ELSE»
+				ragged-last-bottom = ##f
+				«ENDIF»
+			}
 
 			\layout {
 			  \context {

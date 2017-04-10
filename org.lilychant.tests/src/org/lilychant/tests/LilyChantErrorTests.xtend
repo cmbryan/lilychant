@@ -32,9 +32,9 @@ class LilyChantErrorTests {
 					Sop Bass
 				Phrase one
 					Voice Sop
-						e4 f g a2
+						e4 f4 g4 a2
 					Voice Bass
-						c4 d e f2
+						c4 d4 e4 f2
 			Chant Tone one
 				This __ <is a> test |
 				with extra syl--la--bles |

@@ -126,6 +126,11 @@ public class LilyChantScriptAdapterFactory extends AdapterFactoryImpl
         return createNoteAdapter();
       }
       @Override
+      public Adapter caseFormat(Format object)
+      {
+        return createFormatAdapter();
+      }
+      @Override
       public Adapter caseHyphenRule(HyphenRule object)
       {
         return createHyphenRuleAdapter();
@@ -308,6 +313,21 @@ public class LilyChantScriptAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNoteAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.lilychant.lilyChantScript.Format <em>Format</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.lilychant.lilyChantScript.Format
+   * @generated
+   */
+  public Adapter createFormatAdapter()
   {
     return null;
   }

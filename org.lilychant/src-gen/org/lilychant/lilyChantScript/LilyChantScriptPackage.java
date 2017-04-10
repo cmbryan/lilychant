@@ -87,13 +87,22 @@ public interface LilyChantScriptPackage extends EPackage
   int SCRIPT__CHANTS = 1;
 
   /**
+   * The feature id for the '<em><b>Format</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT__FORMAT = 2;
+
+  /**
    * The number of structural features of the '<em>Script</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCRIPT_FEATURE_COUNT = 2;
+  int SCRIPT_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.lilychant.lilyChantScript.impl.ToneImpl <em>Tone</em>}' class.
@@ -447,6 +456,43 @@ public interface LilyChantScriptPackage extends EPackage
   int NOTE_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link org.lilychant.lilyChantScript.impl.FormatImpl <em>Format</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.lilychant.lilyChantScript.impl.FormatImpl
+   * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getFormat()
+   * @generated
+   */
+  int FORMAT = 10;
+
+  /**
+   * The feature id for the '<em><b>Raggedbottom</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORMAT__RAGGEDBOTTOM = 0;
+
+  /**
+   * The feature id for the '<em><b>Raggedlastbottom</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORMAT__RAGGEDLASTBOTTOM = 1;
+
+  /**
+   * The number of structural features of the '<em>Format</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORMAT_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.lilychant.lilyChantScript.impl.HyphenRuleImpl <em>Hyphen Rule</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -454,7 +500,7 @@ public interface LilyChantScriptPackage extends EPackage
    * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getHyphenRule()
    * @generated
    */
-  int HYPHEN_RULE = 10;
+  int HYPHEN_RULE = 11;
 
   /**
    * The feature id for the '<em><b>Emphasis</b></em>' attribute.
@@ -491,7 +537,7 @@ public interface LilyChantScriptPackage extends EPackage
    * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getExtenderRule()
    * @generated
    */
-  int EXTENDER_RULE = 11;
+  int EXTENDER_RULE = 12;
 
   /**
    * The feature id for the '<em><b>Emphasis</b></em>' attribute.
@@ -528,7 +574,7 @@ public interface LilyChantScriptPackage extends EPackage
    * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getSkipRule()
    * @generated
    */
-  int SKIP_RULE = 12;
+  int SKIP_RULE = 13;
 
   /**
    * The feature id for the '<em><b>Emphasis</b></em>' attribute.
@@ -565,7 +611,7 @@ public interface LilyChantScriptPackage extends EPackage
    * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getBarline()
    * @generated
    */
-  int BARLINE = 13;
+  int BARLINE = 14;
 
 
   /**
@@ -599,6 +645,17 @@ public interface LilyChantScriptPackage extends EPackage
    * @generated
    */
   EReference getScript_Chants();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.lilychant.lilyChantScript.Script#getFormat <em>Format</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Format</em>'.
+   * @see org.lilychant.lilyChantScript.Script#getFormat()
+   * @see #getScript()
+   * @generated
+   */
+  EReference getScript_Format();
 
   /**
    * Returns the meta object for class '{@link org.lilychant.lilyChantScript.Tone <em>Tone</em>}'.
@@ -911,6 +968,38 @@ public interface LilyChantScriptPackage extends EPackage
   EAttribute getNote_Duration();
 
   /**
+   * Returns the meta object for class '{@link org.lilychant.lilyChantScript.Format <em>Format</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Format</em>'.
+   * @see org.lilychant.lilyChantScript.Format
+   * @generated
+   */
+  EClass getFormat();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.lilychant.lilyChantScript.Format#isRaggedbottom <em>Raggedbottom</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Raggedbottom</em>'.
+   * @see org.lilychant.lilyChantScript.Format#isRaggedbottom()
+   * @see #getFormat()
+   * @generated
+   */
+  EAttribute getFormat_Raggedbottom();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.lilychant.lilyChantScript.Format#isRaggedlastbottom <em>Raggedlastbottom</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Raggedlastbottom</em>'.
+   * @see org.lilychant.lilyChantScript.Format#isRaggedlastbottom()
+   * @see #getFormat()
+   * @generated
+   */
+  EAttribute getFormat_Raggedlastbottom();
+
+  /**
    * Returns the meta object for class '{@link org.lilychant.lilyChantScript.HyphenRule <em>Hyphen Rule</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -998,6 +1087,14 @@ public interface LilyChantScriptPackage extends EPackage
      * @generated
      */
     EReference SCRIPT__CHANTS = eINSTANCE.getScript_Chants();
+
+    /**
+     * The meta object literal for the '<em><b>Format</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCRIPT__FORMAT = eINSTANCE.getScript_Format();
 
     /**
      * The meta object literal for the '{@link org.lilychant.lilyChantScript.impl.ToneImpl <em>Tone</em>}' class.
@@ -1248,6 +1345,32 @@ public interface LilyChantScriptPackage extends EPackage
      * @generated
      */
     EAttribute NOTE__DURATION = eINSTANCE.getNote_Duration();
+
+    /**
+     * The meta object literal for the '{@link org.lilychant.lilyChantScript.impl.FormatImpl <em>Format</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.lilychant.lilyChantScript.impl.FormatImpl
+     * @see org.lilychant.lilyChantScript.impl.LilyChantScriptPackageImpl#getFormat()
+     * @generated
+     */
+    EClass FORMAT = eINSTANCE.getFormat();
+
+    /**
+     * The meta object literal for the '<em><b>Raggedbottom</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORMAT__RAGGEDBOTTOM = eINSTANCE.getFormat_Raggedbottom();
+
+    /**
+     * The meta object literal for the '<em><b>Raggedlastbottom</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FORMAT__RAGGEDLASTBOTTOM = eINSTANCE.getFormat_Raggedlastbottom();
 
     /**
      * The meta object literal for the '{@link org.lilychant.lilyChantScript.impl.HyphenRuleImpl <em>Hyphen Rule</em>}' class.

@@ -29,14 +29,14 @@ class LilyChantGeneratorTest {
 					Sop Bass
 				Phrase one
 					Voice Sop
-						e4 f g a2
+						e4 f4 g4 a2
 					Voice Bass
-						c4 d e f2
+						c4 d4 e4 f2
 				Phrase two
 					Voice Sop
-						a4 g f e1
+						a4 g4 f4 e1
 					Voice Bass
-						f4 e d c1
+						f4 e4 d4 c1
 			Chant Tone one
 				This __ <is a> test |
 				This __ __ <is a test> |
@@ -70,14 +70,14 @@ alignleft = \once \override LyricText #'self-alignment-X = #-1
 % voices
 %
 Sop = {
-	e4 ( f ) g g a2 \bar "|" 
-	 a4 ( g f ) e1 \bar "" e1 \bar "" e1 \bar "" \bar "|" 
+	e4 ( f4 ) g4 g4 a2 \bar "|" 
+	 a4 ( g4 f4 ) e1 \bar "" e1 \bar "" e1 \bar "" \bar "|" 
 	 \bar "|." 
 }
 
 Bass = {
-	c4 ( d ) e e f2 \bar "|" 
-	 f4 ( e d ) c1 \bar "" c1 \bar "" c1 \bar "" \bar "|" 
+	c4 ( d4 ) e4 e4 f2 \bar "|" 
+	 f4 ( e4 d4 ) c1 \bar "" c1 \bar "" c1 \bar "" \bar "|" 
 	 \bar "|." 
 }
 
@@ -129,16 +129,16 @@ words = \lyricmode {
 % voices
 %
 Sop = {
-	e4 \bar "" f \bar "" g \bar "" a2 \bar "" \bar "|" 
-	 a4 \bar "" g \bar "" f \bar "" e1 \bar "" \bar "|" 
-	 e4 \bar "" f \bar "" g \bar "" a2 \bar "" \bar "||" 
+	e4 \bar "" f4 \bar "" g4 \bar "" a2 \bar "" \bar "|" 
+	 a4 \bar "" g4 \bar "" f4 \bar "" e1 \bar "" \bar "|" 
+	 e4 \bar "" f4 \bar "" g4 \bar "" a2 \bar "" \bar "||" 
 	 \bar "|." 
 }
 
 Bass = {
-	c4 \bar "" d \bar "" e \bar "" f2 \bar "" \bar "|" 
-	 f4 \bar "" e \bar "" d \bar "" c1 \bar "" \bar "|" 
-	 c4 \bar "" d \bar "" e \bar "" f2 \bar "" \bar "||" 
+	c4 \bar "" d4 \bar "" e4 \bar "" f2 \bar "" \bar "|" 
+	 f4 \bar "" e4 \bar "" d4 \bar "" c1 \bar "" \bar "|" 
+	 c4 \bar "" d4 \bar "" e4 \bar "" f2 \bar "" \bar "||" 
 	 \bar "|." 
 }
 
@@ -197,7 +197,10 @@ words = \lyricmode {
 % =======================
 % Layout
 % =======================
-\paper { ragged-last-bottom = ##f }
+\paper {
+	ragged-bottom = ##f
+	ragged-last-bottom = ##f
+}
 
 \layout {
   \context {
@@ -326,7 +329,10 @@ words = \lyricmode {
 % =======================
 % Layout
 % =======================
-\paper { ragged-last-bottom = ##f }
+\paper {
+	ragged-bottom = ##f
+	ragged-last-bottom = ##f
+}
 
 \layout {
   \context {
@@ -459,7 +465,10 @@ words = \lyricmode {
 % =======================
 % Layout
 % =======================
-\paper { ragged-last-bottom = ##f }
+\paper {
+	ragged-bottom = ##f
+	ragged-last-bottom = ##f
+}
 
 \layout {
   \context {
@@ -652,7 +661,10 @@ words = \lyricmode {
 % =======================
 % Layout
 % =======================
-\paper { ragged-last-bottom = ##f }
+\paper {
+	ragged-bottom = ##f
+	ragged-last-bottom = ##f
+}
 
 \layout {
   \context {
@@ -764,7 +776,10 @@ words = \lyricmode {
 % =======================
 % Layout
 % =======================
-\paper { ragged-last-bottom = ##f }
+\paper {
+	ragged-bottom = ##f
+	ragged-last-bottom = ##f
+}
 
 \layout {
   \context {

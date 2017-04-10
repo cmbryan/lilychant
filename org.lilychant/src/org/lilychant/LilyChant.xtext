@@ -8,6 +8,7 @@ Script:
 	(tones+=Tone)*
 //	ensemble=Ensemble
 	(chants+=Chant)*
+	format=Format?
 ;
 
 /*
@@ -117,6 +118,14 @@ SkipRule returns Syllable:
 
 Note:
 	pitch=ID duration=DURATION
+;
+
+Format:
+	'Format'
+		BEGIN
+		(raggedbottom?='ragged-bottom'?
+		& raggedlastbottom?='ragged-last-bottom'?)
+		END
 ;
 
 /*

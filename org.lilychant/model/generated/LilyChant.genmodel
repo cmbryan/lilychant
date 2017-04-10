@@ -13,6 +13,7 @@
     <genClasses ecoreClass="LilyChant.ecore#//Script">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LilyChant.ecore#//Script/tones"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LilyChant.ecore#//Script/chants"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LilyChant.ecore#//Script/format"/>
     </genClasses>
     <genClasses ecoreClass="LilyChant.ecore#//Tone">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LilyChant.ecore#//Tone/name"/>
@@ -51,6 +52,10 @@
     <genClasses ecoreClass="LilyChant.ecore#//Note">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LilyChant.ecore#//Note/pitch"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LilyChant.ecore#//Note/duration"/>
+    </genClasses>
+    <genClasses ecoreClass="LilyChant.ecore#//Format">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LilyChant.ecore#//Format/raggedbottom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LilyChant.ecore#//Format/raggedlastbottom"/>
     </genClasses>
     <genClasses ecoreClass="LilyChant.ecore#//HyphenRule"/>
     <genClasses ecoreClass="LilyChant.ecore#//ExtenderRule"/>

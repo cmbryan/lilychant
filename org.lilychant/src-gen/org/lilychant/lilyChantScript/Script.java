@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.lilychant.lilyChantScript.Script#getTones <em>Tones</em>}</li>
  *   <li>{@link org.lilychant.lilyChantScript.Script#getChants <em>Chants</em>}</li>
+ *   <li>{@link org.lilychant.lilyChantScript.Script#getFormat <em>Format</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,5 +58,31 @@ public interface Script extends EObject
    * @generated
    */
   EList<Chant> getChants();
+
+  /**
+   * Returns the value of the '<em><b>Format</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Format</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Format</em>' containment reference.
+   * @see #setFormat(Format)
+   * @see org.lilychant.lilyChantScript.LilyChantScriptPackage#getScript_Format()
+   * @model containment="true"
+   * @generated
+   */
+  Format getFormat();
+
+  /**
+   * Sets the value of the '{@link org.lilychant.lilyChantScript.Script#getFormat <em>Format</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Format</em>' containment reference.
+   * @see #getFormat()
+   * @generated
+   */
+  void setFormat(Format value);
 
 } // Script

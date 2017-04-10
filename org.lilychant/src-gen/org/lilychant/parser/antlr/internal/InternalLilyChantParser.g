@@ -108,6 +108,25 @@ ruleScript returns [EObject current=null]
 				}
 			)
 		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getScriptAccess().getFormatFormatParserRuleCall_2_0());
+				}
+				lv_format_2_0=ruleFormat
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getScriptRule());
+					}
+					set(
+						$current,
+						"format",
+						lv_format_2_0,
+						"org.lilychant.LilyChant.Format");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
 	)
 ;
 
@@ -993,6 +1012,97 @@ ruleNote returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleFormat
+entryRuleFormat returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFormatRule()); }
+	iv_ruleFormat=ruleFormat
+	{ $current=$iv_ruleFormat.current; }
+	EOF;
+
+// Rule Format
+ruleFormat returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0=Format
+		{
+			newLeafNode(otherlv_0, grammarAccess.getFormatAccess().getFormatKeyword_0());
+		}
+		this_BEGIN_1=RULE_BEGIN
+		{
+			newLeafNode(this_BEGIN_1, grammarAccess.getFormatAccess().getBEGINTerminalRuleCall_1());
+		}
+		(
+			(
+				{ 
+				  getUnorderedGroupHelper().enter(grammarAccess.getFormatAccess().getUnorderedGroup_2());
+				}
+				(
+					(
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 0)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 0);
+					}
+								({true}?=>((
+									lv_raggedbottom_3_0=RaggedBottom
+									{
+										newLeafNode(lv_raggedbottom_3_0, grammarAccess.getFormatAccess().getRaggedbottomRaggedBottomKeyword_2_0_0());
+									}
+									{
+										if ($current==null) {
+											$current = createModelElement(grammarAccess.getFormatRule());
+										}
+										setWithLastConsumed($current, "raggedbottom", true, "ragged-bottom");
+									}
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getFormatAccess().getUnorderedGroup_2());
+					}
+				)
+			)|
+			(
+				{getUnorderedGroupHelper().canSelect(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 1)}?=>(
+					{
+						getUnorderedGroupHelper().select(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 1);
+					}
+								({true}?=>((
+									lv_raggedlastbottom_4_0=RaggedLastBottom
+									{
+										newLeafNode(lv_raggedlastbottom_4_0, grammarAccess.getFormatAccess().getRaggedlastbottomRaggedLastBottomKeyword_2_1_0());
+									}
+									{
+										if ($current==null) {
+											$current = createModelElement(grammarAccess.getFormatRule());
+										}
+										setWithLastConsumed($current, "raggedlastbottom", true, "ragged-last-bottom");
+									}
+								)
+								))
+					{ 
+						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getFormatAccess().getUnorderedGroup_2());
+					}
+				)
+			)
+					)*
+				)
+			)
+				{ 
+				  getUnorderedGroupHelper().leave(grammarAccess.getFormatAccess().getUnorderedGroup_2());
+				}
+		)
+		this_END_5=RULE_END
+		{
+			newLeafNode(this_END_5, grammarAccess.getFormatAccess().getENDTerminalRuleCall_3());
+		}
 	)
 ;
 

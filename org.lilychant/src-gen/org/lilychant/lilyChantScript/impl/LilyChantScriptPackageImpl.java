@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.lilychant.lilyChantScript.Barline;
 import org.lilychant.lilyChantScript.Chant;
 import org.lilychant.lilyChantScript.ExtenderRule;
+import org.lilychant.lilyChantScript.Format;
 import org.lilychant.lilyChantScript.HyphenRule;
 import org.lilychant.lilyChantScript.LilyChantScriptFactory;
 import org.lilychant.lilyChantScript.LilyChantScriptPackage;
@@ -105,6 +106,13 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
    * @generated
    */
   private EClass noteEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass formatEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -225,6 +233,16 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
   public EReference getScript_Chants()
   {
     return (EReference)scriptEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getScript_Format()
+  {
+    return (EReference)scriptEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -522,6 +540,36 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getFormat()
+  {
+    return formatEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFormat_Raggedbottom()
+  {
+    return (EAttribute)formatEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFormat_Raggedlastbottom()
+  {
+    return (EAttribute)formatEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getHyphenRule()
   {
     return hyphenRuleEClass;
@@ -590,6 +638,7 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
     scriptEClass = createEClass(SCRIPT);
     createEReference(scriptEClass, SCRIPT__TONES);
     createEReference(scriptEClass, SCRIPT__CHANTS);
+    createEReference(scriptEClass, SCRIPT__FORMAT);
 
     toneEClass = createEClass(TONE);
     createEAttribute(toneEClass, TONE__NAME);
@@ -628,6 +677,10 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
     noteEClass = createEClass(NOTE);
     createEAttribute(noteEClass, NOTE__PITCH);
     createEAttribute(noteEClass, NOTE__DURATION);
+
+    formatEClass = createEClass(FORMAT);
+    createEAttribute(formatEClass, FORMAT__RAGGEDBOTTOM);
+    createEAttribute(formatEClass, FORMAT__RAGGEDLASTBOTTOM);
 
     hyphenRuleEClass = createEClass(HYPHEN_RULE);
 
@@ -676,6 +729,7 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
     initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getScript_Tones(), this.getTone(), null, "tones", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getScript_Chants(), this.getChant(), null, "chants", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScript_Format(), this.getFormat(), null, "format", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(toneEClass, Tone.class, "Tone", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTone_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -714,6 +768,10 @@ public class LilyChantScriptPackageImpl extends EPackageImpl implements LilyChan
     initEClass(noteEClass, Note.class, "Note", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNote_Pitch(), ecorePackage.getEString(), "pitch", null, 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getNote_Duration(), ecorePackage.getEString(), "duration", null, 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(formatEClass, Format.class, "Format", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFormat_Raggedbottom(), ecorePackage.getEBoolean(), "raggedbottom", null, 0, 1, Format.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFormat_Raggedlastbottom(), ecorePackage.getEBoolean(), "raggedlastbottom", null, 0, 1, Format.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(hyphenRuleEClass, HyphenRule.class, "HyphenRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

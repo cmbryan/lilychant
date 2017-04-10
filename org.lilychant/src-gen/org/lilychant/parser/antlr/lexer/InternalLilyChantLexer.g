@@ -11,6 +11,12 @@ package org.lilychant.parser.antlr.lexer;
 import org.eclipse.xtext.parser.antlr.Lexer;
 }
 
+RaggedLastBottom : 'ragged-last-bottom';
+
+RaggedBottom : 'ragged-bottom';
+
+Format : 'Format';
+
 Phrase : 'Phrase';
 
 Voices : 'Voices';

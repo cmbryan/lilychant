@@ -26,14 +26,14 @@ class LilyChantParsingTest{
 					Sop Alt
 				Phrase one
 					Voice Sop
-						c4 d e f2
+						c4 d4 e4 f2
 					Voice Alt
-						g4 a b c2
+						g4 a4 b4 c2
 				Phrase two
 					Voice Sop
-						d4 e e f1
+						d4 e4 e4 f1
 					Voice Alt
-						g4 a b c2
+						g4 a4 b4 c2
 			Chant Tone one
 				<This--s> is__ <a test> |
 				Words in phrase two |

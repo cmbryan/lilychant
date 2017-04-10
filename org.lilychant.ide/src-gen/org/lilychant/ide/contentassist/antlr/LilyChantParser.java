@@ -59,8 +59,10 @@ public class LilyChantParser extends AbstractContentAssistParser {
 					put(grammarAccess.getExtenderRuleAccess().getGroup(), "rule__ExtenderRule__Group__0");
 					put(grammarAccess.getSkipRuleAccess().getGroup(), "rule__SkipRule__Group__0");
 					put(grammarAccess.getNoteAccess().getGroup(), "rule__Note__Group__0");
+					put(grammarAccess.getFormatAccess().getGroup(), "rule__Format__Group__0");
 					put(grammarAccess.getScriptAccess().getTonesAssignment_0(), "rule__Script__TonesAssignment_0");
 					put(grammarAccess.getScriptAccess().getChantsAssignment_1(), "rule__Script__ChantsAssignment_1");
+					put(grammarAccess.getScriptAccess().getFormatAssignment_2(), "rule__Script__FormatAssignment_2");
 					put(grammarAccess.getToneAccess().getNameAssignment_1(), "rule__Tone__NameAssignment_1");
 					put(grammarAccess.getToneAccess().getVoiceNamesAssignment_5(), "rule__Tone__VoiceNamesAssignment_5");
 					put(grammarAccess.getToneAccess().getPhrasesAssignment_7(), "rule__Tone__PhrasesAssignment_7");
@@ -90,6 +92,9 @@ public class LilyChantParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSkipRuleAccess().getLiteralAssignment_1(), "rule__SkipRule__LiteralAssignment_1");
 					put(grammarAccess.getNoteAccess().getPitchAssignment_0(), "rule__Note__PitchAssignment_0");
 					put(grammarAccess.getNoteAccess().getDurationAssignment_1(), "rule__Note__DurationAssignment_1");
+					put(grammarAccess.getFormatAccess().getRaggedbottomAssignment_2_0(), "rule__Format__RaggedbottomAssignment_2_0");
+					put(grammarAccess.getFormatAccess().getRaggedlastbottomAssignment_2_1(), "rule__Format__RaggedlastbottomAssignment_2_1");
+					put(grammarAccess.getFormatAccess().getUnorderedGroup_2(), "rule__Format__UnorderedGroup_2");
 				}
 			};
 		}

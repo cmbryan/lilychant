@@ -5,6 +5,7 @@ package org.lilychant.lilyChantScript.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -12,12 +13,14 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.lilychant.lilyChantScript.Chant;
+import org.lilychant.lilyChantScript.Format;
 import org.lilychant.lilyChantScript.LilyChantScriptPackage;
 import org.lilychant.lilyChantScript.Script;
 import org.lilychant.lilyChantScript.Tone;
@@ -31,6 +34,7 @@ import org.lilychant.lilyChantScript.Tone;
  * <ul>
  *   <li>{@link org.lilychant.lilyChantScript.impl.ScriptImpl#getTones <em>Tones</em>}</li>
  *   <li>{@link org.lilychant.lilyChantScript.impl.ScriptImpl#getChants <em>Chants</em>}</li>
+ *   <li>{@link org.lilychant.lilyChantScript.impl.ScriptImpl#getFormat <em>Format</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,6 +61,16 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
    * @ordered
    */
   protected EList<Chant> chants;
+
+  /**
+   * The cached value of the '{@link #getFormat() <em>Format</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFormat()
+   * @generated
+   * @ordered
+   */
+  protected Format format;
 
   /**
    * <!-- begin-user-doc -->
@@ -112,6 +126,54 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
    * <!-- end-user-doc -->
    * @generated
    */
+  public Format getFormat()
+  {
+    return format;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFormat(Format newFormat, NotificationChain msgs)
+  {
+    Format oldFormat = format;
+    format = newFormat;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LilyChantScriptPackage.SCRIPT__FORMAT, oldFormat, newFormat);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFormat(Format newFormat)
+  {
+    if (newFormat != format)
+    {
+      NotificationChain msgs = null;
+      if (format != null)
+        msgs = ((InternalEObject)format).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LilyChantScriptPackage.SCRIPT__FORMAT, null, msgs);
+      if (newFormat != null)
+        msgs = ((InternalEObject)newFormat).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LilyChantScriptPackage.SCRIPT__FORMAT, null, msgs);
+      msgs = basicSetFormat(newFormat, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LilyChantScriptPackage.SCRIPT__FORMAT, newFormat, newFormat));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -121,6 +183,8 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
         return ((InternalEList<?>)getTones()).basicRemove(otherEnd, msgs);
       case LilyChantScriptPackage.SCRIPT__CHANTS:
         return ((InternalEList<?>)getChants()).basicRemove(otherEnd, msgs);
+      case LilyChantScriptPackage.SCRIPT__FORMAT:
+        return basicSetFormat(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -139,6 +203,8 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
         return getTones();
       case LilyChantScriptPackage.SCRIPT__CHANTS:
         return getChants();
+      case LilyChantScriptPackage.SCRIPT__FORMAT:
+        return getFormat();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -162,6 +228,9 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
         getChants().clear();
         getChants().addAll((Collection<? extends Chant>)newValue);
         return;
+      case LilyChantScriptPackage.SCRIPT__FORMAT:
+        setFormat((Format)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -182,6 +251,9 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
       case LilyChantScriptPackage.SCRIPT__CHANTS:
         getChants().clear();
         return;
+      case LilyChantScriptPackage.SCRIPT__FORMAT:
+        setFormat((Format)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -200,6 +272,8 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
         return tones != null && !tones.isEmpty();
       case LilyChantScriptPackage.SCRIPT__CHANTS:
         return chants != null && !chants.isEmpty();
+      case LilyChantScriptPackage.SCRIPT__FORMAT:
+        return format != null;
     }
     return super.eIsSet(featureID);
   }

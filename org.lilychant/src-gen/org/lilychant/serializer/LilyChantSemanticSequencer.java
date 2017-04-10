@@ -16,6 +16,7 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.lilychant.lilyChantScript.Chant;
 import org.lilychant.lilyChantScript.ExtenderRule;
+import org.lilychant.lilyChantScript.Format;
 import org.lilychant.lilyChantScript.HyphenRule;
 import org.lilychant.lilyChantScript.LilyChantScriptPackage;
 import org.lilychant.lilyChantScript.LyricPhrase;
@@ -49,6 +50,9 @@ public class LilyChantSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case LilyChantScriptPackage.EXTENDER_RULE:
 				sequence_ExtenderRule(context, (ExtenderRule) semanticObject); 
+				return; 
+			case LilyChantScriptPackage.FORMAT:
+				sequence_Format(context, (Format) semanticObject); 
 				return; 
 			case LilyChantScriptPackage.HYPHEN_RULE:
 				sequence_HyphenRule(context, (HyphenRule) semanticObject); 
@@ -115,6 +119,18 @@ public class LilyChantSemanticSequencer extends AbstractDelegatingSemanticSequen
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getExtenderRuleAccess().getLiteral__Keyword_1_0(), semanticObject.getLiteral());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Format returns Format
+	 *
+	 * Constraint:
+	 *     (raggedbottom?='ragged-bottom' | raggedlastbottom?='ragged-last-bottom')+
+	 */
+	protected void sequence_Format(ISerializationContext context, Format semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -202,7 +218,7 @@ public class LilyChantSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Script returns Script
 	 *
 	 * Constraint:
-	 *     ((tones+=Tone+ chants+=Chant+) | chants+=Chant+)?
+	 *     ((tones+=Tone* chants+=Chant+ format=Format) | (tones+=Tone* format=Format) | format=Format)?
 	 */
 	protected void sequence_Script(ISerializationContext context, Script semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
