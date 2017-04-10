@@ -72,12 +72,12 @@ class LilyChantGenerator extends AbstractGenerator {
 				while (syllableIndex < noteGroup.syllables.length) {
 					
 					// TODO use terminal definitions for hyphens and extenders, but where do they live?
-					// TODO Better error handling
 					try {
 						var Note note
 						if (noteIndex >= targetVoice.notes.length) {
-							// TODO This should be an error!
-							note = null
+							// Validator should have caught this!
+							// Can't fail at this stage, so use the last pitch
+							note = targetVoice.notes.last
 						} else {
 							note = targetVoice.notes.get(noteIndex)
 						}

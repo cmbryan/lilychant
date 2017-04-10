@@ -6,7 +6,6 @@ package org.lilychant.validation
 import org.eclipse.xtext.validation.Check
 import org.lilychant.lilyChantScript.Chant
 import org.lilychant.lilyChantScript.VoicePhrase
-import org.lilychant.lilyChantScript.LilyChantScriptPackage
 
 /**
  * This class contains custom validation rules. 
@@ -16,17 +15,6 @@ import org.lilychant.lilyChantScript.LilyChantScriptPackage
 class LilyChantValidator extends AbstractLilyChantValidator {
 	
 	public static val TOO_MANY_SYLLABLES = 'tooManySyllables'
-	
-//  public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					LilyChantPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
 
 	@Check
 	def checkNotTooManySyllables(Chant chant) {
@@ -69,9 +57,9 @@ class LilyChantValidator extends AbstractLilyChantValidator {
 						// TODO use terminal definitions for hyphens and extenders, but where do they live?
 						// TODO Better error handling
 						if (noteIndex >= targetVoice.notes.length) {
-							error('More syllables than notes!', 
-									LilyChantScriptPackage.Literals.LYRIC_PHRASE,
-									null)
+							error('More syllables than notes!',
+								noteGroup,
+								null)
 						}
 						val syllable = noteGroup.syllables.get(syllableIndex)
 						switch (syllable.literal) {
