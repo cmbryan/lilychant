@@ -2028,7 +2028,7 @@ rule__Note__Group__1__Impl
 :
 (
 	{ before(grammarAccess.getNoteAccess().getDurationAssignment_1()); }
-	(rule__Note__DurationAssignment_1)?
+	(rule__Note__DurationAssignment_1)
 	{ after(grammarAccess.getNoteAccess().getDurationAssignment_1()); }
 )
 ;

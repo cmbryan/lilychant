@@ -992,7 +992,7 @@ ruleNote returns [EObject current=null]
 						"org.lilychant.LilyChant.DURATION");
 				}
 			)
-		)?
+		)
 	)
 ;
 

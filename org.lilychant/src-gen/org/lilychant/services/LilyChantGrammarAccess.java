@@ -588,10 +588,10 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		////	major='major' | minor='minor'
 		////;
 		//Note:
-		//	pitch=ID duration=DURATION?;
+		//	pitch=ID duration=DURATION;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//pitch=ID duration=DURATION?
+		//pitch=ID duration=DURATION
 		public Group getGroup() { return cGroup; }
 		
 		//pitch=ID
@@ -600,7 +600,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getPitchIDTerminalRuleCall_0_0() { return cPitchIDTerminalRuleCall_0_0; }
 		
-		//duration=DURATION?
+		//duration=DURATION
 		public Assignment getDurationAssignment_1() { return cDurationAssignment_1; }
 		
 		//DURATION
@@ -889,7 +889,7 @@ public class LilyChantGrammarAccess extends AbstractGrammarElementFinder {
 	////	major='major' | minor='minor'
 	////;
 	//Note:
-	//	pitch=ID duration=DURATION?;
+	//	pitch=ID duration=DURATION;
 	public NoteElements getNoteAccess() {
 		return pNote;
 	}

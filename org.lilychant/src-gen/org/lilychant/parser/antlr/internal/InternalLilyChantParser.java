@@ -2710,7 +2710,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNote"
-    // InternalLilyChantParser.g:952:1: ruleNote returns [EObject current=null] : ( ( (lv_pitch_0_0= RULE_ID ) ) ( (lv_duration_1_0= RULE_DURATION ) )? ) ;
+    // InternalLilyChantParser.g:952:1: ruleNote returns [EObject current=null] : ( ( (lv_pitch_0_0= RULE_ID ) ) ( (lv_duration_1_0= RULE_DURATION ) ) ) ;
     public final EObject ruleNote() throws RecognitionException {
         EObject current = null;
 
@@ -2721,11 +2721,11 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLilyChantParser.g:958:2: ( ( ( (lv_pitch_0_0= RULE_ID ) ) ( (lv_duration_1_0= RULE_DURATION ) )? ) )
-            // InternalLilyChantParser.g:959:2: ( ( (lv_pitch_0_0= RULE_ID ) ) ( (lv_duration_1_0= RULE_DURATION ) )? )
+            // InternalLilyChantParser.g:958:2: ( ( ( (lv_pitch_0_0= RULE_ID ) ) ( (lv_duration_1_0= RULE_DURATION ) ) ) )
+            // InternalLilyChantParser.g:959:2: ( ( (lv_pitch_0_0= RULE_ID ) ) ( (lv_duration_1_0= RULE_DURATION ) ) )
             {
-            // InternalLilyChantParser.g:959:2: ( ( (lv_pitch_0_0= RULE_ID ) ) ( (lv_duration_1_0= RULE_DURATION ) )? )
-            // InternalLilyChantParser.g:960:3: ( (lv_pitch_0_0= RULE_ID ) ) ( (lv_duration_1_0= RULE_DURATION ) )?
+            // InternalLilyChantParser.g:959:2: ( ( (lv_pitch_0_0= RULE_ID ) ) ( (lv_duration_1_0= RULE_DURATION ) ) )
+            // InternalLilyChantParser.g:960:3: ( (lv_pitch_0_0= RULE_ID ) ) ( (lv_duration_1_0= RULE_DURATION ) )
             {
             // InternalLilyChantParser.g:960:3: ( (lv_pitch_0_0= RULE_ID ) )
             // InternalLilyChantParser.g:961:4: (lv_pitch_0_0= RULE_ID )
@@ -2757,44 +2757,33 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalLilyChantParser.g:978:3: ( (lv_duration_1_0= RULE_DURATION ) )?
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // InternalLilyChantParser.g:978:3: ( (lv_duration_1_0= RULE_DURATION ) )
+            // InternalLilyChantParser.g:979:4: (lv_duration_1_0= RULE_DURATION )
+            {
+            // InternalLilyChantParser.g:979:4: (lv_duration_1_0= RULE_DURATION )
+            // InternalLilyChantParser.g:980:5: lv_duration_1_0= RULE_DURATION
+            {
+            lv_duration_1_0=(Token)match(input,RULE_DURATION,FOLLOW_2); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
 
-            if ( (LA19_0==RULE_DURATION) ) {
-                alt19=1;
+              					newLeafNode(lv_duration_1_0, grammarAccess.getNoteAccess().getDurationDURATIONTerminalRuleCall_1_0());
+              				
             }
-            switch (alt19) {
-                case 1 :
-                    // InternalLilyChantParser.g:979:4: (lv_duration_1_0= RULE_DURATION )
-                    {
-                    // InternalLilyChantParser.g:979:4: (lv_duration_1_0= RULE_DURATION )
-                    // InternalLilyChantParser.g:980:5: lv_duration_1_0= RULE_DURATION
-                    {
-                    lv_duration_1_0=(Token)match(input,RULE_DURATION,FOLLOW_2); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
+            if ( state.backtracking==0 ) {
 
-                      					newLeafNode(lv_duration_1_0, grammarAccess.getNoteAccess().getDurationDURATIONTerminalRuleCall_1_0());
-                      				
-                    }
-                    if ( state.backtracking==0 ) {
+              					if (current==null) {
+              						current = createModelElement(grammarAccess.getNoteRule());
+              					}
+              					setWithLastConsumed(
+              						current,
+              						"duration",
+              						lv_duration_1_0,
+              						"org.lilychant.LilyChant.DURATION");
+              				
+            }
 
-                      					if (current==null) {
-                      						current = createModelElement(grammarAccess.getNoteRule());
-                      					}
-                      					setWithLastConsumed(
-                      						current,
-                      						"duration",
-                      						lv_duration_1_0,
-                      						"org.lilychant.LilyChant.DURATION");
-                      				
-                    }
+            }
 
-                    }
-
-
-                    }
-                    break;
 
             }
 
@@ -2838,23 +2827,23 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
             // InternalLilyChantParser.g:1007:2: ( (enumLiteral_0= VerticalLine ) | (enumLiteral_1= VerticalLineVerticalLine ) )
             {
             // InternalLilyChantParser.g:1007:2: ( (enumLiteral_0= VerticalLine ) | (enumLiteral_1= VerticalLineVerticalLine ) )
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-            if ( (LA20_0==VerticalLine) ) {
-                alt20=1;
+            if ( (LA19_0==VerticalLine) ) {
+                alt19=1;
             }
-            else if ( (LA20_0==VerticalLineVerticalLine) ) {
-                alt20=2;
+            else if ( (LA19_0==VerticalLineVerticalLine) ) {
+                alt19=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return current;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 20, 0, input);
+                    new NoViableAltException("", 19, 0, input);
 
                 throw nvae;
             }
-            switch (alt20) {
+            switch (alt19) {
                 case 1 :
                     // InternalLilyChantParser.g:1008:3: (enumLiteral_0= VerticalLine )
                     {
@@ -2967,7 +2956,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
     static final String dfa_3s = "\2\11\4\uffff\1\22\1\0\4\uffff";
     static final String dfa_4s = "\2\25\4\uffff\1\22\1\0\4\uffff";
     static final String dfa_5s = "\2\uffff\1\2\3\1\2\uffff\4\1";
-    static final String dfa_6s = "\1\uffff\1\0\5\uffff\1\1\4\uffff}>";
+    static final String dfa_6s = "\1\uffff\1\1\5\uffff\1\0\4\uffff}>";
     static final String[] dfa_7s = {
             "\1\1\2\2\2\uffff\1\2\1\uffff\3\2\2\uffff\1\2",
             "\1\10\1\3\1\5\2\uffff\1\6\1\uffff\1\11\1\4\1\7\2\uffff\1\12",
@@ -3012,6 +3001,21 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA11_7 = input.LA(1);
+
+                         
+                        int index11_7 = input.index();
+                        input.rewind();
+                        s = -1;
+                        if ( (synpred1_InternalLilyChantParser()) ) {s = 11;}
+
+                        else if ( (true) ) {s = 2;}
+
+                         
+                        input.seek(index11_7);
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
                         int LA11_1 = input.LA(1);
 
                          
@@ -3038,21 +3042,6 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
 
                          
                         input.seek(index11_1);
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA11_7 = input.LA(1);
-
-                         
-                        int index11_7 = input.index();
-                        input.rewind();
-                        s = -1;
-                        if ( (synpred1_InternalLilyChantParser()) ) {s = 11;}
-
-                        else if ( (true) ) {s = 2;}
-
-                         
-                        input.seek(index11_7);
                         if ( s>=0 ) return s;
                         break;
             }
@@ -3089,6 +3078,6 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x000000000004C600L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000044600L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000444600L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000100000L});
 
 }

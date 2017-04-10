@@ -181,10 +181,19 @@ public class LilyChantSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Note returns Note
 	 *
 	 * Constraint:
-	 *     (pitch=ID duration=DURATION?)
+	 *     (pitch=ID duration=DURATION)
 	 */
 	protected void sequence_Note(ISerializationContext context, Note semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LilyChantScriptPackage.Literals.NOTE__PITCH) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilyChantScriptPackage.Literals.NOTE__PITCH));
+			if (transientValues.isValueTransient(semanticObject, LilyChantScriptPackage.Literals.NOTE__DURATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LilyChantScriptPackage.Literals.NOTE__DURATION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNoteAccess().getPitchIDTerminalRuleCall_0_0(), semanticObject.getPitch());
+		feeder.accept(grammarAccess.getNoteAccess().getDurationDURATIONTerminalRuleCall_1_0(), semanticObject.getDuration());
+		feeder.finish();
 	}
 	
 	

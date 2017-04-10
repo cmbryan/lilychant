@@ -5205,23 +5205,12 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
             if ( (LA16_0==HyphenMinusHyphenMinus) ) {
                 switch ( input.LA(2) ) {
-                    case EOF:
-                    case HyphenMinusHyphenMinus:
-                    case KW___:
-                    case VerticalLineVerticalLine:
-                    case KW__:
-                    case VerticalLine:
-                    case RULE_START_NOTE_GROUP:
-                        {
-                        alt16=1;
-                        }
-                        break;
                     case Asterisk:
                         {
-                        int LA16_4 = input.LA(3);
+                        int LA16_3 = input.LA(3);
 
-                        if ( (LA16_4==RULE_ID) ) {
-                            int LA16_5 = input.LA(4);
+                        if ( (LA16_3==RULE_ID) ) {
+                            int LA16_4 = input.LA(4);
 
                             if ( (synpred18_InternalLilyChantParser()) ) {
                                 alt16=1;
@@ -5231,11 +5220,22 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
                         break;
                     case RULE_ID:
                         {
-                        int LA16_5 = input.LA(3);
+                        int LA16_4 = input.LA(3);
 
                         if ( (synpred18_InternalLilyChantParser()) ) {
                             alt16=1;
                         }
+                        }
+                        break;
+                    case EOF:
+                    case HyphenMinusHyphenMinus:
+                    case KW___:
+                    case VerticalLineVerticalLine:
+                    case KW__:
+                    case VerticalLine:
+                    case RULE_START_NOTE_GROUP:
+                        {
+                        alt16=1;
                         }
                         break;
                 }
@@ -6722,40 +6722,29 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Note__Group__1__Impl"
-    // InternalLilyChantParser.g:2024:1: rule__Note__Group__1__Impl : ( ( rule__Note__DurationAssignment_1 )? ) ;
+    // InternalLilyChantParser.g:2024:1: rule__Note__Group__1__Impl : ( ( rule__Note__DurationAssignment_1 ) ) ;
     public final void rule__Note__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:2028:1: ( ( ( rule__Note__DurationAssignment_1 )? ) )
-            // InternalLilyChantParser.g:2029:1: ( ( rule__Note__DurationAssignment_1 )? )
+            // InternalLilyChantParser.g:2028:1: ( ( ( rule__Note__DurationAssignment_1 ) ) )
+            // InternalLilyChantParser.g:2029:1: ( ( rule__Note__DurationAssignment_1 ) )
             {
-            // InternalLilyChantParser.g:2029:1: ( ( rule__Note__DurationAssignment_1 )? )
-            // InternalLilyChantParser.g:2030:2: ( rule__Note__DurationAssignment_1 )?
+            // InternalLilyChantParser.g:2029:1: ( ( rule__Note__DurationAssignment_1 ) )
+            // InternalLilyChantParser.g:2030:2: ( rule__Note__DurationAssignment_1 )
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteAccess().getDurationAssignment_1()); 
             }
-            // InternalLilyChantParser.g:2031:2: ( rule__Note__DurationAssignment_1 )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            // InternalLilyChantParser.g:2031:2: ( rule__Note__DurationAssignment_1 )
+            // InternalLilyChantParser.g:2031:3: rule__Note__DurationAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Note__DurationAssignment_1();
 
-            if ( (LA20_0==RULE_DURATION) ) {
-                alt20=1;
-            }
-            switch (alt20) {
-                case 1 :
-                    // InternalLilyChantParser.g:2031:3: rule__Note__DurationAssignment_1
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Note__DurationAssignment_1();
-
-                    state._fsp--;
-                    if (state.failed) return ;
-
-                    }
-                    break;
+            state._fsp--;
+            if (state.failed) return ;
 
             }
 
