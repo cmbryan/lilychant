@@ -349,6 +349,8 @@ class LilyChantGenerator extends AbstractGenerator {
 			% =======================
 			% Layout
 			% =======================
+			\paper { ragged-last-bottom = ##f }
+
 			\layout {
 			  \context {
 			    \Score
