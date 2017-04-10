@@ -269,7 +269,11 @@ class LilyChantGenerator extends AbstractGenerator {
 	}
 	
 	def private toLyString(Syllable it) {
-		return literal
+		if (literal == '__')
+			// Don't print vocal extenders
+			return ''
+		else
+			return literal
 	}
 	
 	def private doGroupSyllables(int numSyllables) {
