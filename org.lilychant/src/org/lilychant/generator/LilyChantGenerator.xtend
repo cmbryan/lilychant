@@ -74,7 +74,13 @@ class LilyChantGenerator extends AbstractGenerator {
 					// TODO use terminal definitions for hyphens and extenders, but where do they live?
 					// TODO Better error handling
 					try {
-						val note = targetVoice.notes.get(noteIndex)
+						var Note note
+						if (noteIndex >= targetVoice.notes.length) {
+							// TODO This should be an error!
+							note = null
+						} else {
+							note = targetVoice.notes.get(noteIndex)
+						}
 						val syllable = noteGroup.syllables.get(syllableIndex)
 						switch (syllable.literal) {
 							case "--",

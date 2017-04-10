@@ -3,6 +3,10 @@
  */
 package org.lilychant.validation
 
+import org.eclipse.xtext.validation.Check
+import org.lilychant.lilyChantScript.Chant
+import org.lilychant.lilyChantScript.VoicePhrase
+import org.lilychant.lilyChantScript.LilyChantScriptPackage
 
 /**
  * This class contains custom validation rules. 
@@ -10,6 +14,8 @@ package org.lilychant.validation
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class LilyChantValidator extends AbstractLilyChantValidator {
+	
+	public static val TOO_MANY_SYLLABLES = 'tooManySyllables'
 	
 //  public static val INVALID_NAME = 'invalidName'
 //
@@ -21,5 +27,91 @@ class LilyChantValidator extends AbstractLilyChantValidator {
 //					INVALID_NAME)
 //		}
 //	}
-	
+
+	@Check
+	def checkNotTooManySyllables(Chant chant) {
+		for (voiceName : chant.tone.voiceNames) {
+			// This logic is copied from the generator
+			var currentPhraseIndex = -1
+
+			for (lyricPhrase : chant.phrases) {
+				if (lyricPhrase.explicitPhrase != null) {
+					currentPhraseIndex = chant.tone.phrases.indexOf(lyricPhrase.explicitPhrase)
+				} else {
+					currentPhraseIndex = (currentPhraseIndex + 1) % chant.tone.phrases.length
+					// Special case for 'final' phrase
+					while (chant.tone.phrases.get(currentPhraseIndex).name.toLowerCase.endsWith("final") &&
+						currentPhraseIndex != 0) {
+						currentPhraseIndex = (currentPhraseIndex + 1) % chant.tone.phrases.length
+					}
+				}
+				val notePhrase = chant.tone.phrases.get(currentPhraseIndex)
+
+				var VoicePhrase targetVoice
+				for (voice : notePhrase.voices) {
+					if (voice.name == voiceName) {
+						targetVoice = voice
+					}
+				}
+
+				// Match the notes to the syllables
+				var noteIndex = 0
+				for (noteGroup : lyricPhrase.noteGroups) {
+					val syllables = noteGroup.syllables.filter[!#['_', '__', '--'].contains(literal)]
+					var insideGroup = false
+
+					// Print the notes
+					var syllableIndex = 0
+					var inSlur = false
+					var emphasisAdded = false
+					while (syllableIndex < noteGroup.syllables.length) {
+
+						// TODO use terminal definitions for hyphens and extenders, but where do they live?
+						// TODO Better error handling
+						if (noteIndex >= targetVoice.notes.length) {
+							error('More syllables than notes!', 
+									LilyChantScriptPackage.Literals.LYRIC_PHRASE,
+									null)
+						}
+						val syllable = noteGroup.syllables.get(syllableIndex)
+						switch (syllable.literal) {
+							case "--",
+							case "_": {
+								// skip to the next syllable
+							}
+							case "__": {
+//								if (doGroupSyllables(syllables.length)) {
+//									// error
+//								} else {
+								if (!inSlur) {
+//										while (result.last.contains('bar')) {
+//											result.remove(result.last)
+//										}
+//										result.add("(")
+									inSlur = true
+								}
+								// slurring implies advance to the next note,
+								// *unless* it's the first of a note-group, in which case
+								// the advance has already happened!
+								if (syllableIndex > 0)
+									noteIndex++
+
+								// This adds the actual note:
+								val nextNote = targetVoice.notes.get(noteIndex)
+//								}
+							}
+							default: {
+								if (inSlur) {
+									inSlur = false
+								}
+							}
+						}
+						syllableIndex++
+					}
+					syllableIndex++
+					noteIndex++
+				}
+			}
+		}
+	}
 }

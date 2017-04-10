@@ -86,10 +86,10 @@ Bass = {
 % Lyrics
 % =======================
 words = \lyricmode {
-	This __ 
+	This  
 	is a 
 	test 
-	This __ __ 
+	This   
 	is a test 
 }
 
@@ -197,6 +197,8 @@ words = \lyricmode {
 % =======================
 % Layout
 % =======================
+\paper { ragged-last-bottom = ##f }
+
 \layout {
   \context {
     \Score
@@ -324,6 +326,8 @@ words = \lyricmode {
 % =======================
 % Layout
 % =======================
+\paper { ragged-last-bottom = ##f }
+
 \layout {
   \context {
     \Score
@@ -405,16 +409,16 @@ Bass = {
 % =======================
 words = \lyricmode {
 	When Israel of 
-	old __ 
+	old  
 	had 
 	passed 
 	through the a 
 	 -- byss "of the Red Sea, " with
 	un -- 
-	wet __ 
+	wet  
 	feet, 
 	 he "overcame the power of Amalek in " the
-	wil __ 
+	wil  
 	-- der 
 	-- ness, 
 }
@@ -455,6 +459,8 @@ words = \lyricmode {
 % =======================
 % Layout
 % =======================
+\paper { ragged-last-bottom = ##f }
+
 \layout {
   \context {
     \Score
@@ -646,6 +652,8 @@ words = \lyricmode {
 % =======================
 % Layout
 % =======================
+\paper { ragged-last-bottom = ##f }
+
 \layout {
   \context {
     \Score
@@ -756,6 +764,8 @@ words = \lyricmode {
 % =======================
 % Layout
 % =======================
+\paper { ragged-last-bottom = ##f }
+
 \layout {
   \context {
     \Score
