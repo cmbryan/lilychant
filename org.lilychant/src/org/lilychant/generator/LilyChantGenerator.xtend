@@ -38,7 +38,7 @@ class LilyChantGenerator extends AbstractGenerator {
 		var result = new ArrayList<String>()
 
 		for (lyricPhrase : chant.phrases) {
-			if (lyricPhrase.explicitPhrase != null) {
+			if (lyricPhrase.explicitPhrase !== null) {
 				currentPhraseIndex = chant.tone.phrases.indexOf(lyricPhrase.explicitPhrase)
 			} else {
 				currentPhraseIndex = (currentPhraseIndex+1) % chant.tone.phrases.length
@@ -304,9 +304,9 @@ class LilyChantGenerator extends AbstractGenerator {
 			alignleft = \once \override LyricText #'self-alignment-X = #-1
 			
 			«FOR chant : model.chants»
-			«IF chant.name != null»
+			«IF chant.name !== null»
 			% =======================
-			% Score «IF chant.name != null»for «chant.name»«ENDIF»
+			% Score «IF chant.name !== null»for «chant.name»«ENDIF»
 			% =======================
 			«ENDIF»
 			%
