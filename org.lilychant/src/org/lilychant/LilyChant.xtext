@@ -117,7 +117,7 @@ SkipRule returns Syllable:
 //;
 
 Note:
-	pitch=ID duration=DURATION
+	pitch=ID duration?=DURATION?
 ;
 
 Format:

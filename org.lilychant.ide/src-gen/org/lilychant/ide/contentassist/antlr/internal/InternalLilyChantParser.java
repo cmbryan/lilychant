@@ -6913,29 +6913,40 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Note__Group__1__Impl"
-    // InternalLilyChantParser.g:2079:1: rule__Note__Group__1__Impl : ( ( rule__Note__DurationAssignment_1 ) ) ;
+    // InternalLilyChantParser.g:2079:1: rule__Note__Group__1__Impl : ( ( rule__Note__DurationAssignment_1 )? ) ;
     public final void rule__Note__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLilyChantParser.g:2083:1: ( ( ( rule__Note__DurationAssignment_1 ) ) )
-            // InternalLilyChantParser.g:2084:1: ( ( rule__Note__DurationAssignment_1 ) )
+            // InternalLilyChantParser.g:2083:1: ( ( ( rule__Note__DurationAssignment_1 )? ) )
+            // InternalLilyChantParser.g:2084:1: ( ( rule__Note__DurationAssignment_1 )? )
             {
-            // InternalLilyChantParser.g:2084:1: ( ( rule__Note__DurationAssignment_1 ) )
-            // InternalLilyChantParser.g:2085:2: ( rule__Note__DurationAssignment_1 )
+            // InternalLilyChantParser.g:2084:1: ( ( rule__Note__DurationAssignment_1 )? )
+            // InternalLilyChantParser.g:2085:2: ( rule__Note__DurationAssignment_1 )?
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getNoteAccess().getDurationAssignment_1()); 
             }
-            // InternalLilyChantParser.g:2086:2: ( rule__Note__DurationAssignment_1 )
-            // InternalLilyChantParser.g:2086:3: rule__Note__DurationAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Note__DurationAssignment_1();
+            // InternalLilyChantParser.g:2086:2: ( rule__Note__DurationAssignment_1 )?
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            state._fsp--;
-            if (state.failed) return ;
+            if ( (LA21_0==RULE_DURATION) ) {
+                alt21=1;
+            }
+            switch (alt21) {
+                case 1 :
+                    // InternalLilyChantParser.g:2086:3: rule__Note__DurationAssignment_1
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Note__DurationAssignment_1();
+
+                    state._fsp--;
+                    if (state.failed) return ;
+
+                    }
+                    break;
 
             }
 
@@ -7296,16 +7307,16 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
             // InternalLilyChantParser.g:2209:2: ( rule__Format__UnorderedGroup_2__0 )?
             {
             // InternalLilyChantParser.g:2209:2: ( rule__Format__UnorderedGroup_2__0 )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( LA21_0 == RaggedBottom && getUnorderedGroupHelper().canSelect(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 0) ) {
-                alt21=1;
+            if ( LA22_0 == RaggedBottom && getUnorderedGroupHelper().canSelect(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 0) ) {
+                alt22=1;
             }
-            else if ( LA21_0 == RaggedLastBottom && getUnorderedGroupHelper().canSelect(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 1) ) {
-                alt21=1;
+            else if ( LA22_0 == RaggedLastBottom && getUnorderedGroupHelper().canSelect(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 1) ) {
+                alt22=1;
             }
-            switch (alt21) {
+            switch (alt22) {
                 case 1 :
                     // InternalLilyChantParser.g:0:0: rule__Format__UnorderedGroup_2__0
                     {
@@ -7351,23 +7362,23 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
             // InternalLilyChantParser.g:2223:3: ( ({...}? => ( ( ( rule__Format__RaggedbottomAssignment_2_0 ) ) ) ) | ({...}? => ( ( ( rule__Format__RaggedlastbottomAssignment_2_1 ) ) ) ) )
             {
             // InternalLilyChantParser.g:2223:3: ( ({...}? => ( ( ( rule__Format__RaggedbottomAssignment_2_0 ) ) ) ) | ({...}? => ( ( ( rule__Format__RaggedlastbottomAssignment_2_1 ) ) ) ) )
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( LA22_0 == RaggedBottom && getUnorderedGroupHelper().canSelect(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 0) ) {
-                alt22=1;
+            if ( LA23_0 == RaggedBottom && getUnorderedGroupHelper().canSelect(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 0) ) {
+                alt23=1;
             }
-            else if ( LA22_0 == RaggedLastBottom && getUnorderedGroupHelper().canSelect(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 1) ) {
-                alt22=2;
+            else if ( LA23_0 == RaggedLastBottom && getUnorderedGroupHelper().canSelect(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 1) ) {
+                alt23=2;
             }
             else {
                 if (state.backtracking>0) {state.failed=true; return ;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 22, 0, input);
+                    new NoViableAltException("", 23, 0, input);
 
                 throw nvae;
             }
-            switch (alt22) {
+            switch (alt23) {
                 case 1 :
                     // InternalLilyChantParser.g:2224:3: ({...}? => ( ( ( rule__Format__RaggedbottomAssignment_2_0 ) ) ) )
                     {
@@ -7501,16 +7512,16 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
             state._fsp--;
             if (state.failed) return ;
             // InternalLilyChantParser.g:2268:2: ( rule__Format__UnorderedGroup_2__1 )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( LA23_0 == RaggedBottom && getUnorderedGroupHelper().canSelect(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 0) ) {
-                alt23=1;
+            if ( LA24_0 == RaggedBottom && getUnorderedGroupHelper().canSelect(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 0) ) {
+                alt24=1;
             }
-            else if ( LA23_0 == RaggedLastBottom && getUnorderedGroupHelper().canSelect(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 1) ) {
-                alt23=1;
+            else if ( LA24_0 == RaggedLastBottom && getUnorderedGroupHelper().canSelect(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 1) ) {
+                alt24=1;
             }
-            switch (alt23) {
+            switch (alt24) {
                 case 1 :
                     // InternalLilyChantParser.g:0:0: rule__Format__UnorderedGroup_2__1
                     {
@@ -9178,8 +9189,8 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
     }
     // $ANTLR end synpred19_InternalLilyChantParser
 
-    // $ANTLR start synpred23_InternalLilyChantParser
-    public final void synpred23_InternalLilyChantParser_fragment() throws RecognitionException {   
+    // $ANTLR start synpred24_InternalLilyChantParser
+    public final void synpred24_InternalLilyChantParser_fragment() throws RecognitionException {   
         // InternalLilyChantParser.g:2209:2: ( rule__Format__UnorderedGroup_2__0 )
         // InternalLilyChantParser.g:2209:2: rule__Format__UnorderedGroup_2__0
         {
@@ -9191,10 +9202,10 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
         }
     }
-    // $ANTLR end synpred23_InternalLilyChantParser
+    // $ANTLR end synpred24_InternalLilyChantParser
 
-    // $ANTLR start synpred24_InternalLilyChantParser
-    public final void synpred24_InternalLilyChantParser_fragment() throws RecognitionException {   
+    // $ANTLR start synpred25_InternalLilyChantParser
+    public final void synpred25_InternalLilyChantParser_fragment() throws RecognitionException {   
         // InternalLilyChantParser.g:2224:3: ( ({...}? => ( ( ( rule__Format__RaggedbottomAssignment_2_0 ) ) ) ) )
         // InternalLilyChantParser.g:2224:3: ({...}? => ( ( ( rule__Format__RaggedbottomAssignment_2_0 ) ) ) )
         {
@@ -9203,7 +9214,7 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
         {
         if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 0) ) {
             if (state.backtracking>0) {state.failed=true; return ;}
-            throw new FailedPredicateException(input, "synpred24_InternalLilyChantParser", "getUnorderedGroupHelper().canSelect(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 0)");
+            throw new FailedPredicateException(input, "synpred25_InternalLilyChantParser", "getUnorderedGroupHelper().canSelect(grammarAccess.getFormatAccess().getUnorderedGroup_2(), 0)");
         }
         // InternalLilyChantParser.g:2225:102: ( ( ( rule__Format__RaggedbottomAssignment_2_0 ) ) )
         // InternalLilyChantParser.g:2226:5: ( ( rule__Format__RaggedbottomAssignment_2_0 ) )
@@ -9238,10 +9249,10 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
         }
     }
-    // $ANTLR end synpred24_InternalLilyChantParser
+    // $ANTLR end synpred25_InternalLilyChantParser
 
-    // $ANTLR start synpred25_InternalLilyChantParser
-    public final void synpred25_InternalLilyChantParser_fragment() throws RecognitionException {   
+    // $ANTLR start synpred26_InternalLilyChantParser
+    public final void synpred26_InternalLilyChantParser_fragment() throws RecognitionException {   
         // InternalLilyChantParser.g:2268:2: ( rule__Format__UnorderedGroup_2__1 )
         // InternalLilyChantParser.g:2268:2: rule__Format__UnorderedGroup_2__1
         {
@@ -9253,15 +9264,15 @@ public class InternalLilyChantParser extends AbstractInternalContentAssistParser
 
         }
     }
-    // $ANTLR end synpred25_InternalLilyChantParser
+    // $ANTLR end synpred26_InternalLilyChantParser
 
     // Delegated rules
 
-    public final boolean synpred23_InternalLilyChantParser() {
+    public final boolean synpred26_InternalLilyChantParser() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred23_InternalLilyChantParser_fragment(); // can never throw exception
+            synpred26_InternalLilyChantParser_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
