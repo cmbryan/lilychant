@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.lilychant.lilyChantScript.Note#getPitch <em>Pitch</em>}</li>
- *   <li>{@link org.lilychant.lilyChantScript.Note#isDuration <em>Duration</em>}</li>
+ *   <li>{@link org.lilychant.lilyChantScript.Note#getDuration <em>Duration</em>}</li>
  * </ul>
  *
  * @see org.lilychant.lilyChantScript.LilyChantScriptPackage#getNote()
@@ -51,21 +51,21 @@ public interface Note extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Duration</em>' attribute.
-   * @see #setDuration(boolean)
+   * @see #setDuration(String)
    * @see org.lilychant.lilyChantScript.LilyChantScriptPackage#getNote_Duration()
    * @model
    * @generated
    */
-  boolean isDuration();
+  String getDuration();
 
   /**
-   * Sets the value of the '{@link org.lilychant.lilyChantScript.Note#isDuration <em>Duration</em>}' attribute.
+   * Sets the value of the '{@link org.lilychant.lilyChantScript.Note#getDuration <em>Duration</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Duration</em>' attribute.
-   * @see #isDuration()
+   * @see #getDuration()
    * @generated
    */
-  void setDuration(boolean value);
+  void setDuration(String value);
 
 } // Note

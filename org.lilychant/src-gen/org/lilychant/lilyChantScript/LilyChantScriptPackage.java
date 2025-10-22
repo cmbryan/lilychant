@@ -957,11 +957,11 @@ public interface LilyChantScriptPackage extends EPackage
   EAttribute getNote_Pitch();
 
   /**
-   * Returns the meta object for the attribute '{@link org.lilychant.lilyChantScript.Note#isDuration <em>Duration</em>}'.
+   * Returns the meta object for the attribute '{@link org.lilychant.lilyChantScript.Note#getDuration <em>Duration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Duration</em>'.
-   * @see org.lilychant.lilyChantScript.Note#isDuration()
+   * @see org.lilychant.lilyChantScript.Note#getDuration()
    * @see #getNote()
    * @generated
    */

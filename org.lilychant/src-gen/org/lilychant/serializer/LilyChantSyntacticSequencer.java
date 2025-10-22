@@ -28,8 +28,6 @@ public class LilyChantSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (ruleCall.getRule() == grammarAccess.getBEGINRule())
 			return getBEGINToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getDURATIONRule())
-			return getDURATIONToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getENDRule())
 			return getENDToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getEND_NOTE_GROUPRule())
@@ -44,15 +42,6 @@ public class LilyChantSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Defaults to the empty string.
 	 */
 	protected String getBEGINToken(EObject semanticObject, RuleCall ruleCall, INode node) { return ""; }
-	
-	/**
-	 * terminal DURATION: ('1'|'2'|'4'|'8'|'16'|'\breve')+;
-	 */
-	protected String getDURATIONToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "1";
-	}
 	
 	/**
 	 * Synthetic terminal rule. The concrete syntax is to be specified by clients.

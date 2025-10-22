@@ -2836,7 +2836,7 @@ public class InternalLilyChantParser extends AbstractInternalAntlrParser {
                       					setWithLastConsumed(
                       						current,
                       						"duration",
-                      						lv_duration_1_0 != null,
+                      						lv_duration_1_0,
                       						"org.lilychant.LilyChant.DURATION");
                       				
                     }

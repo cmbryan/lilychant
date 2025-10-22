@@ -1007,7 +1007,7 @@ ruleNote returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"duration",
-						lv_duration_1_0 != null,
+						lv_duration_1_0,
 						"org.lilychant.LilyChant.DURATION");
 				}
 			)

@@ -212,7 +212,7 @@ public class LilyChantSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     Note returns Note
 	 *
 	 * Constraint:
-	 *     (pitch=ID duration?=DURATION?)
+	 *     (pitch=ID duration=DURATION?)
 	 * </pre>
 	 */
 	protected void sequence_Note(ISerializationContext context, Note semanticObject) {

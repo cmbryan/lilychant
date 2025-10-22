@@ -22,7 +22,7 @@ import org.lilychant.lilyChantScript.Note;
  * </p>
  * <ul>
  *   <li>{@link org.lilychant.lilyChantScript.impl.NoteImpl#getPitch <em>Pitch</em>}</li>
- *   <li>{@link org.lilychant.lilyChantScript.impl.NoteImpl#isDuration <em>Duration</em>}</li>
+ *   <li>{@link org.lilychant.lilyChantScript.impl.NoteImpl#getDuration <em>Duration</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,24 +50,24 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note
   protected String pitch = PITCH_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isDuration() <em>Duration</em>}' attribute.
+   * The default value of the '{@link #getDuration() <em>Duration</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isDuration()
+   * @see #getDuration()
    * @generated
    * @ordered
    */
-  protected static final boolean DURATION_EDEFAULT = false;
+  protected static final String DURATION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #isDuration() <em>Duration</em>}' attribute.
+   * The cached value of the '{@link #getDuration() <em>Duration</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isDuration()
+   * @see #getDuration()
    * @generated
    * @ordered
    */
-  protected boolean duration = DURATION_EDEFAULT;
+  protected String duration = DURATION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,7 +121,7 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note
    * @generated
    */
   @Override
-  public boolean isDuration()
+  public String getDuration()
   {
     return duration;
   }
@@ -132,9 +132,9 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note
    * @generated
    */
   @Override
-  public void setDuration(boolean newDuration)
+  public void setDuration(String newDuration)
   {
-    boolean oldDuration = duration;
+    String oldDuration = duration;
     duration = newDuration;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, LilyChantScriptPackage.NOTE__DURATION, oldDuration, duration));
@@ -153,7 +153,7 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note
       case LilyChantScriptPackage.NOTE__PITCH:
         return getPitch();
       case LilyChantScriptPackage.NOTE__DURATION:
-        return isDuration();
+        return getDuration();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -172,7 +172,7 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note
         setPitch((String)newValue);
         return;
       case LilyChantScriptPackage.NOTE__DURATION:
-        setDuration((Boolean)newValue);
+        setDuration((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -211,7 +211,7 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note
       case LilyChantScriptPackage.NOTE__PITCH:
         return PITCH_EDEFAULT == null ? pitch != null : !PITCH_EDEFAULT.equals(pitch);
       case LilyChantScriptPackage.NOTE__DURATION:
-        return duration != DURATION_EDEFAULT;
+        return DURATION_EDEFAULT == null ? duration != null : !DURATION_EDEFAULT.equals(duration);
     }
     return super.eIsSet(featureID);
   }
