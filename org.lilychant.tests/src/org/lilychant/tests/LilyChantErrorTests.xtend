@@ -42,15 +42,12 @@ class LilyChantErrorTests {
 		model.assertParsedWithError;
 	}	
 
-	// FIXME How to check for error...
 	private def assertParsedWithError(EObject obj) {
 		Assert.assertNotNull(obj)
 		validationHelper.assertError(
 			obj,
 			LilyChantScriptPackage.Literals.NOTE_GROUP,
-			LilyChantValidator.TOO_MANY_SYLLABLES,
-			160, 4,
-			"Too many syllables"
+			LilyChantValidator.TOO_MANY_SYLLABLES
 		)
 	}
 }

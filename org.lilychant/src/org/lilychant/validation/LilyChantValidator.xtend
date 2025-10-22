@@ -59,7 +59,9 @@ class LilyChantValidator extends AbstractLilyChantValidator {
 						if (noteIndex >= targetVoice.notes.length) {
 							error('More syllables than notes!',
 								noteGroup,
-								null)
+								null,
+								noteIndex,
+								TOO_MANY_SYLLABLES)
 						}
 						val syllable = noteGroup.syllables.get(syllableIndex)
 						switch (syllable.literal) {
