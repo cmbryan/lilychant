@@ -77,7 +77,7 @@ class LilyChantGenerator extends AbstractGenerator {
 						if (noteIndex >= targetVoice.notes.length) {
 							// Validator should have caught this!
 							// Can't fail at this stage, so use the last pitch
-							note = targetVoice.notes.last
+							note = targetVoice.notes.lastOrNull
 						} else {
 							note = targetVoice.notes.get(noteIndex)
 						}
@@ -92,8 +92,8 @@ class LilyChantGenerator extends AbstractGenerator {
 									// error
 								} else {
 									if (!inSlur) {
-										while (result.last.contains('bar')) {
-											result.remove(result.last)
+										while (result.lastOrNull.contains('bar')) {
+											result.remove(result.lastOrNull)
 										}
 										result.add("(")
 										inSlur = true
@@ -150,7 +150,7 @@ class LilyChantGenerator extends AbstractGenerator {
 										emphasisAdded = true
 									} else if (emphasisAdded) {
 										if (syllableIndex==noteGroup.syllables.length-1
-											&& noteGroup===lyricPhrase.noteGroups.last) {
+											&& noteGroup===lyricPhrase.noteGroups.lastOrNull) {
 											// this is the last syllable in the phrase.
 											// Even though emphasis has been added, this one needs to be long 
 											result.add(note.pitch + '2')
@@ -251,7 +251,7 @@ class LilyChantGenerator extends AbstractGenerator {
 					if (printSyllables.get(sylIdx).literal == '--') {
 						result.append(' --')
 					}
-					result.append(printSyllables.last.toLyString)
+					result.append(printSyllables.lastOrNull.toLyString)
 
 				} else {
 					for (syllable : printSyllables) {
